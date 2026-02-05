@@ -1,12 +1,22 @@
 import axios from "axios";
 
-/* ================= BASE URL ================= */
-const API_URL =
-  process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+/* ================= BASE URL (ENV SAFE) ================= */
+/**
+ * LOCAL  → http://localhost:5000/api
+ * PROD   → https://YOUR-BACKEND.onrender.com/api
+ *
+ * IMPORTANT:
+ * - For GitHub Pages, NEVER use relative URLs
+ * - Always use absolute backend URL in production
+ */
+const API_BASE_URL =
+  process.env.NODE_ENV === "production"
+     ? "https://nmai-project.onrender.com/api"
+    : "http://localhost:5000/api";
 
 /* ================= AXIOS INSTANCE ================= */
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -25,17 +35,20 @@ api.interceptors.request.use(
 );
 
 /* ================= RESPONSE INTERCEPTOR ================= */
-/**
- * IMPORTANT:
- * All API calls return `response.data`
- */
 api.interceptors.response.use(
   (response) => response.data,
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
-      window.location.href = "/login";
+
+      // GitHub Pages safe redirect
+      if (process.env.NODE_ENV === "production") {
+        window.location.href = "#/login";
+      } else {
+        window.location.href = "/login";
+      }
     }
+
     return Promise.reject(
       error.response?.data || { message: error.message }
     );
@@ -67,36 +80,26 @@ export const authAPI = {
 
 /* ================= ARTICLES API ================= */
 export const articlesAPI = {
-  /** PAGE-BASED (SEO, URL pagination) */
   getAll: (params = {}) =>
     api.get("/articles", { params: cleanParams(params) }),
 
-  /** CURSOR-BASED (FAST, BIG DATA) */
   getByCursor: ({ cursor, limit = 9, ...filters }) =>
     api.get("/articles", {
-      params: cleanParams({
-        cursor,
-        limit,
-        ...filters,
-      }),
+      params: cleanParams({ cursor, limit, ...filters }),
     }),
 
-  /** SINGLE ARTICLE */
   getBySlug: (slug) => api.get(`/articles/${slug}`),
 
-  /** HOME PAGE */
   getLatest: (limit = 10) =>
     api.get("/articles/latest", { params: { limit } }),
 
   getTrending: (limit = 5) =>
     api.get("/articles/trending", { params: { limit } }),
 
-  /** CRUD */
   create: (data) => api.post("/articles", data),
   update: (id, data) => api.put(`/articles/${id}`, data),
   delete: (id) => api.delete(`/articles/${id}`),
 
-  /** INTERACTIONS */
   like: (id) => api.post(`/articles/${id}/like`),
 };
 
@@ -127,7 +130,6 @@ export const usersAPI = {
     api.delete(`/users/save-article/${articleId}`),
 
   getSavedArticles: () => api.get("/users/saved-articles"),
-
   getQuizHistory: () => api.get("/users/quiz-history"),
 
   getProfile: () => api.get("/users/profile"),

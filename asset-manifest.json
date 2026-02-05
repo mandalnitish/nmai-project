@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nmai-project/static/css/main.dbbe5140.css",
+    "main.js": "/nmai-project/static/js/main.8c4663e7.js",
+    "index.html": "/nmai-project/index.html",
+    "main.dbbe5140.css.map": "/nmai-project/static/css/main.dbbe5140.css.map",
+    "main.8c4663e7.js.map": "/nmai-project/static/js/main.8c4663e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbbe5140.css",
+    "static/js/main.8c4663e7.js"
+  ]
+}

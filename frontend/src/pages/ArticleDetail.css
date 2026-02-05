@@ -1,0 +1,74 @@
+/* ================= ARTICLE DETAIL PAGE ================= */
+
+.article-detail-page {
+  background: #f5f7fb;
+  padding: 3rem 1rem;
+}
+
+/* MAIN ARTICLE CONTAINER */
+.article-content {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border-radius: 24px;
+  padding: 3.5rem;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.article-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* SUMMARY */
+.article-summary {
+  background: linear-gradient(135deg, #e0f2ff, #eef2ff);
+  border-left: 6px solid #667eea;
+  padding: 1.5rem 1.8rem;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #1f2937;
+  margin: 2rem 0;
+}
+
+/* ARTICLE BODY */
+.article-body {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #374151;
+}
+
+.article-body h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.article-body h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .article-content {
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+  }
+
+  .article-title {
+    font-size: 2.1rem;
+  }
+
+  .article-summary {
+    font-size: 1.05rem;
+  }
+
+  .article-body {
+    font-size: 1.02rem;
+  }
+}

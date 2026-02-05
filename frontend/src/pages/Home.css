@@ -1,0 +1,320 @@
+/* =====================
+   GLOBAL
+===================== */
+.home-page {
+  background: #f5f7fa;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 2.2rem 0; /* ⬅ reduced vertical gap */
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* =====================
+   HERO SECTION (COMPACT)
+===================== */
+.hero-section {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #ffffff;
+  padding: 2.2rem 2rem; /* ⬅ reduced height */
+  border-radius: 14px;
+  margin: 0 0 2rem 0; /* ⬅ removes top gap */
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: auto;
+  text-align: left; /* ⬅ exam-site style */
+}
+
+.hero-title {
+  font-size: 2rem; /* ⬅ reduced */
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #facc15, #f97316);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.95;
+  max-width: 720px;
+}
+
+.hero-buttons {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  background: #facc15;
+  color: #1f2937;
+}
+
+.btn-primary:hover {
+  background: #fbbf24;
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =====================
+   ARTICLES
+===================== */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.6rem;
+}
+
+.group-title {
+  margin: 1.4rem 0 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* =====================
+   STATES
+===================== */
+.empty-state {
+  padding: 1.6rem;
+  text-align: center;
+  color: #555;
+}
+
+/* =====================
+   TRENDING
+===================== */
+.trending-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.trending-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trending-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.trending-number {
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.trending-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+.trending-date {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* =====================
+   MCQs
+===================== */
+.mcq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.mcq-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 1.1rem;
+  border-radius: 10px;
+}
+
+.mcq-card .answer {
+  margin-top: 0.6rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+/* =====================
+   PAGINATION
+===================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 2.2rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.pagination button.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.section .pagination {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.4rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-section {
+    padding: 1.6rem 1.2rem;
+  }
+}
+
+/* ==================================================
+   FORCE REMOVE TOP GAP ABOVE HERO (FINAL FIX)
+================================================== */
+
+/* Main layout wrapper */
+.gk-layout {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Main content column */
+.gk-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Secondary navigation bar (Daily | Monthly | UPSC ...) */
+.secondary-nav,
+.sub-nav,
+.tabs-nav {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Hero must start immediately */
+.hero-section {
+  margin-top: 0 !important;
+}
+
+/* ==================================================
+   MAKE HERO COMPACT (SIZE FIX)
+================================================== */
+
+.hero-section {
+  padding: 2.2rem 2.2rem !important;
+}
+
+.hero-title {
+  font-size: 1.9rem !important;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* ==================================================
+   MOBILE SAFETY
+================================================== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-section {
+    padding: 1.6rem 1.2rem !important;
+  }
+}

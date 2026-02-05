@@ -1,0 +1,217 @@
+/* ================= THEME ================= */
+:root {
+  --primary: #3b82f6;
+  --primary-soft: rgba(59, 130, 246, 0.15);
+  --bg-main: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+/* ================= ROOT ================= */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ================= PAGE GRID ================= */
+.gk-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  gap: 1.8rem;
+  max-width: 1400px;
+  margin: 2.2rem auto;
+  padding: 0 1rem;
+}
+
+/* ================= SIDEBARS ================= */
+.gk-sidebar {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Sidebar title */
+.gk-sidebar h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  padding: 0.6rem 0.75rem;
+  margin: -1rem -1rem 0.9rem;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Sidebar list */
+.gk-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gk-sidebar li {
+  padding: 0.45rem 0.2rem;
+  border-bottom: 1px dashed var(--border-light);
+  cursor: pointer;
+  color: var(--text-main);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.gk-sidebar li:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+/* ================= MAIN CONTENT ================= */
+.gk-content {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  padding: 1.8rem;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+}
+
+/* Page heading (MEDIUM SIZE) */
+.gk-content h1 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ================= GROUP HEADINGS ================= */
+.group-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.4rem 0 0.6rem;
+  color: var(--text-main);
+}
+
+/* ================= ARTICLE CARD ================= */
+.gk-article {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: transform 0.2s ease;
+}
+
+.gk-article:last-child {
+  border-bottom: none;
+}
+
+.gk-article:hover {
+  transform: translateY(-2px);
+}
+
+/* Image */
+.gk-article img {
+  width: 170px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Article title */
+.gk-article-body h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.gk-article-body h2:hover {
+  color: var(--primary);
+}
+
+/* Meta (Category + Date) */
+.gk-date {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.3rem 0;
+}
+
+/* Summary */
+.gk-article-body p {
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* ================= SEARCH ================= */
+.gk-search {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  font-size: 0.9rem;
+}
+
+.gk-search:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* ================= READ MORE BUTTON ================= */
+.older-wrap {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+
+.older-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.older-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--primary-soft);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .gk-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gk-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .gk-content {
+    padding: 1.4rem;
+  }
+
+  .gk-article {
+    flex-direction: column;
+  }
+
+  .gk-article img {
+    width: 100%;
+    height: 200px;
+  }
+}

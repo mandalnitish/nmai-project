@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NMAI Current Affairs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #f0f4ff 0%, #fff9f0 100%);
+            border: 2px solid #667eea;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .contact-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        
+        .contact-form {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .info-box {
+            background-color: #e6f3ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background-color: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .faq-section {
+            margin: 30px 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f5f5f5;
+            padding: 15px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #e8e8e8;
+        }
+        
+        .faq-answer {
+            padding: 15px 20px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .social-links {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 2em;
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: #666;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <p class="tagline">We're Here to Help You Succeed</p>
+    </header>
+    
+    <div class="container">
+        <div class="info-box">
+            <p style="font-size: 1.1em; margin: 0;"><strong>Welcome!</strong> We're delighted to hear from you. Whether you have questions about our content, need technical support, want to provide feedback, or have business inquiries, we're here to assist you.</p>
+        </div>
+        
+        <h2>Get in Touch</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h3>Email Us</h3>
+                <p><strong>General Inquiries:</strong><br>
+                <a href="mailto:support@nmai.in">support@nmai.in</a></p>
+                <p><strong>Technical Support:</strong><br>
+                <a href="mailto:tech@nmai.in">tech@nmai.in</a></p>
+                <p><strong>Business & Partnerships:</strong><br>
+                <a href="mailto:business@nmai.in">business@nmai.in</a></p>
+                <p style="margin: 0;"><small>Response time: 24-48 hours</small></p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="icon">📱</div>
+                <h3>Call Us</h3>
+                <p><strong>Customer Support:</strong><br>
+                +91 [Your Phone Number]</p>
+                <p><strong>Available:</strong><br>
+                Monday - Saturday<br>
+                10:00 AM - 6:00 PM (IST)</p>
+                <p style="margin: 0;"><small>Sunday & Holidays: Closed</small></p>
+            </div>
+            
+            <div class="contact-card">
+                <div class="icon">📍</div>
+                <h3>Visit Us</h3>
+                <p><strong>Registered Office:</strong></p>
+                <p>[Your Complete Address]<br>
+                [City, State - PIN Code]<br>
+                India</p>
+                <p style="margin: 0;"><small>Office Hours: Mon-Sat, 10 AM - 6 PM</small></p>
+            </div>
+        </div>
+        
+        <h2>Send Us a Message</h2>
+        
+        <div class="contact-form">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Select Subject --</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="content">Content-Related</option>
+                        <option value="subscription">Subscription/Payment</option>
+                        <option value="feedback">Feedback/Suggestions</option>
+                        <option value="partnership">Business Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exam">Preparing for (Optional)</label>
+                    <select id="exam" name="exam">
+                        <option value="">-- Select Exam --</option>
+                        <option value="upsc">UPSC Civil Services</option>
+                        <option value="ssc">SSC (CGL/CHSL/CPO)</option>
+                        <option value="banking">Banking (IBPS/SBI)</option>
+                        <option value="railway">Railway Exams</option>
+                        <option value="bpsc">BPSC</option>
+                        <option value="uppsc">UPPSC</option>
+                        <option value="mppsc">MPPSC</option>
+                        <option value="other_state">Other State PSC</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" required placeholder="Please describe your query or feedback in detail..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+                
+                <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
+                    * Required fields<br>
+                    By submitting this form, you agree to our <a href="/privacy-policy.html">Privacy Policy</a> and consent to be contacted by NMAI Current Affairs.
+                </p>
+            </form>
+        </div>
+        
+        <div class="warning-box">
+            <h3 style="margin-top: 0;">⏰ Response Time</h3>
+            <p>We strive to respond to all inquiries within <strong>24-48 hours</strong> during business days. For urgent technical issues affecting paid subscriptions, we aim to respond within 12 hours. Please note that responses may be delayed during weekends and public holidays.</p>
+        </div>
+        
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ How can I access daily current affairs?
+                </div>
+                <div class="faq-answer">
+                    Daily current affairs are available for free on our homepage. Simply visit <a href="https://nmai.in">nmai.in</a> every day to access the latest updates. You can also subscribe to our newsletter to receive daily current affairs directly in your email inbox.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ How do I purchase monthly PDF compilations?
+                </div>
+                <div class="faq-answer">
+                    Monthly PDF compilations can be purchased from our <a href="/store.html">Store</a> section. Select the month you need, add to cart, and complete the payment. The PDF will be available for download immediately after successful payment.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ I'm facing technical issues with the website. What should I do?
+                </div>
+                <div class="faq-answer">
+                    For technical issues, please email us at <a href="mailto:tech@nmai.in">tech@nmai.in</a> with details about the problem, including:
+                    <ul>
+                        <li>Description of the issue</li>
+                        <li>Browser and device you're using</li>
+                        <li>Screenshots (if applicable)</li>
+                        <li>Steps to reproduce the problem</li>
+                    </ul>
+                    Our technical team will assist you within 12-24 hours.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ Can I get a refund for purchased materials?
+                </div>
+                <div class="faq-answer">
+                    Digital products (PDFs, e-books) are generally non-refundable once downloaded. However, if you face technical issues accessing the content or if the product doesn't match the description, please contact us at <a href="mailto:support@nmai.in">support@nmai.in</a> within 7 days of purchase. We'll review your case and provide appropriate resolution.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ How can I contribute content or write for NMAI?
+                </div>
+                <div class="faq-answer">
+                    We welcome contributions from subject experts and successful exam qualifiers! Please send your proposal to <a href="mailto:content@nmai.in">content@nmai.in</a> including:
+                    <ul>
+                        <li>Your qualifications and expertise</li>
+                        <li>Topic/area you'd like to write about</li>
+                        <li>Sample writing (if available)</li>
+                        <li>Brief bio</li>
+                    </ul>
+                    Our content team will review and get back to you within 5-7 business days.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ Do you offer bulk subscriptions for coaching institutes?
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer special bulk subscription packages for coaching institutes, libraries, and educational organizations. For details and pricing, please contact us at <a href="mailto:business@nmai.in">business@nmai.in</a> or call our business development team.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ How can I report errors or suggest improvements?
+                </div>
+                <div class="faq-answer">
+                    We appreciate your feedback! To report errors or suggest improvements:
+                    <ul>
+                        <li>Use the feedback form on this page</li>
+                        <li>Email us at <a href="mailto:feedback@nmai.in">feedback@nmai.in</a></li>
+                        <li>Use the "Report Error" button (if available on the article page)</li>
+                    </ul>
+                    We review all submissions and make corrections promptly.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    ❓ Is my personal information safe with you?
+                </div>
+                <div class="faq-answer">
+                    Absolutely! We take data privacy very seriously. All personal information is encrypted and stored securely. We never share your data with third parties without your consent. Please read our <a href="/privacy-policy.html">Privacy Policy</a> for complete details.
+                </div>
+            </div>
+        </div>
+        
+        <h2>Follow Us on Social Media</h2>
+        
+        <p style="text-align: center; margin-bottom: 20px;">Stay connected and get instant updates on current affairs, exam notifications, and more!</p>
+        
+        <div class="social-links">
+            <a href="[Your Facebook URL]" target="_blank" title="Facebook">📘</a>
+            <a href="[Your Twitter URL]" target="_blank" title="Twitter">🐦</a>
+            <a href="[Your Instagram URL]" target="_blank" title="Instagram">📷</a>
+            <a href="[Your YouTube URL]" target="_blank" title="YouTube">📺</a>
+            <a href="[Your Telegram URL]" target="_blank" title="Telegram">✈️</a>
+            <a href="[Your WhatsApp URL]" target="_blank" title="WhatsApp">📱</a>
+        </div>
+        
+        <h2>Business Inquiries</h2>
+        
+        <p>We welcome partnerships, collaborations, and business opportunities with:</p>
+        
+        <ul>
+            <li><strong>Educational Institutions:</strong> Coaching centers, schools, colleges</li>
+            <li><strong>Publishers:</strong> Book publishers, content creators</li>
+            <li><strong>Technology Partners:</strong> EdTech platforms, app developers</li>
+            <li><strong>Advertisers:</strong> Brands targeting competitive exam aspirants</li>
+            <li><strong>Content Creators:</strong> Subject experts, educators, influencers</li>
+            <li><strong>Media Organizations:</strong> News platforms, educational channels</li>
+        </ul>
+        
+        <p>For partnership opportunities, please contact:</p>
+        <p><strong>Email:</strong> <a href="mailto:business@nmai.in">business@nmai.in</a><br>
+        <strong>Phone:</strong> +91 [Business Development Number]</p>
+        
+        <div class="info-box">
+            <h3 style="margin-top: 0;">📋 Media & Press Inquiries</h3>
+            <p>For press releases, media coverage, or interview requests, please contact our media relations team at <a href="mailto:media@nmai.in">media@nmai.in</a>. We typically respond to media inquiries within 24 hours.</p>
+        </div>
+        
+        <h2>Feedback & Suggestions</h2>
+        
+        <p>Your feedback helps us improve! We welcome suggestions about:</p>
+        
+        <ul>
+            <li>Content quality and relevance</li>
+            <li>Website functionality and user experience</li>
+            <li>New features or topics you'd like to see</li>
+            <li>Improvements to existing resources</li>
+            <li>Pricing and subscription options</li>
+            <li>Any other aspect of our service</li>
+        </ul>
+        
+        <p>Please share your thoughts at <a href="mailto:feedback@nmai.in">feedback@nmai.in</a> or use the contact form above.</p>
+        
+        <div class="warning-box">
+            <h3 style="margin-top: 0;">⚠️ Important Notes</h3>
+            <ul style="margin: 10px 0 0 20px;">
+                <li>We do not offer phone support for free users. Email support is available for all users.</li>
+                <li>Spam or abusive messages will not be entertained and may result in blocking.</li>
+                <li>For account-related queries, please email from your registered email address.</li>
+                <li>Payment-related issues should include transaction ID and payment screenshot.</li>
+                <li>We do not provide personal tutoring or one-on-one mentoring services.</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 NMAI Current Affairs (nmai.in). All rights reserved.</p>
+            <p>
+                <a href="/">Home</a> | 
+                <a href="/terms-of-service.html">Terms of Service</a> | 
+                <a href="/privacy-policy.html">Privacy Policy</a> | 
+                <a href="/disclaimer.html">Disclaimer</a> | 
+                <a href="/about-us.html">About Us</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            
+            // Close all other answers
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // Toggle current answer
+            answer.classList.toggle('active');
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            // For now, we'll just show an alert
+            alert('Thank you for your message! We will get back to you within 24-48 hours.');
+            
+            // Reset form
+            event.target.reset();
+            
+            // In production, you would do something like:
+            /*
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Message sent successfully!');
+                event.target.reset();
+            })
+            .catch(error => {
+                alert('Error sending message. Please try again or email us directly.');
+            });
+            */
+        }
+    </script>
+</body>
+</html>

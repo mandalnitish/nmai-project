@@ -1,0 +1,185 @@
+/* ================= THEME ================= */
+:root {
+  --primary: #3b82f6;
+  --primary-soft: rgba(59, 130, 246, 0.15);
+  --bg-main: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+/* ================= ROOT ================= */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ================= PAGE GRID ================= */
+.gk-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  gap: 1.8rem;
+  max-width: 1400px;
+  margin: 2.2rem auto;
+  padding: 0 1rem;
+}
+
+/* ================= SIDEBAR BASE ================= */
+.gk-sidebar {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  padding: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Sidebar header (TOP ONLY – no overlap) */
+.gk-sidebar > h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--primary);
+  padding: 0.6rem 0.8rem;
+  margin: -1rem -1rem 0.8rem;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Sidebar list */
+.gk-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gk-sidebar li {
+  padding: 0.55rem 0.3rem;
+  border-bottom: 1px dashed var(--border-light);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.gk-sidebar li:last-child {
+  border-bottom: none;
+}
+
+.gk-sidebar li:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+.gk-sidebar li.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ================= LEFT SIDEBAR (CATEGORIES) ================= */
+.gk-sidebar.left {
+  display: block;
+}
+
+/* ================= RIGHT SIDEBAR ================= */
+.gk-sidebar.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Search */
+.gk-search {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  font-size: 0.9rem;
+}
+
+.gk-search:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* Sidebar cards (right side sections) */
+.sidebar-card {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.sidebar-card h3 {
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--primary);
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.sidebar-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-card li {
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.sidebar-card li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-card a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.sidebar-card a:hover {
+  text-decoration: underline;
+}
+
+/* ================= MAIN CONTENT ================= */
+.gk-content {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  padding: 1.8rem;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+}
+
+/* Group headings */
+.group-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 1.4rem 0 0.6rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .gk-layout {
+    grid-template-columns: 1fr;
+  }
+  .gk-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .gk-content {
+    padding: 1.4rem;
+  }
+}

@@ -1,0 +1,202 @@
+/* ================= PAGE BASE ================= */
+.current-affairs-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* ================= HERO ================= */
+.page-header {
+  background: linear-gradient(120deg, #667eea, #764ba2, #3b82f6);
+  color: white;
+  padding: 4rem 1rem 3rem;
+  border-radius: 0 0 40px 40px;
+}
+
+.page-header .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* ================= LAYOUT ================= */
+.ca-layout {
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* ================= SIDEBAR ================= */
+.ca-sidebar {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ================= GLASS CARD ================= */
+.glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* ================= SIDEBAR TITLES ================= */
+.sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  color: #111827;
+}
+
+/* ================= CATEGORY LIST ================= */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+  color: #374151;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.category-list li:hover {
+  background: #eef2ff;
+  color: #2563eb;
+}
+
+.category-list li.active {
+  background: #e0e7ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ================= EXAM FILTER ================= */
+.exam-filter label {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: #111827;
+}
+
+.exam-filter select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+}
+
+.exam-filter select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* ================= ARTICLES LIST ================= */
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin: 3rem 0;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-btn {
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ================= EMPTY STATE ================= */
+.empty-state {
+  background: white;
+  padding: 3.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.empty-state h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #6b7280;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .ca-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ca-sidebar {
+    position: static;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.05rem;
+  }
+}

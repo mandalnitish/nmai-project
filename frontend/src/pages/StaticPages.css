@@ -1,0 +1,126 @@
+/* ===== PAGE WRAPPER ===== */
+.static-page {
+  background: #f5f7fa;
+  padding: 3rem 1rem;
+  min-height: calc(100vh - 120px);
+}
+
+/* ===== CARD ===== */
+.static-card {
+  max-width: 860px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.6rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== TYPOGRAPHY ===== */
+.static-card h1 {
+  font-size: 2.05rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #111827;
+}
+
+.static-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  color: #1f2937;
+}
+
+.static-card p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+/* Intro & closing */
+.static-card .intro {
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+.static-card .closing {
+  margin-top: 1.6rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* ===== LISTS (Policies / Terms) ===== */
+.static-card ul {
+  margin: 0.6rem 0 1.2rem 1.2rem;
+  padding: 0;
+}
+
+.static-card li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  padding: 1.4rem;
+  margin: 2rem 0;
+}
+
+.highlight-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: #0369a1;
+}
+
+.highlight-box ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.highlight-box li {
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+/* ===== CONTACT BOX ===== */
+.contact-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+  margin: 2rem 0;
+}
+
+.contact-box h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.contact-box p {
+  margin: 0;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .static-card {
+    padding: 1.9rem 1.4rem;
+  }
+
+  .static-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .static-card h3 {
+    font-size: 1.05rem;
+  }
+}

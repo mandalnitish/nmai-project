@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nmai-project/static/css/main.dbbe5140.css",
-    "main.js": "/nmai-project/static/js/main.ba54f9bb.js",
+    "main.css": "/nmai-project/static/css/main.93d5dfce.css",
+    "main.js": "/nmai-project/static/js/main.ea52b699.js",
     "index.html": "/nmai-project/index.html",
-    "main.dbbe5140.css.map": "/nmai-project/static/css/main.dbbe5140.css.map",
-    "main.ba54f9bb.js.map": "/nmai-project/static/js/main.ba54f9bb.js.map"
+    "main.93d5dfce.css.map": "/nmai-project/static/css/main.93d5dfce.css.map",
+    "main.ea52b699.js.map": "/nmai-project/static/js/main.ea52b699.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbbe5140.css",
-    "static/js/main.ba54f9bb.js"
+    "static/css/main.93d5dfce.css",
+    "static/js/main.ea52b699.js"
   ]
 }

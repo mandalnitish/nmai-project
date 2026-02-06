@@ -16,14 +16,18 @@ router.get("/", async (req, res) => {
 
     const { category, examRelevance, search } = req.query;
 
-    /* ===== BASE FILTER ===== */
+    /* ===== BASE FILTER (MATCHES DB DATA) ===== */
     const filter = {
       status: "published",
       isActive: true,
     };
 
     if (category) filter.category = category;
-    if (examRelevance) filter.examRelevance = examRelevance;
+
+    // 🔧 FIX 1: examRelevance is an ARRAY in DB
+    if (examRelevance) {
+      filter.examRelevance = { $in: [examRelevance] };
+    }
 
     if (search) {
       filter.$or = [
@@ -39,8 +43,7 @@ router.get("/", async (req, res) => {
         .limit(limit)
         .select("-content")
         .populate("author", "name")
-        .lean()
-        .exec(),
+        .lean(),
 
       Article.countDocuments(filter),
     ]);
@@ -66,6 +69,7 @@ router.get("/", async (req, res) => {
 
 /* =====================================================
    GET LATEST ARTICLES
+   GET /api/articles/latest
    ===================================================== */
 router.get("/latest", async (req, res) => {
   try {
@@ -75,20 +79,24 @@ router.get("/latest", async (req, res) => {
       status: "published",
       isActive: true,
     })
-      .sort({ publishDate: -1 })
+      .sort({ publishDate: -1, createdAt: -1 })
       .limit(limit)
       .select("title slug summary category publishDate featuredImage")
       .populate("author", "name")
       .lean();
 
     res.json({ success: true, articles });
-  } catch {
-    res.status(500).json({ success: false, message: "Failed to fetch latest" });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch latest articles",
+    });
   }
 });
 
 /* =====================================================
    GET ARTICLE BY SLUG
+   GET /api/articles/:slug
    ===================================================== */
 router.get("/:slug", async (req, res) => {
   try {
@@ -102,26 +110,36 @@ router.get("/:slug", async (req, res) => {
       .lean();
 
     if (!article) {
-      return res.status(404).json({ success: false, message: "Not found" });
+      return res.status(404).json({
+        success: false,
+        message: "Article not found",
+      });
     }
 
-    await Article.updateOne(
+    // 🔧 FIX 2: non-blocking view count update
+    Article.updateOne(
       { _id: article._id },
       { $inc: { viewCount: 1 } }
-    );
+    ).exec();
 
     res.json({ success: true, article });
-  } catch {
-    res.status(500).json({ success: false, message: "Fetch failed" });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch article",
+    });
   }
 });
 
-/* ================= ADMIN ================= */
+/* =====================================================
+   CREATE ARTICLE (ADMIN)
+   ===================================================== */
 router.post("/", protect, authorize("admin", "author"), async (req, res) => {
   const article = await Article.create({
     ...req.body,
     author: req.user._id,
     status: "published",
+    isActive: true,
   });
 
   res.status(201).json({ success: true, article });

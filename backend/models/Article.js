@@ -1,82 +1,26 @@
-// models/Article.js
 import mongoose from "mongoose";
 import slugify from "slugify";
 
 const ArticleSchema = new mongoose.Schema(
   {
-    title: {
-      type: String,
-      required: true,
-      trim: true,
-      maxlength: 200,
-    },
+    title: { type: String, required: true, trim: true },
 
-    slug: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      index: true,
-    },
+    slug: { type: String, unique: true, index: true },
 
-    summary: {
-      type: String,
-      required: true,
-      maxlength: 500,
-    },
-
-    content: {
-      type: String,
-      required: true,
-    },
+    summary: { type: String, required: true },
+    content: { type: String, required: true },
 
     category: {
       type: String,
       required: true,
-      enum: [
-        "Economy",
-        "Polity",
-        "Science",
-        "Technology",
-        "Environment",
-        "International",
-        "Social",
-        "Defence",
-        "History",
-        "Geography",
-        "National",
-      ],
       index: true,
     },
 
-    examRelevance: [
-      {
-        type: String,
-        enum: [
-          "UPSC",
-          "SSC",
-          "Banking",
-          "Railways",
-          "State PSC",
-          "Defence",
-          "Judiciary",
-          "Engineering",
-        ],
-        index: true,
-      },
-    ],
-
-    tags: [{ type: String, trim: true, maxlength: 50 }],
+    examRelevance: [{ type: String, index: true }],
 
     featuredImage: {
-      url: {
-        type: String,
-        default:
-          "https://source.unsplash.com/random/800x400?currentaffairs",
-      },
-      alt: {
-        type: String,
-        default: "Article featured image",
-      },
+      url: String,
+      alt: String,
     },
 
     author: {
@@ -86,11 +30,7 @@ const ArticleSchema = new mongoose.Schema(
       index: true,
     },
 
-    publishDate: {
-      type: Date,
-      default: Date.now,
-      index: true,
-    },
+    publishDate: { type: Date, default: Date.now, index: true },
 
     status: {
       type: String,
@@ -99,59 +39,26 @@ const ArticleSchema = new mongoose.Schema(
       index: true,
     },
 
-    isPremium: { type: Boolean, default: false },
+    isActive: { type: Boolean, default: true, index: true },
 
     viewCount: { type: Number, default: 0 },
     likes: { type: Number, default: 0 },
-
-    readingTime: { type: String, default: "5 min" },
-
-    difficulty: {
-      type: String,
-      enum: ["Beginner", "Intermediate", "Advanced"],
-      default: "Intermediate",
-    },
-
-    sources: [String],
-
-    relatedArticles: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "Article" },
-    ],
-
-    isActive: {
-      type: Boolean,
-      default: true,
-      index: true,
-    },
   },
-  {
-    timestamps: true, // ✅ createdAt & updatedAt (used for cursor)
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true },
-  }
+  { timestamps: true }
 );
 
-/* ================= INDEXES (CRITICAL) ================= */
-ArticleSchema.index({ createdAt: -1 }); // Cursor pagination
-ArticleSchema.index({ category: 1, createdAt: -1 });
-ArticleSchema.index({ status: 1, isActive: 1, createdAt: -1 });
+/* ===== INDEXES (CRITICAL) ===== */
+ArticleSchema.index({ status: 1, isActive: 1, publishDate: -1 });
 ArticleSchema.index({ title: "text", summary: "text" });
 
-/* ================= SLUG AUTO-GENERATION ================= */
+/* ===== SLUG ===== */
 ArticleSchema.pre("validate", async function (next) {
   if (!this.slug && this.title) {
-    let baseSlug = slugify(this.title, {
-      lower: true,
-      strict: true,
-    });
+    let slug = slugify(this.title, { lower: true, strict: true });
+    let i = 1;
 
-    let slug = baseSlug;
-    let count = 1;
-
-    while (
-      await mongoose.models.Article.exists({ slug })
-    ) {
-      slug = `${baseSlug}-${count++}`;
+    while (await mongoose.models.Article.exists({ slug })) {
+      slug = `${slug}-${i++}`;
     }
 
     this.slug = slug;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
@@ -12,29 +12,25 @@ import "./GKTodayLayout.css";
 
 /* ================= DATE HELPERS ================= */
 
-const formatDate = (date) => {
-  if (!date) return "";
-  return new Date(date).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-};
-
 const isToday = (date) => {
-  if (!date) return false;
   const d = new Date(date);
   const t = new Date();
   return d.toDateString() === t.toDateString();
 };
 
 const isYesterday = (date) => {
-  if (!date) return false;
   const d = new Date(date);
   const y = new Date();
   y.setDate(y.getDate() - 1);
   return d.toDateString() === y.toDateString();
 };
+
+const formatDate = (date) =>
+  new Date(date).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
 const getDateLabel = (date) => {
   if (isToday(date)) return "Today";
@@ -53,18 +49,9 @@ const Pagination = ({ page, totalPages, onChange }) => {
         Prev
       </button>
 
-      {[...Array(totalPages)].map((_, i) => {
-        const p = i + 1;
-        return (
-          <button
-            key={p}
-            className={p === page ? "active" : ""}
-            onClick={() => onChange(p)}
-          >
-            {p}
-          </button>
-        );
-      })}
+      <span>
+        Page {page} of {totalPages}
+      </span>
 
       <button
         disabled={page === totalPages}
@@ -85,20 +72,16 @@ const Home = () => {
   const [articles, setArticles] = useState([]);
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
-
   const [page, setPage] = useState(pageFromURL);
   const [totalPages, setTotalPages] = useState(1);
 
-  /* ================= SCROLL TO TOP ON PAGE CHANGE ================= */
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [page]);
-
-  /* ================= SYNC PAGE TO URL ================= */
+  /* ================= SYNC PAGE ================= */
   useEffect(() => {
     setSearchParams({ page });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page, setSearchParams]);
 
   /* ================= FETCH DATA ================= */
@@ -119,11 +102,11 @@ const Home = () => {
           articlesAPI.getTrending(5),
         ]);
 
-        if (mounted) {
-          setArticles(latestRes.data || []);
-          setTotalPages(latestRes.pagination?.totalPages || 1);
-          setTrending(trendingRes.data || []);
-        }
+        if (!mounted) return;
+
+        setArticles(latestRes.articles || []);
+        setTotalPages(latestRes.pagination?.totalPages || 1);
+        setTrending(trendingRes.data || []);
       } catch (err) {
         console.error("Home fetch error:", err);
       } finally {
@@ -137,31 +120,21 @@ const Home = () => {
 
   /* ================= GROUP ARTICLES ================= */
 
-  const todayArticles = articles.filter((a) =>
+  const today = articles.filter((a) =>
     isToday(a.publishDate || a.createdAt)
   );
-
-  const yesterdayArticles = articles.filter((a) =>
+  const yesterday = articles.filter((a) =>
     isYesterday(a.publishDate || a.createdAt)
   );
-
-  const earlierArticles = articles.filter(
+  const earlier = articles.filter(
     (a) =>
       !isToday(a.publishDate || a.createdAt) &&
       !isYesterday(a.publishDate || a.createdAt)
   );
 
-  /* ================= MCQs ================= */
-
-  const mcqs = [
-    { q: "Who presents the Union Budget in India?", a: "Finance Minister" },
-    { q: "Which mission promotes AI development in India?", a: "National AI Mission" },
-    { q: "Which institution controls monetary policy in India?", a: "Reserve Bank of India" },
-  ];
-
   return (
     <div className="gk-layout">
-      {/* ================= LEFT SIDEBAR ================= */}
+      {/* LEFT SIDEBAR */}
       <aside className="gk-sidebar left">
         <h3>Categories</h3>
         <ul>
@@ -190,7 +163,7 @@ const Home = () => {
         </ul>
       </aside>
 
-      {/* ================= MAIN ================= */}
+      {/* MAIN */}
       <main className="gk-content">
         {/* HERO */}
         <section className="hero-section">
@@ -198,11 +171,6 @@ const Home = () => {
             Master Current Affairs for <br />
             <span className="gradient-text">Competitive Exams</span>
           </h1>
-
-          <p className="hero-subtitle">
-            Daily current affairs, MCQs, and exam-focused content for UPSC,
-            SSC, Banking, Railway, and State PSC exams.
-          </p>
 
           <div className="hero-buttons">
             <Link to="/current-affairs" className="btn btn-primary">
@@ -214,57 +182,48 @@ const Home = () => {
           </div>
         </section>
 
-        {/* ================= LATEST ================= */}
+        {/* ARTICLES */}
         <section className="section">
           <h2>Latest Current Affairs</h2>
 
           {loading && <p>Loading articles...</p>}
 
-          {!loading && todayArticles.length > 0 && (
+          {!loading && today.length > 0 && (
             <>
-              <h3 className="group-title">Today</h3>
+              <h3>Today</h3>
               <div className="articles-grid">
-                {todayArticles.map((a) => (
+                {today.map((a) => (
                   <ArticleCard
                     key={a._id}
-                    article={{
-                      ...a,
-                      dateLabel: getDateLabel(a.publishDate || a.createdAt),
-                    }}
+                    article={{ ...a, dateLabel: getDateLabel(a.publishDate || a.createdAt) }}
                   />
                 ))}
               </div>
             </>
           )}
 
-          {!loading && yesterdayArticles.length > 0 && (
+          {!loading && yesterday.length > 0 && (
             <>
-              <h3 className="group-title">Yesterday</h3>
+              <h3>Yesterday</h3>
               <div className="articles-grid">
-                {yesterdayArticles.map((a) => (
+                {yesterday.map((a) => (
                   <ArticleCard
                     key={a._id}
-                    article={{
-                      ...a,
-                      dateLabel: getDateLabel(a.publishDate || a.createdAt),
-                    }}
+                    article={{ ...a, dateLabel: getDateLabel(a.publishDate || a.createdAt) }}
                   />
                 ))}
               </div>
             </>
           )}
 
-          {!loading && earlierArticles.length > 0 && (
+          {!loading && earlier.length > 0 && (
             <>
-              <h3 className="group-title">Earlier</h3>
+              <h3>Earlier</h3>
               <div className="articles-grid">
-                {earlierArticles.map((a) => (
+                {earlier.map((a) => (
                   <ArticleCard
                     key={a._id}
-                    article={{
-                      ...a,
-                      dateLabel: getDateLabel(a.publishDate || a.createdAt),
-                    }}
+                    article={{ ...a, dateLabel: getDateLabel(a.publishDate || a.createdAt) }}
                   />
                 ))}
               </div>
@@ -282,7 +241,7 @@ const Home = () => {
           />
         </section>
 
-        {/* ================= TRENDING ================= */}
+        {/* TRENDING */}
         {trending.length > 0 && (
           <section className="section">
             <h2>
@@ -291,45 +250,22 @@ const Home = () => {
 
             <div className="trending-grid">
               {trending.map((a, i) => (
-                <Link
-                  key={a._id}
-                  to={`/article/${a.slug}`}
-                  className="trending-item"
-                >
-                  <span className="trending-number">#{i + 1}</span>
+                <Link key={a._id} to={`/article/${a.slug}`} className="trending-item">
+                  <span>#{i + 1}</span>
                   <div>
                     <h3>{a.title}</h3>
-                    <div className="trending-meta">
-                      <span>{a.category}</span>
-                      <span className="trending-date">
-                        {getDateLabel(a.publishDate || a.createdAt)}
-                      </span>
-                    </div>
+                    <span>{getDateLabel(a.publishDate || a.createdAt)}</span>
                   </div>
                 </Link>
               ))}
             </div>
           </section>
         )}
-
-        {/* ================= MCQs ================= */}
-        <section className="section">
-          <h2>Quick MCQs</h2>
-          <div className="mcq-grid">
-            {mcqs.map((m, i) => (
-              <div key={i} className="mcq-card">
-                <p><strong>Q.</strong> {m.q}</p>
-                <p className="answer">Answer: {m.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
       </main>
 
-      {/* ================= RIGHT SIDEBAR ================= */}
+      {/* RIGHT SIDEBAR */}
       <aside className="gk-sidebar right">
         <input
-          type="text"
           className="gk-search"
           placeholder="Search current affairs..."
           value={search}
@@ -338,29 +274,6 @@ const Home = () => {
             setPage(1);
           }}
         />
-
-        <div className="sidebar-card">
-          <h3>E-Books</h3>
-          <ul>
-            <li><Link to="/ebooks/monthly-mcqs">Current Affairs Monthly MCQs</Link></li>
-            <li><Link to="/ebooks/ca-articles-mcqs">CA Articles + MCQs</Link></li>
-            <li><Link to="/ebooks/yearly-pdf">Yearly Current Affairs PDF</Link></li>
-          </ul>
-        </div>
-
-        <div className="sidebar-card">
-          <h3>States PSC</h3>
-          <ul>
-            <li><Link to="/exams/upsc">UPSC</Link></li>
-            <li><Link to="/exams/ssc">SSC</Link></li>
-            <li><Link to="/exams/banking">Banking</Link></li>
-            <li><Link to="/exams/railway">Railway</Link></li>
-            <li><Link to="/exams/state-psc">State PSC</Link></li>
-            <li><Link to="/exams/gpsc">GPSC</Link></li>
-            <li><Link to="/exams/bpsc">BPSC</Link></li>
-            <li><Link to="/exams/mppsc">MPPSC</Link></li>
-          </ul>
-        </div>
       </aside>
     </div>
   );

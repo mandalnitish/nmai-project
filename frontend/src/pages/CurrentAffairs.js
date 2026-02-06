@@ -70,15 +70,6 @@ const CurrentAffairs = () => {
   return (
     <div className="current-affairs-page">
       {/* ================= HERO ================= */}
-      <div className="page-header">
-        <div className="container">
-          <h1 className="page-title">Daily Current Affairs</h1>
-          <p className="page-subtitle">
-            Smart updates for UPSC, SSC, Banking & State PSC
-          </p>
-        </div>
-      </div>
-
       <div className="container">
         <SearchBar onSearch={(t) => setSearchTerm(t)} />
 

@@ -2,73 +2,102 @@
 
 .article-detail-page {
   background: #f5f7fb;
-  padding: 3rem 1rem;
+  padding: 2.5rem 1rem; /* tightened */
 }
 
-/* MAIN ARTICLE CONTAINER */
+/* ================= MAIN ARTICLE CONTAINER ================= */
+
 .article-content {
   max-width: 900px;
   margin: auto;
-  background: white;
-  border-radius: 24px;
-  padding: 3.5rem;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 3rem 3rem; /* reduced from 3.5rem */
+  box-shadow: 0 24px 70px rgba(0,0,0,0.08);
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
+
 .article-title {
-  font-size: 3rem;
+  font-size: 2.8rem; /* slightly reduced */
   font-weight: 900;
   line-height: 1.2;
   color: #111827;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.2rem 0; /* prevent margin stacking */
 }
 
-/* SUMMARY */
+/* ================= SUMMARY ================= */
+
 .article-summary {
   background: linear-gradient(135deg, #e0f2ff, #eef2ff);
   border-left: 6px solid #667eea;
-  padding: 1.5rem 1.8rem;
+  padding: 1.4rem 1.7rem;
   border-radius: 14px;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   line-height: 1.7;
   color: #1f2937;
-  margin: 2rem 0;
+  margin: 1.8rem 0; /* controlled spacing */
 }
 
-/* ARTICLE BODY */
+/* ================= ARTICLE BODY ================= */
+
 .article-body {
-  font-size: 1.1rem;
-  line-height: 1.85;
+  font-size: 1.08rem;
+  line-height: 1.8;
   color: #374151;
 }
 
+/* HEADINGS */
+
 .article-body h2 {
-  font-size: 1.8rem;
-  margin-top: 2.5rem;
+  font-size: 1.75rem;
+  margin: 2.2rem 0 0.8rem; /* fixed top-heavy gap */
 }
 
 .article-body h3 {
-  font-size: 1.4rem;
-  margin-top: 2rem;
+  font-size: 1.38rem;
+  margin: 1.8rem 0 0.6rem;
+}
+
+/* PARAGRAPHS */
+
+.article-body p {
+  margin: 0 0 1.1rem; /* consistent spacing */
+}
+
+/* LISTS */
+
+.article-body ul,
+.article-body ol {
+  margin: 0.8rem 0 1.3rem 1.4rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
 }
 
 /* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
+  .article-detail-page {
+    padding: 2rem 0.8rem;
+  }
+
   .article-content {
-    padding: 2rem 1.5rem;
+    padding: 1.8rem 1.4rem;
     border-radius: 18px;
   }
 
   .article-title {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 
   .article-summary {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
+    padding: 1.2rem 1.4rem;
   }
 
   .article-body {
-    font-size: 1.02rem;
+    font-size: 1rem;
   }
 }

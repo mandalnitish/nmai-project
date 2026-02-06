@@ -4,35 +4,6 @@
   min-height: 100vh;
 }
 
-/* ================= HERO ================= */
-.page-header {
-  background: linear-gradient(120deg, #667eea, #764ba2, #3b82f6);
-  color: white;
-  padding: 4rem 1rem 3rem;
-  border-radius: 0 0 40px 40px;
-}
-
-.page-header .container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.page-title {
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-}
-
-.page-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  opacity: 0.95;
-}
-
 /* ================= LAYOUT ================= */
 .ca-layout {
   max-width: 1200px;
@@ -52,7 +23,7 @@
   flex-direction: column;
   gap: 1.6rem;
 }
-
+ 
 /* ================= GLASS CARD ================= */
 .glass {
   background: rgba(255, 255, 255, 0.92);

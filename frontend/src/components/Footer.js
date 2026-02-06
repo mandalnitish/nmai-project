@@ -45,16 +45,16 @@ const Footer = () => {
               daily current affairs, and expert guidance. Your success is our mission.
             </p>
             <div className="social-links">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link facebook">
+              <a href="https://www.facebook.com/imandalnitish" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link facebook">
                 <FiFacebook />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link twitter">
+              <a href="https://x.com/nitishm11391299" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link twitter">
                 <FiTwitter />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link instagram">
+              <a href="https://instagram.com/nitishmandalx" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link instagram">
                 <FiInstagram />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-link youtube">
+              <a href="https://youtube.com/@nitishmandalx" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-link youtube">
                 <FiYoutube />
               </a>
             </div>

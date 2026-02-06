@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 import { FiBookOpen, FiTrendingUp, FiTarget } from "react-icons/fi";
@@ -116,164 +117,183 @@ const Home = () => {
   );
 
   return (
-    <div className="gk-layout">
-      {/* LEFT SIDEBAR */}
-      <aside className="gk-sidebar left">
-        <h3>Categories</h3>
-        <ul>
-          {[
-            "All",
-            "Economy",
-            "Polity",
-            "Science",
-            "Technology",
-            "Environment",
-            "International",
-            "National",
-            "Defence",
-          ].map((cat) => (
-            <li
-              key={cat}
-              className={category === cat ? "active" : ""}
-              onClick={() => {
-                setCategory(cat);
-                setPage(1);
-              }}
-            >
-              {cat}
-            </li>
-          ))}
-        </ul>
-      </aside>
+    <>
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
+        <meta
+          name="description"
+          content="NMAI provides daily current affairs, MCQs, quizzes and exam-focused analysis for UPSC, SSC, Banking, Railway and State PSC exams."
+        />
+        <meta
+          name="keywords"
+          content="Current Affairs, UPSC, SSC, Banking, MCQ, Daily Quiz"
+        />
+      </Helmet>
 
-      {/* MAIN CONTENT */}
-      <main className="gk-content">
-        <section className="hero-section">
-          <h1>
-            Master Current Affairs for{" "}
-            <span className="gradient-text">Competitive Exams</span>
-          </h1>
-          <p>Daily current affairs, MCQs, and exam-focused content.</p>
+      <div className="gk-layout">
+        {/* LEFT SIDEBAR */}
+        <aside className="gk-sidebar left">
+          <h3>Categories</h3>
+          <ul>
+            {[
+              "All",
+              "Economy",
+              "Polity",
+              "Science",
+              "Technology",
+              "Environment",
+              "International",
+              "National",
+              "Defence",
+            ].map((cat) => (
+              <li
+                key={cat}
+                className={category === cat ? "active" : ""}
+                onClick={() => {
+                  setCategory(cat);
+                  setPage(1);
+                }}
+              >
+                {cat}
+              </li>
+            ))}
+          </ul>
+        </aside>
 
-          <div className="hero-buttons">
-            <Link to="/current-affairs" className="btn btn-primary">
-              <FiBookOpen /> Explore
-            </Link>
-            <Link to="/daily-quiz" className="btn btn-outline">
-              <FiTarget /> Daily Quiz
-            </Link>
-          </div>
-        </section>
+        {/* MAIN CONTENT */}
+        <main className="gk-content">
+          <section className="hero-section">
+            <h1>
+              Master Current Affairs for{" "}
+              <span className="gradient-text">Competitive Exams</span>
+            </h1>
+            <p>Daily current affairs, MCQs, and exam-focused content.</p>
 
-        <section className="section">
-          <h2>Latest Current Affairs</h2>
-
-          {loading && <p>Loading articles...</p>}
-
-          {!loading && articles.length === 0 && (
-            <div className="empty-state">No articles found.</div>
-          )}
-
-          {[["Today", today], ["Yesterday", yesterday], ["Earlier", earlier]].map(
-            ([label, list]) =>
-              list.length > 0 && (
-                <React.Fragment key={label}>
-                  <h3 className="group-title">{label}</h3>
-                  <div className="articles-grid">
-                    {list.map((a) => (
-                      <ArticleCard
-                        key={a._id}
-                        article={{
-                          ...a,
-                          dateLabel: getDateLabel(
-                            a.publishDate || a.createdAt
-                          ),
-                        }}
-                      />
-                    ))}
-                  </div>
-                </React.Fragment>
-              )
-          )}
-
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            onChange={setPage}
-          />
-        </section>
-
-        {trending.length > 0 && (
-          <section className="section">
-            <h2>
-              <FiTrendingUp /> Trending
-            </h2>
-
-            <div className="trending-grid">
-              {trending.map((a, i) => (
-                <Link
-                  key={a._id}
-                  to={`/article/${a.slug}`}
-                  className="trending-item"
-                >
-                  <span>#{i + 1}</span>
-                  <h4>{a.title}</h4>
-                </Link>
-              ))}
+            <div className="hero-buttons">
+              <Link to="/current-affairs" className="btn btn-primary">
+                <FiBookOpen /> Explore
+              </Link>
+              <Link to="/daily-quiz" className="btn btn-outline">
+                <FiTarget /> Daily Quiz
+              </Link>
             </div>
           </section>
-        )}
-      </main>
 
-      {/* RIGHT SIDEBAR */}
-      <aside className="gk-sidebar right">
-        <input
-          type="text"
-          className="gk-search"
-          placeholder="Search current affairs..."
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setPage(1);
-          }}
-        />
+          <section className="section">
+            <h2>Latest Current Affairs</h2>
 
-        <div className="sidebar-card">
-          <h3>E-Books</h3>
-          <ul>
-            <li>
-              <Link to="/ebooks/monthly-mcqs">
-                Current Affairs Monthly MCQs
-              </Link>
-            </li>
-            <li>
-              <Link to="/ebooks/ca-articles-mcqs">
-                CA Articles + MCQs
-              </Link>
-            </li>
-            <li>
-              <Link to="/ebooks/yearly-pdf">
-                Yearly Current Affairs PDF
-              </Link>
-            </li>
-          </ul>
-        </div>
+            {loading && <p>Loading articles...</p>}
 
-        <div className="sidebar-card">
-          <h3>Exams</h3>
-          <ul>
-            <li><Link to="/exams/upsc">UPSC</Link></li>
-            <li><Link to="/exams/ssc">SSC</Link></li>
-            <li><Link to="/exams/banking">Banking</Link></li>
-            <li><Link to="/exams/railway">Railway</Link></li>
-            <li><Link to="/exams/state-psc">State PSC</Link></li>
-            <li><Link to="/exams/gpsc">GPSC</Link></li>
-            <li><Link to="/exams/bpsc">BPSC</Link></li>
-            <li><Link to="/exams/mppsc">MPPSC</Link></li>
-          </ul>
-        </div>
-      </aside>
-    </div>
+            {!loading && articles.length === 0 && (
+              <div className="empty-state">No articles found.</div>
+            )}
+
+            {[
+              ["Today", today],
+              ["Yesterday", yesterday],
+              ["Earlier", earlier],
+            ].map(
+              ([label, list]) =>
+                list.length > 0 && (
+                  <React.Fragment key={label}>
+                    <h3 className="group-title">{label}</h3>
+                    <div className="articles-grid">
+                      {list.map((a) => (
+                        <ArticleCard
+                          key={a._id}
+                          article={{
+                            ...a,
+                            dateLabel: getDateLabel(
+                              a.publishDate || a.createdAt
+                            ),
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </React.Fragment>
+                )
+            )}
+
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              onChange={setPage}
+            />
+          </section>
+
+          {trending.length > 0 && (
+            <section className="section">
+              <h2>
+                <FiTrendingUp /> Trending
+              </h2>
+
+              <div className="trending-grid">
+                {trending.map((a, i) => (
+                  <Link
+                    key={a._id}
+                    to={`/article/${a.slug}`}
+                    className="trending-item"
+                  >
+                    <span>#{i + 1}</span>
+                    <h4>{a.title}</h4>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+        </main>
+
+        {/* RIGHT SIDEBAR */}
+        <aside className="gk-sidebar right">
+          <input
+            type="text"
+            className="gk-search"
+            placeholder="Search current affairs..."
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setPage(1);
+            }}
+          />
+
+          <div className="sidebar-card">
+            <h3>E-Books</h3>
+            <ul>
+              <li>
+                <Link to="/ebooks/monthly-mcqs">
+                  Current Affairs Monthly MCQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/ebooks/ca-articles-mcqs">
+                  CA Articles + MCQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/ebooks/yearly-pdf">
+                  Yearly Current Affairs PDF
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="sidebar-card">
+            <h3>Exams</h3>
+            <ul>
+              <li><Link to="/exams/upsc">UPSC</Link></li>
+              <li><Link to="/exams/ssc">SSC</Link></li>
+              <li><Link to="/exams/banking">Banking</Link></li>
+              <li><Link to="/exams/railway">Railway</Link></li>
+              <li><Link to="/exams/state-psc">State PSC</Link></li>
+              <li><Link to="/exams/gpsc">GPSC</Link></li>
+              <li><Link to="/exams/bpsc">BPSC</Link></li>
+              <li><Link to="/exams/mppsc">MPPSC</Link></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </>
   );
 };
 

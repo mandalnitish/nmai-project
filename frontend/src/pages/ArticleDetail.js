@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useQueryClient } from "react-query";
+import { Helmet } from "react-helmet-async";
 import { articlesAPI, usersAPI } from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
@@ -42,9 +43,7 @@ const ArticleDetail = () => {
   const formatDate = (dateString) => {
     if (!dateString) return "";
     const date = parseISO(dateString);
-    return isValid(date)
-      ? format(date, "MMMM dd, yyyy")
-      : "";
+    return isValid(date) ? format(date, "MMMM dd, yyyy") : "";
   };
 
   if (isLoading) {
@@ -100,52 +99,82 @@ const ArticleDetail = () => {
   };
 
   return (
-    <div className="article-detail-page">
-      <div className="article-detail-container">
-        <Link to="/current-affairs" className="back-link">
-          <FiArrowLeft /> Back to Articles
-        </Link>
+    <>
+      {/* ================= SEO ================= */}
+      <Helmet>
+        <title>{article.title} | NMAI</title>
+        <meta name="description" content={article.summary} />
 
-        <h1 className="article-detail-title">{article.title}</h1>
-
-        <div className="article-detail-meta">
-          <span><FiCalendar /> {formatDate(article.publishDate)}</span>
-          <span><FiUser /> {article.author?.name || "Admin"}</span>
-          <span><FiEye /> {article.viewCount}</span>
-          <span><FiHeart /> {article.likes}</span>
-        </div>
-
-        <img
-          className="article-detail-image"
-          src={
+        {/* Open Graph */}
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.summary} />
+        <meta
+          property="og:image"
+          content={
             article.featuredImage?.url ||
-            `https://source.unsplash.com/900x450/?${article.category || "news"}`
+            "https://nmai-project.vercel.app/android-chrome-512x512.png"
           }
-          alt={article.title}
         />
+        <meta property="og:type" content="article" />
+      </Helmet>
 
-        {article.summary && (
-          <div className="article-summary">{article.summary}</div>
-        )}
+      <div className="article-detail-page">
+        <div className="article-detail-container">
+          <Link to="/current-affairs" className="back-link">
+            <FiArrowLeft /> Back to Articles
+          </Link>
 
-        <div
-          className="article-body"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
+          <h1 className="article-detail-title">{article.title}</h1>
 
-        <div className="article-actions">
-          <button onClick={handleSaveArticle}>
-            <FiBookmark /> {isSaved ? "Saved" : "Save"}
-          </button>
-          <button onClick={handleLike}>
-            <FiHeart /> Like
-          </button>
-          <button onClick={handleShare}>
-            <FiShare2 /> Share
-          </button>
+          <div className="article-detail-meta">
+            <span>
+              <FiCalendar /> {formatDate(article.publishDate)}
+            </span>
+            <span>
+              <FiUser /> {article.author?.name || "Admin"}
+            </span>
+            <span>
+              <FiEye /> {article.viewCount}
+            </span>
+            <span>
+              <FiHeart /> {article.likes}
+            </span>
+          </div>
+
+          <img
+            className="article-detail-image"
+            src={
+              article.featuredImage?.url ||
+              `https://source.unsplash.com/900x450/?${
+                article.category || "news"
+              }`
+            }
+            alt={article.title}
+          />
+
+          {article.summary && (
+            <div className="article-summary">{article.summary}</div>
+          )}
+
+          <div
+            className="article-body"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+
+          <div className="article-actions">
+            <button onClick={handleSaveArticle}>
+              <FiBookmark /> {isSaved ? "Saved" : "Save"}
+            </button>
+            <button onClick={handleLike}>
+              <FiHeart /> Like
+            </button>
+            <button onClick={handleShare}>
+              <FiShare2 /> Share
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

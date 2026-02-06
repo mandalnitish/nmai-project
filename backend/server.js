@@ -27,6 +27,8 @@ app.use(helmet());
 /* ================= CORS ================= */
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://www.nmai.in",
+  "https://nmai.in",
   "https://nmai-project.vercel.app",
   "https://nmai-project-git-main-nitish-mandal.vercel.app",
 ];
@@ -58,6 +60,14 @@ app.use("/api/", limiter);
 
 /* ================= STATIC ================= */
 app.use("/uploads", express.static("uploads"));
+
+/* =====================================================
+   ROBOTS.TXT – BLOCK ALL CRAWLERS (API)
+===================================================== */
+app.get("/robots.txt", (req, res) => {
+  res.type("text/plain");
+  res.send("User-agent: *\nDisallow: /");
+});
 
 /* ================= ROUTES ================= */
 app.use("/api/articles", articleRoutes);

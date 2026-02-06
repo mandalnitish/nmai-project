@@ -1,16 +1,17 @@
 import axios from "axios";
 
 /* =====================================================
-   BASE URL (ENV SAFE)
-   ===================================================== */
+   BASE URL (ENV FIRST, SAFE FALLBACK)
+===================================================== */
 const API_BASE_URL =
-  process.env.NODE_ENV === "production"
+  process.env.REACT_APP_API_URL ||
+  (process.env.NODE_ENV === "production"
     ? "https://nmai-project.onrender.com/api"
-    : "http://localhost:5000/api";
+    : "http://localhost:5000/api");
 
 /* =====================================================
    AXIOS INSTANCE
-   ===================================================== */
+===================================================== */
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -20,7 +21,7 @@ const api = axios.create({
 
 /* =====================================================
    REQUEST INTERCEPTOR (TOKEN)
-   ===================================================== */
+===================================================== */
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -34,9 +35,9 @@ api.interceptors.request.use(
 
 /* =====================================================
    RESPONSE INTERCEPTOR (DATA + 401 HANDLING)
-   ===================================================== */
+===================================================== */
 api.interceptors.response.use(
-  (response) => response.data, // ✅ ALWAYS DATA ONLY
+  (response) => response.data, // ✅ always return data only
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
@@ -50,7 +51,7 @@ api.interceptors.response.use(
 
 /* =====================================================
    PARAM CLEANER
-   ===================================================== */
+===================================================== */
 const cleanParams = (params = {}) => {
   const cleaned = {};
   Object.entries(params).forEach(([key, value]) => {
@@ -63,7 +64,7 @@ const cleanParams = (params = {}) => {
 
 /* =====================================================
    AUTH API
-   ===================================================== */
+===================================================== */
 export const authAPI = {
   register: (data) => api.post("/auth/register", data),
   login: (data) => api.post("/auth/login", data),
@@ -74,7 +75,7 @@ export const authAPI = {
 
 /* =====================================================
    ARTICLES API
-   ===================================================== */
+===================================================== */
 export const articlesAPI = {
   getAll: (params = {}) =>
     api.get("/articles", { params: cleanParams(params) }),
@@ -96,7 +97,7 @@ export const articlesAPI = {
 
 /* =====================================================
    MCQS API
-   ===================================================== */
+===================================================== */
 export const mcqsAPI = {
   getAll: (params = {}) =>
     api.get("/mcqs", { params: cleanParams(params) }),
@@ -109,7 +110,7 @@ export const mcqsAPI = {
 
 /* =====================================================
    USERS API
-   ===================================================== */
+===================================================== */
 export const usersAPI = {
   getProfile: () => api.get("/users/profile"),
   updateProfile: (data) => api.put("/users/profile", data),
@@ -122,7 +123,7 @@ export const usersAPI = {
 
 /* =====================================================
    ADMIN API
-   ===================================================== */
+===================================================== */
 export const adminAPI = {
   getDashboardStats: () => api.get("/admin/dashboard-stats"),
 
@@ -138,5 +139,5 @@ export const adminAPI = {
 
 /* =====================================================
    DEFAULT EXPORT
-   ===================================================== */
+===================================================== */
 export default api;

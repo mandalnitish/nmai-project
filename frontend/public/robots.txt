@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block internal/private pages
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /admin
+Disallow: /*?page=
+
+# Sitemap
+Sitemap: https://www.nmai.in/sitemap.xml

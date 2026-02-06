@@ -7,8 +7,6 @@ import SearchBar from "../components/SearchBar";
 import { FiFilter } from "react-icons/fi";
 import "./CurrentAffairs.css";
 
-/* ================= CONSTANTS ================= */
-
 const CATEGORIES = [
   "All",
   "National",
@@ -27,35 +25,34 @@ const EXAM_MAP = {
   upsc: "UPSC",
   ssc: "SSC",
   banking: "Banking",
-  railway: "Railway",
   "state-psc": "State PSC",
 };
 
-/* ================= COMPONENT ================= */
-
 const CurrentAffairs = () => {
   const [searchParams] = useSearchParams();
-  const type = searchParams.get("type");
+  const type = searchParams.get("type"); // daily | monthly | upsc | ssc
 
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState("All");
   const [examType, setExamType] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  /* ================= APPLY URL FILTER ================= */
+  /* ================= APPLY SECONDARY BAR FILTER ================= */
   useEffect(() => {
     if (!type) return;
 
+    // Exam-based filter
     if (EXAM_MAP[type]) {
       setExamType(EXAM_MAP[type]);
     } else {
       setExamType("");
     }
 
+    // Reset pagination when tab changes
     setPage(1);
   }, [type]);
 
-  /* ================= FETCH ARTICLES ================= */
+  /* ================= QUERY ================= */
   const { data, isLoading, error } = useQuery(
     ["articles", page, category, examType, searchTerm, type],
     () =>
@@ -65,29 +62,19 @@ const CurrentAffairs = () => {
         category: category === "All" ? "" : category,
         examRelevance: examType,
         search: searchTerm,
+        type, // optional backend usage (daily/monthly)
       }),
     { keepPreviousData: true }
   );
 
-  const articles = data?.articles || [];
-  const pagination = data?.pagination;
-
-  /* ================= UI ================= */
   return (
     <div className="current-affairs-page">
+      {/* ================= HERO ================= */}
       <div className="container">
-
-        {/* SEARCH */}
-        <SearchBar
-          onSearch={(value) => {
-            setSearchTerm(value);
-            setPage(1);
-          }}
-        />
+        <SearchBar onSearch={(t) => setSearchTerm(t)} />
 
         <div className="ca-layout">
-
-          {/* SIDEBAR */}
+          {/* ================= SIDEBAR ================= */}
           <aside className="ca-sidebar">
             <div className="glass">
               <h3 className="sidebar-title">Filter by Category</h3>
@@ -128,60 +115,54 @@ const CurrentAffairs = () => {
             </div>
           </aside>
 
-          {/* CONTENT */}
+          {/* ================= CONTENT ================= */}
           <section className="ca-content">
-
-            {isLoading && (
+            {isLoading ? (
               <div className="loading-container">
                 <p>Loading articles...</p>
               </div>
-            )}
-
-            {error && (
+            ) : error ? (
               <div className="error-message">
                 Failed to load articles
               </div>
-            )}
-
-            {!isLoading && articles.length === 0 && (
-              <div className="empty-state">
-                <h3>No articles found</h3>
-                <p>Try another filter or keyword</p>
-              </div>
-            )}
-
-            {articles.length > 0 && (
+            ) : data?.data?.length ? (
               <>
                 <div className="articles-grid">
-                  {articles.map((article) => (
+                  {data.data.map((article) => (
                     <ArticleCard key={article._id} article={article} />
                   ))}
                 </div>
 
-                {pagination?.totalPages > 1 && (
+                {data.pagination?.totalPages > 1 && (
                   <div className="pagination">
                     <button
                       disabled={page === 1}
                       onClick={() => setPage((p) => p - 1)}
+                      className="pagination-btn"
                     >
                       Previous
                     </button>
 
-                    <span>
-                      Page {page} of {pagination.totalPages}
+                    <span className="pagination-info">
+                      Page {page} of {data.pagination.totalPages}
                     </span>
 
                     <button
-                      disabled={page === pagination.totalPages}
+                      disabled={page === data.pagination.totalPages}
                       onClick={() => setPage((p) => p + 1)}
+                      className="pagination-btn"
                     >
                       Next
                     </button>
                   </div>
                 )}
               </>
+            ) : (
+              <div className="empty-state">
+                <h3>No articles found</h3>
+                <p>Try another filter or keyword</p>
+              </div>
             )}
-
           </section>
         </div>
       </div>

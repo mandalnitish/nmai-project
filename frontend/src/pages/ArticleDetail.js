@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// ArticleDetail.jsx – SAVE SYNCED WITH PROFILE
+import React, { useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useQueryClient } from "react-query";
 import { articlesAPI, usersAPI } from "../services/api";
@@ -31,26 +32,24 @@ const ArticleDetail = () => {
     {
       retry: 1,
       onSuccess: (res) => {
-        const article = res?.article || res?.data;
-        if (article && user?.savedArticles) {
-          setIsSaved(user.savedArticles.includes(article._id));
+        if (res?.success && user?.savedArticles) {
+          setIsSaved(user.savedArticles.includes(res.data._id));
         }
       },
       onError: () => toast.error("Failed to load article"),
     }
   );
 
-  // 🔥 SAFE NORMALIZATION (MOST IMPORTANT LINE)
-  const article = data?.article || data?.data;
+  const article = data?.data;
 
   /* ================= DATE FORMAT ================= */
-  const formatDate = (dateValue) => {
-    if (!dateValue) return "Date not available";
+  const formatDate = (dateString) => {
+    if (!dateString) return "Date not available";
     try {
       const date =
-        typeof dateValue === "string"
-          ? parseISO(dateValue)
-          : new Date(dateValue);
+        typeof dateString === "string"
+          ? parseISO(dateString)
+          : new Date(dateString);
       return isValid(date) ? format(date, "MMMM dd, yyyy") : "Invalid date";
     } catch {
       return "Date not available";
@@ -76,10 +75,11 @@ const ArticleDetail = () => {
         toast.success("Article saved");
       }
 
-      queryClient.invalidateQueries("me");
+      // 🔥 SYNC PROFILE + NAVBAR + ANYWHERE
       queryClient.invalidateQueries("savedArticles");
+      queryClient.invalidateQueries("me");
     } catch {
-      setIsSaved(prev);
+      setIsSaved(prev); // rollback
       toast.error("Failed to update saved article");
     }
   };
@@ -123,7 +123,7 @@ const ArticleDetail = () => {
     );
   }
 
-  if (error || !article) {
+  if (error || !data?.success) {
     return (
       <div className="error-container">
         <h2>Article not found</h2>
@@ -154,9 +154,11 @@ const ArticleDetail = () => {
             <h1 className="article-title">{article.title}</h1>
 
             <div className="article-meta">
-              <span>
-                <FiCalendar /> {formatDate(article.publishDate || article.createdAt)}
-              </span>
+              {article.publishDate && (
+                <span>
+                  <FiCalendar /> {formatDate(article.publishDate)}
+                </span>
+              )}
               <span>
                 <FiUser /> {article.author?.name || "Admin"}
               </span>

@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -56,14 +62,22 @@ const queryClient = new QueryClient({
 /* ================= PRIVATE ROUTE ================= */
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
-  if (loading) return null;
+
+  if (loading) {
+    return <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>;
+  }
+
   return isAuthenticated ? children : <Navigate to="/login" replace />;
 };
 
 /* ================= ADMIN ROUTE ================= */
 const AdminRoute = ({ children }) => {
   const { user, loading } = useAuth();
-  if (loading) return null;
+
+  if (loading) {
+    return <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>;
+  }
+
   return user?.role === "admin" ? children : <Navigate to="/" replace />;
 };
 
@@ -73,7 +87,6 @@ export default function App() {
       <AuthProvider>
         <Router>
           <div className="app-wrapper">
-
             <Navbar />
             <SecondaryBar />
 
@@ -117,7 +130,7 @@ export default function App() {
                 <Route path="/ebooks/ca-articles-mcqs" element={<EbookArticlesMCQs />} />
                 <Route path="/ebooks/yearly-pdf" element={<EbookYearlyPDF />} />
 
-                {/* ===== EXAMS (AUTO) ===== */}
+                {/* ===== EXAMS ===== */}
                 <Route path="/exams/:examSlug" element={<ExamPage />} />
 
                 {/* ===== LEGAL ===== */}

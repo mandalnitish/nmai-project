@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
-import {
-  FiBookOpen,
-  FiTrendingUp,
-  FiTarget,
-} from "react-icons/fi";
+import { FiBookOpen, FiTrendingUp, FiTarget } from "react-icons/fi";
 import "./Home.css";
 import "./GKTodayLayout.css";
 
@@ -36,11 +32,18 @@ const getDateLabel = (date) =>
 /* ================= PAGINATION ================= */
 const Pagination = ({ page, totalPages, onChange }) => {
   if (totalPages <= 1) return null;
+
   return (
     <div className="pagination">
-      <button disabled={page === 1} onClick={() => onChange(page - 1)}>Prev</button>
-      <span>Page {page} of {totalPages}</span>
-      <button disabled={page === totalPages} onClick={() => onChange(page + 1)}>Next</button>
+      <button disabled={page === 1} onClick={() => onChange(page - 1)}>
+        Prev
+      </button>
+      <span>
+        Page {page} of {totalPages}
+      </span>
+      <button disabled={page === totalPages} onClick={() => onChange(page + 1)}>
+        Next
+      </button>
     </div>
   );
 };
@@ -53,11 +56,14 @@ const Home = () => {
   const [articles, setArticles] = useState([]);
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
+
   const [page, setPage] = useState(pageFromURL);
   const [totalPages, setTotalPages] = useState(1);
 
+  /* ================= FETCH DATA ================= */
   useEffect(() => {
     let mounted = true;
 
@@ -77,10 +83,9 @@ const Home = () => {
 
         if (!mounted) return;
 
-        // ✅ CORRECT RESPONSE MAPPING
         setArticles(latestRes.articles || []);
         setTotalPages(latestRes.pagination?.totalPages || 1);
-        setTrending(trendingRes.data || []);
+        setTrending(trendingRes || []);
       } catch (err) {
         console.error("Home fetch error:", err);
       } finally {
@@ -90,13 +95,24 @@ const Home = () => {
 
     fetchData();
     setSearchParams({ page });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     return () => (mounted = false);
   }, [page, category, search, setSearchParams]);
 
-  const today = articles.filter(a => isToday(a.publishDate || a.createdAt));
-  const yesterday = articles.filter(a => isYesterday(a.publishDate || a.createdAt));
+  /* ================= GROUP ARTICLES ================= */
+  const today = articles.filter((a) =>
+    isToday(a.publishDate || a.createdAt)
+  );
+
+  const yesterday = articles.filter((a) =>
+    isYesterday(a.publishDate || a.createdAt)
+  );
+
   const earlier = articles.filter(
-    a => !isToday(a.publishDate || a.createdAt) && !isYesterday(a.publishDate || a.createdAt)
+    (a) =>
+      !isToday(a.publishDate || a.createdAt) &&
+      !isYesterday(a.publishDate || a.createdAt)
   );
 
   return (
@@ -105,23 +121,47 @@ const Home = () => {
       <aside className="gk-sidebar left">
         <h3>Categories</h3>
         <ul>
-          {["All","Economy","Polity","Science","Technology","Environment","International","National","Defence"].map(cat => (
-            <li key={cat} className={category === cat ? "active" : ""}
-              onClick={() => { setCategory(cat); setPage(1); }}>
+          {[
+            "All",
+            "Economy",
+            "Polity",
+            "Science",
+            "Technology",
+            "Environment",
+            "International",
+            "National",
+            "Defence",
+          ].map((cat) => (
+            <li
+              key={cat}
+              className={category === cat ? "active" : ""}
+              onClick={() => {
+                setCategory(cat);
+                setPage(1);
+              }}
+            >
               {cat}
             </li>
           ))}
         </ul>
       </aside>
 
-      {/* MAIN */}
+      {/* MAIN CONTENT */}
       <main className="gk-content">
         <section className="hero-section">
-          <h1>Master Current Affairs for <span className="gradient-text">Competitive Exams</span></h1>
+          <h1>
+            Master Current Affairs for{" "}
+            <span className="gradient-text">Competitive Exams</span>
+          </h1>
           <p>Daily current affairs, MCQs, and exam-focused content.</p>
+
           <div className="hero-buttons">
-            <Link to="/current-affairs" className="btn btn-primary"><FiBookOpen /> Explore</Link>
-            <Link to="/daily-quiz" className="btn btn-outline"><FiTarget /> Daily Quiz</Link>
+            <Link to="/current-affairs" className="btn btn-primary">
+              <FiBookOpen /> Explore
+            </Link>
+            <Link to="/daily-quiz" className="btn btn-outline">
+              <FiTarget /> Daily Quiz
+            </Link>
           </div>
         </section>
 
@@ -129,7 +169,10 @@ const Home = () => {
           <h2>Latest Current Affairs</h2>
 
           {loading && <p>Loading articles...</p>}
-          {!loading && articles.length === 0 && <div className="empty-state">No articles found.</div>}
+
+          {!loading && articles.length === 0 && (
+            <div className="empty-state">No articles found.</div>
+          )}
 
           {[["Today", today], ["Yesterday", yesterday], ["Earlier", earlier]].map(
             ([label, list]) =>
@@ -137,23 +180,42 @@ const Home = () => {
                 <React.Fragment key={label}>
                   <h3 className="group-title">{label}</h3>
                   <div className="articles-grid">
-                    {list.map(a => (
-                      <ArticleCard key={a._id} article={{ ...a, dateLabel: getDateLabel(a.publishDate || a.createdAt) }} />
+                    {list.map((a) => (
+                      <ArticleCard
+                        key={a._id}
+                        article={{
+                          ...a,
+                          dateLabel: getDateLabel(
+                            a.publishDate || a.createdAt
+                          ),
+                        }}
+                      />
                     ))}
                   </div>
                 </React.Fragment>
               )
           )}
 
-          <Pagination page={page} totalPages={totalPages} onChange={setPage} />
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            onChange={setPage}
+          />
         </section>
 
         {trending.length > 0 && (
           <section className="section">
-            <h2><FiTrendingUp /> Trending</h2>
+            <h2>
+              <FiTrendingUp /> Trending
+            </h2>
+
             <div className="trending-grid">
               {trending.map((a, i) => (
-                <Link key={a._id} to={`/article/${a.slug}`} className="trending-item">
+                <Link
+                  key={a._id}
+                  to={`/article/${a.slug}`}
+                  className="trending-item"
+                >
                   <span>#{i + 1}</span>
                   <h4>{a.title}</h4>
                 </Link>
@@ -164,41 +226,52 @@ const Home = () => {
       </main>
 
       {/* RIGHT SIDEBAR */}
-      {/* ================= RIGHT SIDEBAR ================= */}
-<aside className="gk-sidebar right">
-  <input
-    type="text"
-    className="gk-search"
-    placeholder="Search current affairs..."
-    value={search}
-    onChange={(e) => {
-      setSearch(e.target.value);
-      setPage(1);
-    }}
-  />
+      <aside className="gk-sidebar right">
+        <input
+          type="text"
+          className="gk-search"
+          placeholder="Search current affairs..."
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
+        />
 
-  <div className="sidebar-card">
-    <h3>E-Books</h3>
-    <ul>
-      <li><Link to="/ebooks/monthly-mcqs">Current Affairs Monthly MCQs</Link></li>
-      <li><Link to="/ebooks/ca-articles-mcqs">CA Articles + MCQs</Link></li>
-      <li><Link to="/ebooks/yearly-pdf">Yearly Current Affairs PDF</Link></li>
-    </ul>
-  </div>
+        <div className="sidebar-card">
+          <h3>E-Books</h3>
+          <ul>
+            <li>
+              <Link to="/ebooks/monthly-mcqs">
+                Current Affairs Monthly MCQs
+              </Link>
+            </li>
+            <li>
+              <Link to="/ebooks/ca-articles-mcqs">
+                CA Articles + MCQs
+              </Link>
+            </li>
+            <li>
+              <Link to="/ebooks/yearly-pdf">
+                Yearly Current Affairs PDF
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-  <div className="sidebar-card">
-    <h3>States PSC</h3>
-    <ul>
-          <li><Link to="/exams/upsc">UPSC</Link></li>
-           <li><Link to="/exams/ssc">SSC</Link></li>
+        <div className="sidebar-card">
+          <h3>Exams</h3>
+          <ul>
+            <li><Link to="/exams/upsc">UPSC</Link></li>
+            <li><Link to="/exams/ssc">SSC</Link></li>
             <li><Link to="/exams/banking">Banking</Link></li>
             <li><Link to="/exams/railway">Railway</Link></li>
             <li><Link to="/exams/state-psc">State PSC</Link></li>
-             <li><Link to="/exams/gpsc">GPSC</Link></li>
+            <li><Link to="/exams/gpsc">GPSC</Link></li>
             <li><Link to="/exams/bpsc">BPSC</Link></li>
-          <li><Link to="/exams/mppsc">MPPSC</Link></li>
-        </ul>
-       </div>
+            <li><Link to="/exams/mppsc">MPPSC</Link></li>
+          </ul>
+        </div>
       </aside>
     </div>
   );

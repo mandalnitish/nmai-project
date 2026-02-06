@@ -8,7 +8,7 @@ import connectDB from "./config/db.js";
 
 // ROUTES
 import authRoutes from "./routes/auth.js";
-import articleRoutes from "./routes/articles.js";
+import articleRoutes from "./routes/articleRoutes.js";
 import mcqRoutes from "./routes/mcqRoutes.js";
 import userRoutes from "./routes/users.js";
 
@@ -24,7 +24,7 @@ const app = express();
 /* ================= MIDDLEWARE ================= */
 app.use(helmet());
 
-/* ================= CORS (FIXED) ================= */
+/* ================= CORS ================= */
 const allowedOrigins = [
   "http://localhost:3000",
   "https://nmai-project.vercel.app",

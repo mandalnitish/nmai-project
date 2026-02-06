@@ -1,7 +1,7 @@
 /* ================= FOOTER CONTAINER ================= */
 .footer {
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #0a1628 0%, #111d3a 50%, #0d1b2a 100%);
   color: white;
   padding: 4rem 0 0;
   margin-top: 5rem;
@@ -16,8 +16,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -31,29 +31,29 @@
 
 /* ================= SCROLL TO TOP BUTTON ================= */
 .scroll-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  animation: fadeInUp 0.5s ease;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
+    z-index: 10;
+    animation: fadeInUp 0.5s ease;
 }
 
 .scroll-to-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.6);
 }
 
 .scroll-to-top:active {
@@ -85,27 +85,27 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   border-radius: 15px;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
   transition: all 0.3s ease;
   animation: pulse 2s ease-in-out infinite;
 }
 
 .logo-icon:hover {
   transform: scale(1.05) rotate(5deg);
-  box-shadow: 0 10px 35px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 10px 35px rgba(59, 130, 246, 0.5);
 }
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
   }
   50% {
-    box-shadow: 0 8px 35px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 8px 35px rgba(59, 130, 246, 0.5);
   }
 }
 
@@ -135,7 +135,7 @@
   bottom: 0;
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -182,7 +182,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -198,7 +198,7 @@
 
 .social-link:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
   border-color: transparent;
 }
 
@@ -240,11 +240,11 @@
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
-  color: #667eea;
+  color: #3b82f6;
 }
 
 .footer-links a:hover {
-  color: #667eea;
+  color: #3b82f6;
 }
 
 .footer-links a:hover .link-arrow {
@@ -254,7 +254,7 @@
 
 /* ================= NEWSLETTER SECTION ================= */
 .newsletter-section {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2.5rem;
@@ -272,7 +272,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
   animation: rotate 20s linear infinite;
 }
 
@@ -294,6 +294,7 @@
 .newsletter-text h3 {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 .newsletter-text p {
@@ -344,18 +345,18 @@
 
 .newsletter-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #3b82f6;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .newsletter-input:focus + .input-icon {
-  color: #667eea;
+  color: #3b82f6;
 }
 
 .newsletter-btn {
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -367,13 +368,13 @@
   justify-content: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
   white-space: nowrap;
 }
 
 .newsletter-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
 }
 
 .newsletter-btn:active:not(:disabled) {
@@ -408,7 +409,7 @@
 }
 
 .brand-name {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -561,6 +562,6 @@
 /* ================= DARK MODE ENHANCEMENTS ================= */
 @media (prefers-color-scheme: dark) {
   .footer {
-    background: linear-gradient(135deg, #0a0a0f 0%, #16213e 50%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #060d1f 0%, #0a1628 50%, #0d1b2a 100%);
   }
 }

@@ -1,41 +1,51 @@
-/* ================= NAVBAR ================= */
+/* =========================================================
+   NAVBAR BASE
+========================================================= */
 .navbar {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  /* modern depth */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* ================= WRAPPER ================= */
+/* =========================================================
+   WRAPPER
+========================================================= */
 .navbar-wrap {
   max-width: 1200px;
   margin: auto;
-  padding: 0.6rem 1rem; /* ⬅ reduced height */
+  padding: 0.6rem 1rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
 }
 
-/* ================= LEFT ================= */
+/* =========================================================
+   LEFT (LOGO)
+========================================================= */
 .nav-left {
   display: flex;
   align-items: center;
 }
 
 .navbar-logo {
-  font-size: 1.45rem;
-  font-weight: 900;
-  color: #111827;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.4px;
 }
 
-/* ================= CENTER ================= */
+/* LOGO IMAGE — STATIC (NO HOVER / NO ANIMATION) */
+.logo-img {
+  height: 54px; /* desktop */
+  width: auto;
+  display: block;
+}
+
+/* =========================================================
+   CENTER MENU
+========================================================= */
 .nav-center {
   display: flex;
   justify-content: center;
@@ -49,10 +59,9 @@
   color: #374151;
   text-decoration: none;
   padding: 0.3rem 0;
-  transition: color 0.2s ease;
 }
 
-/* underline animation */
+/* ACTIVE / HOVER UNDERLINE */
 .nav-center a::after {
   content: "";
   position: absolute;
@@ -60,29 +69,27 @@
   bottom: -6px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  background: #2563eb;
   transform: translateX(-50%);
-  transition: width 0.25s ease;
 }
 
-.nav-center a:hover,
 .nav-center a.active {
   color: #2563eb;
 }
 
-.nav-center a:hover::after,
 .nav-center a.active::after {
   width: 100%;
 }
 
-/* ================= RIGHT ================= */
+/* =========================================================
+   RIGHT (AUTH)
+========================================================= */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Login / Profile link */
 .nav-right a {
   font-size: 0.9rem;
   font-weight: 600;
@@ -90,23 +97,17 @@
   text-decoration: none;
 }
 
-/* Register button */
+/* REGISTER BUTTON */
 .register-link {
   padding: 0.45rem 1.2rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: #2563eb;
   color: #ffffff !important;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.register-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(59, 130, 246, 0.35);
-}
-
-/* ================= USER AREA ================= */
+/* USER */
 .nav-user {
   display: flex;
   align-items: center;
@@ -120,11 +121,6 @@
   text-decoration: none;
 }
 
-.nav-username:hover {
-  text-decoration: underline;
-}
-
-/* Logout button */
 .logout-btn {
   background: none;
   border: none;
@@ -134,11 +130,9 @@
   cursor: pointer;
 }
 
-.logout-btn:hover {
-  text-decoration: underline;
-}
-
-/* ================= MOBILE TOGGLE ================= */
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
 .nav-toggle {
   display: none;
   background: none;
@@ -153,18 +147,25 @@
   height: 2px;
   background: #374151;
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 @media (max-width: 920px) {
   .navbar-wrap {
     grid-template-columns: auto auto;
   }
 
+  /* LOGO SCALE */
+  .logo-img {
+    height: 42px;
+  }
+
+  /* MOBILE MENU */
   .nav-center {
     position: absolute;
-    top: 58px; /* ⬅ matches reduced navbar height */
+    top: 58px;
     left: 0;
     right: 0;
     background: #ffffff;
@@ -173,18 +174,11 @@
     gap: 1.2rem;
     padding: 1.4rem 0;
     border-top: 1px solid #e5e7eb;
-
-    /* animation */
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.25s ease;
+    display: none;
   }
 
   .nav-center.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
   }
 
   .nav-right {
@@ -193,5 +187,11 @@
 
   .nav-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+    height: 36px;
   }
 }

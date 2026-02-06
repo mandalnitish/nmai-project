@@ -1,5 +1,4 @@
-// ArticleDetail.jsx – SAVE SYNCED WITH PROFILE
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useQueryClient } from "react-query";
 import { articlesAPI, usersAPI } from "../services/api";
@@ -9,7 +8,6 @@ import { format, isValid, parseISO } from "date-fns";
 import {
   FiCalendar,
   FiUser,
-  FiTag,
   FiBookmark,
   FiHeart,
   FiShare2,
@@ -24,221 +22,128 @@ const ArticleDetail = () => {
   const queryClient = useQueryClient();
 
   const [isSaved, setIsSaved] = useState(false);
+  const [isLiking, setIsLiking] = useState(false);
 
-  /* ================= FETCH ARTICLE ================= */
-  const { data, isLoading, error } = useQuery(
+  const { data, isLoading } = useQuery(
     ["article", slug],
     () => articlesAPI.getBySlug(slug),
     {
-      retry: 1,
+      retry: false,
       onSuccess: (res) => {
         if (res?.success && user?.savedArticles) {
-          setIsSaved(user.savedArticles.includes(res.data._id));
+          setIsSaved(user.savedArticles.includes(res.article._id));
         }
       },
-      onError: () => toast.error("Failed to load article"),
     }
   );
 
-  const article = data?.data;
+  const article = data?.article;
 
-  /* ================= DATE FORMAT ================= */
   const formatDate = (dateString) => {
-    if (!dateString) return "Date not available";
-    try {
-      const date =
-        typeof dateString === "string"
-          ? parseISO(dateString)
-          : new Date(dateString);
-      return isValid(date) ? format(date, "MMMM dd, yyyy") : "Invalid date";
-    } catch {
-      return "Date not available";
-    }
+    if (!dateString) return "";
+    const date = parseISO(dateString);
+    return isValid(date)
+      ? format(date, "MMMM dd, yyyy")
+      : "";
   };
 
-  /* ================= SAVE / UNSAVE ================= */
+  if (isLoading) {
+    return <p style={{ padding: "2rem" }}>Loading article...</p>;
+  }
+
+  if (!data || !data.success || !article) {
+    return (
+      <div className="error-container">
+        <h2>Article not found</h2>
+        <Link to="/current-affairs" className="back-link">
+          <FiArrowLeft /> Back to Articles
+        </Link>
+      </div>
+    );
+  }
+
   const handleSaveArticle = async () => {
-    if (!user) {
-      toast.error("Please login to save articles");
-      return;
-    }
+    if (!user) return toast.error("Please login to save articles");
 
     const prev = isSaved;
-    setIsSaved(!prev); // optimistic UI
+    setIsSaved(!prev);
 
     try {
-      if (prev) {
-        await usersAPI.unsaveArticle(article._id);
-        toast.success("Removed from saved");
-      } else {
-        await usersAPI.saveArticle(article._id);
-        toast.success("Article saved");
-      }
+      prev
+        ? await usersAPI.unsaveArticle(article._id)
+        : await usersAPI.saveArticle(article._id);
 
-      // 🔥 SYNC PROFILE + NAVBAR + ANYWHERE
-      queryClient.invalidateQueries("savedArticles");
       queryClient.invalidateQueries("me");
+      queryClient.invalidateQueries("savedArticles");
     } catch {
-      setIsSaved(prev); // rollback
+      setIsSaved(prev);
       toast.error("Failed to update saved article");
     }
   };
 
-  /* ================= LIKE ================= */
   const handleLike = async () => {
-    if (!user) {
-      toast.error("Please login to like articles");
-      return;
-    }
+    if (!user) return toast.error("Please login to like articles");
+    if (isLiking) return;
 
+    setIsLiking(true);
     try {
       await articlesAPI.like(article._id);
-      toast.success("Article liked");
-    } catch {
-      toast.error("Failed to like article");
+      queryClient.invalidateQueries(["article", slug]);
+    } finally {
+      setIsLiking(false);
     }
   };
 
-  /* ================= SHARE ================= */
   const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: article.title,
-        text: article.summary,
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copied to clipboard");
-    }
+    navigator.clipboard.writeText(window.location.href);
+    toast.success("Link copied");
   };
 
-  /* ================= STATES ================= */
-  if (isLoading) {
-    return (
-      <div className="loading-container">
-        <div className="spinner" />
-        <p>Loading article...</p>
-      </div>
-    );
-  }
-
-  if (error || !data?.success) {
-    return (
-      <div className="error-container">
-        <h2>Article not found</h2>
-        <Link to="/current-affairs" className="btn btn-primary">
-          <FiArrowLeft /> Back to Articles
-        </Link>
-      </div>
-    );
-  }
-
-  /* ================= UI ================= */
   return (
     <div className="article-detail-page">
-      <div className="container">
+      <div className="article-detail-container">
         <Link to="/current-affairs" className="back-link">
           <FiArrowLeft /> Back to Articles
         </Link>
 
-        <article className="article-content">
-          {/* HEADER */}
-          <header className="article-header">
-            {article.category && (
-              <div className="article-category-badge">
-                {article.category}
-              </div>
-            )}
+        <h1 className="article-detail-title">{article.title}</h1>
 
-            <h1 className="article-title">{article.title}</h1>
+        <div className="article-detail-meta">
+          <span><FiCalendar /> {formatDate(article.publishDate)}</span>
+          <span><FiUser /> {article.author?.name || "Admin"}</span>
+          <span><FiEye /> {article.viewCount}</span>
+          <span><FiHeart /> {article.likes}</span>
+        </div>
 
-            <div className="article-meta">
-              {article.publishDate && (
-                <span>
-                  <FiCalendar /> {formatDate(article.publishDate)}
-                </span>
-              )}
-              <span>
-                <FiUser /> {article.author?.name || "Admin"}
-              </span>
-              <span>
-                <FiEye /> {article.viewCount || 0}
-              </span>
-              <span>
-                <FiHeart /> {article.likes || 0}
-              </span>
-            </div>
+        <img
+          className="article-detail-image"
+          src={
+            article.featuredImage?.url ||
+            `https://source.unsplash.com/900x450/?${article.category || "news"}`
+          }
+          alt={article.title}
+        />
 
-            {article.examRelevance?.length > 0 && (
-              <div className="exam-tags">
-                <strong>Relevant for:</strong>
-                {article.examRelevance.map((exam, i) => (
-                  <span key={i} className="exam-tag">
-                    {exam}
-                  </span>
-                ))}
-              </div>
-            )}
-          </header>
+        {article.summary && (
+          <div className="article-summary">{article.summary}</div>
+        )}
 
-          {/* IMAGE */}
-          <div className="featured-image">
-            <img
-              src={
-                article.featuredImage?.url ||
-                `https://source.unsplash.com/random/800x400?${article.category}`
-              }
-              alt={article.title}
-            />
-          </div>
+        <div
+          className="article-body"
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
 
-          {/* SUMMARY */}
-          {article.summary && (
-            <div className="article-summary">
-              <h3>Summary</h3>
-              <p>{article.summary}</p>
-            </div>
-          )}
-
-          {/* CONTENT */}
-          {article.content && (
-            <div
-              className="article-body"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-          )}
-
-          {/* TAGS */}
-          {article.tags?.length > 0 && (
-            <div className="article-tags">
-              <strong>Tags:</strong>
-              {article.tags.map((tag, i) => (
-                <span key={i} className="tag">
-                  <FiTag /> {tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {/* ACTIONS */}
-          <div className="article-actions">
-            <button
-              className={`action-btn ${isSaved ? "active" : ""}`}
-              onClick={handleSaveArticle}
-            >
-              <FiBookmark /> {isSaved ? "Saved" : "Save Article"}
-            </button>
-
-            <button className="action-btn" onClick={handleLike}>
-              <FiHeart /> Like
-            </button>
-
-            <button className="action-btn" onClick={handleShare}>
-              <FiShare2 /> Share
-            </button>
-          </div>
-        </article>
+        <div className="article-actions">
+          <button onClick={handleSaveArticle}>
+            <FiBookmark /> {isSaved ? "Saved" : "Save"}
+          </button>
+          <button onClick={handleLike}>
+            <FiHeart /> Like
+          </button>
+          <button onClick={handleShare}>
+            <FiShare2 /> Share
+          </button>
+        </div>
       </div>
     </div>
   );

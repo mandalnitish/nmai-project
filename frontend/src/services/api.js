@@ -1,17 +1,8 @@
 import axios from "axios";
 
 /* =====================================================
-   BASE URL (ENV + PROD SAFE)
+   BASE URL (ENV SAFE)
    ===================================================== */
-
-/**
- * LOCAL  → http://localhost:5000/api
- * PROD   → https://nmai-project.onrender.com/api
- *
- * IMPORTANT:
- * - NEVER use relative URLs in production
- * - This works for Vercel, GitHub Pages, Netlify
- */
 const API_BASE_URL =
   process.env.NODE_ENV === "production"
     ? "https://nmai-project.onrender.com/api"
@@ -28,7 +19,7 @@ const api = axios.create({
 });
 
 /* =====================================================
-   REQUEST INTERCEPTOR (AUTH TOKEN)
+   REQUEST INTERCEPTOR (TOKEN)
    ===================================================== */
 api.interceptors.request.use(
   (config) => {
@@ -42,22 +33,15 @@ api.interceptors.request.use(
 );
 
 /* =====================================================
-   RESPONSE INTERCEPTOR (401 SAFE REDIRECT)
+   RESPONSE INTERCEPTOR (DATA + 401 HANDLING)
    ===================================================== */
 api.interceptors.response.use(
-  (response) => response.data, // 🔥 ALWAYS RETURN DATA ONLY
+  (response) => response.data, // ✅ ALWAYS DATA ONLY
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
-
-      // SPA safe redirect
-      if (process.env.NODE_ENV === "production") {
-        window.location.href = "/login";
-      } else {
-        window.location.href = "/login";
-      }
+      window.location.href = "/login";
     }
-
     return Promise.reject(
       error.response?.data || { message: error.message }
     );
@@ -65,7 +49,7 @@ api.interceptors.response.use(
 );
 
 /* =====================================================
-   PARAM CLEANER (VERY IMPORTANT)
+   PARAM CLEANER
    ===================================================== */
 const cleanParams = (params = {}) => {
   const cleaned = {};
@@ -89,12 +73,11 @@ export const authAPI = {
 };
 
 /* =====================================================
-   ARTICLES API (✔ MATCHES BACKEND RESPONSE)
+   ARTICLES API
    ===================================================== */
 export const articlesAPI = {
   getAll: (params = {}) =>
     api.get("/articles", { params: cleanParams(params) }),
-  // returns: { success, articles, pagination }
 
   getLatest: (limit = 10) =>
     api.get("/articles/latest", { params: { limit } }),
@@ -112,7 +95,7 @@ export const articlesAPI = {
 };
 
 /* =====================================================
-   MCQs API
+   MCQS API
    ===================================================== */
 export const mcqsAPI = {
   getAll: (params = {}) =>

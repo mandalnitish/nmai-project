@@ -2,41 +2,54 @@ import { Link } from "react-router-dom";
 import { FiCalendar } from "react-icons/fi";
 import "./ArticleCard.css";
 
+const formatDate = (date) =>
+  date
+    ? new Date(date).toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      })
+    : "";
+
 const ArticleCard = ({ article }) => {
-  const date =
-    article.publishDate || article.createdAt
-      ? new Date(article.publishDate || article.createdAt).toLocaleDateString(
-          "en-IN",
-          { day: "numeric", month: "short", year: "numeric" }
-        )
-      : "";
-
   return (
-    <Link to={`/article/${article.slug}`} className="article-card-horizontal">
-      {article.featuredImage?.url && (
-        <div className="article-image">
-          <img
-            src={article.featuredImage.url}
-            alt={article.title}
-            loading="lazy"
-          />
-        </div>
-      )}
+    <Link
+      to={`/article/${article.slug}`}
+      className="article-card-horizontal"
+    >
+      {/* IMAGE */}
+      <div className="article-card-image">
+        <img
+          src={
+            article.featuredImage?.url ||
+            `https://source.unsplash.com/400x250/?${article.category || "news"}`
+          }
+          alt={article.title}
+          loading="lazy"
+        />
+      </div>
 
+      {/* CONTENT */}
       <div className="article-card-content">
-        <div className="article-meta">
-          <span className="category">{article.category}</span>
-          {date && (
-            <span className="date">
-              <FiCalendar /> {date}
-            </span>
+        <div className="article-card-meta">
+          {article.category && (
+            <span className="category">{article.category}</span>
           )}
+          <span>
+            <FiCalendar />{" "}
+            {formatDate(article.publishDate || article.createdAt)}
+          </span>
         </div>
 
-        <h3 className="title">{article.title}</h3>
-        <p className="summary">{article.summary}</p>
+        <h3 className="article-card-title">{article.title}</h3>
 
-        <span className="read-more">Read More →</span>
+        {article.summary && (
+          <p className="article-card-summary">
+            {article.summary}
+          </p>
+        )}
+
+        <span className="article-card-read">Read More</span>
       </div>
     </Link>
   );

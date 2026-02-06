@@ -100,8 +100,8 @@ a:hover {
 }
 
 .main-content {
-  flex: 1;
-  padding-top: 60px; /* Account for fixed navbar */
+  padding-top: 0;        /* 🔥 REMOVE EXTRA GAP */
+  padding-bottom: 0;
 }
 
 .container {

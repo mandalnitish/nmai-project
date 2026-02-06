@@ -4,13 +4,16 @@ import axios from "axios";
 // CRA requires REACT_APP_ prefix
 const API_URL = process.env.REACT_APP_API_URL;
 
+if (!API_URL) {
+  console.error("❌ REACT_APP_API_URL is NOT defined");
+}
+
 /* ================= AXIOS INSTANCE ================= */
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true,
 });
 
 /* ================= ARTICLE SERVICES ================= */
@@ -66,5 +69,4 @@ export const getPaginatedArticles = async (page = 1, limit = 10) => {
   return response.data;
 };
 
-/* ================= EXPORT AXIOS INSTANCE ================= */
 export default api;

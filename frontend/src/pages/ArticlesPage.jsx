@@ -4,19 +4,39 @@ import { getAllArticles } from "../services/articleService";
 const ArticlesPage = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getAllArticles()
-      .then((data) => {
-        setArticles(data.articles || data || []);
-      })
-      .catch((err) => {
+    const fetchArticles = async () => {
+      try {
+        setLoading(true);
+
+        // 🔹 Explicit params (important)
+        const res = await getAllArticles({
+          page: 1,
+          limit: 12,
+        });
+
+        // 🔥 FIX: backend returns `articles`
+        const list = Array.isArray(res?.articles)
+          ? res.articles
+          : [];
+
+        setArticles(list);
+      } catch (err) {
         console.error("Failed to load articles:", err);
-      })
-      .finally(() => setLoading(false));
+        setError("Failed to load articles");
+        setArticles([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
   }, []);
 
   if (loading) return <p>Loading articles...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div style={{ padding: "1rem" }}>
@@ -27,7 +47,7 @@ const ArticlesPage = () => {
       {articles.map((article) => (
         <div key={article._id} style={{ marginBottom: "1rem" }}>
           <h3>{article.title}</h3>
-          <p>{article.summary || article.content?.slice(0, 150)}...</p>
+          <p>{article.summary}</p>
         </div>
       ))}
     </div>

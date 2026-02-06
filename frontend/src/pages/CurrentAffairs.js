@@ -30,29 +30,24 @@ const EXAM_MAP = {
 
 const CurrentAffairs = () => {
   const [searchParams] = useSearchParams();
-  const type = searchParams.get("type"); // daily | monthly | upsc | ssc
+  const type = searchParams.get("type");
 
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState("All");
   const [examType, setExamType] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  /* ================= APPLY SECONDARY BAR FILTER ================= */
+  /* ================= APPLY SECONDARY FILTER ================= */
   useEffect(() => {
-    if (!type) return;
-
-    // Exam-based filter
     if (EXAM_MAP[type]) {
       setExamType(EXAM_MAP[type]);
     } else {
       setExamType("");
     }
-
-    // Reset pagination when tab changes
     setPage(1);
   }, [type]);
 
-  /* ================= QUERY ================= */
+  /* ================= FETCH ARTICLES ================= */
   const { data, isLoading, error } = useQuery(
     ["articles", page, category, examType, searchTerm, type],
     () =>
@@ -62,14 +57,15 @@ const CurrentAffairs = () => {
         category: category === "All" ? "" : category,
         examRelevance: examType,
         search: searchTerm,
-        type, // optional backend usage (daily/monthly)
       }),
     { keepPreviousData: true }
   );
 
+  const articles = data?.data || [];
+  const pagination = data?.pagination;
+
   return (
     <div className="current-affairs-page">
-      {/* ================= HERO ================= */}
       <div className="container">
         <SearchBar onSearch={(t) => setSearchTerm(t)} />
 
@@ -122,18 +118,16 @@ const CurrentAffairs = () => {
                 <p>Loading articles...</p>
               </div>
             ) : error ? (
-              <div className="error-message">
-                Failed to load articles
-              </div>
-            ) : data?.data?.length ? (
+              <div className="error-message">Failed to load articles</div>
+            ) : articles.length > 0 ? (
               <>
                 <div className="articles-grid">
-                  {data.data.map((article) => (
+                  {articles.map((article) => (
                     <ArticleCard key={article._id} article={article} />
                   ))}
                 </div>
 
-                {data.pagination?.totalPages > 1 && (
+                {pagination?.totalPages > 1 && (
                   <div className="pagination">
                     <button
                       disabled={page === 1}
@@ -144,11 +138,11 @@ const CurrentAffairs = () => {
                     </button>
 
                     <span className="pagination-info">
-                      Page {page} of {data.pagination.totalPages}
+                      Page {page} of {pagination.totalPages}
                     </span>
 
                     <button
-                      disabled={page === data.pagination.totalPages}
+                      disabled={page === pagination.totalPages}
                       onClick={() => setPage((p) => p + 1)}
                       className="pagination-btn"
                     >

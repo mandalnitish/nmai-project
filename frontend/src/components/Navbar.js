@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png";
@@ -12,66 +12,171 @@ export default function Navbar() {
   const handleLogout = () => {
     logout();
     navigate("/");
+    setMenuOpen(false);
   };
 
   const closeMenu = () => setMenuOpen(false);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
+
+  // Close menu on window resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 920 && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [menuOpen]);
+
   return (
-    <header className="navbar">
-      <div className="navbar-wrap">
-        {/* LOGO */}
-        <div className="nav-left">
-          <Link to="/" className="navbar-logo" onClick={closeMenu}>
-            <img
-              src={logo}
-              alt="NMAI Current Affairs"
-              className="logo-img"
-            />
+    <>
+      {/* Mobile overlay */}
+      {menuOpen && (
+        <div 
+          className="nav-overlay"
+          onClick={closeMenu}
+        />
+      )}
+
+      <header className="navbar">
+        <div className="navbar-wrap">
+          {/* LOGO (LEFT) */}
+          <div className="nav-left">
+            <Link to="/" className="navbar-logo" onClick={closeMenu}>
+              <img
+                src={logo}
+                alt="NMAI Current Affairs"
+                className="logo-img"
+              />
+            </Link>
+          </div>
+
+          {/* DESKTOP MENU (CENTER) */}
+          <nav className="nav-center desktop-menu">
+            <NavLink to="/" end>Home</NavLink>
+            <NavLink to="/current-affairs">Current Affairs</NavLink>
+            <NavLink to="/mcq-practice">MCQs</NavLink>
+            <NavLink to="/daily-quiz">Daily Quiz</NavLink>
+            <NavLink to="/about-us">About Us</NavLink>
+            <NavLink to="/contact-us">Contact</NavLink>
+          </nav>
+
+          {/* DESKTOP AUTH (RIGHT) */}
+          <div className="nav-right desktop-menu">
+            {!isAuthenticated ? (
+              <>
+                <NavLink to="/login" className="nav-login-btn">Login</NavLink>
+                <NavLink to="/register" className="nav-register-btn">
+                  Register
+                </NavLink>
+              </>
+            ) : (
+              <div className="nav-user">
+                <NavLink to="/profile" className="nav-username">
+                  👤 {user?.name}
+                </NavLink>
+                <button onClick={handleLogout} className="logout-btn">
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* MOBILE TOGGLE (RIGHT SIDE) */}
+          <button
+            className={`nav-toggle ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </header>
+
+      {/* MOBILE MENU DRAWER (SLIDES FROM RIGHT) */}
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <div className="mobile-menu-header">
+          <Link to="/" className="mobile-logo" onClick={closeMenu}>
+            <img src={logo} alt="NMAI" className="mobile-logo-img" />
           </Link>
         </div>
 
-        {/* MENU */}
-        <nav className={`nav-center ${menuOpen ? "open" : ""}`}>
-          <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
-          <NavLink to="/current-affairs" onClick={closeMenu}>Current Affairs</NavLink>
-          <NavLink to="/mcq-practice" onClick={closeMenu}>MCQs</NavLink>
-          <NavLink to="/daily-quiz" onClick={closeMenu}>Daily Quiz</NavLink>
-          <NavLink to="/about-us" onClick={closeMenu}>About Us</NavLink>
-          <NavLink to="/contact-us" onClick={closeMenu}>Contact</NavLink>
-        </nav>
-
-        {/* AUTH */}
-        <div className="nav-right">
+        {/* Mobile Auth Section (Top) */}
+        <div className="mobile-auth-top">
           {!isAuthenticated ? (
-            <>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="/register" className="register-link">
+            <div className="mobile-auth-buttons">
+              <NavLink to="/login" className="mobile-login-btn" onClick={closeMenu}>
+                Login
+              </NavLink>
+              <NavLink to="/register" className="mobile-register-btn" onClick={closeMenu}>
                 Register
               </NavLink>
-            </>
+            </div>
           ) : (
-            <div className="nav-user">
-              <NavLink to="/profile" className="nav-username">
-                👤 {user?.name}
+            <div className="mobile-user-card">
+              <NavLink to="/profile" className="mobile-user-info" onClick={closeMenu}>
+                <div className="user-avatar">👤</div>
+                <div className="user-details">
+                  <span className="user-name">{user?.name}</span>
+                  <span className="user-email">{user?.email}</span>
+                </div>
               </NavLink>
-              <button onClick={handleLogout} className="logout-btn">
-                Logout
-              </button>
             </div>
           )}
         </div>
 
-        {/* MOBILE TOGGLE */}
-        <button
-          className={`nav-toggle ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        {/* Mobile Navigation Links */}
+        <nav className="mobile-nav-links">
+          <NavLink to="/" end onClick={closeMenu}>
+            <span className="nav-icon">🏠</span>
+            <span>Home</span>
+          </NavLink>
+          <NavLink to="/current-affairs" onClick={closeMenu}>
+            <span className="nav-icon">📰</span>
+            <span>Current Affairs</span>
+          </NavLink>
+          <NavLink to="/mcq-practice" onClick={closeMenu}>
+            <span className="nav-icon">📝</span>
+            <span>MCQs</span>
+          </NavLink>
+          <NavLink to="/daily-quiz" onClick={closeMenu}>
+            <span className="nav-icon">🎯</span>
+            <span>Daily Quiz</span>
+          </NavLink>
+          <NavLink to="/about-us" onClick={closeMenu}>
+            <span className="nav-icon">ℹ️</span>
+            <span>About Us</span>
+          </NavLink>
+          <NavLink to="/contact-us" onClick={closeMenu}>
+            <span className="nav-icon">📧</span>
+            <span>Contact</span>
+          </NavLink>
+        </nav>
+
+        {/* Mobile Logout Button (Bottom) */}
+        {isAuthenticated && (
+          <div className="mobile-menu-footer">
+            <button onClick={handleLogout} className="mobile-logout-btn">
+              <span>🚪</span>
+              <span>Logout</span>
+            </button>
+          </div>
+        )}
       </div>
-    </header>
+    </>
   );
 }

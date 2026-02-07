@@ -3,9 +3,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
-import { FiBookOpen, FiTrendingUp, FiTarget } from "react-icons/fi";
+import { FiBookOpen, FiTrendingUp, FiTarget, FiMenu, FiX } from "react-icons/fi";
 import "./Home.css";
-import "./GKTodayLayout.css";
 
 /* ================= DATE HELPERS ================= */
 const formatDate = (date) =>
@@ -64,6 +63,9 @@ const Home = () => {
   const [page, setPage] = useState(pageFromURL);
   const [totalPages, setTotalPages] = useState(1);
 
+  // Mobile sidebar state
+  const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
+
   /* ================= FETCH DATA ================= */
   useEffect(() => {
     let mounted = true;
@@ -101,6 +103,18 @@ const Home = () => {
     return () => (mounted = false);
   }, [page, category, search, setSearchParams]);
 
+  // Lock body scroll when sidebar is open
+  useEffect(() => {
+    if (isMobileCategoryOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileCategoryOpen]);
+
   /* ================= GROUP ARTICLES ================= */
   const today = articles.filter((a) =>
     isToday(a.publishDate || a.createdAt)
@@ -115,6 +129,18 @@ const Home = () => {
       !isToday(a.publishDate || a.createdAt) &&
       !isYesterday(a.publishDate || a.createdAt)
   );
+
+  const categories = [
+    "All",
+    "Economy",
+    "Polity",
+    "Science",
+    "Technology",
+    "Environment",
+    "International",
+    "National",
+    "Defence",
+  ];
 
   return (
     <>
@@ -131,167 +157,216 @@ const Home = () => {
         />
       </Helmet>
 
-      <div className="gk-layout">
-        {/* LEFT SIDEBAR */}
-        <aside className="gk-sidebar left">
-          <h3>Categories</h3>
-          <ul>
-            {[
-              "All",
-              "Economy",
-              "Polity",
-              "Science",
-              "Technology",
-              "Environment",
-              "International",
-              "National",
-              "Defence",
-            ].map((cat) => (
-              <li
-                key={cat}
-                className={category === cat ? "active" : ""}
-                onClick={() => {
-                  setCategory(cat);
-                  setPage(1);
-                }}
-              >
-                {cat}
-              </li>
-            ))}
-          </ul>
-        </aside>
-
-        {/* MAIN CONTENT */}
-        <main className="gk-content">
-          <section className="hero-section">
-            <h1>
-              Master Current Affairs for{" "}
-              <span className="gradient-text">Competitive Exams</span>
-            </h1>
-            <p>Daily current affairs, MCQs, and exam-focused content.</p>
-
-            <div className="hero-buttons">
-              <Link to="/current-affairs" className="btn btn-primary">
-                <FiBookOpen /> Explore
-              </Link>
-              <Link to="/daily-quiz" className="btn btn-outline">
-                <FiTarget /> Daily Quiz
-              </Link>
-            </div>
-          </section>
-
-          <section className="section">
-            <h2>Latest Current Affairs</h2>
-
-            {loading && <p>Loading articles...</p>}
-
-            {!loading && articles.length === 0 && (
-              <div className="empty-state">No articles found.</div>
-            )}
-
-            {[
-              ["Today", today],
-              ["Yesterday", yesterday],
-              ["Earlier", earlier],
-            ].map(
-              ([label, list]) =>
-                list.length > 0 && (
-                  <React.Fragment key={label}>
-                    <h3 className="group-title">{label}</h3>
-                    <div className="articles-grid">
-                      {list.map((a) => (
-                        <ArticleCard
-                          key={a._id}
-                          article={{
-                            ...a,
-                            dateLabel: getDateLabel(
-                              a.publishDate || a.createdAt
-                            ),
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </React.Fragment>
-                )
-            )}
-
-            <Pagination
-              page={page}
-              totalPages={totalPages}
-              onChange={setPage}
-            />
-          </section>
-
-          {trending.length > 0 && (
-            <section className="section">
-              <h2>
-                <FiTrendingUp /> Trending
-              </h2>
-
-              <div className="trending-grid">
-                {trending.map((a, i) => (
-                  <Link
-                    key={a._id}
-                    to={`/article/${a.slug}`}
-                    className="trending-item"
-                  >
-                    <span>#{i + 1}</span>
-                    <h4>{a.title}</h4>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-        </main>
-
-        {/* RIGHT SIDEBAR */}
-        <aside className="gk-sidebar right">
-          <input
-            type="text"
-            className="gk-search"
-            placeholder="Search current affairs..."
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setPage(1);
-            }}
+      <div className="home-page">
+        {/* Mobile overlay */}
+        {isMobileCategoryOpen && (
+          <div 
+            className="sidebar-overlay active"
+            onClick={() => setIsMobileCategoryOpen(false)}
           />
+        )}
 
-          <div className="sidebar-card">
-            <h3>E-Books</h3>
-            <ul>
-              <li>
-                <Link to="/ebooks/monthly-mcqs">
-                  Current Affairs Monthly MCQs
-                </Link>
-              </li>
-              <li>
-                <Link to="/ebooks/ca-articles-mcqs">
-                  CA Articles + MCQs
-                </Link>
-              </li>
-              <li>
-                <Link to="/ebooks/yearly-pdf">
-                  Yearly Current Affairs PDF
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="home-container">
+          {/* ================= MOBILE CATEGORY TOGGLE ================= */}
+          <button 
+            className="mobile-category-toggle"
+            onClick={() => setIsMobileCategoryOpen(!isMobileCategoryOpen)}
+            aria-label="Toggle categories"
+          >
+            {isMobileCategoryOpen ? <FiX /> : <FiMenu />}
+            <span>Categories</span>
+          </button>
 
-          <div className="sidebar-card">
-            <h3>Exams</h3>
-            <ul>
-              <li><Link to="/exams/upsc">UPSC</Link></li>
-              <li><Link to="/exams/ssc">SSC</Link></li>
-              <li><Link to="/exams/banking">Banking</Link></li>
-              <li><Link to="/exams/railway">Railway</Link></li>
-              <li><Link to="/exams/state-psc">State PSC</Link></li>
-              <li><Link to="/exams/gpsc">GPSC</Link></li>
-              <li><Link to="/exams/bpsc">BPSC</Link></li>
-              <li><Link to="/exams/mppsc">MPPSC</Link></li>
-            </ul>
+          <div className="home-layout">
+            {/* ================= LEFT SIDEBAR ================= */}
+            <aside className={`home-sidebar left ${isMobileCategoryOpen ? 'mobile-open' : ''}`}>
+              <div className="sidebar-header">
+                <h3>Categories</h3>
+                <button 
+                  className="sidebar-close"
+                  onClick={() => setIsMobileCategoryOpen(false)}
+                  aria-label="Close sidebar"
+                >
+                  <FiX />
+                </button>
+              </div>
+              <ul>
+                {categories.map((cat) => (
+                  <li
+                    key={cat}
+                    className={category === cat ? "active" : ""}
+                    onClick={() => {
+                      setCategory(cat);
+                      setPage(1);
+                      setIsMobileCategoryOpen(false);
+                    }}
+                  >
+                    {cat}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+
+            {/* ================= MAIN CONTENT ================= */}
+            <main className="home-content">
+              {/* HERO SECTION */}
+              <section className="hero-section">
+                <div className="hero-content">
+                  <h1 className="hero-title">
+                    Master Current Affairs for{" "}
+                    <span className="gradient-text">Competitive Exams</span>
+                  </h1>
+                  <p className="hero-subtitle">
+                    Daily current affairs, MCQs, and exam-focused content for UPSC, SSC, Banking & more.
+                  </p>
+
+                  <div className="hero-buttons">
+                    <Link to="/current-affairs" className="btn btn-primary">
+                      <FiBookOpen /> Explore Articles
+                    </Link>
+                    <Link to="/daily-quiz" className="btn btn-outline">
+                      <FiTarget /> Take Daily Quiz
+                    </Link>
+                  </div>
+                </div>
+              </section>
+
+              {/* LATEST CURRENT AFFAIRS */}
+              <section className="section latest-section">
+                <h2 className="section-title">Latest Current Affairs</h2>
+
+                {loading && (
+                  <div className="loading-state">
+                    <div className="spinner"></div>
+                    <p>Loading articles...</p>
+                  </div>
+                )}
+
+                {!loading && articles.length === 0 && (
+                  <div className="empty-state">
+                    <p>No articles found. Try changing your filters.</p>
+                  </div>
+                )}
+
+                {!loading && (
+                  <>
+                    {[
+                      ["Today", today],
+                      ["Yesterday", yesterday],
+                      ["Earlier", earlier],
+                    ].map(
+                      ([label, list]) =>
+                        list.length > 0 && (
+                          <React.Fragment key={label}>
+                            <h3 className="group-title">{label}</h3>
+                            <div className="articles-grid">
+                              {list.map((a) => (
+                                <ArticleCard
+                                  key={a._id}
+                                  article={{
+                                    ...a,
+                                    dateLabel: getDateLabel(
+                                      a.publishDate || a.createdAt
+                                    ),
+                                  }}
+                                />
+                              ))}
+                            </div>
+                          </React.Fragment>
+                        )
+                    )}
+
+                    <Pagination
+                      page={page}
+                      totalPages={totalPages}
+                      onChange={setPage}
+                    />
+                  </>
+                )}
+              </section>
+
+              {/* TRENDING SECTION */}
+              {trending.length > 0 && (
+                <section className="section trending-section">
+                  <h2 className="section-title">
+                    <FiTrendingUp /> Trending Now
+                  </h2>
+
+                  <div className="trending-grid">
+                    {trending.map((a, i) => (
+                      <Link
+                        key={a._id}
+                        to={`/article/${a.slug}`}
+                        className="trending-item"
+                      >
+                        <span className="trending-number">#{i + 1}</span>
+                        <div className="trending-content">
+                          <h4>{a.title}</h4>
+                          <div className="trending-meta">
+                            <span className="trending-date">
+                              {formatDate(a.publishDate || a.createdAt)}
+                            </span>
+                            {a.category && (
+                              <span className="trending-category">{a.category}</span>
+                            )}
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </main>
+
+            {/* ================= RIGHT SIDEBAR ================= */}
+            <aside className="home-sidebar right">
+              {/* Search */}
+              <div className="sidebar-search">
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search current affairs..."
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                    setPage(1);
+                  }}
+                />
+              </div>
+
+              {/* E-Books */}
+              <div className="sidebar-card">
+                <h3>E-Books</h3>
+                <ul>
+                  <li>
+                    <Link to="/ebooks/monthly-mcqs">Monthly MCQs</Link>
+                  </li>
+                  <li>
+                    <Link to="/ebooks/ca-articles-mcqs">Articles + MCQs</Link>
+                  </li>
+                  <li>
+                    <Link to="/ebooks/yearly-pdf">Yearly PDF</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Exams */}
+              <div className="sidebar-card">
+                <h3>Exams</h3>
+                <ul>
+                  <li><Link to="/exams/upsc">UPSC</Link></li>
+                  <li><Link to="/exams/ssc">SSC</Link></li>
+                  <li><Link to="/exams/banking">Banking</Link></li>
+                  <li><Link to="/exams/railway">Railway</Link></li>
+                  <li><Link to="/exams/state-psc">State PSC</Link></li>
+                  <li><Link to="/exams/gpsc">GPSC</Link></li>
+                  <li><Link to="/exams/bpsc">BPSC</Link></li>
+                  <li><Link to="/exams/mppsc">MPPSC</Link></li>
+                </ul>
+              </div>
+            </aside>
           </div>
-        </aside>
+        </div>
       </div>
     </>
   );

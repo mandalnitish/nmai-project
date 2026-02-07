@@ -1,5 +1,6 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { FiCalendar } from "react-icons/fi";
+import { FiCalendar, FiTag } from "react-icons/fi";
 import "./ArticleCard.css";
 
 /* ================= DATE FORMATTER ================= */
@@ -23,42 +24,46 @@ const ArticleCard = ({ article }) => {
   return (
     <Link to={`/article/${article.slug}`} className="article-card-horizontal">
       {/* IMAGE */}
-      <div className="article-image">
+      <div className="article-card-image-horizontal">
         <img
           src={
             article.featuredImage?.url ||
-            `https://source.unsplash.com/400x250/?${article.category || "news"}`
+            `https://source.unsplash.com/400x300/?${article.category || "news"}`
           }
           alt={article.title}
           loading="lazy"
           onError={(e) => {
-            e.target.src =
-              "https://source.unsplash.com/400x250/?current-affairs";
+            e.target.src = "https://source.unsplash.com/400x300/?current-affairs";
           }}
         />
       </div>
 
       {/* CONTENT */}
-      <div className="article-card-content">
-        <div className="article-meta">
+      <div className="article-card-content-horizontal">
+        {/* Meta */}
+        <div className="article-card-meta-horizontal">
           {article.category && (
-            <span className="category">{article.category}</span>
+            <span className="article-category-badge-horizontal">
+              <FiTag /> {article.category}
+            </span>
           )}
-
           {dateText && (
-            <span className="date">
+            <span className="article-date-horizontal">
               <FiCalendar /> {dateText}
             </span>
           )}
         </div>
 
-        <h3 className="title">{article.title}</h3>
+        {/* Title */}
+        <h3 className="article-title-horizontal">{article.title}</h3>
 
+        {/* Summary */}
         {article.summary && (
-          <p className="summary">{article.summary}</p>
+          <p className="article-summary-horizontal">{article.summary}</p>
         )}
 
-        <span className="read-more">Read More →</span>
+        {/* Read more */}
+        <span className="article-read-more-horizontal">Read Full Article →</span>
       </div>
     </Link>
   );

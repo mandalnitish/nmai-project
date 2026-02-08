@@ -1,36 +1,92 @@
 import mongoose from "mongoose";
-import slugify from "slugify";
+
+/* ==========================================================================
+   Article Schema (Seeder-safe, Production-ready)
+   ========================================================================== */
 
 const ArticleSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true, trim: true },
+    /* ================= CORE ================= */
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+      index: true,
+    },
 
-    slug: { type: String, unique: true, index: true },
+    slug: {
+      type: String,
+      required: true, // ✅ slug MUST be provided by seeder / admin
+      unique: true,
+      index: true,
+    },
 
-    summary: { type: String, required: true },
-    content: { type: String, required: true },
+    summary: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
+    content: {
+      type: String,
+      required: true,
+    },
+
+    /* ================= CLASSIFICATION ================= */
     category: {
       type: String,
       required: true,
       index: true,
     },
 
-    examRelevance: [{ type: String, index: true }],
+    tags: {
+      type: [String],
+      default: [],
+      index: true,
+    },
+
+    examRelevance: {
+      type: [String],
+      default: ["UPSC", "SSC"],
+      index: true,
+    },
+
+    difficulty: {
+      type: String,
+      enum: ["Beginner", "Intermediate", "Advanced"],
+      default: "Beginner",
+      index: true,
+    },
+
+    /* ================= META ================= */
+    readingTime: {
+      type: String,
+      default: "6 min",
+    },
+
+    sources: {
+      type: [String],
+      default: [],
+    },
 
     featuredImage: {
       url: String,
       alt: String,
     },
 
+    /* ================= AUTHOR ================= */
     author: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
+      type: String, // compatible with seed + admin
+      default: "Current Affairs Desk",
       index: true,
     },
 
-    publishDate: { type: Date, default: Date.now, index: true },
+    /* ================= STATUS ================= */
+    publishDate: {
+      type: Date,
+      default: Date.now,
+      index: true,
+    },
 
     status: {
       type: String,
@@ -39,30 +95,36 @@ const ArticleSchema = new mongoose.Schema(
       index: true,
     },
 
-    isActive: { type: Boolean, default: true, index: true },
+    isActive: {
+      type: Boolean,
+      default: true,
+      index: true,
+    },
 
-    viewCount: { type: Number, default: 0 },
-    likes: { type: Number, default: 0 },
+    /* ================= STATS ================= */
+    viewCount: {
+      type: Number,
+      default: 0,
+    },
+
+    likes: {
+      type: Number,
+      default: 0,
+    },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-/* ===== INDEXES (CRITICAL) ===== */
+/* ================= INDEXES (PERFORMANCE) ================= */
 ArticleSchema.index({ status: 1, isActive: 1, publishDate: -1 });
-ArticleSchema.index({ title: "text", summary: "text" });
+ArticleSchema.index({ title: "text", summary: "text", content: "text" });
 
-/* ===== SLUG ===== */
-ArticleSchema.pre("validate", async function (next) {
-  if (!this.slug && this.title) {
-    let slug = slugify(this.title, { lower: true, strict: true });
-    let i = 1;
-
-    while (await mongoose.models.Article.exists({ slug })) {
-      slug = `${slug}-${i++}`;
-    }
-
-    this.slug = slug;
-  }
+/* ================= QUERY HELPERS ================= */
+// Auto-hide inactive articles in all find queries
+ArticleSchema.pre(/^find/, function (next) {
+  this.where({ isActive: true });
   next();
 });
 

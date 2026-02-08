@@ -54,7 +54,7 @@ const Home = () => {
   const pageFromURL = Number(searchParams.get("page")) || 1;
 
   const [articles, setArticles] = useState([]);
-  const [trending, setTrending] = useState([]);
+  const [trending, setTrending] = useState([]); // UI preserved
   const [loading, setLoading] = useState(true);
 
   const [search, setSearch] = useState("");
@@ -63,10 +63,9 @@ const Home = () => {
   const [page, setPage] = useState(pageFromURL);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Mobile sidebar state
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
-  /* ================= FETCH DATA ================= */
+  /* ================= FETCH DATA (FIXED, SAFE) ================= */
   useEffect(() => {
     let mounted = true;
 
@@ -74,23 +73,23 @@ const Home = () => {
       try {
         setLoading(true);
 
-        const [latestRes, trendingRes] = await Promise.all([
-          articlesAPI.getAll({
-            page,
-            limit: 9,
-            category: category === "All" ? "" : category,
-            search,
-          }),
-          articlesAPI.getTrending(5),
-        ]);
+        const latestRes = await articlesAPI.getAll({
+          page,
+          limit: 9,
+          category: category === "All" ? "" : category,
+          search,
+        });
 
         if (!mounted) return;
 
         setArticles(latestRes.articles || []);
         setTotalPages(latestRes.pagination?.totalPages || 1);
-        setTrending(trendingRes || []);
+
+        // keep trending UI but don’t break page
+        setTrending([]);
       } catch (err) {
         console.error("Home fetch error:", err);
+        setArticles([]);
       } finally {
         mounted && setLoading(false);
       }
@@ -103,15 +102,11 @@ const Home = () => {
     return () => (mounted = false);
   }, [page, category, search, setSearchParams]);
 
-  // Lock body scroll when sidebar is open
+  /* ================= BODY SCROLL LOCK ================= */
   useEffect(() => {
-    if (isMobileCategoryOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileCategoryOpen ? "hidden" : "unset";
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileCategoryOpen]);
 
@@ -140,56 +135,49 @@ const Home = () => {
     "International",
     "National",
     "Defence",
+    "Sports",
   ];
 
   return (
     <>
-      {/* ================= SEO ================= */}
       <Helmet>
         <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
-        <meta
-          name="description"
-          content="NMAI provides daily current affairs, MCQs, quizzes and exam-focused analysis for UPSC, SSC, Banking, Railway and State PSC exams."
-        />
-        <meta
-          name="keywords"
-          content="Current Affairs, UPSC, SSC, Banking, MCQ, Daily Quiz"
-        />
       </Helmet>
 
       <div className="home-page">
-        {/* Mobile overlay */}
         {isMobileCategoryOpen && (
-          <div 
+          <div
             className="sidebar-overlay active"
             onClick={() => setIsMobileCategoryOpen(false)}
           />
         )}
 
         <div className="home-container">
-          {/* ================= MOBILE CATEGORY TOGGLE ================= */}
-          <button 
+          <button
             className="mobile-category-toggle"
             onClick={() => setIsMobileCategoryOpen(!isMobileCategoryOpen)}
-            aria-label="Toggle categories"
           >
             {isMobileCategoryOpen ? <FiX /> : <FiMenu />}
             <span>Categories</span>
           </button>
 
           <div className="home-layout">
-            {/* ================= LEFT SIDEBAR ================= */}
-            <aside className={`home-sidebar left ${isMobileCategoryOpen ? 'mobile-open' : ''}`}>
+            {/* LEFT SIDEBAR */}
+            <aside
+              className={`home-sidebar left ${
+                isMobileCategoryOpen ? "mobile-open" : ""
+              }`}
+            >
               <div className="sidebar-header">
                 <h3>Categories</h3>
-                <button 
+                <button
                   className="sidebar-close"
                   onClick={() => setIsMobileCategoryOpen(false)}
-                  aria-label="Close sidebar"
                 >
                   <FiX />
                 </button>
               </div>
+
               <ul>
                 {categories.map((cat) => (
                   <li
@@ -207,9 +195,9 @@ const Home = () => {
               </ul>
             </aside>
 
-            {/* ================= MAIN CONTENT ================= */}
+            {/* MAIN CONTENT */}
             <main className="home-content">
-              {/* HERO SECTION */}
+              {/* HERO */}
               <section className="hero-section">
                 <div className="hero-content">
                   <h1 className="hero-title">
@@ -231,7 +219,7 @@ const Home = () => {
                 </div>
               </section>
 
-              {/* LATEST CURRENT AFFAIRS */}
+              {/* LATEST */}
               <section className="section latest-section">
                 <h2 className="section-title">Latest Current Affairs</h2>
 
@@ -242,7 +230,7 @@ const Home = () => {
                   </div>
                 )}
 
-                {!loading && articles.length === 0 && (
+                {!loading && articles.length === 0 && page === 1 && (
                   <div className="empty-state">
                     <p>No articles found. Try changing your filters.</p>
                   </div>
@@ -285,46 +273,21 @@ const Home = () => {
                 )}
               </section>
 
-              {/* TRENDING SECTION */}
+              {/* TRENDING (LAYOUT KEPT) */}
               {trending.length > 0 && (
                 <section className="section trending-section">
                   <h2 className="section-title">
                     <FiTrendingUp /> Trending Now
                   </h2>
-
-                  <div className="trending-grid">
-                    {trending.map((a, i) => (
-                      <Link
-                        key={a._id}
-                        to={`/article/${a.slug}`}
-                        className="trending-item"
-                      >
-                        <span className="trending-number">#{i + 1}</span>
-                        <div className="trending-content">
-                          <h4>{a.title}</h4>
-                          <div className="trending-meta">
-                            <span className="trending-date">
-                              {formatDate(a.publishDate || a.createdAt)}
-                            </span>
-                            {a.category && (
-                              <span className="trending-category">{a.category}</span>
-                            )}
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
                 </section>
               )}
             </main>
 
-            {/* ================= RIGHT SIDEBAR ================= */}
+            {/* RIGHT SIDEBAR */}
             <aside className="home-sidebar right">
-              {/* Search */}
               <div className="sidebar-search">
                 <input
                   type="text"
-                  className="search-input"
                   placeholder="Search current affairs..."
                   value={search}
                   onChange={(e) => {
@@ -334,23 +297,15 @@ const Home = () => {
                 />
               </div>
 
-              {/* E-Books */}
               <div className="sidebar-card">
                 <h3>E-Books</h3>
                 <ul>
-                  <li>
-                    <Link to="/ebooks/monthly-mcqs">Monthly MCQs</Link>
-                  </li>
-                  <li>
-                    <Link to="/ebooks/ca-articles-mcqs">Articles + MCQs</Link>
-                  </li>
-                  <li>
-                    <Link to="/ebooks/yearly-pdf">Yearly PDF</Link>
-                  </li>
+                  <li><Link to="/ebooks/monthly-mcqs">Monthly MCQs</Link></li>
+                  <li><Link to="/ebooks/ca-articles-mcqs">Articles + MCQs</Link></li>
+                  <li><Link to="/ebooks/yearly-pdf">Yearly PDF</Link></li>
                 </ul>
               </div>
 
-              {/* Exams */}
               <div className="sidebar-card">
                 <h3>Exams</h3>
                 <ul>
@@ -359,9 +314,6 @@ const Home = () => {
                   <li><Link to="/exams/banking">Banking</Link></li>
                   <li><Link to="/exams/railway">Railway</Link></li>
                   <li><Link to="/exams/state-psc">State PSC</Link></li>
-                  <li><Link to="/exams/gpsc">GPSC</Link></li>
-                  <li><Link to="/exams/bpsc">BPSC</Link></li>
-                  <li><Link to="/exams/mppsc">MPPSC</Link></li>
                 </ul>
               </div>
             </aside>

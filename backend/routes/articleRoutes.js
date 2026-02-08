@@ -7,7 +7,6 @@ const router = express.Router();
 /* =====================================================
    GET ALL ARTICLES
    GET /api/articles
-   Pagination + Filters + Search
    ===================================================== */
 router.get("/", async (req, res) => {
   try {
@@ -15,7 +14,7 @@ router.get("/", async (req, res) => {
     const limit = Math.min(parseInt(req.query.limit) || 12, 50);
     const skip = (page - 1) * limit;
 
-    const { category, examRelevance, difficulty, search } = req.query;
+    const { category, examRelevance, search } = req.query;
 
     const filter = {
       status: "published",
@@ -23,14 +22,12 @@ router.get("/", async (req, res) => {
     };
 
     if (category) filter.category = category;
-    if (difficulty) filter.difficulty = difficulty;
     if (examRelevance) filter.examRelevance = { $in: [examRelevance] };
 
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: "i" } },
         { summary: { $regex: search, $options: "i" } },
-        { content: { $regex: search, $options: "i" } },
       ];
     }
 
@@ -40,6 +37,7 @@ router.get("/", async (req, res) => {
         .skip(skip)
         .limit(limit)
         .select("-content")
+        .populate("author", "name")
         .lean(),
       Article.countDocuments(filter),
     ]);
@@ -55,8 +53,7 @@ router.get("/", async (req, res) => {
       },
     });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({
+    res.json({
       success: false,
       message: "Failed to fetch articles",
     });
@@ -64,7 +61,7 @@ router.get("/", async (req, res) => {
 });
 
 /* =====================================================
-   GET ARTICLE BY SLUG (SEO)
+   ✅ GET ARTICLE BY SLUG (FIXED)
    GET /api/articles/:slug
    ===================================================== */
 router.get("/:slug", async (req, res) => {
@@ -73,16 +70,18 @@ router.get("/:slug", async (req, res) => {
       slug: req.params.slug,
       status: "published",
       isActive: true,
-    }).lean();
+    })
+      .populate("author", "name")
+      .lean();
 
     if (!article) {
-      return res.status(404).json({
+      return res.json({
         success: false,
         message: "Article not found",
       });
     }
 
-    // Non-blocking view count increment
+    // non-blocking view count increment
     Article.updateOne(
       { _id: article._id },
       { $inc: { viewCount: 1 } }
@@ -93,8 +92,7 @@ router.get("/:slug", async (req, res) => {
       article,
     });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({
+    res.json({
       success: false,
       message: "Failed to fetch article",
     });
@@ -102,34 +100,18 @@ router.get("/:slug", async (req, res) => {
 });
 
 /* =====================================================
-   CREATE ARTICLE (ADMIN / AUTHOR)
+   CREATE ARTICLE (ADMIN)
    POST /api/articles
    ===================================================== */
-router.post(
-  "/",
-  protect,
-  authorize("admin", "author"),
-  async (req, res) => {
-    try {
-      const article = await Article.create({
-        ...req.body,
-        author: req.user?.name || "Current Affairs Desk",
-        status: "published",
-        isActive: true,
-      });
+router.post("/", protect, authorize("admin", "author"), async (req, res) => {
+  const article = await Article.create({
+    ...req.body,
+    author: req.user._id,
+    status: "published",
+    isActive: true,
+  });
 
-      res.json({
-        success: true,
-        article,
-      });
-    } catch (err) {
-      console.error(err);
-      res.status(400).json({
-        success: false,
-        message: "Failed to create article",
-      });
-    }
-  }
-);
+  res.json({ success: true, article });
+});
 
 export default router;

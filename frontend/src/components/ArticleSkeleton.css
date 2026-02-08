@@ -1,0 +1,32 @@
+.article-skeleton {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-image {
+  height: 160px;
+  background: #e5e7eb;
+}
+
+.skeleton-content {
+  padding: 12px;
+}
+
+.skeleton-line {
+  height: 12px;
+  background: #e5e7eb;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}

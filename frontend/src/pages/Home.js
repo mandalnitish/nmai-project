@@ -3,8 +3,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
+import ArticleSkeleton from "../components/ArticleSkeleton";
 import { FiBookOpen, FiTrendingUp, FiTarget, FiMenu, FiX } from "react-icons/fi";
 import "./Home.css";
+
 
 /* ================= DATE HELPERS ================= */
 const formatDate = (date) =>
@@ -70,30 +72,32 @@ const Home = () => {
     let mounted = true;
 
     const fetchData = async () => {
-      try {
-        setLoading(true);
+  try {
+    setLoading(true);
 
-        const latestRes = await articlesAPI.getAll({
-          page,
-          limit: 9,
-          category: category === "All" ? "" : category,
-          search,
-        });
+    const [latestRes, trendingRes] = await Promise.all([
+      articlesAPI.getAll({
+        page,
+        limit: 9,
+        category: category === "All" ? "" : category,
+        search,
+      }),
+      articlesAPI.getTrending(5),
+    ]);
 
-        if (!mounted) return;
+    if (!mounted) return;
 
-        setArticles(latestRes.articles || []);
-        setTotalPages(latestRes.pagination?.totalPages || 1);
-
-        // keep trending UI but don’t break page
-        setTrending([]);
-      } catch (err) {
-        console.error("Home fetch error:", err);
-        setArticles([]);
-      } finally {
-        mounted && setLoading(false);
-      }
-    };
+    setArticles(latestRes.articles || []);
+    setTotalPages(latestRes.pagination?.totalPages || 1);
+    setTrending(trendingRes.articles || []);
+  } catch (err) {
+    console.error("Home fetch error:", err);
+    setArticles([]);
+    setTrending([]);
+  } finally {
+    mounted && setLoading(false);
+  }
+  };
 
     fetchData();
     setSearchParams({ page });
@@ -224,11 +228,13 @@ const Home = () => {
                 <h2 className="section-title">Latest Current Affairs</h2>
 
                 {loading && (
-                  <div className="loading-state">
-                    <div className="spinner"></div>
-                    <p>Loading articles...</p>
-                  </div>
+                      <div className="articles-grid">
+                      {Array.from({ length: 6 }).map((_, i) => (
+                    <ArticleSkeleton key={i} />
+                     ))}
+                </div>
                 )}
+
 
                 {!loading && articles.length === 0 && page === 1 && (
                   <div className="empty-state">
@@ -279,8 +285,26 @@ const Home = () => {
                   <h2 className="section-title">
                     <FiTrendingUp /> Trending Now
                   </h2>
-                </section>
-              )}
+                 <div className="trending-grid">
+                 {trending.map((a, i) => (
+                        <Link
+                    key={a._id}
+                    to={`/article/${a.slug}`}
+                       className="trending-item"
+                         >
+                    <span className="trending-number">#{i + 1}</span>
+                   <div className="trending-content">
+                <h4>{a.title}</h4>
+                 <div className="trending-meta">
+                  <span>{formatDate(a.publishDate)}</span>
+                 <span>{a.category}</span>
+                 </div>
+                </div>
+               </Link>
+               ))}
+            </div>
+            </section>
+             )}
             </main>
 
             {/* RIGHT SIDEBAR */}

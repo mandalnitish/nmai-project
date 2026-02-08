@@ -60,6 +60,38 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+/* =====================================================
+   GET TRENDING ARTICLES
+   GET /api/articles/trending
+   ===================================================== */
+router.get("/trending", async (req, res) => {
+  try {
+    const limit = Math.min(Number(req.query.limit) || 5, 10);
+
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+    const articles = await Article.find({
+      status: "published",
+      isActive: true,
+      publishDate: { $gte: sevenDaysAgo },
+    })
+      .sort({ viewCount: -1, publishDate: -1 })
+      .limit(limit)
+      .select("title slug category publishDate viewCount")
+      .lean();
+
+    res.json({ success: true, articles });
+  } catch (err) {
+    console.error("Trending error:", err);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch trending articles",
+    });
+  }
+});
+
 /* =====================================================
    ✅ GET ARTICLE BY SLUG (FIXED)
    GET /api/articles/:slug

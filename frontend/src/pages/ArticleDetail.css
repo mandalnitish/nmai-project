@@ -138,26 +138,64 @@
 }
 
 /* =====================
-   IMAGE
+   IMAGE - FIXED FOR PROPER SIZING
 ===================== */
-
 .article-image-wrapper {
   margin: 1.25rem 0 2rem;
   border-radius: 14px;
   overflow: hidden;
   background: var(--bg-light);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  
+  /* Fixed aspect ratio */
+  width: 100%;
+  position: relative;
+}
 
-  aspect-ratio: 16 / 9;   /* ✅ KEY FIX */
-  max-height: 340px;      /* Desktop medium size */
+/* Create proper aspect ratio container */
+.article-image-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
 .article-detail-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;           /* ✅ IMPORTANT */
-  max-height: 340px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
+}
+
+/* Fallback for when ::before doesn't work */
+@supports not (aspect-ratio: 16 / 9) {
+  .article-image-wrapper {
+    min-height: 400px;
+  }
+  
+  .article-detail-image {
+    position: relative;
+    min-height: 400px;
+  }
+}
+
+/* Modern browsers with aspect-ratio support */
+@supports (aspect-ratio: 16 / 9) {
+  .article-image-wrapper {
+    aspect-ratio: 16 / 9;
+    max-height: 500px;
+  }
+  
+  .article-image-wrapper::before {
+    display: none;
+  }
+  
+  .article-detail-image {
+    position: relative;
+  }
 }
 
 /* =====================
@@ -455,6 +493,12 @@
   .article-body {
     font-size: 1.05rem;
   }
+  
+  @supports (aspect-ratio: 16 / 9) {
+    .article-image-wrapper {
+      max-height: 450px;
+    }
+  }
 }
 
 /* =====================
@@ -498,8 +542,17 @@
     margin-bottom: 2rem;
   }
   
-  .article-detail-image {
-    max-height: 300px;
+  @supports (aspect-ratio: 16 / 9) {
+    .article-image-wrapper {
+      max-height: 350px;
+    }
+  }
+  
+  @supports not (aspect-ratio: 16 / 9) {
+    .article-image-wrapper,
+    .article-detail-image {
+      min-height: 250px;
+    }
   }
   
   .article-summary {
@@ -571,8 +624,17 @@
     gap: 0.5rem;
   }
   
-  .article-detail-image {
-    max-height: 250px;
+  @supports (aspect-ratio: 16 / 9) {
+    .article-image-wrapper {
+      max-height: 280px;
+    }
+  }
+  
+  @supports not (aspect-ratio: 16 / 9) {
+    .article-image-wrapper,
+    .article-detail-image {
+      min-height: 200px;
+    }
   }
   
   .article-summary {

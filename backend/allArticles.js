@@ -35,7 +35,7 @@ const ARTICLE_LIST = [
   // PAGE 1 (FEB 9, 2026 – LATEST) - Articles 0-23
   { title: "Daily Current Affairs Quiz: February 8–9, 2026", category: "ExamUtility", page: 1, imageName: "quiz-feb-8-9-2026.jpg" },
   { title: "INS Arnala, Anti-Submarine Warfare Shallow Water Craft", category: "Defence", page: 1, imageName: "ins-arnala.jpg" },
-  { title: "NSO Launches MCP Server for eSankhyiki Portal", category: "Economy", page: 1, imageName: "nso-mcp-esankhyiki.png" },
+  { title: "NSO Launches MCP Server for eSankhyiki Portal", category: "Economy", page: 1, imageName: "nso-mcp-esankhyiki.jpg" },
   { title: "Two New Marine Worm Species Discovered off West Bengal Coast", category: "Environment", page: 1, imageName: "marine-worms-west-bengal.jpg" },
   { title: "INS Arnala Strengthens India's Indigenous Naval Capability", category: "Defence", page: 1, imageName: "ins-arnala-naval.jpg" },
   { title: "World's Longest Snake Recorded in Sulawesi, Indonesia", category: "Environment", page: 1, imageName: "longest-snake-sulawesi.jpg" },

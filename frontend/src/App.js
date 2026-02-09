@@ -59,13 +59,18 @@ const queryClient = new QueryClient({
   },
 });
 
+/* ================= COMMON LOADER ================= */
+const PageLoader = () => (
+  <div style={{ padding: "2rem", textAlign: "center" }}>
+    Loading...
+  </div>
+);
+
 /* ================= PRIVATE ROUTE ================= */
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
 
-  if (loading) {
-    return <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>;
-  }
+  if (loading) return <PageLoader />;
 
   return isAuthenticated ? children : <Navigate to="/login" replace />;
 };
@@ -74,13 +79,22 @@ const PrivateRoute = ({ children }) => {
 const AdminRoute = ({ children }) => {
   const { user, loading } = useAuth();
 
-  if (loading) {
-    return <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>;
-  }
+  if (loading) return <PageLoader />;
 
   return user?.role === "admin" ? children : <Navigate to="/" replace />;
 };
 
+/* ================= 404 ================= */
+function NotFound() {
+  return (
+    <div style={{ padding: "3rem", textAlign: "center" }}>
+      <h2>404 – Page Not Found</h2>
+      <p>The page you are looking for does not exist.</p>
+    </div>
+  );
+}
+
+/* ================= APP ================= */
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -142,6 +156,7 @@ export default function App() {
 
                 {/* ===== 404 ===== */}
                 <Route path="*" element={<NotFound />} />
+
               </Routes>
             </main>
 
@@ -157,15 +172,5 @@ export default function App() {
         </Router>
       </AuthProvider>
     </QueryClientProvider>
-  );
-}
-
-/* ================= 404 ================= */
-function NotFound() {
-  return (
-    <div style={{ padding: "3rem", textAlign: "center" }}>
-      <h2>404 – Page Not Found</h2>
-      <p>The page you are looking for does not exist.</p>
-    </div>
   );
 }

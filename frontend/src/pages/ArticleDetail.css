@@ -140,16 +140,22 @@
 /* =====================
    IMAGE
 ===================== */
+
 .article-image-wrapper {
-  margin-bottom: 2.5rem;
-  border-radius: var(--radius-lg);
+  margin: 1.25rem 0 2rem;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  background: var(--bg-light);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  aspect-ratio: 16 / 9;   /* ✅ KEY FIX */
+  max-height: 340px;      /* Desktop medium size */
 }
 
 .article-detail-image {
   width: 100%;
-  max-height: 500px;
+  height: auto;           /* ✅ IMPORTANT */
+  max-height: 340px;
   object-fit: cover;
   display: block;
 }

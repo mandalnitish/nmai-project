@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { FiCalendar } from "react-icons/fi";
+import ArticleImage from "./ArticleImage";
 import "./ArticleCard.css";
 
+/* ================= DATE FORMAT ================= */
 const formatDate = (date) =>
   date
     ? new Date(date).toLocaleDateString("en-IN", {
@@ -12,44 +14,50 @@ const formatDate = (date) =>
     : "";
 
 const ArticleCard = ({ article }) => {
+  const getImageName = (url) => {
+    if (!url) return null;
+    return url.split("/").pop();
+  };
+
   return (
     <Link
       to={`/article/${article.slug}`}
       className="article-card-horizontal"
+      aria-label={`Read article: ${article.title}`}
     >
-      {/* IMAGE */}
+      {/* ================= IMAGE ================= */}
       <div className="article-card-image">
-        <img
-          src={
-            article.featuredImage?.url ||
-            `https://source.unsplash.com/400x250/?${article.category || "news"}`
-          }
-          alt={article.title}
-          loading="lazy"
+        <ArticleImage
+          imageName={getImageName(article.featuredImage?.url)}
+          title={article.title}
         />
       </div>
 
-      {/* CONTENT */}
+      {/* ================= CONTENT ================= */}
       <div className="article-card-content">
+        {/* META */}
         <div className="article-card-meta">
           {article.category && (
-            <span className="category">{article.category}</span>
+            <span className="article-category-badge">
+              {article.category}
+            </span>
           )}
-          <span>
-            <FiCalendar />{" "}
+          <span className="article-date">
+            <FiCalendar />
             {formatDate(article.publishDate || article.createdAt)}
           </span>
         </div>
 
+        {/* TITLE */}
         <h3 className="article-card-title">{article.title}</h3>
 
+        {/* SUMMARY */}
         {article.summary && (
-          <p className="article-card-summary">
-            {article.summary}
-          </p>
+          <p className="article-card-summary">{article.summary}</p>
         )}
 
-        <span className="article-card-read">Read More</span>
+        {/* READ MORE */}
+        <span className="article-card-read">Read full article</span>
       </div>
     </Link>
   );

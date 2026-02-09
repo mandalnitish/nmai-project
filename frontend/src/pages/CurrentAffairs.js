@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { FiFilter, FiX } from "react-icons/fi";
 
 import { articlesAPI } from "../services/api";
-import ArticleCard from "../components/ArticleCard";
+import ArticleCardHorizontal from "../components/ArticleCardHorizontal";
 import SearchBar from "../components/SearchBar";
 
 import "./CurrentAffairs.css";
@@ -53,21 +53,36 @@ const CurrentAffairs = () => {
     setPage(1);
   }, [type]);
 
-  // Lock body scroll when sidebar is open
+  /* ================= LOCK BODY SCROLL (MOBILE) ================= */
   useEffect(() => {
-    if (isSidebarOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isSidebarOpen ? "hidden" : "unset";
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isSidebarOpen]);
 
+  /* ================= AUTO CLOSE SIDEBAR ON DESKTOP ================= */
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsSidebarOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   /* ================= FETCH ARTICLES ================= */
+  const queryKey = [
+    "articles",
+    page,
+    category,
+    examType,
+    searchTerm,
+  ];
+
   const { data, isLoading, error } = useQuery(
-    ["articles", page, category, examType, searchTerm],
+    queryKey,
     () =>
       articlesAPI.getAll({
         page,
@@ -78,6 +93,7 @@ const CurrentAffairs = () => {
       }),
     {
       keepPreviousData: true,
+      staleTime: 5 * 60 * 1000,
     }
   );
 
@@ -87,19 +103,19 @@ const CurrentAffairs = () => {
   /* ================= UI ================= */
   return (
     <div className="current-affairs-page">
-      {/* Mobile overlay */}
+      {/* MOBILE OVERLAY */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="sidebar-overlay active"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
 
       <div className="ca-container">
-        {/* MOBILE FILTER TOGGLE */}
-        <button 
+        {/* MOBILE FILTER BUTTON */}
+        <button
           className="mobile-filter-toggle"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          onClick={() => setIsSidebarOpen((v) => !v)}
           aria-label="Toggle filters"
         >
           {isSidebarOpen ? <FiX /> : <FiFilter />}
@@ -118,21 +134,25 @@ const CurrentAffairs = () => {
 
         <div className="ca-layout">
           {/* ================= SIDEBAR ================= */}
-          <aside className={`ca-sidebar ${isSidebarOpen ? 'mobile-open' : ''}`}>
+          <aside
+            className={`ca-sidebar ${
+              isSidebarOpen ? "mobile-open" : ""
+            }`}
+          >
             <div className="sidebar-header">
               <h3 className="sidebar-title">
                 <FiFilter /> Filters
               </h3>
-              <button 
+              <button
                 className="sidebar-close"
                 onClick={() => setIsSidebarOpen(false)}
-                aria-label="Close sidebar"
+                aria-label="Close filters"
               >
                 <FiX />
               </button>
             </div>
 
-            {/* Categories */}
+            {/* CATEGORIES */}
             <div className="filter-section">
               <h4>Categories</h4>
               <ul className="category-list">
@@ -152,7 +172,7 @@ const CurrentAffairs = () => {
               </ul>
             </div>
 
-            {/* Exam Filter */}
+            {/* EXAM FILTER */}
             <div className="filter-section exam-filter">
               <h4>Exam Type</h4>
               <select
@@ -174,16 +194,18 @@ const CurrentAffairs = () => {
 
           {/* ================= CONTENT ================= */}
           <section className="ca-content">
-            {/* Active filters display */}
+            {/* ACTIVE FILTERS */}
             {(category !== "All" || examType) && (
               <div className="active-filters">
                 <span className="filter-label">Active Filters:</span>
+
                 {category !== "All" && (
                   <span className="filter-tag">
                     {category}
                     <button onClick={() => setCategory("All")}>×</button>
                   </span>
                 )}
+
                 {examType && (
                   <span className="filter-tag">
                     {examType}
@@ -193,20 +215,24 @@ const CurrentAffairs = () => {
               </div>
             )}
 
+            {/* STATES */}
             {isLoading ? (
               <div className="loading-container">
-                <div className="spinner"></div>
+                <div className="spinner" />
                 <p>Loading current affairs…</p>
               </div>
             ) : error ? (
               <div className="error-message">
                 <p>Failed to load articles. Please try again.</p>
               </div>
-            ) : articles.length > 0 ? (
+            ) : articles.length ? (
               <>
                 <div className="articles-grid">
                   {articles.map((article) => (
-                    <ArticleCard key={article._id} article={article} />
+                    <ArticleCardHorizontal
+                      key={article._id}
+                      article={article}
+                    />
                   ))}
                 </div>
 
@@ -218,7 +244,7 @@ const CurrentAffairs = () => {
                       disabled={page === 1}
                       onClick={() => {
                         setPage((p) => p - 1);
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
                       Previous
@@ -233,7 +259,7 @@ const CurrentAffairs = () => {
                       disabled={page === pagination.totalPages}
                       onClick={() => {
                         setPage((p) => p + 1);
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
                       Next
@@ -246,7 +272,7 @@ const CurrentAffairs = () => {
                 <div className="empty-icon">📭</div>
                 <h3>No articles found</h3>
                 <p>Try changing your filters or search term</p>
-                <button 
+                <button
                   className="reset-btn"
                   onClick={() => {
                     setCategory("All");

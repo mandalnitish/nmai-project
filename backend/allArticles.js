@@ -249,8 +249,6 @@ const generateHTMLContent = (title, category) => {
 const ARTICLE_LIST = [
  
   // PAGE 1 (FEB 9, 2026 – LATEST) - Articles 0-23
-  { title: "Daily Current Affairs Quiz: February 8–9, 2026", category: "ExamUtility", page: 1, imageName: "quiz-feb-8-9-2026" },
-  { title: "INS Arnala, Anti-Submarine Warfare Shallow Water Craft", category: "Defence", page: 1, imageName: "ins-arnala" },
   { title: "NSO Launches MCP Server for eSankhyiki Portal", category: "Economy", page: 1, imageName: "nso-mcp-esankhyiki" },
   { title: "Two New Marine Worm Species Discovered off West Bengal Coast", category: "Environment", page: 1, imageName: "marine-worms-west-bengal" },
   { title: "INS Arnala Strengthens India's Indigenous Naval Capability", category: "Defence", page: 1, imageName: "ins-arnala-naval" },
@@ -387,7 +385,6 @@ const ARTICLE_LIST = [
   { title: "Insolvency and Bankruptcy Code Amendment Bill Likely", category: "Economy", page: 10, imageName: "ibc-amendment" },
 
   // PAGE 11 (JAN 30) - Articles 118-125
-  { title: "Daily Current Affairs Quiz – February 3, 2026", category: "ExamUtility", page: 11, imageName: "quiz-feb-3-2026" },
   { title: "India AI Impact Summit 2026 – Global AI Gathering", category: "Technology", page: 11, imageName: "ai-summit-global" },
   { title: "NSO Migration Survey to Inform Labour & Urban Policy", category: "Social", page: 11, imageName: "nso-migration-policy" },
   { title: "Pennaiyar River Tribunal to Address Inter-State Water Dispute", category: "Polity", page: 11, imageName: "pennaiyar-dispute" },

@@ -7,7 +7,6 @@ import ArticleSkeleton from "../components/ArticleSkeleton";
 import { FiBookOpen, FiTrendingUp, FiTarget, FiMenu, FiX } from "react-icons/fi";
 import "./Home.css";
 
-
 /* ================= DATE HELPERS ================= */
 const formatDate = (date) =>
   date
@@ -56,7 +55,7 @@ const Home = () => {
   const pageFromURL = Number(searchParams.get("page")) || 1;
 
   const [articles, setArticles] = useState([]);
-  const [trending, setTrending] = useState([]); // UI preserved
+  const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [search, setSearch] = useState("");
@@ -67,37 +66,37 @@ const Home = () => {
 
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
-  /* ================= FETCH DATA (FIXED, SAFE) ================= */
+  /* ================= FETCH DATA ================= */
   useEffect(() => {
     let mounted = true;
 
     const fetchData = async () => {
-  try {
-    setLoading(true);
+      try {
+        setLoading(true);
 
-    const [latestRes, trendingRes] = await Promise.all([
-      articlesAPI.getAll({
-        page,
-        limit: 9,
-        category: category === "All" ? "" : category,
-        search,
-      }),
-      articlesAPI.getTrending(5),
-    ]);
+        const [latestRes, trendingRes] = await Promise.all([
+          articlesAPI.getAll({
+            page,
+            limit: 9,
+            category: category === "All" ? "" : category,
+            search,
+          }),
+          articlesAPI.getTrending(5),
+        ]);
 
-    if (!mounted) return;
+        if (!mounted) return;
 
-    setArticles(latestRes.articles || []);
-    setTotalPages(latestRes.pagination?.totalPages || 1);
-    setTrending(trendingRes.articles || []);
-  } catch (err) {
-    console.error("Home fetch error:", err);
-    setArticles([]);
-    setTrending([]);
-  } finally {
-    mounted && setLoading(false);
-  }
-  };
+        setArticles(latestRes.articles || []);
+        setTotalPages(latestRes.pagination?.totalPages || 1);
+        setTrending(trendingRes.articles || []);
+      } catch (err) {
+        console.error("Home fetch error:", err);
+        setArticles([]);
+        setTrending([]);
+      } finally {
+        mounted && setLoading(false);
+      }
+    };
 
     fetchData();
     setSearchParams({ page });
@@ -131,13 +130,13 @@ const Home = () => {
 
   const categories = [
     "All",
+    "National",
+    "International",
     "Economy",
     "Polity",
     "Science",
     "Technology",
     "Environment",
-    "International",
-    "National",
     "Defence",
     "Sports",
   ];
@@ -223,18 +222,17 @@ const Home = () => {
                 </div>
               </section>
 
-              {/* LATEST */}
+              {/* LATEST - HORIZONTAL CARDS IN SINGLE COLUMN */}
               <section className="section latest-section">
                 <h2 className="section-title">Latest Current Affairs</h2>
 
                 {loading && (
-                      <div className="articles-grid">
-                      {Array.from({ length: 6 }).map((_, i) => (
-                    <ArticleSkeleton key={i} />
-                     ))}
-                </div>
+                  <div className="articles-grid">
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <ArticleSkeleton key={i} />
+                    ))}
+                  </div>
                 )}
-
 
                 {!loading && articles.length === 0 && page === 1 && (
                   <div className="empty-state">
@@ -253,6 +251,7 @@ const Home = () => {
                         list.length > 0 && (
                           <React.Fragment key={label}>
                             <h3 className="group-title">{label}</h3>
+                            {/* HORIZONTAL CARD LAYOUT */}
                             <div className="articles-grid">
                               {list.map((a) => (
                                 <ArticleCard
@@ -263,6 +262,7 @@ const Home = () => {
                                       a.publishDate || a.createdAt
                                     ),
                                   }}
+                                  layout="horizontal"
                                 />
                               ))}
                             </div>
@@ -279,32 +279,32 @@ const Home = () => {
                 )}
               </section>
 
-              {/* TRENDING (LAYOUT KEPT) */}
+              {/* TRENDING */}
               {trending.length > 0 && (
                 <section className="section trending-section">
                   <h2 className="section-title">
                     <FiTrendingUp /> Trending Now
                   </h2>
-                 <div className="trending-grid">
-                 {trending.map((a, i) => (
-                        <Link
-                    key={a._id}
-                    to={`/article/${a.slug}`}
-                       className="trending-item"
-                         >
-                    <span className="trending-number">#{i + 1}</span>
-                   <div className="trending-content">
-                <h4>{a.title}</h4>
-                 <div className="trending-meta">
-                  <span>{formatDate(a.publishDate)}</span>
-                 <span>{a.category}</span>
-                 </div>
-                </div>
-               </Link>
-               ))}
-            </div>
-            </section>
-             )}
+                  <div className="trending-grid">
+                    {trending.map((a, i) => (
+                      <Link
+                        key={a._id}
+                        to={`/article/${a.slug}`}
+                        className="trending-item"
+                      >
+                        <span className="trending-number">#{i + 1}</span>
+                        <div className="trending-content">
+                          <h4>{a.title}</h4>
+                          <div className="trending-meta">
+                            <span>{formatDate(a.publishDate)}</span>
+                            <span>{a.category}</span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
             </main>
 
             {/* RIGHT SIDEBAR */}

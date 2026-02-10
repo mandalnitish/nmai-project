@@ -53,8 +53,8 @@ const ArticleDetail = () => {
   };
 
   const getImageName = (url) => {
-     return url; // Returns full Cloudinary URL
-   };
+    return url; // Returns full Cloudinary URL
+  };
 
   /* ================= STATES ================= */
   if (isLoading) {
@@ -175,7 +175,7 @@ const ArticleDetail = () => {
             </span>
           </div>
 
-          {/* FEATURED IMAGE (FIXED) */}
+          {/* FEATURED IMAGE */}
           <div className="article-image-wrapper">
             <ArticleImage
               imageName={getImageName(article.featuredImage?.url)}
@@ -186,15 +186,7 @@ const ArticleDetail = () => {
             />
           </div>
 
-          {/* Summary */}
-          {article.summary && (
-            <div className="article-summary">
-              <div className="summary-icon">💡</div>
-              <div className="summary-text">{article.summary}</div>
-            </div>
-          )}
-
-          {/* Content */}
+          {/* Content - Summary section removed */}
           <div
             className="article-body"
             dangerouslySetInnerHTML={{ __html: article.content }}

@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { FiFilter, FiX } from "react-icons/fi";
 
 import { articlesAPI } from "../services/api";
-import ArticleCardHorizontal from "../components/ArticleCardHorizontal";
+import ArticleCard from "../components/ArticleCard";
 import SearchBar from "../components/SearchBar";
 
 import "./CurrentAffairs.css";
@@ -227,11 +227,13 @@ const CurrentAffairs = () => {
               </div>
             ) : articles.length ? (
               <>
-                <div className="articles-grid">
+                {/* HORIZONTAL CARD LAYOUT */}
+                <div className="articles-list">
                   {articles.map((article) => (
-                    <ArticleCardHorizontal
+                    <ArticleCard
                       key={article._id}
                       article={article}
+                      layout="horizontal"
                     />
                   ))}
                 </div>

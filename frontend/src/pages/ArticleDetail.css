@@ -198,31 +198,8 @@
   }
 }
 
-/* =====================
-   SUMMARY
-===================== */
-.article-summary {
-  display: flex;
-  gap: 1rem;
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  border-left: 4px solid var(--primary-blue);
-  padding: 1.5rem 1.75rem;
-  border-radius: var(--radius-md);
-  margin-bottom: 2.5rem;
-}
 
-.summary-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.summary-text {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-main);
-  font-weight: 500;
-}
-
+/* Added margin-top after removing summary section */
 /* =====================
    ARTICLE BODY
 ===================== */
@@ -231,6 +208,7 @@
   line-height: 1.8;
   color: var(--text-body);
   margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .article-body p {

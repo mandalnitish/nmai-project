@@ -2,9 +2,9 @@
    UPDATED: Fixed image paths to work with /images/articles/ directory
    ========================================================================== */
 
-// Date helper: Returns date based on page number (Feb 9, 2026 going backwards)
+// Date helper: Returns date based on page number (Feb 10, 2026 going backwards)
 const getArticleDate = (pageNumber) => {
-  const baseDate = new Date('2026-02-09');
+  const baseDate = new Date('2026-02-10');
   const daysToSubtract = pageNumber - 1;
   const articleDate = new Date(baseDate);
   articleDate.setDate(articleDate.getDate() - daysToSubtract);
@@ -36,7 +36,6 @@ const TAGS = {
 
 const ARTICLE_CONTENT = {
    
-
 
    "Manu Bhaker Wins Silver in Asian Championship 25m Pistol": {
   introduction: `Olympic double bronze medallist Manu Bhaker won the silver medal in the women’s 25m pistol event at the Asian Shooting Championship after a tense shoot-off.`,
@@ -5070,7 +5069,7 @@ const ARTICLE_LIST = [
   { title: "RBI Approves Vijay Anandh as City Union Bank CEO", category: "Economy", page: 1, imageName: "vijay-anandh-city-union-bank" },
   { title: "Somalia–Saudi Defence Pact Deepens Gulf Rivalries", category: "International", page: 1, imageName: "somalia-saudi-defence-pact" },
 
-  // PAGE 1 (FEB 9, 2026 – LATEST) - Articles 0-23
+  // PAGE  (FEB 9, 2026 – LATEST) - Articles 0-23
   { title: "NSO Launches MCP Server for eSankhyiki Portal", category: "Economy", page: 1, imageName: "nso-mcp-esankhyiki" },
   { title: "Two New Marine Worm Species Discovered off West Bengal Coast", category: "Environment", page: 1, imageName: "marine-worms-west-bengal" },
   { title: "INS Arnala Strengthens India's Indigenous Naval Capability", category: "Defence", page: 1, imageName: "ins-arnala-naval" },

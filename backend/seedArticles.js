@@ -20,31 +20,98 @@ const seedArticles = async () => {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log("✅ MongoDB connected");
 
-    // Remove existing articles
-    const deleteResult = await Article.deleteMany({});
-    console.log(`🗑️  Existing articles removed: ${deleteResult.deletedCount}`);
+    let newArticlesCount = 0;
+    let updatedArticlesCount = 0;
+    let skippedArticlesCount = 0;
 
-    // Insert new articles
-    const insertedArticles = await Article.insertMany(allArticles);
-    console.log(`🚀 ${insertedArticles.length} articles seeded successfully`);
+    // Process each article
+    for (const articleData of allArticles) {
+      try {
+        // Find existing article by slug
+        const existingArticle = await Article.findOne({ slug: articleData.slug });
 
-    // Display sample of seeded articles
-    console.log("\n📝 Sample of seeded articles:");
-    console.log("First article:", insertedArticles[0].title, "- Date:", insertedArticles[0].publishDate);
-    console.log("Last article:", insertedArticles[insertedArticles.length - 1].title, "- Date:", insertedArticles[insertedArticles.length - 1].publishDate);
+        if (existingArticle) {
+          // Article exists - preserve metadata, only update content if needed
+          const hasContentChanges = 
+            existingArticle.title !== articleData.title ||
+            existingArticle.content !== articleData.content ||
+            existingArticle.summary !== articleData.summary;
 
-    // Verify date ordering (latest first)
-    const articlesFromDB = await Article.find({}).sort({ publishDate: -1 }).limit(5);
-    console.log("\n📅 Top 5 articles by date (should be Feb 9, 8, 7, etc.):");
-    articlesFromDB.forEach((article, index) => {
-      console.log(`${index + 1}. ${article.title} - ${article.publishDate.toDateString()}`);
+          if (hasContentChanges) {
+            // Update only content fields, preserve all metadata
+            await Article.updateOne(
+              { slug: articleData.slug },
+              {
+                $set: {
+                  title: articleData.title,
+                  content: articleData.content,
+                  summary: articleData.summary,
+                  category: articleData.category,
+                  examRelevance: articleData.examRelevance,
+                  tags: articleData.tags,
+                  featuredImage: articleData.featuredImage,
+                  // DO NOT update: publishDate, createdAt, viewCount, likes, savedBy
+                }
+              }
+            );
+            updatedArticlesCount++;
+            console.log(`📝 Updated content: ${articleData.title}`);
+          } else {
+            skippedArticlesCount++;
+          }
+        } else {
+          // New article - insert with all data
+          await Article.create(articleData);
+          newArticlesCount++;
+          console.log(`✅ New article: ${articleData.title} (${articleData.publishDate.toDateString()})`);
+        }
+      } catch (error) {
+        console.error(`❌ Error processing article "${articleData.title}":`, error.message);
+      }
+    }
+
+    console.log("\n" + "=".repeat(60));
+    console.log("📊 SEEDING SUMMARY");
+    console.log("=".repeat(60));
+    console.log(`✨ New articles added: ${newArticlesCount}`);
+    console.log(`📝 Existing articles updated: ${updatedArticlesCount}`);
+    console.log(`⏭️  Articles skipped (no changes): ${skippedArticlesCount}`);
+    console.log(`📈 Total articles processed: ${allArticles.length}`);
+
+    // Verify latest articles
+    const latestArticles = await Article.find({})
+      .sort({ publishDate: -1 })
+      .limit(5)
+      .select('title publishDate viewCount');
+
+    console.log("\n📅 Latest 5 articles in database:");
+    latestArticles.forEach((article, index) => {
+      const date = article.publishDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+      console.log(`${index + 1}. ${date} - ${article.title} (${article.viewCount || 0} views)`);
     });
+
+    // Show total count by date
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const todayCount = await Article.countDocuments({
+      publishDate: { $gte: today }
+    });
+
+    console.log(`\n📆 Articles published today: ${todayCount}`);
 
     console.log("\n✅ Seeding completed successfully!");
     process.exit(0);
   } catch (error) {
     console.error("❌ Seeding failed:", error);
     console.error("Error details:", error.message);
+    if (error.stack) {
+      console.error("Stack trace:", error.stack);
+    }
     process.exit(1);
   }
 };

@@ -23,22 +23,35 @@ const seedArticles = async () => {
     let newArticlesCount = 0;
     let updatedArticlesCount = 0;
     let skippedArticlesCount = 0;
+    let imageIssuesCount = 0;
 
     // Process each article
     for (const articleData of allArticles) {
       try {
+        // IMPORTANT: Validate image URL
+        if (!articleData.featuredImage?.url || 
+            !articleData.featuredImage.url.startsWith('https://')) {
+          console.warn(`⚠️  Invalid image URL for: ${articleData.title}`);
+          console.warn(`   URL: ${articleData.featuredImage?.url || 'missing'}`);
+          imageIssuesCount++;
+        }
+
         // Find existing article by slug
         const existingArticle = await Article.findOne({ slug: articleData.slug });
 
         if (existingArticle) {
-          // Article exists - preserve metadata, only update content if needed
-          const hasContentChanges = 
+          // Check if image URL needs updating
+          const imageNeedsUpdate = 
+            existingArticle.featuredImage?.url !== articleData.featuredImage?.url;
+
+          const contentNeedsUpdate = 
             existingArticle.title !== articleData.title ||
             existingArticle.content !== articleData.content ||
-            existingArticle.summary !== articleData.summary;
+            existingArticle.summary !== articleData.summary ||
+            imageNeedsUpdate;
 
-          if (hasContentChanges) {
-            // Update only content fields, preserve all metadata
+          if (contentNeedsUpdate) {
+            // Update content AND image URL
             await Article.updateOne(
               { slug: articleData.slug },
               {
@@ -49,13 +62,18 @@ const seedArticles = async () => {
                   category: articleData.category,
                   examRelevance: articleData.examRelevance,
                   tags: articleData.tags,
-                  featuredImage: articleData.featuredImage,
-                  // DO NOT update: publishDate, createdAt, viewCount, likes, savedBy
+                  featuredImage: articleData.featuredImage, // ✅ UPDATE IMAGE
                 }
               }
             );
+            
+            if (imageNeedsUpdate) {
+              console.log(`🖼️  Updated image: ${articleData.title.substring(0, 50)}`);
+              console.log(`   New URL: ${articleData.featuredImage.url.substring(0, 80)}...`);
+            } else {
+              console.log(`📝 Updated content: ${articleData.title.substring(0, 50)}`);
+            }
             updatedArticlesCount++;
-            console.log(`📝 Updated content: ${articleData.title}`);
           } else {
             skippedArticlesCount++;
           }
@@ -63,35 +81,101 @@ const seedArticles = async () => {
           // New article - insert with all data
           await Article.create(articleData);
           newArticlesCount++;
-          console.log(`✅ New article: ${articleData.title} (${articleData.publishDate.toDateString()})`);
+          
+          const dateStr = articleData.publishDate.toDateString();
+          const imageUrl = articleData.featuredImage?.url || 'NO IMAGE';
+          
+          console.log(`✅ New article: ${articleData.title} (${dateStr})`);
+          console.log(`   Image: ${imageUrl.substring(0, 80)}${imageUrl.length > 80 ? '...' : ''}`);
         }
       } catch (error) {
         console.error(`❌ Error processing article "${articleData.title}":`, error.message);
       }
     }
 
-    console.log("\n" + "=".repeat(60));
+    console.log("\n" + "=".repeat(80));
     console.log("📊 SEEDING SUMMARY");
-    console.log("=".repeat(60));
+    console.log("=".repeat(80));
     console.log(`✨ New articles added: ${newArticlesCount}`);
     console.log(`📝 Existing articles updated: ${updatedArticlesCount}`);
     console.log(`⏭️  Articles skipped (no changes): ${skippedArticlesCount}`);
+    console.log(`⚠️  Image issues detected: ${imageIssuesCount}`);
     console.log(`📈 Total articles processed: ${allArticles.length}`);
 
+    // Verify images in database
+    console.log("\n🖼️  IMAGE VERIFICATION");
+    console.log("=".repeat(80));
+    
+    const articlesWithImages = await Article.countDocuments({
+      'featuredImage.url': { $exists: true, $ne: null, $ne: "" }
+    });
+    
+    const cloudinaryImages = await Article.countDocuments({
+      'featuredImage.url': { $regex: 'cloudinary.com' }
+    });
+
+    const articlesWithoutImages = await Article.countDocuments({
+      $or: [
+        { 'featuredImage.url': { $exists: false } },
+        { 'featuredImage.url': null },
+        { 'featuredImage.url': "" }
+      ]
+    });
+
+    console.log(`✅ Articles with images: ${articlesWithImages}`);
+    console.log(`☁️  Cloudinary images: ${cloudinaryImages}`);
+    console.log(`❌ Articles without images: ${articlesWithoutImages}`);
+
+    // Show sample articles with images
+    console.log("\n📋 Sample articles with images:");
+    const sampleWithImages = await Article.find({
+      'featuredImage.url': { $regex: 'cloudinary.com' }
+    }).limit(5).select('title featuredImage.url publishDate');
+
+    sampleWithImages.forEach((article, idx) => {
+      const date = article.publishDate ? 
+        new Date(article.publishDate).toLocaleDateString() : 
+        'No date';
+      console.log(`\n${idx + 1}. ${article.title.substring(0, 60)}`);
+      console.log(`   Date: ${date}`);
+      console.log(`   Image: ${article.featuredImage.url.substring(0, 80)}...`);
+    });
+
+    // Show articles WITHOUT images (should be none)
+    if (articlesWithoutImages > 0) {
+      console.log("\n⚠️  WARNING: Articles without images found!");
+      const noImages = await Article.find({
+        $or: [
+          { 'featuredImage.url': { $exists: false } },
+          { 'featuredImage.url': null },
+          { 'featuredImage.url': "" }
+        ]
+      }).limit(5).select('title');
+
+      noImages.forEach((article, idx) => {
+        console.log(`   ${idx + 1}. ${article.title}`);
+      });
+    }
+
     // Verify latest articles
+    console.log("\n📅 Latest 5 articles in database:");
     const latestArticles = await Article.find({})
       .sort({ publishDate: -1 })
       .limit(5)
-      .select('title publishDate viewCount');
+      .select('title publishDate viewCount featuredImage.url');
 
-    console.log("\n📅 Latest 5 articles in database:");
     latestArticles.forEach((article, index) => {
       const date = article.publishDate.toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
       });
-      console.log(`${index + 1}. ${date} - ${article.title} (${article.viewCount || 0} views)`);
+      
+      const hasImage = article.featuredImage?.url ? '🖼️' : '❌';
+      const imageUrl = article.featuredImage?.url || 'NO IMAGE';
+      
+      console.log(`${index + 1}. ${date} - ${article.title} (${article.viewCount || 0} views) ${hasImage}`);
+      console.log(`   ${imageUrl.substring(0, 80)}${imageUrl.length > 80 ? '...' : ''}`);
     });
 
     // Show total count by date
@@ -104,7 +188,22 @@ const seedArticles = async () => {
 
     console.log(`\n📆 Articles published today: ${todayCount}`);
 
-    console.log("\n✅ Seeding completed successfully!");
+    console.log("\n" + "=".repeat(80));
+    console.log("✅ Seeding completed successfully!");
+    console.log("=".repeat(80));
+    console.log("\n💡 Next Steps:");
+    console.log("   1. Restart your backend server");
+    console.log("   2. Clear browser cache (Ctrl + Shift + R)");
+    console.log("   3. Check your website");
+    console.log("   4. Open browser console to check for image load errors");
+    
+    if (cloudinaryImages < allArticles.length) {
+      console.log("\n⚠️  WARNING: Not all images are Cloudinary URLs!");
+      console.log(`   Expected: ${allArticles.length}`);
+      console.log(`   Got: ${cloudinaryImages}`);
+      console.log("   Some images may not load correctly.");
+    }
+
     process.exit(0);
   } catch (error) {
     console.error("❌ Seeding failed:", error);

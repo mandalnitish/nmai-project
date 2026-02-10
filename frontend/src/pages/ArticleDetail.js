@@ -53,9 +53,8 @@ const ArticleDetail = () => {
   };
 
   const getImageName = (url) => {
-    if (!url) return null;
-    return url.split("/").pop(); // IMPORTANT
-  };
+     return url; // Returns full Cloudinary URL
+   };
 
   /* ================= STATES ================= */
   if (isLoading) {

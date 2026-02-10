@@ -15,8 +15,7 @@ const formatDate = (date) =>
 
 const ArticleCard = ({ article }) => {
   const getImageName = (url) => {
-    if (!url) return null;
-    return url.split("/").pop();
+  return url; // Returns full Cloudinary URL
   };
 
   return (

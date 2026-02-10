@@ -11,10 +11,9 @@ const ArticleCard = ({ article }) => {
   };
 
   // Extract image name from URL
-  const getImageName = (url) => {
-    if (!url) return null;
-    return url.split('/').pop();
-  };
+ const getImageName = (url) => {
+    return url; // Returns full Cloudinary URL
+   };
 
   return (
     <div className="article-card">

@@ -3,12 +3,8 @@ import { FiImage } from "react-icons/fi";
 import "./ArticleImage.css";
 
 /**
- * ArticleImage Component - Optimized for Cloudinary URLs
- * 
- * Handles three types of image URLs:
- * 1. Full Cloudinary URL (https://res.cloudinary.com/...)
- * 2. Image filename only (will construct Cloudinary URL)
- * 3. Legacy local URLs (/uploads/...)
+ * ArticleImage Component - Works with Cloudinary URLs
+ * Handles full Cloudinary URLs from database
  */
 const ArticleImage = ({ 
   imageName, 
@@ -22,26 +18,25 @@ const ArticleImage = ({
   const [error, setError] = useState(false);
 
   /**
-   * Construct the proper image URL
+   * Get the proper image URL
+   * imageName is the FULL URL from database like:
+   * https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/wtsc...
    */
   const getImageUrl = () => {
-    if (!imageName) return null;
+    if (!imageName) {
+      console.log('❌ No image name provided');
+      return null;
+    }
 
-    // If it's already a full Cloudinary URL, use it directly
-    if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
+    // Already a full URL - use it directly
+    if (imageName.startsWith('https://') || imageName.startsWith('http://')) {
+      console.log('✅ Using full URL:', imageName.substring(0, 80));
       return imageName;
     }
 
-    // If it's a Cloudinary public ID (e.g., "nmai-articles/image.jpg")
-    // Construct the full URL
-    if (imageName.includes('nmai-articles/')) {
-      const cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || 'your-cloud-name';
-      return `https://res.cloudinary.com/${cloudName}/image/upload/${imageName}`;
-    }
-
-    // Legacy: Try local backend (fallback)
-    const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
-    return `${baseUrl}/uploads/${imageName}`;
+    // Fallback: shouldn't reach here, but just in case
+    console.warn('⚠️  Unexpected image format:', imageName);
+    return null;
   };
 
   const imageUrl = getImageUrl();
@@ -51,7 +46,9 @@ const ArticleImage = ({
     setError(false);
   };
 
-  const handleImageError = () => {
+  const handleImageError = (e) => {
+    console.error('❌ Image failed to load:', imageUrl);
+    console.error('   Error:', e.type);
     setLoading(false);
     setError(true);
   };
@@ -59,7 +56,7 @@ const ArticleImage = ({
   // Show placeholder if no image or error
   if (!imageName || !imageUrl || error) {
     return (
-      <div className="article-image-placeholder">
+      <div className={`article-image-placeholder ${className}`}>
         <FiImage size={48} />
         <p>No image available</p>
       </div>

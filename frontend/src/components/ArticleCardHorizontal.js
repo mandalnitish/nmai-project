@@ -11,10 +11,9 @@ const ArticleCardHorizontal = ({ article }) => {
     navigate(`/article/${article.slug}`);
   };
 
-  const getImageName = (url) => {
-    if (!url) return null;
-    return url.split("/").pop();
-  };
+ const getImageName = (url) => {
+    return url; // Returns full Cloudinary URL
+   };
 
   const formatDate = (dateString) => {
     if (!dateString) return "";

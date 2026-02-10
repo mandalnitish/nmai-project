@@ -843,3 +843,15 @@
 .home-sidebar::-webkit-scrollbar-thumb:hover {
   background: var(--text-gray);
 }
+/* Proper viewport handling */
+@media (max-width: 768px) {
+  .home-layout {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    padding: 0.75rem;
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr; /* Single column article cards */
+    gap: 1rem;
+  }
+}

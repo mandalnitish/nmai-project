@@ -1,43 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { FiImage } from "react-icons/fi";
 import "./ArticleImage.css";
 
-const ArticleImage = ({ imageName, title, className = "", width, height }) => {
-  const [error, setError] = useState(false);
+const ArticleImage = ({ 
+  imageName, 
+  title = "Article Image", 
+  className = "",
+  width,
+  height,
+  lazy = true 
+}) => {
+  const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  // Construct image path
-  const imagePath = imageName
-    ? `/images/articles/${imageName.replace(/\.(jpg|jpeg|png|webp)$/i, "")}.png`
-    : null;
+  useEffect(() => {
+    if (!imageName) {
+      setLoading(false);
+      setError(true);
+      return;
+    }
 
-  const handleLoad = () => {
+    // Construct image URL - adjust based on your backend
+    const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+    const url = `${baseUrl}/api/uploads/${imageName}`;
+    
+    setImageUrl(url);
+  }, [imageName]);
+
+  const handleImageLoad = () => {
     setLoading(false);
+    setError(false);
   };
 
-  const handleError = () => {
-    setError(true);
+  const handleImageError = () => {
     setLoading(false);
+    setError(true);
   };
 
   // Show placeholder if no image or error
-  if (!imagePath || error) {
+  if (!imageName || error) {
     return (
-      <div className={`article-image-placeholder ${className}`}>
-        <svg
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
-        <p>Image unavailable</p>
+      <div className="article-image-placeholder">
+        <FiImage size={48} />
+        <p>No image available</p>
       </div>
     );
   }
@@ -45,19 +51,20 @@ const ArticleImage = ({ imageName, title, className = "", width, height }) => {
   return (
     <>
       {loading && (
-        <div className={`article-image-placeholder ${className}`}>
+        <div className="article-image-placeholder">
           <div className="image-loader"></div>
         </div>
       )}
+      
       <img
-        src={imagePath}
-        alt={title || "Article image"}
+        src={imageUrl}
+        alt={title}
         className={`article-image ${className} ${loading ? 'loading' : ''}`}
+        onLoad={handleImageLoad}
+        onError={handleImageError}
+        loading={lazy ? "lazy" : "eager"}
         width={width}
         height={height}
-        onLoad={handleLoad}
-        onError={handleError}
-        loading="lazy"
         style={{ display: loading ? 'none' : 'block' }}
       />
     </>

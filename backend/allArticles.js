@@ -35,7 +35,366 @@ const TAGS = {
 /* ================= INDIVIDUAL ARTICLE CONTENT ================= */
 
 const ARTICLE_CONTENT = {
-  
+   
+
+
+   "Manu Bhaker Wins Silver in Asian Championship 25m Pistol": {
+  introduction: `Olympic double bronze medallist Manu Bhaker won the silver medal in the women’s 25m pistol event at the Asian Shooting Championship after a tense shoot-off.`,
+  keyHighlights: [
+    { label: "Athlete", value: "Manu Bhaker" },
+    { label: "Event", value: "Asian Shooting Championship" },
+    { label: "Discipline", value: "25m Pistol" }
+  ],
+  sections: [
+    {
+      heading: "Competition Overview",
+      content: `The final witnessed intense competition with Bhaker narrowly missing gold.`
+    },
+    {
+      heading: "India’s Shooting Strength",
+      content: `India continues to dominate Asian shooting events across categories.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Indian sports achievements",
+      "Shooting disciplines",
+      "Olympic preparation"
+    ]
+  },
+  keyTakeaways: [
+    "Silver medal at Asian level",
+    "Olympic medallist continues strong form",
+    "Boost for Indian shooting"
+  ],
+  sources: ["Asian Shooting Confederation"]
+},
+
+"Modi Announces $175 Million Seychelles Development Package": {
+  introduction: `Prime Minister Narendra Modi announced a $175 million development assistance package for Seychelles following bilateral talks in New Delhi.`,
+  keyHighlights: [
+    { label: "Amount", value: "$175 Million" },
+    { label: "Country", value: "Seychelles" },
+    { label: "Theme", value: "Development cooperation" }
+  ],
+  sections: [
+    {
+      heading: "Key Areas of Assistance",
+      content: `Includes infrastructure, health, education, and capacity building.`
+    },
+    {
+      heading: "Strategic Importance",
+      content: `Strengthens India’s presence in the Indian Ocean Region (IOR).`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "India–Africa relations",
+      "Indian Ocean diplomacy",
+      "Development assistance"
+    ]
+  },
+  keyTakeaways: [
+    "Major aid package announced",
+    "Strengthens IOR engagement",
+    "Enhances strategic partnership"
+  ],
+  sources: ["MEA"]
+},
+
+"ISRO Selects South Polar Site for Chandrayaan-4 Lander": {
+  introduction: `ISRO has identified a precise south polar landing site on the Moon for its upcoming Chandrayaan-4 mission.`,
+  keyHighlights: [
+    { label: "Mission", value: "Chandrayaan-4" },
+    { label: "Agency", value: "ISRO" },
+    { label: "Location", value: "Lunar South Pole" }
+  ],
+  sections: [
+    {
+      heading: "Why South Pole?",
+      content: `The region is rich in water ice and critical for future lunar exploration.`
+    },
+    {
+      heading: "Mission Significance",
+      content: `Chandrayaan-4 aims to advance lunar sample return capabilities.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "India’s lunar missions",
+      "Space technology",
+      "Planetary exploration"
+    ]
+  },
+  keyTakeaways: [
+    "Landing site finalized",
+    "Boosts lunar research",
+    "Strategic space milestone"
+  ],
+  sources: ["ISRO"]
+},
+
+"Delhi Partners Bharat Taxi for Cooperative Mobility Services": {
+  introduction: `Delhi has partnered with Bharat Taxi’s cooperative mobility platform to reorganize urban taxi services.`,
+  keyHighlights: [
+    { label: "Partner", value: "Bharat Taxi" },
+    { label: "State", value: "Delhi" },
+    { label: "Sector", value: "Urban transport" }
+  ],
+  sections: [
+    {
+      heading: "What is Cooperative Mobility?",
+      content: `Drivers operate as members rather than gig workers.`
+    },
+    {
+      heading: "Urban Impact",
+      content: `Improves driver welfare and fare transparency.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Urban transport reforms",
+      "Cooperative economy",
+      "Gig economy alternatives"
+    ]
+  },
+  keyTakeaways: [
+    "First state partnership",
+    "Driver-centric model",
+    "Urban mobility reform"
+  ],
+  sources: ["Delhi Government"]
+},
+
+"New Dragonfly Species Lyriothemis keralensis Discovered in Kerala": {
+  introduction: `Scientists have discovered a new dragonfly species, Lyriothemis keralensis, in coastal Kerala.`,
+  keyHighlights: [
+    { label: "Species", value: "Lyriothemis keralensis" },
+    { label: "Location", value: "Kerala" },
+    { label: "Category", value: "Biodiversity" }
+  ],
+  sections: [
+    {
+      heading: "Scientific Importance",
+      content: `Adds to India’s documented odonate diversity.`
+    },
+    {
+      heading: "Ecological Indicator",
+      content: `Dragonflies indicate freshwater ecosystem health.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Species discovery",
+      "Biodiversity hotspots",
+      "Environmental conservation"
+    ]
+  },
+  keyTakeaways: [
+    "New species discovered",
+    "Highlights Kerala biodiversity",
+    "Supports conservation efforts"
+  ],
+  sources: ["Zoological Survey of India"]
+},
+
+"Visually Challenged Woman Tops Kerala Judicial Service Disability Merit List": {
+  introduction: `Thanya Nathan C. has become the first totally visually impaired woman to top Kerala Judicial Service’s disability merit list.`,
+  keyHighlights: [
+    { label: "Individual", value: "Thanya Nathan C." },
+    { label: "State", value: "Kerala" },
+    { label: "Milestone", value: "Judicial inclusion" }
+  ],
+  sections: [
+    {
+      heading: "Historic Achievement",
+      content: `Marks a breakthrough in inclusive justice.`
+    },
+    {
+      heading: "Social Significance",
+      content: `Strengthens rights of persons with disabilities.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Disability inclusion",
+      "Judicial reforms",
+      "Social justice"
+    ]
+  },
+  keyTakeaways: [
+    "Historic first",
+    "Promotes inclusivity",
+    "Judicial empowerment"
+  ],
+  sources: ["Kerala PSC"]
+},
+
+"Daily Current Affairs Quiz: February 10, 2026": {
+  introduction: `Daily Current Affairs Quiz for February 10, 2026 tests awareness of recent national and international developments.`,
+  keyHighlights: [
+    { label: "Type", value: "Quiz" },
+    { label: "Date", value: "February 10, 2026" }
+  ],
+  sections: [
+    {
+      heading: "Purpose",
+      content: `Helps aspirants revise daily current affairs efficiently.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "UPSC prelims practice",
+      "Daily revision",
+      "MCQ-based learning"
+    ]
+  },
+  keyTakeaways: [
+    "Daily revision tool",
+    "Exam-oriented questions"
+  ],
+  sources: ["Editorial Compilation"]
+},
+
+"India, Netherlands Launch Hydrogen Fellowship, Expand Research Ties": {
+  introduction: `India and the Netherlands launched a Hydrogen Fellowship Programme to strengthen clean energy research cooperation.`,
+  keyHighlights: [
+    { label: "Countries", value: "India & Netherlands" },
+    { label: "Focus", value: "Green Hydrogen" }
+  ],
+  sections: [
+    {
+      heading: "Programme Scope",
+      content: `Supports academic exchange and joint research.`
+    },
+    {
+      heading: "Climate Importance",
+      content: `Accelerates clean energy transition.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Green hydrogen",
+      "International research collaboration",
+      "Energy diplomacy"
+    ]
+  },
+  keyTakeaways: [
+    "Clean energy partnership",
+    "Academic collaboration",
+    "Climate action support"
+  ],
+  sources: ["MEA"]
+},
+
+"India, Greece Sign Pact to Boost Defence Industry Ties": {
+  introduction: `India and Greece signed a declaration of intent to enhance defence industrial collaboration.`,
+  keyHighlights: [
+    { label: "Countries", value: "India & Greece" },
+    { label: "Sector", value: "Defence industry" }
+  ],
+  sections: [
+    {
+      heading: "Areas of Cooperation",
+      content: `Joint production, technology transfer, and training.`
+    },
+    {
+      heading: "Strategic Impact",
+      content: `Strengthens Mediterranean outreach.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Defence diplomacy",
+      "Strategic partnerships",
+      "Make in India defence"
+    ]
+  },
+  keyTakeaways: [
+    "Defence ties strengthened",
+    "Industrial cooperation",
+    "Strategic alignment"
+  ],
+  sources: ["Defence Ministry"]
+},
+
+"New Frog Species Found in Peru Faces Immediate Threat": {
+  introduction: `A newly discovered frog species in Peru’s cloud forests is already facing extinction threats.`,
+  keyHighlights: [
+    { label: "Location", value: "Peru" },
+    { label: "Issue", value: "Biodiversity loss" }
+  ],
+  sections: [
+    {
+      heading: "Threats",
+      content: `Habitat loss and climate change endanger the species.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Global biodiversity",
+      "Climate threats",
+      "Species conservation"
+    ]
+  },
+  keyTakeaways: [
+    "New species discovered",
+    "Immediate conservation need"
+  ],
+  sources: ["Scientific Journals"]
+},
+
+"RBI Approves Vijay Anandh as City Union Bank CEO": {
+  introduction: `RBI has approved R Vijay Anandh as MD & CEO of City Union Bank.`,
+  keyHighlights: [
+    { label: "Bank", value: "City Union Bank" },
+    { label: "Regulator", value: "RBI" }
+  ],
+  sections: [
+    {
+      heading: "Banking Governance",
+      content: `Leadership continuity supports financial stability.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "Banking regulation",
+      "Role of RBI"
+    ]
+  },
+  keyTakeaways: [
+    "CEO appointment approved",
+    "Strengthens governance"
+  ],
+  sources: ["RBI"]
+},
+
+"Somalia–Saudi Defence Pact Deepens Gulf Rivalries": {
+  introduction: `Somalia’s new defence pact with Saudi Arabia has intensified geopolitical competition in the Horn of Africa.`,
+  keyHighlights: [
+    { label: "Countries", value: "Somalia & Saudi Arabia" },
+    { label: "Region", value: "Horn of Africa" }
+  ],
+  sections: [
+    {
+      heading: "Geopolitical Context",
+      content: `Reflects growing Gulf influence in Africa.`
+    }
+  ],
+  examPerspective: {
+    points: [
+      "West Asia geopolitics",
+      "Horn of Africa",
+      "Defence diplomacy"
+    ]
+  },
+  keyTakeaways: [
+    "Defence pact signed",
+    "Regional power shifts"
+  ],
+  sources: ["International Affairs Reports"]
+},
+
   "NSO Launches MCP Server for eSankhyiki Portal": {
     introduction: `The National Statistical Office (NSO) has launched an MCP (Model Context Protocol) Server for the eSankhyiki Portal, marking a significant advancement in India's statistical data infrastructure and digital governance framework.`,
     
@@ -4696,7 +5055,21 @@ const generateHTMLContent = (title, category) => {
 /* ================= ALL ARTICLES LIST ================= */
 
 const ARTICLE_LIST = [
- 
+  
+  // PAGE 1 (FEB 10, 2026 – LATEST) 
+
+  { title: "Manu Bhaker Wins Silver in Asian Championship 25m Pistol", category: "Sports", page: 1, imageName: "manu-bhaker-25m-pistol" },
+  { title: "Modi Announces $175 Million Seychelles Development Package", category: "International", page: 1, imageName: "modi-seychelles-package" },
+  { title: "ISRO Selects South Polar Site for Chandrayaan-4 Lander", category: "Science", page: 1, imageName: "chandrayaan-4-south-pole" },
+  { title: "Delhi Partners Bharat Taxi for Cooperative Mobility Services", category: "Infrastructure", page: 1, imageName: "delhi-bharat-taxi" },
+  { title: "New Dragonfly Species Lyriothemis keralensis Discovered in Kerala", category: "Environment", page: 1, imageName: "lyriothemis-keralensis" },
+  { title: "Visually Challenged Woman Tops Kerala Judicial Service Disability Merit List", category: "Social", page: 1, imageName: "kerala-judicial-disability" },
+  { title: "India, Netherlands Launch Hydrogen Fellowship, Expand Research Ties", category: "Energy", page: 1, imageName: "india-netherlands-hydrogen" },
+  { title: "India, Greece Sign Pact to Boost Defence Industry Ties", category: "Defence", page: 1, imageName: "india-greece-defence-pact" },
+  { title: "New Frog Species Found in Peru Faces Immediate Threat", category: "Environment", page: 1, imageName: "peru-new-frog-species" },
+  { title: "RBI Approves Vijay Anandh as City Union Bank CEO", category: "Economy", page: 1, imageName: "vijay-anandh-city-union-bank" },
+  { title: "Somalia–Saudi Defence Pact Deepens Gulf Rivalries", category: "International", page: 1, imageName: "somalia-saudi-defence-pact" },
+
   // PAGE 1 (FEB 9, 2026 – LATEST) - Articles 0-23
   { title: "NSO Launches MCP Server for eSankhyiki Portal", category: "Economy", page: 1, imageName: "nso-mcp-esankhyiki" },
   { title: "Two New Marine Worm Species Discovered off West Bengal Coast", category: "Environment", page: 1, imageName: "marine-worms-west-bengal" },

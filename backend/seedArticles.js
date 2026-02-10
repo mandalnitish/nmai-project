@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("MONGODB_URI =", process.env.MONGODB_URI);
+console.log("MONGODB_URI =", process.env.MONGODB_URI ? "✅ Connected" : "❌ Missing");
 
 const seedArticles = async () => {
   try {
@@ -14,44 +14,58 @@ const seedArticles = async () => {
       throw new Error("❌ No articles found in allArticles.js");
     }
 
-    console.log(`📊 Found ${allArticles.length} articles to seed`);
+    console.log('\n' + '='.repeat(80));
+    console.log('🌱 SEEDING ARTICLES TO DATABASE');
+    console.log('='.repeat(80));
+    console.log(`📊 Found ${allArticles.length} articles to seed\n`);
 
     // Connect to MongoDB
+    console.log("🔗 Connecting to MongoDB...");
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log("✅ MongoDB connected");
+    console.log("✅ MongoDB connected\n");
 
     let newArticlesCount = 0;
     let updatedArticlesCount = 0;
     let skippedArticlesCount = 0;
-    let imageIssuesCount = 0;
+    let imageValidCount = 0;
+    let imageInvalidCount = 0;
+
+    console.log('📝 Processing articles...\n');
 
     // Process each article
     for (const articleData of allArticles) {
       try {
-        // IMPORTANT: Validate image URL
-        if (!articleData.featuredImage?.url || 
-            !articleData.featuredImage.url.startsWith('https://')) {
-          console.warn(`⚠️  Invalid image URL for: ${articleData.title}`);
-          console.warn(`   URL: ${articleData.featuredImage?.url || 'missing'}`);
-          imageIssuesCount++;
+        // Validate image URL
+        const imageUrl = articleData.featuredImage?.url;
+        
+        if (!imageUrl) {
+          console.warn(`⚠️  No image URL for: ${articleData.title.substring(0, 60)}`);
+          imageInvalidCount++;
+        } else if (!imageUrl.startsWith('https://')) {
+          console.warn(`⚠️  Invalid image URL for: ${articleData.title.substring(0, 60)}`);
+          console.warn(`   URL: ${imageUrl}`);
+          imageInvalidCount++;
+        } else if (imageUrl.includes('cloudinary.com')) {
+          imageValidCount++;
+        } else {
+          console.warn(`⚠️  Non-Cloudinary URL for: ${articleData.title.substring(0, 60)}`);
+          imageInvalidCount++;
         }
 
         // Find existing article by slug
         const existingArticle = await Article.findOne({ slug: articleData.slug });
 
         if (existingArticle) {
-          // Check if image URL needs updating
-          const imageNeedsUpdate = 
-            existingArticle.featuredImage?.url !== articleData.featuredImage?.url;
-
-          const contentNeedsUpdate = 
+          // Check if content needs updating
+          const needsUpdate = 
             existingArticle.title !== articleData.title ||
             existingArticle.content !== articleData.content ||
             existingArticle.summary !== articleData.summary ||
-            imageNeedsUpdate;
+            existingArticle.featuredImage?.url !== articleData.featuredImage?.url ||
+            JSON.stringify(existingArticle.tags) !== JSON.stringify(articleData.tags);
 
-          if (contentNeedsUpdate) {
-            // Update content AND image URL
+          if (needsUpdate) {
+            // Update article but preserve views, likes, bookmarks
             await Article.updateOne(
               { slug: articleData.slug },
               {
@@ -62,49 +76,47 @@ const seedArticles = async () => {
                   category: articleData.category,
                   examRelevance: articleData.examRelevance,
                   tags: articleData.tags,
-                  featuredImage: articleData.featuredImage, // ✅ UPDATE IMAGE
+                  featuredImage: articleData.featuredImage,
+                  publishDate: articleData.publishDate,
+                  // Preserve engagement metrics
                 }
               }
             );
             
-            if (imageNeedsUpdate) {
-              console.log(`🖼️  Updated image: ${articleData.title.substring(0, 50)}`);
-              console.log(`   New URL: ${articleData.featuredImage.url.substring(0, 80)}...`);
-            } else {
-              console.log(`📝 Updated content: ${articleData.title.substring(0, 50)}`);
-            }
+            console.log(`🔄 Updated: ${articleData.title.substring(0, 60)}`);
             updatedArticlesCount++;
           } else {
             skippedArticlesCount++;
           }
         } else {
           // New article - insert with all data
-          await Article.create(articleData);
+          await Article.create({
+            ...articleData,
+            viewCount: 0,
+            likes: 0,
+            bookmarks: 0,
+          });
+          
+          const dateStr = new Date(articleData.publishDate).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          });
+          
+          console.log(`✅ New: ${articleData.title.substring(0, 60)} (${dateStr})`);
           newArticlesCount++;
-          
-          const dateStr = articleData.publishDate.toDateString();
-          const imageUrl = articleData.featuredImage?.url || 'NO IMAGE';
-          
-          console.log(`✅ New article: ${articleData.title} (${dateStr})`);
-          console.log(`   Image: ${imageUrl.substring(0, 80)}${imageUrl.length > 80 ? '...' : ''}`);
         }
       } catch (error) {
-        console.error(`❌ Error processing article "${articleData.title}":`, error.message);
+        console.error(`❌ Error processing "${articleData.title}":`, error.message);
       }
     }
 
-    console.log("\n" + "=".repeat(80));
-    console.log("📊 SEEDING SUMMARY");
-    console.log("=".repeat(80));
-    console.log(`✨ New articles added: ${newArticlesCount}`);
-    console.log(`📝 Existing articles updated: ${updatedArticlesCount}`);
-    console.log(`⏭️  Articles skipped (no changes): ${skippedArticlesCount}`);
-    console.log(`⚠️  Image issues detected: ${imageIssuesCount}`);
-    console.log(`📈 Total articles processed: ${allArticles.length}`);
-
-    // Verify images in database
-    console.log("\n🖼️  IMAGE VERIFICATION");
-    console.log("=".repeat(80));
+    // Verify database state
+    console.log('\n' + '='.repeat(80));
+    console.log('🔍 VERIFICATION');
+    console.log('='.repeat(80));
+    
+    const totalInDb = await Article.countDocuments();
     
     const articlesWithImages = await Article.countDocuments({
       'featuredImage.url': { $exists: true, $ne: null, $ne: "" }
@@ -122,91 +134,105 @@ const seedArticles = async () => {
       ]
     });
 
-    console.log(`✅ Articles with images: ${articlesWithImages}`);
-    console.log(`☁️  Cloudinary images: ${cloudinaryImages}`);
-    console.log(`❌ Articles without images: ${articlesWithoutImages}`);
+    console.log(`📊 Database Statistics:`);
+    console.log(`   Total articles in DB: ${totalInDb}`);
+    console.log(`   Articles with images: ${articlesWithImages}`);
+    console.log(`   Cloudinary images: ${cloudinaryImages} ✅`);
+    console.log(`   Missing images: ${articlesWithoutImages} ${articlesWithoutImages > 0 ? '⚠️' : '✅'}`);
 
-    // Show sample articles with images
-    console.log("\n📋 Sample articles with images:");
-    const sampleWithImages = await Article.find({
-      'featuredImage.url': { $regex: 'cloudinary.com' }
-    }).limit(5).select('title featuredImage.url publishDate');
-
-    sampleWithImages.forEach((article, idx) => {
-      const date = article.publishDate ? 
-        new Date(article.publishDate).toLocaleDateString() : 
-        'No date';
-      console.log(`\n${idx + 1}. ${article.title.substring(0, 60)}`);
-      console.log(`   Date: ${date}`);
-      console.log(`   Image: ${article.featuredImage.url.substring(0, 80)}...`);
-    });
-
-    // Show articles WITHOUT images (should be none)
-    if (articlesWithoutImages > 0) {
-      console.log("\n⚠️  WARNING: Articles without images found!");
-      const noImages = await Article.find({
-        $or: [
-          { 'featuredImage.url': { $exists: false } },
-          { 'featuredImage.url': null },
-          { 'featuredImage.url': "" }
-        ]
-      }).limit(5).select('title');
-
-      noImages.forEach((article, idx) => {
-        console.log(`   ${idx + 1}. ${article.title}`);
-      });
-    }
-
-    // Verify latest articles
-    console.log("\n📅 Latest 5 articles in database:");
+    // Show latest articles
+    console.log('\n📅 Latest 10 Articles in Database:\n');
+    
     const latestArticles = await Article.find({})
       .sort({ publishDate: -1 })
-      .limit(5)
+      .limit(10)
       .select('title publishDate viewCount featuredImage.url');
 
     latestArticles.forEach((article, index) => {
-      const date = article.publishDate.toLocaleDateString('en-US', {
+      const date = new Date(article.publishDate).toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
         year: 'numeric'
       });
       
-      const hasImage = article.featuredImage?.url ? '🖼️' : '❌';
-      const imageUrl = article.featuredImage?.url || 'NO IMAGE';
+      const hasValidImage = article.featuredImage?.url?.includes('cloudinary.com');
+      const imageIcon = hasValidImage ? '✅' : '❌';
       
-      console.log(`${index + 1}. ${date} - ${article.title} (${article.viewCount || 0} views) ${hasImage}`);
-      console.log(`   ${imageUrl.substring(0, 80)}${imageUrl.length > 80 ? '...' : ''}`);
+      console.log(`${index + 1}. ${date} - ${article.title.substring(0, 50)}`);
+      console.log(`   Views: ${article.viewCount || 0} | Image: ${imageIcon}`);
+      
+      if (article.featuredImage?.url) {
+        const url = article.featuredImage.url;
+        console.log(`   ${url.substring(0, 80)}${url.length > 80 ? '...' : ''}`);
+      }
+      console.log('');
     });
 
-    // Show total count by date
-    const today = new Date();
+    // Articles by date
+    const today = new Date('2026-02-10');
     today.setHours(0, 0, 0, 0);
     
     const todayCount = await Article.countDocuments({
-      publishDate: { $gte: today }
+      publishDate: { 
+        $gte: today,
+        $lt: new Date(today.getTime() + 24 * 60 * 60 * 1000)
+      }
     });
 
-    console.log(`\n📆 Articles published today: ${todayCount}`);
-
-    console.log("\n" + "=".repeat(80));
-    console.log("✅ Seeding completed successfully!");
-    console.log("=".repeat(80));
-    console.log("\n💡 Next Steps:");
-    console.log("   1. Restart your backend server");
-    console.log("   2. Clear browser cache (Ctrl + Shift + R)");
-    console.log("   3. Check your website");
-    console.log("   4. Open browser console to check for image load errors");
+    const yesterdayStart = new Date(today);
+    yesterdayStart.setDate(yesterdayStart.getDate() - 1);
     
-    if (cloudinaryImages < allArticles.length) {
-      console.log("\n⚠️  WARNING: Not all images are Cloudinary URLs!");
-      console.log(`   Expected: ${allArticles.length}`);
-      console.log(`   Got: ${cloudinaryImages}`);
-      console.log("   Some images may not load correctly.");
+    const yesterdayCount = await Article.countDocuments({
+      publishDate: { 
+        $gte: yesterdayStart,
+        $lt: today
+      }
+    });
+
+    console.log('📊 Articles by Date:');
+    console.log(`   Today (Feb 10, 2026): ${todayCount} articles`);
+    console.log(`   Yesterday (Feb 9, 2026): ${yesterdayCount} articles`);
+
+    // Summary
+    console.log('\n' + '='.repeat(80));
+    console.log('✅ SEEDING SUMMARY');
+    console.log('='.repeat(80));
+    console.log(`✨ New articles added: ${newArticlesCount}`);
+    console.log(`🔄 Existing articles updated: ${updatedArticlesCount}`);
+    console.log(`⏭️  Articles skipped (no changes): ${skippedArticlesCount}`);
+    console.log(`✅ Valid Cloudinary images: ${imageValidCount}`);
+    console.log(`⚠️  Image issues detected: ${imageInvalidCount}`);
+    console.log(`📈 Total articles processed: ${allArticles.length}`);
+    console.log('='.repeat(80));
+
+    // Warnings
+    if (imageInvalidCount > 0) {
+      console.log('\n⚠️  WARNING: Some articles have invalid image URLs!');
+      console.log('   Run: node scripts/migrateImagesToCloudinary.js');
     }
+
+    if (articlesWithoutImages > 0) {
+      console.log('\n⚠️  WARNING: Some articles in DB have no images!');
+      console.log('   Check these articles and update them.');
+    }
+
+    if (cloudinaryImages === totalInDb) {
+      console.log('\n🎉 SUCCESS: All articles have valid Cloudinary images!');
+    }
+
+    // Next steps
+    console.log('\n💡 NEXT STEPS:');
+    console.log('   1. Restart your backend server');
+    console.log('   2. Clear browser cache (Ctrl + Shift + R)');
+    console.log('   3. Visit your website and verify:');
+    console.log('      - Articles are showing correct dates');
+    console.log('      - All images are loading');
+    console.log('      - No duplicate articles');
+    console.log('   4. Open browser console to check for any errors\n');
 
     process.exit(0);
   } catch (error) {
-    console.error("❌ Seeding failed:", error);
+    console.error("\n❌ Seeding failed:", error);
     console.error("Error details:", error.message);
     if (error.stack) {
       console.error("Stack trace:", error.stack);

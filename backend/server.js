@@ -11,6 +11,7 @@ import authRoutes from "./routes/auth.js";
 import articleRoutes from "./routes/articleRoutes.js";
 import mcqRoutes from "./routes/mcqRoutes.js";
 import userRoutes from "./routes/users.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 /* ================= ENV ================= */
 dotenv.config();
@@ -21,8 +22,15 @@ connectDB();
 /* ================= APP ================= */
 const app = express();
 
-/* ================= MIDDLEWARE ================= */
+/* ================= PROXY (IMPORTANT FOR PROD) ================= */
+app.set("trust proxy", 1);
+
+/* ================= SECURITY ================= */
 app.use(helmet());
+
+/* ================= BODY PARSER ================= */
+app.use(express.json({ limit: "100mb" }));
+app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 
 /* ================= CORS ================= */
 const allowedOrigins = [
@@ -46,30 +54,35 @@ app.use(
   })
 );
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 /* ================= RATE LIMIT ================= */
-const limiter = rateLimit({
+// General API limiter
+const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 300,
   message: "Too many requests, please try again later.",
 });
 
-app.use("/api/", limiter);
+// Upload-specific limiter (relaxed)
+const uploadLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 50, // bulk uploads are heavy
+  message: "Too many upload requests, please slow down.",
+});
+
+app.use("/api/", apiLimiter);
+app.use("/api/upload", uploadLimiter);
 
 /* ================= STATIC ================= */
 app.use("/uploads", express.static("uploads"));
 
-/* =====================================================
-   ROBOTS.TXT – BLOCK ALL CRAWLERS (API)
-===================================================== */
+/* ================= ROBOTS ================= */
 app.get("/robots.txt", (req, res) => {
   res.type("text/plain");
   res.send("User-agent: *\nDisallow: /");
 });
 
 /* ================= ROUTES ================= */
+app.use("/api/upload", uploadRoutes);
 app.use("/api/articles", articleRoutes);
 app.use("/api/mcqs", mcqRoutes);
 app.use("/api/auth", authRoutes);

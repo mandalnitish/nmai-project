@@ -32,6 +32,190 @@ const TAGS = {
   ExamUtility: ["UPSC", "SSC"]
 };
 
+
+   /* ================= IMAGE CDN MAP (Cloudinary) ================= */
+
+const IMAGE_MAP = {
+  
+  default:
+    "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720000/nmai-articles/default.jpg",
+
+  // PAGE 1
+
+  "manu-bhaker-25m-pistol": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hnwxgrjplpvrjckl4w1n.jpg",
+  "modi-seychelles-package": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nduhppu7qfdnymcj0f2b.jpg",
+  "chandrayaan-4-south-pole": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/duiutajylgzwphetyxtn.jpg",
+  "delhi-bharat-taxi": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/pl4lfln5gdhmksritu4z.jpg",
+  "lyriothemis-keralensis": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/qa0c7adimuuxsfl4ntv1.jpg",
+  "kerala-judicial-disability": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/zylnu0hg1cncsueuuh4c.jpg",
+  "india-netherlands-hydrogen": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/lya6uaud02970622ownx.jpg",
+  "india-greece-defence-pact": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/m7dttcpe6aa4zoeoykhl.jpg",
+  "peru-new-frog-species": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/zcyks1pkv9cjj4b1pdb8.jpg",
+  "vijay-anandh-city-union-bank": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/akxvyjhcrf9r7di89krd.jpg",
+  "somalia-saudi-defence-pact": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/wtscentqwqqvx8rrdm18.jpg",
+
+  "nso-mcp-esankhyiki": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/j5mvpljjjepv1puenp15.jpg",
+  "marine-worms-west-bengal": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/wkqyfwsyspuiuyhg5mrm.jpg",
+  "ins-arnala-naval": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hloubmkgjw9hfozis4ni.jpg",
+  "longest-snake-sulawesi": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/kvmapio4kkjwufrzmi8m.png",
+  "trapdoor-spider-kolhapur": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/k2andkagcriuynxnjaw9.jpg",
+  "sharda-river-corridor": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wkt4euywlqorho38zuhb.jpg",
+  "kondaveedu-fort": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/f0nwuz5wdo9ksforv6td.jpg",
+  "kailash-yatra-shipki-la": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ykv2fmkwrbgpbjgl15ot.jpg",
+  "ant-species-guwahati": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wqppok9csiaiopwnr2fw.jpg",
+  "eurasian-otter-kashmir": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/txtmkmnsgzw6ldwpcjqc.jpg",
+  "epilepsy-day-2026": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/y0trbftbfin5xuinaa5n.jpg",
+  "saff-u19-women": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/xywbp5mglcd68lvvikwy.jpg",
+  "chess-esports-nations-cup": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/ynkywibkkwyzqzxcgcdg.jpg",
+  "wool-production-india": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/sz0wyjvqmzuuwivmwdne.jpg",
+  "padhai-with-ai": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/hbqbmlu9uck4b7rjawdc.jpg",
+  "azista-space-orbit": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/vemrxwamnubxarjituhn.jpg",
+  "thailand-election": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/vw8lbsiqwvi5m73cdsxb.jpg",
+  "japan-election": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ee7iezdz0i3uzeabkp66.jpg",
+  "medicolegal-guidebook": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720670/nmai-articles/rvokxwuiqcpo8fzu7fnb.jpg",
+  "queensland-ban": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/jdfwrg2mu3gta86ey1da.jpg",
+  "cbci-president": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/mokeacyxmpbr6gkjna2x.jpg",
+  "leed-green-realty": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/fdhcq3dsebtaothnplzf.png",
+  
+
+  // PAGE 2
+
+  "meghana-sajjanar-bronze": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/f14hwqhb9kb7o1bjln1u.jpg",
+  "india-us-trade-pact": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/r7tfwk2wfpj2h8nvrssn.jpg",
+  "rss-flag-march": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/bgbr9s0ilqltnvlrfoh2.jpg",
+  "cancer-cells-research": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/fg7ezd25ko2ky1fdggb2.jpg",
+  "south-africa-fmd-vaccine": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/hfbbwmibu2smdervadlv.jpg",
+  "pm-modi-malaysia": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/ypj5kozm7ssagf6tzkvc.jpg",
+  "forex-reserves": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/v97fzh78jjbllrzvo14n.jpg",
+  "us-tariffs-removal": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/kon0nmq6ma7a1fwh8bhd.jpg",
+  "voc-port-anti-drone": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/ud1ycgb6sd3bakrhtjah.jpg",
+  
+
+  // PAGE 3
+
+  "rcb-wpl-title": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/yeu3dfclyuanyqduygdk.jpg",
+  "surajkund-crafts-mela": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/oigojdzxwqgxzlx4kqhe.jpg",
+  "operation-shastra": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/tp5mwgn7qjm3tswaa50c.jpg",
+  "india-u19-world-cup": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/v6x2ylac82pl6sobrvnk.jpg",
+  "nasa-spherex-comet": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/zxlbrgfoaspphivquagj.jpg",
+  "rbi-repo-rate": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/uv7hbkwjw8wn9ku6lld1.jpg",
+  "end-fgm": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/alcluqoxlzc7ki2rnjtb.jpg",
+  "alwar-insurance": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/xshvrabjsuwjmpl2fgvm.jpg",
+  "chabahar-port": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hwejnhwhv1lfz6msmeg9.jpg",
+  "age-of-consent": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hyhjzesfscvjjahh5p9i.jpg",
+
+
+  // PAGE 4
+
+  "goa-bird-atlas": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720663/nmai-articles/vrokzrnvgj7ev8z4vp6y.jpg",
+  "delhi-pollution": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/jaqjbmy6faxcfbg4yxmq.jpg",
+  "arun-icecreams-guinness": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/op2ygck32eq1p3my0skt.jpg",
+  "amaravati-quantum-valley": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/qykamps6vv9avx6jkb0s.jpg",
+  "china-rare-earth": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/vard5oqsegew8dzz5yqv.jpg",
+  "agni-iii-missile": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/ceqmdmi7be7kpmo3qvwq.jpg",
+  "tamil-nadu-greening": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/lvlz7orqzbnbxdxpwaol.jpg",
+  "iran-ioc-female": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/xyxhz8uf4jyjprq1brfp.jpg",
+  "bhutan-queen-award": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/rmdzfpgbcgwlhbzshg5l.jpg",
+  "karnataka-ballot-papers": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720668/nmai-articles/qodlnawovjluxnzlxs1p.jpg",
+
+
+  // PAGE 5
+
+  "project-vault-trump": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/oiitk79t8ivivmhjmrnz.jpg",
+  "hakki-pikki-tribe": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/tylduz0vmdkfcgyewsj7.jpg",
+  "chichon-volcano": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/uuuj3twab6kzjmdxszpc.jpg",
+  "rbi-repo-rate-budget": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ebp8lqjqulmpkowclo0p.jpg",
+  "india-gcc-trade": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/fmbug83w3gbypdoenqit.jpg",
+  "isro-gisat-1a": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/w9woprztotsclql5sgta.jpg",
+  "manipur-deputy-cm": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/maqqhxukioyx8ddi5jbo.jpg",
+  "pakhal-plant-species": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/noinxsrkfvhhak9o8410.jpg",
+  "heart-attack-biosensor": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qwltqf6cfbjxatur66ol.jpg",
+  "dubai-loop": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/yjorbgtyacnrusvl8yuo.jpg",
+
+
+  // PAGE 6
+
+  "lead-free-photodetector": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/t0w2h1apnru55avot5ci.jpg",
+  "railways-ai-elephant": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/lkcgbuwyuptapa8qv8bh.jpg",
+  "esha-singh-gold": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ummjipiia8twbbac9lie.jpg",
+  "rouble-nagi-teacher-prize": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ur6f7fscs9kqx4nzvo6r.jpg",
+  "suruchi-samrat-silver": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/f37j645najf8zquvdyeu.jpg",
+  "bharat-taxi": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qzyoiocqoa09rl3fwka9.jpg",
+  "exercise-khanjar": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/w9woprztotsclql5sgta.jpg",
+  "us-baltic-security": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ee7iezdz0i3uzeabkp66.jpg",
+  "karnataka-property-mutation": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/osewjtacfcn7nnndqrpx.jpg",
+  "ncdc-schemes": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/uygfhngjtqlwgcdjhts9.jpg",
+  "brics-industrial": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/gimptxwo1u23xkkzbpo8.jpg",
+  "eci-conference": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/j5mvpljjjepv1puenp15.jpg",
+  "paradip-swachhata": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/esaj4bqbyrxqhrdwgqeg.jpg",
+  "bharat-rang-mahotsav": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/hbqbmlu9uck4b7rjawdc.jpg",
+  "seychelles-president": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/ulyfprbuaseao7rbrvgh.jpg",
+
+  // PAGE 7
+
+  "nasa-jupiter-juno": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/aw3b6rfzcs9deuuvnw4b.jpg",
+  "andre-beteille": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/zxlbrgfoaspphivquagj.jpg",
+  "milano-cortina-skiing": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/uygfhngjtqlwgcdjhts9.jpg",
+  "lung-cancer-guidelines": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/lk98tlehpvgrpbrm6yge.jpg",
+  "elon-musk-800b": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nv7zbbygpcqp1pdt18ej.jpg",
+  "india-china-trade": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nduhppu7qfdnymcj0f2b.jpg",
+  "world-govt-summit": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/o1adrzjo6sdhmkodgrxq.jpg",
+  "kamakhya-ropeway": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/wu063tafttmhmkjbygjk.jpg",
+  "badminton-asia": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/ja1jhtmrvdgu7iysx7qv.jpg",
+  "drdo-sfdr-missile": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/kjxppz3dog1taawsluy4.jpg",
+  "devnimori-relics": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/cr89ejnyx8eartp0f5tx.jpg",
+  "moltbook-ai": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/pr078didbbzaai1vncjk.jpg",
+
+// PAGE 8
+
+  "neophyteid-app": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/gimptxwo1u23xkkzbpo8.jpg",
+  "volcan-de-fuego": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/jl6jg2rcr6mwsruniwqn.jpg",
+  "saksham-2026": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/qzzrzrht789w9r6nysxf.jpg",
+  "bharat-container-shipping": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/xz6suwwpa5tjqxutgaoh.jpg",
+  "vinay-tonse-yes-bank": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/imphcj0dt9fq9ngfdc6p.jpg",
+  "walmart-1-trillion": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/cqzywiuqnf2ywt7vmh7j.jpg",
+  "spain-social-media-ban": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/j0txe4x88irmexne38o7.jpg",
+  "manipur-cm": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720670/nmai-articles/ufdx9jnbxqssmogx3kdq.jpg",
+  "yuki-bhambri-atp": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/qyttf53htcir9r9aa1ce.jpg",
+  "sp-venkatesh": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/onn2pbhxi2wszlhjzxlp.jpg",
+
+// PAGE 9
+
+  "haven-1-space-station": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/xdx77ataanwoqfo1n3ox.jpg",
+  "gandhi-statue-australia": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/bo7on4kttgzhxd1dlczu.jpg",
+  "iim-digital-conclave": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/oaogvwqil120gx43w0vz.jpg",
+  "seafood-congress": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/cjnddoinukdahdjwkpiw.jpg",
+  "solar-flare-x8": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/nsciv0sk3n5jgrlardqg.jpg",
+  "anahat-singh-squash": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/wr7njhi6usiqcleyfqvi.jpg",
+  "india-us-tariffs": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/onpm8uibvsaymsjkfykr.jpg",
+  "dalai-lama-grammy": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/nfnlfzvoxdjhcaqwsgdl.jpg",
+  "ramanathan-nobel": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ocfhxyjezowbrf6g2yiq.jpg",
+
+// PAGE 10
+
+  "census-2027-digital": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/tqtztdpmhslogsooyc94.jpg",
+  "supercapacitor": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/hdszqh7xnixami2xdrdi.jpg",
+  "ai-impact-summit": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ooxkbrto5hfcjwtkle1r.jpg",
+  "migration-survey": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/oomyaslk8nxc1kijwwg4.jpg",
+  "pennaiyar-tribunal": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/qkbonkc7quicmuygygmn.jpg",
+  "gyan-bharatam": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/eolbfbs8xevr1qwy6ozo.jpg",
+  "gujarat-renewable": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/nws9isyuwptgbhn3npwc.jpg",
+  "pilloo-ai-app": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ymiovubdu5b7oi7jatvn.jpg",
+  "ibc-amendment": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720683/nmai-articles/chsqwsco76lx53yjy8n0.jpg",
+
+// PAGE 11
+
+  "ai-summit-global": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720683/nmai-articles/ecm63tipncl0ograhlbd.jpg",
+  "nso-migration-policy": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/nn6zdsrwjxlb5ixsj56d.jpg",
+  "pennaiyar-dispute": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720682/nmai-articles/qyypzalxldjbjyd7zvoe.jpg",
+  "gyan-bharatam-mission": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720682/nmai-articles/rfew4ks08uvv3iebpphx.jpg",
+  "gujarat-energy-leader": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720682/nmai-articles/vhlrjyhwzlyagobfqjgd.jpg",
+  "ap-ai-accounting": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720679/nmai-articles/hpltpsydug4p7kanqu6y.jpg",
+  "ibc-amendment-proposed": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/jl6jg2rcr6mwsruniwqn.jpg",
+
+};
+
+
 /* ================= INDIVIDUAL ARTICLE CONTENT ================= */
 
 const ARTICLE_CONTENT = {
@@ -5227,11 +5411,12 @@ const allArticles = ARTICLE_LIST.map((article, index) => {
     content: generateHTMLContent(article.title, article.category),
     category: article.category,
     tags: TAGS[article.category] || ["UPSC"],
+
     featuredImage: {
-      // FIXED: Direct path to images in /images/articles/
-      url: `/images/articles/${article.imageName}`,
-      alt: article.title
+    url: IMAGE_MAP[article.imageName] ?? IMAGE_MAP["default"],
+    alt: article.title
     },
+
     publishDate: articleDate,
     lastUpdated: articleDate,
     readingTime: "6 min",

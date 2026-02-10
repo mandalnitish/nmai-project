@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiImage } from "react-icons/fi";
 import "./ArticleImage.css";
 
+/**
+ * ArticleImage Component - Optimized for Cloudinary URLs
+ * 
+ * Handles three types of image URLs:
+ * 1. Full Cloudinary URL (https://res.cloudinary.com/...)
+ * 2. Image filename only (will construct Cloudinary URL)
+ * 3. Legacy local URLs (/uploads/...)
+ */
 const ArticleImage = ({ 
   imageName, 
   title = "Article Image", 
@@ -10,23 +18,33 @@ const ArticleImage = ({
   height,
   lazy = true 
 }) => {
-  const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  useEffect(() => {
-    if (!imageName) {
-      setLoading(false);
-      setError(true);
-      return;
+  /**
+   * Construct the proper image URL
+   */
+  const getImageUrl = () => {
+    if (!imageName) return null;
+
+    // If it's already a full Cloudinary URL, use it directly
+    if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
+      return imageName;
     }
 
-    // Construct image URL - adjust based on your backend
+    // If it's a Cloudinary public ID (e.g., "nmai-articles/image.jpg")
+    // Construct the full URL
+    if (imageName.includes('nmai-articles/')) {
+      const cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || 'your-cloud-name';
+      return `https://res.cloudinary.com/${cloudName}/image/upload/${imageName}`;
+    }
+
+    // Legacy: Try local backend (fallback)
     const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
-    const url = `${baseUrl}/api/uploads/${imageName}`;
-    
-    setImageUrl(url);
-  }, [imageName]);
+    return `${baseUrl}/uploads/${imageName}`;
+  };
+
+  const imageUrl = getImageUrl();
 
   const handleImageLoad = () => {
     setLoading(false);
@@ -39,7 +57,7 @@ const ArticleImage = ({
   };
 
   // Show placeholder if no image or error
-  if (!imageName || error) {
+  if (!imageName || !imageUrl || error) {
     return (
       <div className="article-image-placeholder">
         <FiImage size={48} />

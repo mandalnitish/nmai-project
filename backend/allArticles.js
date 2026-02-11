@@ -38,6 +38,282 @@ const TAGS = {
 /* ================= ALL ARTICLES ================= */
 
 const allArticles = [
+  
+   {
+  "title": "Global R&D Spending Hits $2.87 Trillion in 2024",
+  "slug": "2-global-rd-spending-hits-2-87-trillion-in-2024",
+  "summary": "Comprehensive analysis of global R&D expenditure trends in 2024 with exam-oriented insights for UPSC, SSC, and State PSC aspirants.",
+  "content": "<h2>Introduction</h2><p>Global research and development (R&D) spending reached $2.87 trillion in 2024, according to the World Intellectual Property Organization (WIPO), marking nearly a 3% annual growth.</p><h2>Key Highlights</h2><ul><li><strong>Global Spending:</strong> $2.87 trillion</li><li><strong>Growth Rate:</strong> Nearly 3%</li><li><strong>Institution:</strong> WIPO</li></ul><h2>Detailed Analysis</h2><h3>Innovation Trends</h3><p>R&D investment reflects technological competition and innovation-driven growth.</p><h3>Leading Economies</h3><p>Major economies continue to dominate global R&D spending.</p><h2>Exam Perspective</h2><ul><li>Science & Technology</li><li>Innovation Index</li><li>Economic Development</li></ul><h2>Key Takeaways</h2><ul><li>Steady growth in R&D spending</li><li>Global innovation race intensifies</li></ul><h2>Sources & References</h2><p>World Intellectual Property Organization</p>",
+  "category": "Economy",
+  "tags": ["R&D", "Innovation"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790300/nmai-articles/cypn9rxdpgc5wjrpyw7c.jpg", 
+  "alt": "Global R&D Spending" 
+   },
+
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["WIPO", "International Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "South Korea, US Launch Buddy Squadron Air Drill",
+  "slug": "3-south-korea-us-launch-buddy-squadron-air-drill",
+  "summary": "Analysis of South Korea–US joint air exercise and its geopolitical implications for exam preparation.",
+  "content": "<h2>Introduction</h2><p>South Korea and the United States launched a joint aerial exercise at Osan Air Base in Pyeongtaek to strengthen defence cooperation.</p><h2>Key Highlights</h2><ul><li><strong>Countries:</strong> South Korea, United States</li><li><strong>Location:</strong> Osan Air Base</li><li><strong>Purpose:</strong> Defence preparedness</li></ul><h2>Detailed Analysis</h2><h3>Strategic Context</h3><p>The exercise reflects growing regional security concerns.</p><h2>Exam Perspective</h2><ul><li>International Relations</li><li>Military Exercises</li></ul><h2>Key Takeaways</h2><ul><li>Strengthened defence ties</li><li>Focus on Indo-Pacific security</li></ul><h2>Sources & References</h2><p>Official Defence Statements</p>",
+  "category": "International Relations",
+  "tags": ["Military", "Defence"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790281/nmai-articles/yrhs5ef9xjwepeoff0cv.jpg", 
+  "alt": "South Korea US Air Drill" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Defence Releases"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "CM Majhi Launches Harichandan’s New Books",
+  "slug": "4-cm-majhi-launches-harichandans-new-books",
+  "summary": "Coverage of Odisha CM Mohan Charan Majhi unveiling new books by Biswabhusan Harichandan.",
+  "content": "<h2>Introduction</h2><p>Odisha CM Mohan Charan Majhi unveiled two new books authored by Biswabhusan Harichandan in Bhubaneswar.</p><h2>Key Highlights</h2><ul><li><strong>Chief Minister:</strong> Mohan Charan Majhi</li><li><strong>Author:</strong> Biswabhusan Harichandan</li><li><strong>Location:</strong> Bhubaneswar</li></ul><h2>Exam Perspective</h2><ul><li>State Politics</li><li>Literary Contributions</li></ul><h2>Key Takeaways</h2><ul><li>Recognition of veteran leader</li></ul><h2>Sources & References</h2><p>State Government Release</p>",
+  "category": "Polity",
+  "tags": ["Odisha", "Books"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790281/nmai-articles/vlfuokenjdzkob9ac5lf.jpg", 
+  "alt": "Book Launch Ceremony" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "4 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["State Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+ {
+  "title": "Chandrayaan-4 South Pole Landing Site Identified",
+  "slug": "5-chandrayaan-4-south-pole-landing-site-identified",
+  "summary": "Comprehensive analysis of ISRO’s identification of a lunar south pole landing site for Chandrayaan-4 with exam-oriented insights.",
+  "content": "<h2>Introduction</h2><p>Scientists at ISRO’s Space Applications Centre have identified a promising landing site near Mons Mouton in the Moon’s south polar region for India’s first lunar sample return mission, Chandrayaan-4.</p><h2>Key Highlights</h2><ul><li><strong>Mission:</strong> Chandrayaan-4</li><li><strong>Agency:</strong> ISRO</li><li><strong>Location:</strong> Mons Mouton, Lunar South Pole</li></ul><h2>Detailed Analysis</h2><h3>Strategic Importance</h3><p>The lunar south pole is scientifically significant due to potential water-ice deposits.</p><h3>India’s Space Progress</h3><p>This mission builds upon the success of Chandrayaan-3.</p><h2>Exam Perspective</h2><ul><li>Space Technology</li><li>India’s Space Missions</li></ul><h2>Key Takeaways</h2><ul><li>Focus on sample return mission</li><li>Scientific exploration of lunar south pole</li></ul><h2>Sources & References</h2><p>ISRO Releases</p>",
+  "category": "Science & Technology",
+  "tags": ["ISRO", "Space Mission"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790288/nmai-articles/bjtfr9xvbb4mm1keulvp.jpg", 
+  "alt": "Chandrayaan-4 Lunar South Pole" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["ISRO", "Government Statements"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "Sansha Yongle Blue Hole Reveals Complex Ocean History",
+  "slug": "6-sansha-yongle-blue-hole-reveals-complex-ocean-history",
+  "summary": "Analysis of the Sansha Yongle Blue Hole and its significance in understanding marine geological evolution.",
+  "content": "<h2>Introduction</h2><p>The Sansha Yongle Blue Hole, one of the deepest known marine sinkholes, has revealed insights into historical oceanographic and climatic patterns.</p><h2>Key Highlights</h2><ul><li><strong>Location:</strong> South China Sea</li><li><strong>Feature:</strong> Deepest Blue Hole in the region</li></ul><h2>Detailed Analysis</h2><h3>Oceanographic Importance</h3><p>Blue holes provide records of environmental and climatic changes.</p><h2>Exam Perspective</h2><ul><li>Oceanography</li><li>Marine Geography</li></ul><h2>Key Takeaways</h2><ul><li>Scientific value of blue holes</li><li>Insights into climate history</li></ul><h2>Sources & References</h2><p>Marine Research Publications</p>",
+  "category": "Geography",
+  "tags": ["Oceanography", "Climate"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790285/nmai-articles/ma2dzs8qkqselxqmc4tp.jpg", 
+  "alt": "Sansha Yongle Blue Hole" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Research Journals"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "Lancet Study Questions HbA1c Accuracy for Diabetes in India",
+  "slug": "8-lancet-study-questions-hba1c-accuracy-india",
+  "summary": "Analysis of The Lancet study raising concerns about HbA1c reliability in diagnosing Type-2 diabetes in India.",
+  "content": "<h2>Introduction</h2><p>A study published in The Lancet Regional Health has raised concerns about the reliability of HbA1c testing for diagnosing Type-2 diabetes in India.</p><h2>Key Highlights</h2><ul><li><strong>Journal:</strong> The Lancet Regional Health</li><li><strong>Focus:</strong> HbA1c diagnostic accuracy</li></ul><h2>Detailed Analysis</h2><p>Ethnic and physiological variations may affect HbA1c readings.</p><h2>Exam Perspective</h2><ul><li>Public Health</li><li>Non-Communicable Diseases</li></ul><h2>Key Takeaways</h2><ul><li>Need for contextual diagnostic standards</li></ul><h2>Sources & References</h2><p>The Lancet</p>",
+  "category": "Health",
+  "tags": ["Diabetes", "Public Health"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790287/nmai-articles/solqspyjcr0fr6j4xnjq.jpg", 
+    "alt": "HbA1c Diabetes Study" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["The Lancet"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+  
+  {
+  "title": "India, France Near SCALP Missile Deal After Operational Success",
+  "slug": "9-india-france-near-scalp-missile-deal-after-operational-success",
+  "summary": "Comprehensive analysis of the proposed SCALP cruise missile procurement deal between India and France with defence and strategic insights.",
+  "content": "<h2>Introduction</h2><p>India and France are in advanced discussions to finalise a defence deal for the procurement of SCALP cruise missiles following their successful operational deployment.</p><h2>Key Highlights</h2><ul><li><strong>Missile:</strong> SCALP Cruise Missile</li><li><strong>Countries:</strong> India and France</li><li><strong>Significance:</strong> Long-range precision strike capability</li></ul><h2>Detailed Analysis</h2><h3>Strategic Importance</h3><p>The SCALP missile enhances India's deep-strike capabilities and strengthens Indo-French defence ties.</p><h2>Exam Perspective</h2><ul><li>Defence Technology</li><li>India–France Relations</li></ul><h2>Key Takeaways</h2><ul><li>Boost to air power capability</li><li>Deepening strategic partnership</li></ul><h2>Sources & References</h2><p>Defence Ministry Releases</p>",
+  "category": "Defence",
+  "tags": ["Missile", "India-France"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790284/nmai-articles/tgd3eqnt5mmyqimupeam.jpg", 
+  "alt": "SCALP Missile" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Official Defence Statements"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "Vulture Conservation Sees Revival Milestone in Maharashtra",
+  "slug": "10-vulture-conservation-revival-milestone-maharashtra",
+  "summary": "Analysis of Maharashtra’s vulture conservation programme and ecological revival with environmental exam relevance.",
+  "content": "<h2>Introduction</h2><p>Maharashtra’s vulture conservation programme has achieved a milestone with the return of migratory griffon vultures to previously abandoned forest habitats.</p><h2>Key Highlights</h2><ul><li><strong>State:</strong> Maharashtra</li><li><strong>Species:</strong> Griffon Vultures</li><li><strong>Focus:</strong> Biodiversity Restoration</li></ul><h2>Detailed Analysis</h2><p>Conservation efforts, including safe zones and awareness campaigns, have aided population revival.</p><h2>Exam Perspective</h2><ul><li>Biodiversity Conservation</li><li>Environmental Governance</li></ul><h2>Key Takeaways</h2><ul><li>Successful conservation model</li><li>Ecological balance restoration</li></ul><h2>Sources & References</h2><p>Forest Department Reports</p>",
+  "category": "Environment",
+  "tags": ["Biodiversity", "Wildlife"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/c_fill,g_auto,h_250,w_400/v1770790295/nmai-articles/mnjhq6txjl0huxruzoyo.jpg", 
+    "alt": "Griffon Vulture Maharashtra" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Forest Department"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "India’s Reform Agenda for the Kimberley Process",
+  "slug": "11-indias-reform-agenda-for-kimberley-process",
+  "summary": "Detailed explanation of India’s reform proposals within the Kimberley Process Certification Scheme framework.",
+  "content": "<h2>Introduction</h2><p>The Kimberley Process Certification Scheme (KPCS) is designed to prevent trade in conflict diamonds. India has proposed reforms to enhance transparency and effectiveness.</p><h2>Key Highlights</h2><ul><li><strong>Mechanism:</strong> Kimberley Process Certification Scheme</li><li><strong>Objective:</strong> Prevent conflict diamond trade</li></ul><h2>Detailed Analysis</h2><p>Reforms focus on stronger monitoring and broader conflict definitions.</p><h2>Exam Perspective</h2><ul><li>International Trade</li><li>Global Governance Mechanisms</li></ul><h2>Key Takeaways</h2><ul><li>India’s proactive reform stance</li><li>Ethical trade importance</li></ul><h2>Sources & References</h2><p>International Trade Reports</p>",
+  "category": "International Relations",
+  "tags": ["Diamonds", "Global Governance"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790284/nmai-articles/dsixufkh0yf4cythm39h.jpg", 
+    "alt": "Kimberley Process" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Trade Publications"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "India Improves Rank in Global Corruption Index 2025",
+  "slug": "12-india-improves-rank-global-corruption-index-2025",
+  "summary": "Analysis of India’s improved ranking in the Corruption Perceptions Index 2025 and governance implications.",
+  "content": "<h2>Introduction</h2><p>India climbed five places to rank 91st in the Corruption Perceptions Index (CPI) 2025, reflecting modest improvements in public sector transparency.</p><h2>Key Highlights</h2><ul><li><strong>Index:</strong> Corruption Perceptions Index</li><li><strong>Rank:</strong> 91st</li><li><strong>Improvement:</strong> +5 places</li></ul><h2>Detailed Analysis</h2><p>The CPI evaluates perceived levels of public sector corruption globally.</p><h2>Exam Perspective</h2><ul><li>Governance Indicators</li><li>Transparency & Accountability</li></ul><h2>Key Takeaways</h2><ul><li>Incremental governance progress</li></ul><h2>Sources & References</h2><p>Transparency Reports</p>",
+  "category": "Polity",
+  "tags": ["Governance", "Transparency"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790297/nmai-articles/l8dmc24vlo9mkw4x36jg.jpg", 
+  "alt": "Corruption Perceptions Index 2025" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Transparency International"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "India Emerges as Global Leader in Enterprise AI Adoption",
+  "slug": "13-india-emerges-global-leader-enterprise-ai-adoption",
+  "summary": "Comprehensive analysis of India’s rise in enterprise AI and machine learning adoption with exam-oriented insights for competitive examinations.",
+  "content": "<h2>Introduction</h2><p>India has emerged as a global leader in enterprise artificial intelligence adoption, ranking second worldwide in AI and machine learning usage according to a recent industry report.</p><h2>Key Highlights</h2><ul><li><strong>Ranking:</strong> Second globally</li><li><strong>Focus:</strong> Enterprise AI & Machine Learning</li><li><strong>Sector Impact:</strong> Banking, IT, Healthcare, Governance</li></ul><h2>Detailed Analysis</h2><h3>Digital Transformation</h3><p>Rapid digitalization and startup ecosystem growth have accelerated AI deployment across industries.</p><h3>Economic Impact</h3><p>AI integration is expected to significantly enhance productivity and economic growth.</p><h2>Exam Perspective</h2><ul><li>Emerging Technologies</li><li>Digital India Initiatives</li><li>Economic Development</li></ul><h2>Key Takeaways</h2><ul><li>Strong enterprise AI penetration</li><li>India positioned as AI innovation hub</li></ul><h2>Sources & References</h2><p>Industry AI Reports</p>",
+  "category": "Science & Technology",
+  "tags": ["Artificial Intelligence", "Digital Economy"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790297/nmai-articles/hlglc2psrez6s5gk5d3y.jpg", 
+    "alt": "Enterprise AI Adoption India" },
+  "publishDate": "2026-02-11T00:00:00.000Z",
+  "lastUpdated": "2026-02-11T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Industry Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "French President Emmanuel Macron to Visit India From February 17–19",
+  "slug": "14-french-president-emmanuel-macron-visit-india-february-17-19",
+  "summary": "Analysis of French President Emmanuel Macron’s official visit to India and its diplomatic significance.",
+  "content": "<h2>Introduction</h2><p>French President Emmanuel Macron will undertake an official visit to India from February 17 to 19 for high-level bilateral discussions with Prime Minister Narendra Modi.</p><h2>Key Highlights</h2><ul><li><strong>Leader:</strong> Emmanuel Macron</li><li><strong>Duration:</strong> February 17–19</li><li><strong>Focus Areas:</strong> Defence, Trade, Climate Cooperation</li></ul><h2>Detailed Analysis</h2><p>The visit underscores the strategic partnership between India and France across multiple sectors.</p><h2>Exam Perspective</h2><ul><li>India–France Relations</li><li>Strategic Partnerships</li></ul><h2>Key Takeaways</h2><ul><li>Strengthening bilateral cooperation</li><li>Focus on Indo-Pacific strategy</li></ul><h2>Sources & References</h2><p>Ministry of External Affairs Releases</p>",
+  "category": "International Relations",
+  "tags": ["Diplomacy", "India-France"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790291/nmai-articles/h6go20xdbpsfazwntutk.jpg", 
+  "alt": "Emmanuel Macron India Visit" },
+  "publishDate": "2026-02-10T00:00:00.000Z",
+  "lastUpdated": "2026-02-10T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["MEA Statements"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+
+{
+  "title": "Aditya Pandya Becomes India’s Youngest Male Analog Astronaut",
+  "slug": "15-aditya-pandya-indias-youngest-male-analog-astronaut",
+  "summary": "Comprehensive coverage of Aditya Pandya becoming India’s youngest male analog astronaut with space science relevance for exams.",
+  "content": "<h2>Introduction</h2><p>Seventeen-year-old Aditya Pandya has become India’s youngest male analog astronaut after completing a lunar-habitat simulation mission conducted by AAKA Space Studio.</p><h2>Key Highlights</h2><ul><li><strong>Name:</strong> Aditya Pandya</li><li><strong>Age:</strong> 17 years</li><li><strong>Program:</strong> Analog Astronaut Mission</li></ul><h2>Detailed Analysis</h2><h3>Analog Missions</h3><p>Analog astronaut missions simulate space-like isolation and environmental conditions to prepare for future space exploration.</p><h3>Inspiration for Youth</h3><p>The achievement highlights growing interest in space sciences among Indian youth.</p><h2>Exam Perspective</h2><ul><li>Space Exploration</li><li>STEM Education</li></ul><h2>Key Takeaways</h2><ul><li>Youngest male analog astronaut from India</li><li>Boost to India’s space enthusiasm</li></ul><h2>Sources & References</h2><p>Space Program Releases</p>",
+  "category": "Science & Technology",
+  "tags": ["Space Science", "Youth Achievement"],
+  "featuredImage": { "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770790287/nmai-articles/xdihrabfll5ekul1xkk3.jpg", 
+    "alt": "Aditya Pandya Analog Astronaut" },
+  "publishDate": "2026-02-10T00:00:00.000Z",
+  "lastUpdated": "2026-02-10T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Official Announcements"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 1
+},
+  
   {
     "title": "Manu Bhaker Wins Silver in Asian Championship 25m Pistol",
     "slug": "1-manu-bhaker-wins-silver-in-asian-championship-25m-pistol",
@@ -49,7 +325,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hnwxgrjplpvrjckl4w1n.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qzyoiocqoa09rl3fwka9.jpg",
       "alt": "Manu Bhaker Wins Silver in Asian Championship 25m Pistol"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -82,7 +358,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nduhppu7qfdnymcj0f2b.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720668/nmai-articles/qodlnawovjluxnzlxs1p.jpg",
       "alt": "Modi Announces $175 Million Seychelles Development Package"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -116,7 +392,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/duiutajylgzwphetyxtn.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/ynkywibkkwyzqzxcgcdg.jpg",
       "alt": "ISRO Selects South Polar Site for Chandrayaan-4 Lander"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -148,7 +424,7 @@ const allArticles = [
       "Transport"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/pl4lfln5gdhmksritu4z.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/jdfwrg2mu3gta86ey1da.jpg",
       "alt": "Delhi Partners Bharat Taxi for Cooperative Mobility Services"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -181,7 +457,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/qa0c7adimuuxsfl4ntv1.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ur6f7fscs9kqx4nzvo6r.jpg",
       "alt": "New Dragonfly Species Lyriothemis keralensis Discovered in Kerala"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -214,7 +490,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/zylnu0hg1cncsueuuh4c.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ebp8lqjqulmpkowclo0p.jpg",
       "alt": "Visually Challenged Woman Tops Kerala Judicial Service Disability Merit List"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -246,7 +522,7 @@ const allArticles = [
       "Renewables"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/lya6uaud02970622ownx.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/jaqjbmy6faxcfbg4yxmq.jpg",
       "alt": "India, Netherlands Launch Hydrogen Fellowship, Expand Research Ties"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -279,7 +555,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/m7dttcpe6aa4zoeoykhl.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720663/nmai-articles/vrokzrnvgj7ev8z4vp6y.jpg",
       "alt": "India, Greece Sign Pact to Boost Defence Industry Ties"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -312,7 +588,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/zcyks1pkv9cjj4b1pdb8.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720670/nmai-articles/rvokxwuiqcpo8fzu7fnb.jpg",
       "alt": "New Frog Species Found in Peru Faces Immediate Threat"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -347,7 +623,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/akxvyjhcrf9r7di89krd.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ocfhxyjezowbrf6g2yiq.jpg",
       "alt": "RBI Approves Vijay Anandh as City Union Bank CEO"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -380,7 +656,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/wtscentqwqqvx8rrdm18.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720679/nmai-articles/hpltpsydug4p7kanqu6y.jpg",
       "alt": "Somalia–Saudi Defence Pact Deepens Gulf Rivalries"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -415,7 +691,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/j5mvpljjjepv1puenp15.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/lk98tlehpvgrpbrm6yge.jpg",
       "alt": "NSO Launches MCP Server for eSankhyiki Portal"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -448,7 +724,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/wkqyfwsyspuiuyhg5mrm.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/w9woprztotsclql5sgta.jpg",
       "alt": "Two New Marine Worm Species Discovered off West Bengal Coast"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -481,7 +757,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hloubmkgjw9hfozis4ni.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/vard5oqsegew8dzz5yqv.jpg",
       "alt": "INS Arnala Strengthens India's Indigenous Naval Capability"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -514,7 +790,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/kvmapio4kkjwufrzmi8m.png",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/lkcgbuwyuptapa8qv8bh.jpg",
       "alt": "World's Longest Snake Recorded in Sulawesi, Indonesia"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -547,7 +823,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/k2andkagcriuynxnjaw9.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/cjnddoinukdahdjwkpiw.jpg",
       "alt": "New Trapdoor Spider Species Found in Kolhapur Grasslands"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -579,7 +855,7 @@ const allArticles = [
       "Transport"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wkt4euywlqorho38zuhb.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/o1adrzjo6sdhmkodgrxq.jpg",
       "alt": "Sharda River Corridor Project Launched in Champawat"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -612,7 +888,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/f0nwuz5wdo9ksforv6td.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/fmbug83w3gbypdoenqit.jpg",
       "alt": "Centre Plans Comprehensive Development of Kondaveedu Fort"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -645,7 +921,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ykv2fmkwrbgpbjgl15ot.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/rmdzfpgbcgwlhbzshg5l.jpg",
       "alt": "India Explores New Kailash Yatra Route via Shipki La Pass"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -678,7 +954,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wqppok9csiaiopwnr2fw.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/m7dttcpe6aa4zoeoykhl.jpg",
       "alt": "New Ant Species Discovered in Guwahati's Garbhanga Forest"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -711,7 +987,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/txtmkmnsgzw6ldwpcjqc.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/yeu3dfclyuanyqduygdk.jpg",
       "alt": "Eurasian Otter Returns to Kashmir via LoC Waterways"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -743,7 +1019,7 @@ const allArticles = [
       "Public Health"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/y0trbftbfin5xuinaa5n.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/kon0nmq6ma7a1fwh8bhd.jpg",
       "alt": "International Epilepsy Day 2026 Observed Globally"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -776,7 +1052,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/xywbp5mglcd68lvvikwy.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/tp5mwgn7qjm3tswaa50c.jpg",
       "alt": "India Clinch SAFF U-19 Women's Championship Title"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -809,7 +1085,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/ynkywibkkwyzqzxcgcdg.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/sz0wyjvqmzuuwivmwdne.jpg",
       "alt": "Chess Added to Esports Nations Cup 2026 Line-up"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -841,7 +1117,7 @@ const allArticles = [
       "Disaster Management"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/sz0wyjvqmzuuwivmwdne.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720683/nmai-articles/ecm63tipncl0ograhlbd.jpg",
       "alt": "Wool Production in India: States, Types and Industry Profile"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -873,7 +1149,7 @@ const allArticles = [
       "Institutions"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/hbqbmlu9uck4b7rjawdc.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/maqqhxukioyx8ddi5jbo.jpg",
       "alt": "Himachal CM Launches 'Padhai with AI' Initiative"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -907,7 +1183,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/vemrxwamnubxarjituhn.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/akxvyjhcrf9r7di89krd.jpg",
       "alt": "Azista Space Achieves India's First In-Orbit Snooping Capability"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -940,7 +1216,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/vw8lbsiqwvi5m73cdsxb.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/bo7on4kttgzhxd1dlczu.jpg",
       "alt": "Anutin Charnvirakul Wins Thailand Snap Election"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -973,7 +1249,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ee7iezdz0i3uzeabkp66.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/xyxhz8uf4jyjprq1brfp.jpg",
       "alt": "Sanae Takaichi Secures Supermajority in Japan Election"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -1007,7 +1283,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720670/nmai-articles/rvokxwuiqcpo8fzu7fnb.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ee7iezdz0i3uzeabkp66.jpg",
       "alt": "Arjun Ram Meghwal Launches The Medicolegal Guidebook"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -1040,7 +1316,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/jdfwrg2mu3gta86ey1da.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nduhppu7qfdnymcj0f2b.jpg",
       "alt": "Queensland Moves to Ban Pro-Palestinian Slogans"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -1073,7 +1349,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/mokeacyxmpbr6gkjna2x.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/y0trbftbfin5xuinaa5n.jpg",
       "alt": "Cardinal Poola Anthony Elected CBCI President"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -1106,7 +1382,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/fdhcq3dsebtaothnplzf.png",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/yjorbgtyacnrusvl8yuo.jpg",
       "alt": "India Ranks Second Globally in LEED-Certified Green Realty"
     },
     "publishDate": "2026-02-10T00:00:00.000Z",
@@ -1139,7 +1415,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/f14hwqhb9kb7o1bjln1u.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/wu063tafttmhmkjbygjk.jpg",
       "alt": "Meghana Sajjanar Wins Asian Shooting Championships Bronze"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1174,7 +1450,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/r7tfwk2wfpj2h8nvrssn.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/nfnlfzvoxdjhcaqwsgdl.jpg",
       "alt": "India–US Trade Pact Cuts Duties on Wines and Dry Fruits"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1208,7 +1484,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/bgbr9s0ilqltnvlrfoh2.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/j5mvpljjjepv1puenp15.jpg",
       "alt": "RSS Flag March from Kashmir to Kanyakumari"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1242,7 +1518,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/fg7ezd25ko2ky1fdggb2.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/txtmkmnsgzw6ldwpcjqc.jpg",
       "alt": "Cancer Cells Reprogramme Immune Cells to Aid Tumour Growth"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1276,7 +1552,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/hfbbwmibu2smdervadlv.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/jl6jg2rcr6mwsruniwqn.jpg",
       "alt": "South Africa Launches First Local FMD Vaccine in 20 Years"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1309,7 +1585,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/ypj5kozm7ssagf6tzkvc.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/oomyaslk8nxc1kijwwg4.jpg",
       "alt": "PM Modi Begins Two-Day Official Visit to Malaysia"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1344,7 +1620,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/v97fzh78jjbllrzvo14n.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/v6x2ylac82pl6sobrvnk.jpg",
       "alt": "India's Forex Reserves Hit Record High"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1379,7 +1655,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/kon0nmq6ma7a1fwh8bhd.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/nfnlfzvoxdjhcaqwsgdl.jpg",
       "alt": "US Removes Additional 25% Tariffs on Indian Goods"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1412,7 +1688,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/ud1ycgb6sd3bakrhtjah.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ooxkbrto5hfcjwtkle1r.jpg",
       "alt": "VOC Port Becomes First in India to Deploy Anti-Drone System"
     },
     "publishDate": "2026-02-09T00:00:00.000Z",
@@ -1445,7 +1721,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/yeu3dfclyuanyqduygdk.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/uygfhngjtqlwgcdjhts9.jpg",
       "alt": "RCB Clinches Second Women's Premier League Title"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1478,7 +1754,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/oigojdzxwqgxzlx4kqhe.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/cqzywiuqnf2ywt7vmh7j.jpg",
       "alt": "Surajkund International Crafts Mela Highlights Artisan Self-Reliance"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1512,7 +1788,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/tp5mwgn7qjm3tswaa50c.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720670/nmai-articles/ufdx9jnbxqssmogx3kdq.jpg",
       "alt": "Delhi Police Launches Operation Shastra"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1545,7 +1821,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/v6x2ylac82pl6sobrvnk.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/op2ygck32eq1p3my0skt.jpg",
       "alt": "India Wins Record Sixth ICC U-19 Cricket World Cup"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1579,7 +1855,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/zxlbrgfoaspphivquagj.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/t0w2h1apnru55avot5ci.jpg",
       "alt": "NASA's SPHEREx Detects Organic Molecules in Interstellar Comet"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1614,7 +1890,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/uv7hbkwjw8wn9ku6lld1.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/aw3b6rfzcs9deuuvnw4b.jpg",
       "alt": "RBI Keeps Repo Rate Unchanged at 5.25%"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1647,7 +1923,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/alcluqoxlzc7ki2rnjtb.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/v97fzh78jjbllrzvo14n.jpg",
       "alt": "Global Push to End Female Genital Mutilation"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1680,7 +1956,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/xshvrabjsuwjmpl2fgvm.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/pl4lfln5gdhmksritu4z.jpg",
       "alt": "Alwar Achieves 100% Insurance Coverage"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1713,7 +1989,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hwejnhwhv1lfz6msmeg9.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/xywbp5mglcd68lvvikwy.jpg",
       "alt": "Iran Reaffirms Support for Chabahar Port Project"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1747,7 +2023,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hyhjzesfscvjjahh5p9i.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hnwxgrjplpvrjckl4w1n.jpg",
       "alt": "Government Rejects Lowering Age of Consent"
     },
     "publishDate": "2026-02-08T00:00:00.000Z",
@@ -1780,7 +2056,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720663/nmai-articles/vrokzrnvgj7ev8z4vp6y.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/uv7hbkwjw8wn9ku6lld1.jpg",
       "alt": "Goa Becomes Second State to Publish Bird Atlas"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1813,7 +2089,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/jaqjbmy6faxcfbg4yxmq.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720661/nmai-articles/mokeacyxmpbr6gkjna2x.jpg",
       "alt": "Delhi Ranked Second Most Polluted City in January: CREA"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1848,7 +2124,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/op2ygck32eq1p3my0skt.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/zcyks1pkv9cjj4b1pdb8.jpg",
       "alt": "Arun Icecreams Sets Guinness World Record in Hyderabad"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1881,7 +2157,7 @@ const allArticles = [
       "Digital India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/qykamps6vv9avx6jkb0s.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/qa0c7adimuuxsfl4ntv1.jpg",
       "alt": "Amaravati Quantum Valley Project Launched in Andhra Pradesh"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1914,7 +2190,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/vard5oqsegew8dzz5yqv.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/vw8lbsiqwvi5m73cdsxb.jpg",
       "alt": "China Clears Limited Rare Earth Exports to Japan"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1947,7 +2223,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/ceqmdmi7be7kpmo3qvwq.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/duiutajylgzwphetyxtn.jpg",
       "alt": "India Successfully Test-Fires Agni-III Ballistic Missile"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -1980,7 +2256,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/lvlz7orqzbnbxdxpwaol.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/qyttf53htcir9r9aa1ce.jpg",
       "alt": "Tamil Nadu Launches Urban Greening Policy"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -2013,7 +2289,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/xyxhz8uf4jyjprq1brfp.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/ceqmdmi7be7kpmo3qvwq.jpg",
       "alt": "Iran's First Female Member Elected to IOC"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -2046,7 +2322,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/rmdzfpgbcgwlhbzshg5l.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/f0nwuz5wdo9ksforv6td.jpg",
       "alt": "Bhutan Queen Mother Receives Upendra Nath Brahma Award"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -2080,7 +2356,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720668/nmai-articles/qodlnawovjluxnzlxs1p.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/tylduz0vmdkfcgyewsj7.jpg",
       "alt": "Karnataka Approves Ballot Papers for Panchayat Elections"
     },
     "publishDate": "2026-02-07T00:00:00.000Z",
@@ -2113,7 +2389,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/oiitk79t8ivivmhjmrnz.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nv7zbbygpcqp1pdt18ej.jpg",
       "alt": "Trump Unveils Project Vault to Secure US Mineral Supplies"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2146,7 +2422,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/tylduz0vmdkfcgyewsj7.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/alcluqoxlzc7ki2rnjtb.jpg",
       "alt": "Hakki Pikki Tribe Members Stranded in Africa Due to Visa Expiry"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2178,7 +2454,7 @@ const allArticles = [
       "Disaster Management"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/uuuj3twab6kzjmdxszpc.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/vemrxwamnubxarjituhn.jpg",
       "alt": "Chichón Volcano Shows Renewed Hydrothermal Activity"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2213,7 +2489,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ebp8lqjqulmpkowclo0p.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/zxlbrgfoaspphivquagj.jpg",
       "alt": "RBI Holds Repo Rate at 5.25% After Union Budget"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2246,7 +2522,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/fmbug83w3gbypdoenqit.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hyhjzesfscvjjahh5p9i.jpg",
       "alt": "India–GCC Formalise Start of Free Trade Talks"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2280,7 +2556,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/w9woprztotsclql5sgta.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/lvlz7orqzbnbxdxpwaol.jpg",
       "alt": "ISRO Prepares for GISAT-1A Launch"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2314,7 +2590,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/maqqhxukioyx8ddi5jbo.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/f37j645najf8zquvdyeu.jpg",
       "alt": "Manipur Deputy CM Appointment Triggers Protests"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2347,7 +2623,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/noinxsrkfvhhak9o8410.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/wkqyfwsyspuiuyhg5mrm.jpg",
       "alt": "New Flowering Plant Species Discovered in Pakhal Sanctuary"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2381,7 +2657,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qwltqf6cfbjxatur66ol.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/xshvrabjsuwjmpl2fgvm.jpg",
       "alt": "Indian Researchers Develop Low-Cost Biosensor for Early Heart Attack Detection"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2413,7 +2689,7 @@ const allArticles = [
       "Transport"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/yjorbgtyacnrusvl8yuo.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/fg7ezd25ko2ky1fdggb2.jpg",
       "alt": "Dubai to Launch Underground Dubai Loop Transport System"
     },
     "publishDate": "2026-02-06T00:00:00.000Z",
@@ -2447,7 +2723,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/t0w2h1apnru55avot5ci.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qwltqf6cfbjxatur66ol.jpg",
       "alt": "India Develops Lead-Free Self-Powered Photodetector"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2480,7 +2756,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/lkcgbuwyuptapa8qv8bh.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/pr078didbbzaai1vncjk.jpg",
       "alt": "Indian Railways Deploys AI System to Prevent Elephant Deaths"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2513,7 +2789,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ummjipiia8twbbac9lie.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/ud1ycgb6sd3bakrhtjah.jpg",
       "alt": "Esha Singh Wins Gold at Asian Shooting Championship"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2546,7 +2822,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ur6f7fscs9kqx4nzvo6r.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/gimptxwo1u23xkkzbpo8.jpg",
       "alt": "Rouble Nagi Wins Global Teacher Prize"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2579,7 +2855,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/f37j645najf8zquvdyeu.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/kjxppz3dog1taawsluy4.jpg",
       "alt": "Suruchi Singh and Samrat Rana Win Silver at Asian Championship"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2614,7 +2890,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/qzyoiocqoa09rl3fwka9.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wkt4euywlqorho38zuhb.jpg",
       "alt": "Bharat Taxi Launches Cooperative Cab Service in Delhi"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2647,7 +2923,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/w9woprztotsclql5sgta.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/oigojdzxwqgxzlx4kqhe.jpg",
       "alt": "Exercise Khanjar Begins at Missamari, Assam"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2680,7 +2956,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ee7iezdz0i3uzeabkp66.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/wr7njhi6usiqcleyfqvi.jpg",
       "alt": "US Congress Approves Security Funds for Baltic States"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2714,7 +2990,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/osewjtacfcn7nnndqrpx.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/uuuj3twab6kzjmdxszpc.jpg",
       "alt": "Karnataka Rolls Out Automatic Property Mutation System"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2749,7 +3025,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/uygfhngjtqlwgcdjhts9.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/fdhcq3dsebtaothnplzf.png",
       "alt": "NCDC Implements Yuva Sahakar and Swayamshakti Schemes"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2782,7 +3058,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/gimptxwo1u23xkkzbpo8.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/wqppok9csiaiopwnr2fw.jpg",
       "alt": "India Joins BRICS Industrial Competencies Centre"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2816,7 +3092,7 @@ const allArticles = [
       "Federalism"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/j5mvpljjjepv1puenp15.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/hfbbwmibu2smdervadlv.jpg",
       "alt": "ECI to Host National Conference of State Election Commissioners"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2849,7 +3125,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/esaj4bqbyrxqhrdwgqeg.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/f14hwqhb9kb7o1bjln1u.jpg",
       "alt": "Paradip Port Authority Wins Swachhata Pakhwada Award"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2882,7 +3158,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/hbqbmlu9uck4b7rjawdc.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720659/nmai-articles/k2andkagcriuynxnjaw9.jpg",
       "alt": "Bharat Rang Mahotsav 25th Edition Opens in Rohtak"
     },
     "publishDate": "2026-02-05T00:00:00.000Z",
@@ -2949,7 +3225,7 @@ const allArticles = [
       "Space"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/aw3b6rfzcs9deuuvnw4b.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/zylnu0hg1cncsueuuh4c.jpg",
       "alt": "NASA Revises Jupiter's Size Using Juno Mission Data"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -2982,7 +3258,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/zxlbrgfoaspphivquagj.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/lya6uaud02970622ownx.jpg",
       "alt": "Andre Beteille Passes Away at 91"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3015,7 +3291,7 @@ const allArticles = [
       "India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/uygfhngjtqlwgcdjhts9.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/ykv2fmkwrbgpbjgl15ot.jpg",
       "alt": "Milano–Cortina 2026 Alpine Skiing Schedule Announced"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3047,7 +3323,7 @@ const allArticles = [
       "Public Health"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/lk98tlehpvgrpbrm6yge.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720665/nmai-articles/ummjipiia8twbbac9lie.jpg",
       "alt": "India Issues First National Lung Cancer Care Guidelines"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3082,7 +3358,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nv7zbbygpcqp1pdt18ej.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/ypj5kozm7ssagf6tzkvc.jpg",
       "alt": "Elon Musk Becomes World's First $800 Billion Individual"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3117,7 +3393,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/nduhppu7qfdnymcj0f2b.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720662/nmai-articles/hwejnhwhv1lfz6msmeg9.jpg",
       "alt": "India–China Trade Reaches Record Level"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3150,7 +3426,7 @@ const allArticles = [
       "Geopolitics"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/o1adrzjo6sdhmkodgrxq.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720682/nmai-articles/vhlrjyhwzlyagobfqjgd.jpg",
       "alt": "World Government Summit 2026 Opens in Dubai"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3182,7 +3458,7 @@ const allArticles = [
       "Transport"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/wu063tafttmhmkjbygjk.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720664/nmai-articles/oiitk79t8ivivmhjmrnz.jpg",
       "alt": "Kamakhya Ropeway Project to Boost Religious Tourism"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3248,7 +3524,7 @@ const allArticles = [
       "Military"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/kjxppz3dog1taawsluy4.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/bgbr9s0ilqltnvlrfoh2.jpg",
       "alt": "DRDO Successfully Demonstrates SFDR Missile Technology"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3281,7 +3557,7 @@ const allArticles = [
       "Awards"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720680/nmai-articles/cr89ejnyx8eartp0f5tx.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720660/nmai-articles/r7tfwk2wfpj2h8nvrssn.jpg",
       "alt": "India Sends Devnimori Buddha Relics to Sri Lanka"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3314,7 +3590,7 @@ const allArticles = [
       "Digital India"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720669/nmai-articles/pr078didbbzaai1vncjk.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/osewjtacfcn7nnndqrpx.jpg",
       "alt": "Moltbook Emerges as AI-Only Social Network Experiment"
     },
     "publishDate": "2026-02-04T00:00:00.000Z",
@@ -3347,7 +3623,7 @@ const allArticles = [
       "Biodiversity"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/gimptxwo1u23xkkzbpo8.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720667/nmai-articles/kvmapio4kkjwufrzmi8m.png",
       "alt": "Kerala to Launch NeophyteID App for Invasive Plant Detection"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3379,7 +3655,7 @@ const allArticles = [
       "Disaster Management"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/jl6jg2rcr6mwsruniwqn.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/eolbfbs8xevr1qwy6ozo.jpg",
       "alt": "Explosive Eruption at Guatemala's Volcán de Fuego"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3411,7 +3687,7 @@ const allArticles = [
       "Renewables"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/qzzrzrht789w9r6nysxf.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720673/nmai-articles/esaj4bqbyrxqhrdwgqeg.jpg",
       "alt": "SAKSHAM 2026 Campaign Launched for Fuel Conservation"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3443,7 +3719,7 @@ const allArticles = [
       "Transport"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/xz6suwwpa5tjqxutgaoh.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720657/nmai-articles/hloubmkgjw9hfozis4ni.jpg",
       "alt": "India Signs Pact to Launch Bharat Container Shipping Line"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3478,7 +3754,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/imphcj0dt9fq9ngfdc6p.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/tqtztdpmhslogsooyc94.jpg",
       "alt": "RBI Appoints Vinay Tonse as YES Bank MD & CEO"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3513,7 +3789,7 @@ const allArticles = [
       "Growth"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/cqzywiuqnf2ywt7vmh7j.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720681/nmai-articles/ymiovubdu5b7oi7jatvn.jpg",
       "alt": "Walmart Becomes First Retailer to Reach $1 Trillion Valuation"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",
@@ -3546,7 +3822,7 @@ const allArticles = [
       "Welfare"
     ],
     "featuredImage": {
-      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/j0txe4x88irmexne38o7.jpg",
+      "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770720675/nmai-articles/xz6suwwpa5tjqxutgaoh.jpg",
       "alt": "Spain Bans Social Media Access for Children Under 16"
     },
     "publishDate": "2026-02-03T00:00:00.000Z",

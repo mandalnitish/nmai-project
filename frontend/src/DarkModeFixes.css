@@ -1,0 +1,384 @@
+/* =====================================================================
+   COMPREHENSIVE DARK MODE FIXES - ALL PAGES + SEARCH BAR
+   Import this file AFTER all component CSS files
+===================================================================== */
+
+/* =====================
+   IMAGE 1: HOME PAGE - HERO & SIDEBARS
+===================== */
+
+/* Hero Section */
+.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+}
+
+.dark-mode .hero-content h1,
+.dark-mode .hero-title {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .hero-content p,
+.dark-mode .hero-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+/* Categories Sidebar - Left Side */
+.dark-mode .categories-sidebar,
+.dark-mode .sidebar-section,
+.dark-mode .category-filter,
+.dark-mode .filters-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .categories-sidebar h3,
+.dark-mode .sidebar-section h3,
+.dark-mode .category-filter h3,
+.dark-mode .filters-header h3 {
+  background: var(--primary-color) !important;
+  color: var(--bg-primary) !important;
+}
+
+.dark-mode .category-list,
+.dark-mode .sidebar-section ul {
+  background: transparent !important;
+}
+
+.dark-mode .category-list li,
+.dark-mode .sidebar-section ul li {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+  background: transparent !important;
+}
+
+.dark-mode .category-list li:hover,
+.dark-mode .sidebar-section ul li:hover {
+  background: var(--bg-light) !important;
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .category-list li.active {
+  background: var(--primary-color) !important;
+  color: var(--bg-primary) !important;
+}
+
+/* E-Books & Exams Sidebar - Right Side */
+.dark-mode .ebooks-sidebar,
+.dark-mode .exams-sidebar,
+.dark-mode .sidebar-widget,
+.dark-mode .sidebar-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .ebooks-sidebar h3,
+.dark-mode .exams-sidebar h3,
+.dark-mode .sidebar-widget h3,
+.dark-mode .sidebar-card h3 {
+  background: var(--primary-color) !important;
+  color: var(--bg-primary) !important;
+}
+
+.dark-mode .ebooks-sidebar ul li,
+.dark-mode .exams-sidebar ul li,
+.dark-mode .sidebar-widget ul li,
+.dark-mode .sidebar-card li {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.dark-mode .ebooks-sidebar ul li:hover,
+.dark-mode .exams-sidebar ul li:hover,
+.dark-mode .sidebar-widget ul li:hover,
+.dark-mode .sidebar-card li:hover {
+  background: var(--bg-light) !important;
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .ebooks-sidebar a,
+.dark-mode .exams-sidebar a,
+.dark-mode .sidebar-widget a,
+.dark-mode .sidebar-card a {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .ebooks-sidebar a:hover,
+.dark-mode .exams-sidebar a:hover,
+.dark-mode .sidebar-widget a:hover,
+.dark-mode .sidebar-card a:hover {
+  color: var(--primary-light) !important;
+}
+
+/* Latest Current Affairs Section */
+.dark-mode .latest-affairs-section,
+.dark-mode .affairs-section {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .latest-affairs-section h2,
+.dark-mode .affairs-section h2 {
+  color: var(--text-primary) !important;
+}
+
+/* =====================
+   MODERN SEARCH BAR - DARK MODE FIX
+===================== */
+
+/* Search Container */
+.dark-mode .sidebar-search {
+  background: linear-gradient(135deg, #1e1e1e, #242424) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Modern Search Input with Icon */
+.dark-mode .sidebar-search input,
+.dark-mode .search-bar input,
+.dark-mode .search-input,
+.dark-mode .gk-search,
+.dark-mode .home-search input {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid var(--border-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Search Icon - Dark Mode (inline SVG) */
+.dark-mode .sidebar-search input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23b3b3b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.75rem center !important;
+  background-size: 18px 18px !important;
+  background-color: var(--bg-tertiary) !important;
+  padding-left: 2.75rem !important;
+}
+
+/* Placeholder - Dark Mode */
+.dark-mode .sidebar-search input::placeholder,
+.dark-mode .search-bar input::placeholder,
+.dark-mode .search-input::placeholder,
+.dark-mode .gk-search::placeholder,
+.dark-mode .home-search input::placeholder {
+  color: var(--text-light) !important;
+  font-weight: 500 !important;
+}
+
+/* Focus State - Dark Mode with Icon Change */
+.dark-mode .sidebar-search input:focus,
+.dark-mode .search-bar input:focus,
+.dark-mode .search-input:focus,
+.dark-mode .gk-search:focus,
+.dark-mode .home-search input:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+  background: var(--bg-card) !important;
+  box-shadow: 0 0 0 3px rgba(124, 142, 247, 0.25) !important;
+}
+
+.dark-mode .sidebar-search input:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237c8ef7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-color: var(--bg-card) !important;
+}
+
+/* Search Icon Alternative */
+.dark-mode .search-icon {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .search-icon:hover {
+  color: var(--primary-light) !important;
+}
+
+/* Other Search Variations */
+.dark-mode .home-search,
+.dark-mode .search-bar,
+.dark-mode .search-container {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* =====================
+   IMAGE 2 & 3: ARTICLE CARDS
+===================== */
+
+/* Article Cards - Horizontal */
+.dark-mode .article-card-horizontal {
+  background: var(--bg-card) !important;
+  border-left-color: var(--primary-color) !important;
+  border-top-color: var(--border-color) !important;
+  border-right-color: var(--border-color) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.dark-mode .article-card-image-horizontal {
+  background: var(--bg-tertiary) !important;
+}
+
+.dark-mode .article-category-badge-horizontal {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+  color: var(--bg-primary) !important;
+}
+
+.dark-mode .article-date-horizontal {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .article-title-horizontal {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .article-card-horizontal:hover .article-title-horizontal {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .article-summary-horizontal {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .article-read-more-horizontal {
+  color: var(--primary-light) !important;
+}
+
+/* =====================
+   CURRENT AFFAIRS PAGE
+===================== */
+
+.dark-mode .current-affairs-page {
+  background: var(--bg-main) !important;
+}
+
+.dark-mode .secondary-bar {
+  background: var(--bg-card) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.dark-mode .secondary-wrap a {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .secondary-wrap a:hover {
+  background: var(--bg-light) !important;
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .secondary-wrap a.active {
+  background: var(--primary-color) !important;
+  color: var(--bg-primary) !important;
+}
+
+.dark-mode .ca-sidebar {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .sidebar-title {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .filter-section h4 {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .category-list li {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .exam-filter select {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Pagination */
+.dark-mode .pagination {
+  background: var(--bg-card) !important;
+}
+
+.dark-mode .pagination-btn {
+  background: var(--primary-color) !important;
+}
+
+.dark-mode .pagination-info {
+  color: var(--text-primary) !important;
+}
+
+/* =====================
+   GLOBAL OVERRIDES
+===================== */
+
+.dark-mode [style*="background: white"],
+.dark-mode [style*="background: #ffffff"],
+.dark-mode [style*="background: #fff"] {
+  background: var(--bg-card) !important;
+}
+
+.dark-mode [style*="color: black"],
+.dark-mode [style*="color: #000000"],
+.dark-mode [style*="color: #000"],
+.dark-mode [style*="color: #333"] {
+  color: var(--text-primary) !important;
+}
+
+/* =====================
+   ADDITIONAL MODERN SEARCH ENHANCEMENTS
+===================== */
+
+/* Search Container Modern Style */
+.dark-mode .sidebar-search {
+  position: relative !important;
+}
+
+/* Glassmorphism effect on hover */
+.dark-mode .sidebar-search input:hover {
+  border-color: var(--primary-dark) !important;
+  background: rgba(42, 42, 42, 0.8) !important;
+}
+
+/* Loading state */
+.dark-mode .sidebar-search.loading input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237c8ef7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='2' x2='12' y2='6'%3E%3C/line%3E%3Cline x1='12' y1='18' x2='12' y2='22'%3E%3C/line%3E%3Cline x1='4.93' y1='4.93' x2='7.76' y2='7.76'%3E%3C/line%3E%3Cline x1='16.24' y1='16.24' x2='19.07' y2='19.07'%3E%3C/line%3E%3Cline x1='2' y1='12' x2='6' y2='12'%3E%3C/line%3E%3Cline x1='18' y1='12' x2='22' y2='12'%3E%3C/line%3E%3Cline x1='4.93' y1='19.07' x2='7.76' y2='16.24'%3E%3C/line%3E%3Cline x1='16.24' y1='7.76' x2='19.07' y2='4.93'%3E%3C/line%3E%3C/svg%3E") !important;
+  animation: rotate 1s linear infinite !important;
+}
+
+@keyframes rotate {
+  from { background-position: 0.75rem center; }
+  to { background-position: 0.75rem center; }
+}
+
+/* Search Results Dropdown (if applicable) */
+.dark-mode .search-results-dropdown {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 12px !important;
+  margin-top: 0.5rem !important;
+}
+
+.dark-mode .search-result-item {
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dark-mode .search-result-item:hover {
+  background: var(--bg-light) !important;
+}
+
+.dark-mode .search-no-results {
+  color: var(--text-secondary) !important;
+}
+
+/* =====================
+   RESPONSIVE SEARCH BAR
+===================== */
+
+@media (max-width: 768px) {
+  .dark-mode .sidebar-search {
+    margin: -1.5rem -1.5rem 1rem !important;
+    padding: 1rem !important;
+  }
+  
+  .dark-mode .sidebar-search input {
+    font-size: 0.9rem !important;
+    padding: 0.75rem 1rem 0.75rem 2.5rem !important;
+  }
+}

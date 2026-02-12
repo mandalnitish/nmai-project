@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { FiUser, FiMail, FiLock, FiPhone, FiMapPin } from 'react-icons/fi';
 import './Auth.css';
+import './AuthDarkMode.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({

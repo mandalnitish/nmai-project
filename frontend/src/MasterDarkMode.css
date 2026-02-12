@@ -1,0 +1,661 @@
+/* =====================================================================
+   MASTER DARK MODE FILE - COMPLETE SOLUTION
+   Import this LAST in your App.css or main CSS file
+   
+   Covers ALL pages:
+   - Home Page
+   - Current Affairs
+   - Article Detail
+   - Daily Quiz
+   - MCQ Practice
+   - Static Pages (About, Privacy, Contact)
+   - GK Today Layout
+   - All Components
+===================================================================== */
+
+/* =====================
+   IMPORT ALL DARK MODE FIXES
+===================== */
+
+/* This file combines all dark mode fixes from:
+   1. Home Page
+   2. Current Affairs
+   3. Article Detail
+   4. Daily Quiz
+   5. MCQ Practice
+   6. Static Pages
+   7. Components (Cards, Sidebars, etc.)
+*/
+
+/* =====================
+   CORE DARK MODE VARIABLES
+===================== */
+.dark-mode,
+[data-theme="dark"],
+body.dark {
+  /* Backgrounds */
+  --bg-primary: #1e293b;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #334155;
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-soft: #1e293b;
+  --bg-gray: #1e293b;
+  --bg-light: #334155;
+  --bg-white: #1e293b;
+  
+  /* Text Colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-light: #94a3b8;
+  --text-dark: #f1f5f9;
+  --text-main: #e2e8f0;
+  --text-body: #cbd5e1;
+  --text-gray: #94a3b8;
+  --text-muted: #94a3b8;
+  
+  /* Borders */
+  --border-color: #334155;
+  --border-light: #334155;
+  --border-medium: #475569;
+  
+  /* Shadows - Darker for dark mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.8);
+  
+  /* Primary Colors - Lighter for dark mode */
+  --primary-color: #60a5fa;
+  --primary-dark: #3b82f6;
+  --primary-light: #93c5fd;
+  --primary: #3b82f6;
+  --primary-soft: rgba(59, 130, 246, 0.2);
+  
+  /* Secondary & Accent */
+  --secondary-color: #a78bfa;
+  --accent-color: #f0abfc;
+  
+  /* Current Affairs Colors */
+  --ca-primary: #3b82f6;
+  --ca-primary-light: #60a5fa;
+  --ca-bg: #0f172a;
+  --ca-card-bg: #1e293b;
+  --ca-text: #e2e8f0;
+  --ca-text-light: #94a3b8;
+  --ca-border: #334155;
+  --ca-sidebar-bg: #1e293b;
+  --ca-filter-active: #3b82f6;
+  
+  /* Semantic Colors - Adjusted for dark mode */
+  --success: #34d399;
+  --error: #f87171;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+  --accent-yellow: #fcd34d;
+  --accent-green: #34d399;
+  --accent-red: #f87171;
+  --accent-orange: #fb923c;
+}
+
+/* =====================
+   HOME PAGE
+===================== */
+.dark-mode .home-page {
+  background: var(--bg-main) !important;
+}
+
+.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .hero-title {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .hero-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .gradient-text {
+  background: linear-gradient(to right, #fcd34d, #fb923c) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* =====================
+   SIDEBARS - ALL PAGES
+===================== */
+.dark-mode .home-sidebar,
+.dark-mode .gk-sidebar,
+.dark-mode .ca-sidebar,
+.dark-mode .categories-sidebar,
+.dark-mode .ebooks-sidebar,
+.dark-mode .exams-sidebar,
+.dark-mode .sidebar-section,
+.dark-mode .sidebar-widget,
+.dark-mode .sidebar-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .sidebar-header h3,
+.dark-mode .home-sidebar h3,
+.dark-mode .gk-sidebar h3,
+.dark-mode .gk-sidebar > h3,
+.dark-mode .sidebar-card h3 {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .home-sidebar li,
+.dark-mode .gk-sidebar li,
+.dark-mode .category-list li,
+.dark-mode .sidebar-card li {
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+  background: transparent !important;
+}
+
+.dark-mode .home-sidebar li:hover,
+.dark-mode .gk-sidebar li:hover,
+.dark-mode .category-list li:hover,
+.dark-mode .sidebar-card li:hover {
+  background: var(--bg-light) !important;
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .home-sidebar li.active,
+.dark-mode .category-list li.active {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .sidebar-card a {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .sidebar-card a:hover {
+  color: var(--primary-light) !important;
+}
+
+/* =====================
+   SEARCH INPUTS
+===================== */
+.dark-mode .sidebar-search input,
+.dark-mode .search-input,
+.dark-mode .gk-search,
+.dark-mode .form-input,
+.dark-mode .form-select {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dark-mode .sidebar-search input::placeholder,
+.dark-mode .search-input::placeholder,
+.dark-mode .gk-search::placeholder {
+  color: var(--text-light) !important;
+}
+
+.dark-mode .sidebar-search input:focus,
+.dark-mode .search-input:focus,
+.dark-mode .gk-search:focus {
+  background: var(--bg-card) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* =====================
+   ARTICLE CARDS - ALL VARIANTS
+===================== */
+.dark-mode .article-card,
+.dark-mode .article-card--horizontal,
+.dark-mode .article-card-horizontal,
+.dark-mode .gk-article {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  border-left-color: var(--primary-color) !important;
+}
+
+.dark-mode .article-card__image,
+.dark-mode .article-card-image-horizontal {
+  background: var(--bg-tertiary) !important;
+}
+
+.dark-mode .article-card__category,
+.dark-mode .article-category-badge-horizontal {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+  color: #93c5fd !important;
+}
+
+.dark-mode .article-card__title,
+.dark-mode .article-title-horizontal,
+.dark-mode .gk-article-body h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .article-card:hover .article-card__title,
+.dark-mode .article-card-horizontal:hover .article-title-horizontal {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .article-card__summary,
+.dark-mode .article-summary-horizontal,
+.dark-mode .gk-article-body p {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .article-card__date,
+.dark-mode .article-date-horizontal,
+.dark-mode .gk-date {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .article-card__read-more,
+.dark-mode .article-read-more-horizontal {
+  color: var(--primary-light) !important;
+}
+
+/* =====================
+   TRENDING SECTION
+===================== */
+.dark-mode .trending-section {
+  background: var(--bg-card) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .trending-item {
+  background: var(--bg-soft) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .trending-item:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.dark-mode .trending-content h4 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .trending-meta {
+  color: var(--text-light) !important;
+}
+
+/* =====================
+   PAGINATION
+===================== */
+.dark-mode .pagination {
+  background: var(--bg-card) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .pagination span {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .pagination button {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .pagination button:disabled {
+  background: var(--bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* =====================
+   DAILY QUIZ PAGE
+===================== */
+.dark-mode .daily-quiz-page {
+  background: var(--bg-main) !important;
+}
+
+.dark-mode .start-card,
+.dark-mode .results-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .start-card h1,
+.dark-mode .results-card h1 {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-color)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.dark-mode .start-card p {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .info-item {
+  background: var(--bg-soft) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .info-item strong {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .info-item span {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .quiz-header,
+.dark-mode .quiz-navigation {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .progress-bar {
+  background: var(--bg-light) !important;
+}
+
+.dark-mode .progress-text {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .quiz-question {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .question-text {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .answer-option,
+.dark-mode .option {
+  background: var(--bg-soft) !important;
+  border: 2px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .answer-option:hover,
+.dark-mode .option:hover {
+  background: var(--bg-light) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.dark-mode .answer-option.selected,
+.dark-mode .option.selected {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .answer-option.correct,
+.dark-mode .option.correct {
+  background: var(--success) !important;
+  border-color: var(--success) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .answer-option.incorrect,
+.dark-mode .option.incorrect {
+  background: var(--error) !important;
+  border-color: var(--error) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .indicator {
+  background: var(--bg-soft) !important;
+  border: 2px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .indicator.answered {
+  background: rgba(52, 211, 153, 0.2) !important;
+  border-color: var(--success) !important;
+  color: var(--success) !important;
+}
+
+.dark-mode .indicator.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .stat-box.correct {
+  background: rgba(52, 211, 153, 0.15) !important;
+  border-color: var(--success) !important;
+  color: var(--success) !important;
+}
+
+.dark-mode .stat-box.incorrect {
+  background: rgba(248, 113, 113, 0.15) !important;
+  border-color: var(--error) !important;
+  color: var(--error) !important;
+}
+
+.dark-mode .stat-box.total {
+  background: rgba(102, 126, 234, 0.15) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* =====================
+   MCQ PRACTICE PAGE
+===================== */
+.dark-mode .mcq-practice-page {
+  background: var(--bg-main) !important;
+}
+
+.dark-mode .page-header {
+  background: linear-gradient(135deg, #4c51bf, #667eea) !important;
+}
+
+.dark-mode .page-title {
+  color: #ffffff !important;
+}
+
+.dark-mode .page-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .filters-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .filters-header h3 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .reset-btn {
+  background: var(--bg-soft) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .filter-group label {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .filter-select {
+  background: var(--bg-soft) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .mcq-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .mcq-card:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.dark-mode .mcq-category {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+  color: #93c5fd !important;
+}
+
+.dark-mode .mcq-question {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .mcq-option {
+  background: var(--bg-soft) !important;
+  border: 2px solid var(--border-light) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .mcq-option:hover {
+  background: var(--bg-light) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.dark-mode .mcq-explanation {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08)) !important;
+  border-left-color: var(--primary-light) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* =====================
+   STATIC PAGES
+===================== */
+.dark-mode .static-page {
+  background: var(--bg-main) !important;
+}
+
+.dark-mode .static-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .static-card h1 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .static-card h2,
+.dark-mode .static-card h3,
+.dark-mode .static-card h4 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .static-card p {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .static-card strong {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .static-card li {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .highlight-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08)) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.dark-mode .highlight-box h3 {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .contact-box > div {
+  background: var(--bg-soft) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.dark-mode .contact-box h4 {
+  color: var(--primary-light) !important;
+}
+
+.dark-mode .contact-box p {
+  color: var(--text-primary) !important;
+}
+
+/* =====================
+   LOADING & ERROR STATES
+===================== */
+.dark-mode .loading-container,
+.dark-mode .empty-state {
+  background: var(--bg-card) !important;
+  border-color: var(--border-light) !important;
+}
+
+.dark-mode .loading-container p,
+.dark-mode .empty-state p {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .spinner {
+  border-color: var(--bg-light) !important;
+  border-top-color: var(--primary-color) !important;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.dark-mode .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .btn-outline {
+  background: transparent !important;
+  color: var(--primary-light) !important;
+  border-color: var(--primary-light) !important;
+}
+
+.dark-mode .btn-outline:hover {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+/* =====================
+   GLOBAL OVERRIDES
+===================== */
+.dark-mode [style*="background: white"],
+.dark-mode [style*="background: #ffffff"],
+.dark-mode [style*="background: #fff"] {
+  background: var(--bg-card) !important;
+}
+
+.dark-mode [style*="color: black"],
+.dark-mode [style*="color: #000000"],
+.dark-mode [style*="color: #333"] {
+  color: var(--text-primary) !important;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+.dark-mode ::-webkit-scrollbar {
+  background: var(--bg-secondary) !important;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--bg-secondary) !important;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--primary-color) !important;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark) !important;
+}
+
+/* =====================
+   IMAGES
+===================== */
+.dark-mode img:not([data-no-invert]) {
+  opacity: 0.9;
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+@media (prefers-reduced-motion: reduce) {
+  .dark-mode * {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+  }
+}

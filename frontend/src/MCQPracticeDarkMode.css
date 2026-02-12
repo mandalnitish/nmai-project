@@ -1,0 +1,374 @@
+/* ================= MCQ PRACTICE PAGE - COMPLETE DARK MODE ================= */
+
+/* Page Background */
+.dark-mode .mcq-practice-page {
+  background: var(--bg-main, #0f172a) !important;
+}
+
+/* ================= PAGE HEADER ================= */
+.dark-mode .page-header {
+  background: linear-gradient(135deg, #4c51bf, #667eea) !important;
+  border-bottom-left-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+}
+
+.dark-mode .page-title {
+  color: #ffffff !important;
+}
+
+.dark-mode .page-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ================= FILTERS CARD ================= */
+.dark-mode .filters-card {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .filters-header h3 {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+.dark-mode .filters-header h3 svg {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+/* ================= RESET BUTTON ================= */
+.dark-mode .reset-btn {
+  background: var(--bg-soft, #1e293b) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+}
+
+.dark-mode .reset-btn:hover {
+  background: var(--bg-light, #334155) !important;
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+/* ================= FILTER GROUPS ================= */
+.dark-mode .filter-group label {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+.dark-mode .filter-select {
+  background: var(--bg-soft, #1e293b) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .filter-select:focus {
+  outline: none !important;
+  border-color: var(--primary-color, #667eea) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* ================= MCQ LIST ================= */
+.dark-mode .mcqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.dark-mode .mcq-item {
+  background: transparent !important;
+}
+
+.dark-mode .mcq-number {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+/* ================= MCQ CARD ================= */
+.dark-mode .mcq-card {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+}
+
+.dark-mode .mcq-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  border-color: var(--primary-color, #667eea) !important;
+}
+
+/* ================= MCQ HEADER ================= */
+.dark-mode .mcq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .mcq-category {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+  color: #93c5fd !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+}
+
+.dark-mode .mcq-date {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 0.85rem !important;
+}
+
+/* ================= MCQ QUESTION ================= */
+.dark-mode .mcq-question {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ================= MCQ OPTIONS ================= */
+.dark-mode .mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .mcq-option,
+.dark-mode .option {
+  background: var(--bg-soft, #1e293b) !important;
+  border: 2px solid var(--border-light, #334155) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.dark-mode .mcq-option:hover,
+.dark-mode .option:hover {
+  background: var(--bg-light, #334155) !important;
+  border-color: var(--primary-color, #667eea) !important;
+}
+
+.dark-mode .mcq-option.selected,
+.dark-mode .option.selected {
+  background: rgba(102, 126, 234, 0.2) !important;
+  border-color: var(--primary-color, #667eea) !important;
+}
+
+.dark-mode .mcq-option.correct,
+.dark-mode .option.correct {
+  background: rgba(52, 211, 153, 0.2) !important;
+  border-color: var(--success, #34d399) !important;
+  color: var(--success, #34d399) !important;
+}
+
+.dark-mode .mcq-option.incorrect,
+.dark-mode .option.incorrect {
+  background: rgba(248, 113, 113, 0.2) !important;
+  border-color: var(--error, #f87171) !important;
+  color: var(--error, #f87171) !important;
+}
+
+.dark-mode .option-label {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-weight: 600 !important;
+}
+
+.dark-mode .option.selected .option-label {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+.dark-mode .option-text {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+/* ================= MCQ EXPLANATION ================= */
+.dark-mode .mcq-explanation {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08)) !important;
+  border-left: 4px solid var(--primary-light, #93c5fd) !important;
+  color: var(--text-secondary, #cbd5e1) !important;
+  padding: 1rem !important;
+  border-radius: 0 8px 8px 0 !important;
+  margin-top: 1rem !important;
+}
+
+.dark-mode .mcq-explanation strong {
+  color: var(--primary-light, #93c5fd) !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dark-mode .mcq-explanation p {
+  color: var(--text-secondary, #cbd5e1) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* ================= MCQ ACTIONS ================= */
+.dark-mode .mcq-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.dark-mode .mcq-actions button {
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.dark-mode .check-answer-btn,
+.dark-mode .show-answer-btn {
+  background: var(--primary-color, #667eea) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark-mode .check-answer-btn:hover,
+.dark-mode .show-answer-btn:hover {
+  background: var(--primary-dark, #5568d3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.dark-mode .next-mcq-btn {
+  background: var(--bg-soft, #1e293b) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+}
+
+.dark-mode .next-mcq-btn:hover {
+  background: var(--bg-light, #334155) !important;
+}
+
+/* ================= LOADING & EMPTY STATES ================= */
+.dark-mode .mcq-loading {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  padding: 3rem !important;
+  text-align: center !important;
+  border-radius: 12px !important;
+}
+
+.dark-mode .mcq-loading p {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .no-mcqs {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  padding: 3rem !important;
+  text-align: center !important;
+  border-radius: 12px !important;
+}
+
+.dark-mode .no-mcqs p {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-size: 1.1rem !important;
+}
+
+/* ================= PAGINATION ================= */
+.dark-mode .mcq-pagination {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-top: 2rem !important;
+}
+
+.dark-mode .mcq-pagination button {
+  background: var(--primary-color, #667eea) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+.dark-mode .mcq-pagination button:hover:not(:disabled) {
+  background: var(--primary-dark, #5568d3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.dark-mode .mcq-pagination button:disabled {
+  background: var(--bg-light, #334155) !important;
+  color: var(--text-light, #94a3b8) !important;
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+}
+
+.dark-mode .mcq-pagination span {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-weight: 600 !important;
+}
+
+/* ================= RESPONSIVE - MOBILE ================= */
+@media (max-width: 768px) {
+  .dark-mode .page-title {
+    font-size: 1.7rem;
+  }
+
+  .dark-mode .page-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .dark-mode .filters-card {
+    padding: 1.3rem 1rem;
+  }
+
+  .dark-mode .filters-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .dark-mode .reset-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dark-mode .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-mode .mcq-card {
+    padding: 1.25rem !important;
+  }
+
+  .dark-mode .mcq-question {
+    font-size: 1rem !important;
+  }
+
+  .dark-mode .mcq-option,
+  .dark-mode .option {
+    padding: 0.875rem !important;
+  }
+
+  .dark-mode .mcq-actions {
+    flex-direction: column;
+  }
+
+  .dark-mode .mcq-actions button {
+    width: 100%;
+  }
+
+  .dark-mode .mcq-pagination {
+    flex-wrap: wrap;
+    padding: 1rem !important;
+  }
+
+  .dark-mode .mcq-pagination button {
+    padding: 0.6rem 1.2rem !important;
+  }
+
+  .dark-mode .mcq-pagination span {
+    width: 100%;
+    text-align: center;
+  }
+}

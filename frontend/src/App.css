@@ -419,3 +419,33 @@ a:hover {
   flex: 1;
   background: #f5f7fa;
 }
+
+/* ================= DARK THEME ================= */
+body.dark {
+  --bg-main: #0f172a;
+  --bg-white: #1e293b;
+  --bg-gray: #1e293b;
+  --bg-light: #334155;
+
+  --text-dark: #f1f5f9;
+  --text-main: #e2e8f0;
+  --text-body: #cbd5e1;
+  --text-gray: #94a3b8;
+
+  --border-light: #334155;
+  --border-medium: #475569;
+
+  --ca-bg: #0f172a;
+  --ca-card-bg: #1e293b;
+  --ca-text: #e2e8f0;
+  --ca-text-light: #94a3b8;
+  --ca-border: #334155;
+  --ca-sidebar-bg: #1e293b;
+
+  --bg-card: #1e293b;
+  --bg-soft: #334155;
+}
+
+
+@import './MasterDarkMode.css';
+@import './DarkModeFixes.css';

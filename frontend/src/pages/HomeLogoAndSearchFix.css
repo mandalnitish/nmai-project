@@ -1,0 +1,229 @@
+/* =====================================================================
+   HOME LOGO & SEARCH ICON FIX
+   Fixes: 1) Home logo not resetting to page 1
+          2) Multiple search icons in dark mode
+===================================================================== */
+
+/* =====================
+   FIX 1: SEARCH ICON - REMOVE DUPLICATES IN DARK MODE
+===================== */
+
+/* Hide any duplicate search icons that appear in dark mode */
+.dark-mode .sidebar-search input::before,
+.dark-mode .sidebar-search input::after {
+  display: none !important;
+}
+
+/* Ensure only ONE search icon is visible */
+.dark-mode .sidebar-search {
+  position: relative;
+}
+
+.dark-mode .sidebar-search input {
+  /* Remove any duplicate background images */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.9rem center !important;
+  background-size: 20px 20px !important;
+  /* Ensure background color doesn't interfere */
+  background-color: #0f172a !important;
+}
+
+/* Light mode - single icon */
+.sidebar-search input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.75rem center !important;
+  background-size: 18px 18px !important;
+  background-color: var(--bg-white, #ffffff) !important;
+}
+
+/* Remove any pseudo-elements that might be adding icons */
+.sidebar-search::before,
+.sidebar-search::after,
+.sidebar-search input::before,
+.sidebar-search input::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* =====================
+   FIX 2: HOME LOGO - ADD PROPER NAVIGATION
+===================== */
+
+/* This fix needs to be implemented in JavaScript/React */
+/* The CSS provides visual feedback for clickability */
+
+/* Make logo clearly clickable */
+.navbar-logo,
+.navbar-brand,
+.logo-link,
+a[href="/"] img,
+.home-logo {
+  cursor: pointer !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.navbar-logo:hover,
+.navbar-brand:hover,
+.logo-link:hover,
+a[href="/"] img:hover,
+.home-logo:hover {
+  opacity: 0.85 !important;
+  transform: scale(1.02) !important;
+}
+
+.navbar-logo:active,
+.navbar-brand:active,
+.logo-link:active,
+a[href="/"] img:active,
+.home-logo:active {
+  transform: scale(0.98) !important;
+}
+
+/* Ensure logo link doesn't have pointer-events disabled */
+.navbar-logo,
+.navbar-brand,
+.logo-link,
+a[href="/"],
+.home-logo {
+  pointer-events: auto !important;
+}
+
+/* =====================
+   ADDITIONAL SEARCH BAR FIXES
+===================== */
+
+/* Right sidebar search in dark mode */
+.dark-mode .home-sidebar.right .sidebar-search input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.9rem center !important;
+  background-size: 20px 20px !important;
+  background-color: #0f172a !important;
+}
+
+/* Left sidebar search in dark mode */
+.dark-mode .home-sidebar.left .sidebar-search input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.9rem center !important;
+  background-size: 20px 20px !important;
+  background-color: #0f172a !important;
+}
+
+/* GK Today Layout search fix */
+.dark-mode .gk-search {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.8rem center !important;
+  background-size: 18px 18px !important;
+  background-color: #0f172a !important;
+  padding-left: 2.5rem !important;
+}
+
+/* Focus state - change icon color */
+.dark-mode .sidebar-search input:focus,
+.dark-mode .gk-search:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+}
+
+/* =====================
+   PREVENT ICON DUPLICATION FROM OTHER CSS FILES
+===================== */
+
+/* Override any conflicting styles from other CSS files */
+.dark-mode input[type="text"].sidebar-search,
+.dark-mode input[type="search"],
+.dark-mode .search-input {
+  /* Ensure only ONE background image */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.9rem center !important;
+  background-size: 20px 20px !important;
+}
+
+/* Remove any SVG icons that might be added via pseudo-elements */
+.dark-mode .sidebar-search svg,
+.dark-mode .search-icon {
+  display: none !important;
+}
+
+/* If search has a wrapper with icon */
+.dark-mode .search-wrapper svg,
+.dark-mode .search-container svg,
+.dark-mode .input-wrapper svg {
+  display: none !important;
+}
+
+/* =====================
+   MOBILE RESPONSIVE
+===================== */
+
+@media (max-width: 768px) {
+  /* Mobile search bar */
+  .dark-mode .sidebar-search input {
+    background-position: 0.75rem center !important;
+    background-size: 18px 18px !important;
+    padding-left: 2.5rem !important;
+  }
+  
+  /* Mobile logo - ensure it's tappable */
+  .navbar-logo,
+  .navbar-brand,
+  .logo-link {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dark-mode .sidebar-search input {
+    background-position: 0.65rem center !important;
+    background-size: 17px 17px !important;
+    padding-left: 2.25rem !important;
+  }
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+
+/* Ensure search icon doesn't interfere with screen readers */
+.sidebar-search[aria-label],
+.sidebar-search input[aria-label] {
+  /* Icon is decorative, text label is primary */
+  speak: none;
+}
+
+/* Logo should have proper alt text and be keyboard accessible */
+.navbar-logo img,
+.navbar-brand img,
+.logo-link img {
+  outline-offset: 2px;
+}
+
+.navbar-logo:focus-visible,
+.navbar-brand:focus-visible,
+.logo-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* =====================
+   PRINT - HIDE DECORATIVE ELEMENTS
+===================== */
+
+@media print {
+  .sidebar-search input {
+    background-image: none !important;
+  }
+  
+  .navbar-logo,
+  .navbar-brand {
+    transform: none !important;
+  }
+}

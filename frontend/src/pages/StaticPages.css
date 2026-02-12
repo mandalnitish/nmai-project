@@ -1,9 +1,9 @@
 /* ===== PAGE WRAPPER ===== */
 .static-page {
   background: #f5f7fa;
-  padding: 3rem 1rem;
-  min-height: calc(100vh - 120px);
+  padding: 2rem 1rem;
 }
+
 
 /* ===== CARD ===== */
 .static-card {

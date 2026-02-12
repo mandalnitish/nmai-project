@@ -1,0 +1,423 @@
+/* ================= STATIC PAGES - COMPLETE DARK MODE ================= */
+/* Covers: About Us, Privacy Policy, Contact Us, Terms & Conditions, etc. */
+
+/* Page Background */
+.dark-mode .static-page {
+  background: var(--bg-main, #0f172a) !important;
+}
+
+/* ================= CARD CONTAINER ================= */
+.dark-mode .static-card {
+  background: var(--bg-card, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ================= TYPOGRAPHY ================= */
+
+/* Main Heading */
+.dark-mode .static-card h1 {
+  color: var(--text-primary, #f1f5f9) !important;
+  background: linear-gradient(135deg, var(--primary-light, #93c5fd), var(--accent-color, #f0abfc)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Subheadings */
+.dark-mode .static-card h2,
+.dark-mode .static-card h3,
+.dark-mode .static-card h4 {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+/* Paragraphs */
+.dark-mode .static-card p {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .static-card .intro {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+.dark-mode .static-card .closing {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+/* Strong Text */
+.dark-mode .static-card strong {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-weight: 700 !important;
+}
+
+.dark-mode .static-card p strong {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+/* ================= LISTS ================= */
+.dark-mode .static-card ul {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .static-card li {
+  color: var(--text-secondary, #cbd5e1) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card li::marker {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+/* ================= HIGHLIGHT BOX ================= */
+.dark-mode .highlight-box {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08)) !important;
+  border: 1px solid var(--primary-color, #667eea) !important;
+  border-radius: 10px !important;
+}
+
+.dark-mode .highlight-box h3 {
+  color: var(--primary-light, #93c5fd) !important;
+  background: transparent !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+.dark-mode .highlight-box ul {
+  list-style: none !important;
+  margin-left: 0 !important;
+}
+
+.dark-mode .highlight-box li {
+  color: var(--text-secondary, #cbd5e1) !important;
+  padding: 0.35rem 0 !important;
+  border: none !important;
+}
+
+.dark-mode .highlight-box li::before {
+  content: '' !important;
+}
+
+/* ================= CONTACT BOX ================= */
+.dark-mode .contact-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+  margin: 2rem 0;
+}
+
+.dark-mode .contact-box > div {
+  background: var(--bg-soft, #1e293b) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-light, #334155) !important;
+}
+
+.dark-mode .contact-box h4 {
+  color: var(--primary-light, #93c5fd) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.dark-mode .contact-box p {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+/* ================= LINKS ================= */
+.dark-mode .static-card a {
+  color: var(--primary-light, #93c5fd) !important;
+  text-decoration: underline !important;
+}
+
+.dark-mode .static-card a:hover {
+  color: var(--primary-color, #667eea) !important;
+}
+
+/* ================= DIVIDERS ================= */
+.dark-mode .static-card hr {
+  border-color: var(--border-light, #334155) !important;
+  opacity: 0.3 !important;
+}
+
+/* ================= PRIVACY POLICY SPECIFIC ================= */
+.dark-mode .privacy-section {
+  margin-bottom: 2rem !important;
+}
+
+.dark-mode .privacy-section h3 {
+  color: var(--text-primary, #f1f5f9) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.dark-mode .privacy-section p {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .privacy-section ul li {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+/* ================= ABOUT US SPECIFIC ================= */
+.dark-mode .about-section {
+  margin-bottom: 2rem !important;
+}
+
+.dark-mode .about-mission {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.05)) !important;
+  border-left: 4px solid var(--primary-color, #667eea) !important;
+  padding: 1.5rem !important;
+  border-radius: 0 12px 12px 0 !important;
+  margin: 2rem 0 !important;
+}
+
+.dark-mode .about-mission p {
+  color: var(--text-primary, #f1f5f9) !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+}
+
+/* ================= CONTACT US SPECIFIC ================= */
+.dark-mode .contact-info {
+  background: var(--bg-soft, #1e293b) !important;
+  padding: 2rem !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  margin: 2rem 0 !important;
+}
+
+.dark-mode .contact-info h3 {
+  color: var(--text-primary, #f1f5f9) !important;
+  margin-bottom: 1rem !important;
+}
+
+.dark-mode .contact-info p {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .contact-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.dark-mode .contact-item svg {
+  color: var(--primary-light, #93c5fd) !important;
+}
+
+.dark-mode .contact-item p {
+  color: var(--text-primary, #f1f5f9) !important;
+  margin: 0 !important;
+}
+
+/* ================= FORMS IN STATIC PAGES ================= */
+.dark-mode .static-card form {
+  background: var(--bg-soft, #1e293b) !important;
+  padding: 2rem !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card .form-group label {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+.dark-mode .static-card input,
+.dark-mode .static-card textarea,
+.dark-mode .static-card select {
+  background: var(--bg-tertiary, #334155) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card input::placeholder,
+.dark-mode .static-card textarea::placeholder {
+  color: var(--text-light, #94a3b8) !important;
+}
+
+.dark-mode .static-card input:focus,
+.dark-mode .static-card textarea:focus,
+.dark-mode .static-card select:focus {
+  background: var(--bg-card, #1e293b) !important;
+  border-color: var(--primary-color, #667eea) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+}
+
+.dark-mode .static-card button[type="submit"],
+.dark-mode .static-card .submit-btn {
+  background: linear-gradient(135deg, var(--primary-color, #667eea), var(--accent-color, #764ba2)) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark-mode .static-card button[type="submit"]:hover,
+.dark-mode .static-card .submit-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* ================= TABLES IN STATIC PAGES ================= */
+.dark-mode .static-card table {
+  background: var(--bg-soft, #1e293b) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card th {
+  background: var(--bg-tertiary, #334155) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card td {
+  color: var(--text-secondary, #cbd5e1) !important;
+  border-color: var(--border-light, #334155) !important;
+}
+
+.dark-mode .static-card tr:hover {
+  background: var(--bg-light, #334155) !important;
+}
+
+/* ================= BLOCKQUOTES ================= */
+.dark-mode .static-card blockquote {
+  background: var(--bg-soft, #1e293b) !important;
+  border-left: 4px solid var(--accent-yellow, #fcd34d) !important;
+  color: var(--text-secondary, #cbd5e1) !important;
+  padding: 1rem 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.dark-mode .static-card blockquote p {
+  color: var(--text-secondary, #cbd5e1) !important;
+  font-style: italic !important;
+}
+
+/* ================= CODE BLOCKS ================= */
+.dark-mode .static-card code {
+  background: var(--bg-tertiary, #334155) !important;
+  color: var(--primary-light, #93c5fd) !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 4px !important;
+}
+
+.dark-mode .static-card pre {
+  background: var(--bg-soft, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  color: var(--text-secondary, #cbd5e1) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+  overflow-x: auto !important;
+}
+
+.dark-mode .static-card pre code {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* ================= FEATURE CARDS ================= */
+.dark-mode .feature-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 2rem 0 !important;
+}
+
+.dark-mode .feature-card {
+  background: var(--bg-soft, #1e293b) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .feature-card:hover {
+  border-color: var(--primary-color, #667eea) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2) !important;
+}
+
+.dark-mode .feature-card h4 {
+  color: var(--text-primary, #f1f5f9) !important;
+}
+
+.dark-mode .feature-card p {
+  color: var(--text-secondary, #cbd5e1) !important;
+}
+
+.dark-mode .feature-icon {
+  color: var(--primary-light, #93c5fd) !important;
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ================= BADGES & TAGS ================= */
+.dark-mode .static-card .badge {
+  background: var(--primary-color, #667eea) !important;
+  color: #ffffff !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 999px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+}
+
+.dark-mode .static-card .tag {
+  background: var(--bg-soft, #1e293b) !important;
+  color: var(--text-primary, #f1f5f9) !important;
+  border: 1px solid var(--border-light, #334155) !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+}
+
+/* ================= RESPONSIVE - MOBILE ================= */
+@media (max-width: 640px) {
+  .dark-mode .static-card {
+    padding: 1.9rem 1.4rem !important;
+  }
+
+  .dark-mode .static-card h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .dark-mode .static-card h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .dark-mode .contact-box {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dark-mode .highlight-box {
+    padding: 1.25rem !important;
+  }
+
+  .dark-mode .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ================= PRINT STYLES ================= */
+@media print {
+  .dark-mode .static-page,
+  .dark-mode .static-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .dark-mode .static-card h1,
+  .dark-mode .static-card h2,
+  .dark-mode .static-card h3,
+  .dark-mode .static-card p,
+  .dark-mode .static-card li {
+    color: #000000 !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+
+  .dark-mode .highlight-box,
+  .dark-mode .contact-box > div {
+    background: #f5f5f5 !important;
+    border: 1px solid #e5e5e5 !important;
+  }
+}

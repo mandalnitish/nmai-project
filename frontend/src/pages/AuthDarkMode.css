@@ -1,0 +1,661 @@
+/* =====================================================================
+   AUTHENTICATION PAGES - COMPLETE DARK MODE
+   Login & Register Pages with Beautiful Dark Theme
+   Import this AFTER Auth.css
+===================================================================== */
+
+/* =====================
+   DARK MODE - AUTH PAGE BACKGROUND
+===================== */
+
+.dark-mode .auth-page {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  min-height: calc(100vh - 60px);
+}
+
+/* =====================
+   AUTH CARD - DARK MODE
+===================== */
+
+.dark-mode .auth-card {
+  background: linear-gradient(180deg, #1e293b, #1a1f2e) !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 
+              0 0 0 1px rgba(139, 92, 246, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Subtle glow effect on card */
+.dark-mode .auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.3), 
+    rgba(168, 85, 247, 0.1)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                 linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode .auth-card:hover::before {
+  opacity: 1;
+}
+
+/* =====================
+   HEADER - DARK MODE
+===================== */
+
+.dark-mode .auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dark-mode .auth-title {
+  font-size: 2.2rem;
+  color: #f1f5f9 !important;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .auth-subtitle {
+  color: #cbd5e1 !important;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* =====================
+   FORM ELEMENTS - DARK MODE
+===================== */
+
+/* Form Groups */
+.dark-mode .form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.dark-mode .form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #e2e8f0 !important;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.dark-mode .form-label svg {
+  color: #a78bfa !important;
+  font-size: 1.1rem;
+}
+
+/* Input Fields */
+.dark-mode .form-input,
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"],
+.dark-mode input[type="tel"] {
+  width: 100%;
+  padding: 0.85rem 1rem !important;
+  background: #0f172a !important;
+  border: 2px solid #334155 !important;
+  border-radius: 12px !important;
+  color: #f1f5f9 !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Placeholder Text */
+.dark-mode .form-input::placeholder,
+.dark-mode input::placeholder {
+  color: #64748b !important;
+  opacity: 0.8;
+}
+
+/* Focus State */
+.dark-mode .form-input:focus,
+.dark-mode input:focus {
+  outline: none !important;
+  border-color: #8b5cf6 !important;
+  background: #1e293b !important;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25), 
+              inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Hover State */
+.dark-mode .form-input:hover:not(:focus),
+.dark-mode input:hover:not(:focus) {
+  border-color: #475569 !important;
+  background: #1e293b !important;
+}
+
+/* Disabled State */
+.dark-mode .form-input:disabled,
+.dark-mode input:disabled {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+  color: #64748b !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =====================
+   FORM ROW - DARK MODE
+===================== */
+
+.dark-mode .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* =====================
+   CHECKBOXES - DARK MODE
+===================== */
+
+.dark-mode .checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.75rem;
+}
+
+.dark-mode .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  color: #e2e8f0 !important;
+}
+
+.dark-mode .checkbox-label:hover {
+  background: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Custom Checkbox Style */
+.dark-mode .checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #8b5cf6;
+  border-radius: 4px;
+}
+
+.dark-mode .checkbox-label input[type="checkbox"]:checked + span {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+/* Checked state background */
+.dark-mode .checkbox-label:has(input:checked) {
+  background: rgba(139, 92, 246, 0.2) !important;
+  border-color: #8b5cf6;
+}
+
+/* =====================
+   BUTTONS - DARK MODE
+===================== */
+
+/* Primary Button */
+.dark-mode .btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.95rem 2rem !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4), 
+              0 0 0 0 rgba(139, 92, 246, 0.4) !important;
+}
+
+.dark-mode .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.5), 
+              0 0 0 4px rgba(139, 92, 246, 0.2) !important;
+}
+
+.dark-mode .btn-primary:active:not(:disabled) {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Disabled Button */
+.dark-mode .btn-primary:disabled {
+  background: #334155 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+  opacity: 0.6;
+}
+
+/* Loading State */
+.dark-mode .btn-primary:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  border: 2px solid transparent;
+  border-top-color: #64748b;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Block Button */
+.dark-mode .btn-block {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* =====================
+   FOOTER LINKS - DARK MODE
+===================== */
+
+.dark-mode .auth-footer {
+  text-align: center;
+  color: #cbd5e1 !important;
+  margin-top: 1.5rem;
+}
+
+.dark-mode .auth-footer p {
+  margin-bottom: 0.8rem;
+  color: #cbd5e1 !important;
+}
+
+.dark-mode .auth-footer a {
+  color: #a78bfa !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark-mode .auth-footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+  transition: width 0.3s ease;
+}
+
+.dark-mode .auth-footer a:hover {
+  color: #c4b5fd !important;
+}
+
+.dark-mode .auth-footer a:hover::after {
+  width: 100%;
+}
+
+/* Forgot Password Link */
+.dark-mode .forgot-link {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #a78bfa !important;
+}
+
+.dark-mode .forgot-link:hover {
+  color: #c4b5fd !important;
+}
+
+/* =====================
+   ANIMATIONS - DARK MODE
+===================== */
+
+/* Fade In Animation */
+.dark-mode .fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse Effect on Focus */
+.dark-mode .form-input:focus {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.15);
+  }
+}
+
+/* =====================
+   VALIDATION STATES - DARK MODE
+===================== */
+
+/* Valid Input */
+.dark-mode .form-input:valid:not(:placeholder-shown) {
+  border-color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.05) !important;
+}
+
+.dark-mode .form-input:valid:not(:placeholder-shown):focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* Invalid Input */
+.dark-mode .form-input:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.05) !important;
+}
+
+/* Error Message */
+.dark-mode .error-message {
+  color: #fca5a5 !important;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dark-mode .success-message {
+  color: #86efac !important;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* =====================
+   AUTOCOMPLETE OVERRIDE
+===================== */
+
+/* Fix Chrome autofill background */
+.dark-mode input:-webkit-autofill,
+.dark-mode input:-webkit-autofill:hover,
+.dark-mode input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  transition: background-color 5000s ease-in-out 0s;
+  border-color: #334155 !important;
+}
+
+.dark-mode input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1e293b inset, 
+                      0 0 0 4px rgba(139, 92, 246, 0.25) !important;
+  border-color: #8b5cf6 !important;
+}
+
+/* =====================
+   RESPONSIVE - TABLET
+===================== */
+
+@media screen and (max-width: 768px) {
+  .dark-mode .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .dark-mode .auth-title {
+    font-size: 1.8rem;
+  }
+
+  .dark-mode .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-mode .checkbox-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =====================
+   RESPONSIVE - MOBILE
+===================== */
+
+@media screen and (max-width: 480px) {
+  .dark-mode .auth-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .dark-mode .auth-title {
+    font-size: 1.6rem;
+  }
+
+  .dark-mode .auth-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .dark-mode .form-input,
+  .dark-mode input {
+    padding: 0.75rem 0.9rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .dark-mode .btn-primary {
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .dark-mode .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-mode .checkbox-label {
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+/* =====================
+   PRINT - HIDE DECORATIVE ELEMENTS
+===================== */
+
+@media print {
+  .dark-mode .auth-page {
+    background: #ffffff !important;
+  }
+
+  .dark-mode .auth-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+  }
+
+  .dark-mode .auth-card::before {
+    display: none !important;
+  }
+
+  .dark-mode .auth-title,
+  .dark-mode .auth-subtitle,
+  .dark-mode .form-label,
+  .dark-mode .auth-footer {
+    color: #000000 !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+
+  .dark-mode .form-input,
+  .dark-mode input {
+    background: #ffffff !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+  }
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+
+/* Focus Visible for Keyboard Navigation */
+.dark-mode .form-input:focus-visible,
+.dark-mode input:focus-visible,
+.dark-mode .checkbox-label:focus-visible,
+.dark-mode .btn-primary:focus-visible {
+  outline: 3px solid #8b5cf6 !important;
+  outline-offset: 2px !important;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .dark-mode .auth-card {
+    border: 2px solid #ffffff !important;
+  }
+
+  .dark-mode .form-input,
+  .dark-mode input {
+    border-width: 3px !important;
+  }
+
+  .dark-mode .btn-primary {
+    border: 2px solid #ffffff !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .dark-mode * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .dark-mode .btn-primary:hover {
+    transform: none !important;
+  }
+
+  .dark-mode .checkbox-label:hover {
+    transform: none !important;
+  }
+}
+
+/* =====================
+   ADDITIONAL ENHANCEMENTS
+===================== */
+
+/* Password Strength Indicator */
+.dark-mode .password-strength {
+  margin-top: 0.5rem;
+  height: 4px;
+  background: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dark-mode .password-strength-fill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 999px;
+}
+
+.dark-mode .password-strength-fill.weak {
+  width: 33%;
+  background: #ef4444;
+}
+
+.dark-mode .password-strength-fill.medium {
+  width: 66%;
+  background: #f59e0b;
+}
+
+.dark-mode .password-strength-fill.strong {
+  width: 100%;
+  background: #10b981;
+}
+
+/* Toast Notifications (if using react-toastify) */
+.dark-mode .Toastify__toast {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .Toastify__toast--success {
+  border-left: 4px solid #10b981 !important;
+}
+
+.dark-mode .Toastify__toast--error {
+  border-left: 4px solid #ef4444 !important;
+}
+
+.dark-mode .Toastify__toast--warning {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.dark-mode .Toastify__progress-bar {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa) !important;
+}
+
+/* Loading Spinner on Button */
+.dark-mode .btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.dark-mode .btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  right: 1rem;
+  margin-top: -8px;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* =====================
+   SMOOTH TRANSITIONS
+===================== */
+
+.dark-mode .auth-page,
+.dark-mode .auth-card,
+.dark-mode .form-input,
+.dark-mode .btn-primary,
+.dark-mode .checkbox-label,
+.dark-mode .auth-footer a {
+  transition-property: background, border-color, color, transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

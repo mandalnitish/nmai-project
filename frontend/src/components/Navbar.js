@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import DarkModeToggle from "./DarkModeToggle";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
 
@@ -8,6 +9,35 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  /* ==============================
+     LOGO CLICK HANDLER (FIXED)
+  ============================== */
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    const isHome = location.pathname === "/";
+    const hasQuery = location.search.length > 0;
+
+    if (isHome && hasQuery) {
+      // Reset URL to clean home
+      navigate("/", { replace: true });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Notify Home page to reset state
+      window.dispatchEvent(new CustomEvent("homeReset"));
+    } else if (isHome) {
+      // Already on home page 1 → just scroll
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate from other page to home
+      navigate("/");
+    }
+  };
 
   const handleLogout = () => {
     logout();
@@ -17,53 +47,58 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  // Lock body scroll when mobile menu is open
+  /* ==============================
+     LOCK BODY SCROLL (MOBILE)
+  ============================== */
   useEffect(() => {
     if (menuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [menuOpen]);
 
-  // Close menu on window resize to desktop
+  /* ==============================
+     CLOSE MENU ON RESIZE
+  ============================== */
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 920 && menuOpen) {
         setMenuOpen(false);
       }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [menuOpen]);
 
   return (
     <>
       {/* Mobile overlay */}
-      {menuOpen && (
-        <div 
-          className="nav-overlay"
-          onClick={closeMenu}
-        />
-      )}
+      {menuOpen && <div className="nav-overlay" onClick={closeMenu} />}
 
       <header className="navbar">
         <div className="navbar-wrap">
-          {/* LOGO (LEFT) */}
+          {/* ================= LOGO ================= */}
           <div className="nav-left">
-            <Link to="/" className="navbar-logo" onClick={closeMenu}>
+            <a
+              href="/"
+              className="navbar-logo"
+              onClick={handleLogoClick}
+            >
               <img
                 src={logo}
                 alt="NMAI Current Affairs"
                 className="logo-img"
               />
-            </Link>
+            </a>
           </div>
 
-          {/* DESKTOP MENU (CENTER) */}
+          {/* ================= DESKTOP MENU ================= */}
           <nav className="nav-center desktop-menu">
             <NavLink to="/" end>Home</NavLink>
             <NavLink to="/current-affairs">Current Affairs</NavLink>
@@ -73,8 +108,10 @@ export default function Navbar() {
             <NavLink to="/contact-us">Contact</NavLink>
           </nav>
 
-          {/* DESKTOP AUTH (RIGHT) */}
+          {/* ================= DESKTOP RIGHT ================= */}
           <div className="nav-right desktop-menu">
+            <DarkModeToggle />
+
             {!isAuthenticated ? (
               <>
                 <NavLink to="/login" className="nav-login-btn">Login</NavLink>
@@ -94,7 +131,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* MOBILE TOGGLE (RIGHT SIDE) */}
+          {/* ================= MOBILE TOGGLE ================= */}
           <button
             className={`nav-toggle ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -107,15 +144,15 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* MOBILE MENU DRAWER (SLIDES FROM RIGHT) */}
+      {/* ================= MOBILE MENU ================= */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="mobile-menu-header">
-          <Link to="/" className="mobile-logo" onClick={closeMenu}>
+          <a href="/" className="mobile-logo" onClick={handleLogoClick}>
             <img src={logo} alt="NMAI" className="mobile-logo-img" />
-          </Link>
+          </a>
         </div>
 
-        {/* Mobile Auth Section (Top) */}
+        {/* Mobile Auth */}
         <div className="mobile-auth-top">
           {!isAuthenticated ? (
             <div className="mobile-auth-buttons">
@@ -139,7 +176,12 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile Navigation Links */}
+        {/* Dark Mode - Mobile */}
+        <div className="mobile-dark-mode-section">
+          <DarkModeToggle showLabel={true} />
+        </div>
+
+        {/* Mobile Links */}
         <nav className="mobile-nav-links">
           <NavLink to="/" end onClick={closeMenu}>
             <span className="nav-icon">🏠</span>
@@ -167,7 +209,7 @@ export default function Navbar() {
           </NavLink>
         </nav>
 
-        {/* Mobile Logout Button (Bottom) */}
+        {/* Mobile Logout */}
         {isAuthenticated && (
           <div className="mobile-menu-footer">
             <button onClick={handleLogout} className="mobile-logout-btn">

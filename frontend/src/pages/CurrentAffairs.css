@@ -13,9 +13,8 @@
 
 /* ================= PAGE CONTAINER ================= */
 .current-affairs-page {
-  min-height: 100vh;
   background: var(--ca-bg);
-  padding: 2rem 0;
+  padding: 0.75rem 0 1rem 0;   /* reduce top space */
 }
 
 .ca-container {

@@ -44,9 +44,19 @@ import TermsOfService from "./pages/TermsOfService";
 
 /* ================= CONTEXT ================= */
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 /* ================= STYLES ================= */
 import "./App.css";
+import "./DarkMode.css";
+
+import './DarkMode.css';              
+import './components/ModernSearchBar.css';       
+import './DarkModeFixes.css'; 
+
+// Import these LAST
+import './pages/SpacingAndLoadingFix.css';
+import './pages/ArticleDetailSpacingFix.css';
 
 /* ================= REACT QUERY ================= */
 const queryClient = new QueryClient({
@@ -99,77 +109,79 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <Router>
-          <div className="app-wrapper">
-            <Navbar />
-            <SecondaryBar />
+        <DarkModeProvider>
+          <Router>
+            <div className="app-wrapper">
+              <Navbar />
+              <SecondaryBar />
 
-            <main className="main-content">
-              <Routes>
+              <main className="main-content">
+                <Routes>
 
-                {/* ===== PUBLIC ===== */}
-                <Route path="/" element={<Home />} />
-                <Route path="/current-affairs" element={<CurrentAffairs />} />
-                <Route path="/article/:slug" element={<ArticleDetail />} />
-                <Route path="/category/:category" element={<CategoryPage />} />
-                <Route path="/mcq-practice" element={<MCQPractice />} />
-                <Route path="/daily-quiz" element={<DailyQuiz />} />
+                  {/* ===== PUBLIC ===== */}
+                  <Route path="/" element={<Home />} />
+                  <Route path="/current-affairs" element={<CurrentAffairs />} />
+                  <Route path="/article/:slug" element={<ArticleDetail />} />
+                  <Route path="/category/:category" element={<CategoryPage />} />
+                  <Route path="/mcq-practice" element={<MCQPractice />} />
+                  <Route path="/daily-quiz" element={<DailyQuiz />} />
 
-                {/* ===== AUTH ===== */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+                  {/* ===== AUTH ===== */}
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
 
-                {/* ===== USER ===== */}
-                <Route
-                  path="/profile"
-                  element={
-                    <PrivateRoute>
-                      <Profile />
-                    </PrivateRoute>
-                  }
-                />
+                  {/* ===== USER ===== */}
+                  <Route
+                    path="/profile"
+                    element={
+                      <PrivateRoute>
+                        <Profile />
+                      </PrivateRoute>
+                    }
+                  />
 
-                {/* ===== ADMIN ===== */}
-                <Route
-                  path="/admin/*"
-                  element={
-                    <AdminRoute>
-                      <AdminDashboard />
-                    </AdminRoute>
-                  }
-                />
+                  {/* ===== ADMIN ===== */}
+                  <Route
+                    path="/admin/*"
+                    element={
+                      <AdminRoute>
+                        <AdminDashboard />
+                      </AdminRoute>
+                    }
+                  />
 
-                {/* ===== E-BOOKS ===== */}
-                <Route path="/ebooks/monthly-mcqs" element={<EbookMonthlyMCQs />} />
-                <Route path="/ebooks/ca-articles-mcqs" element={<EbookArticlesMCQs />} />
-                <Route path="/ebooks/yearly-pdf" element={<EbookYearlyPDF />} />
+                  {/* ===== E-BOOKS ===== */}
+                  <Route path="/ebooks/monthly-mcqs" element={<EbookMonthlyMCQs />} />
+                  <Route path="/ebooks/ca-articles-mcqs" element={<EbookArticlesMCQs />} />
+                  <Route path="/ebooks/yearly-pdf" element={<EbookYearlyPDF />} />
 
-                {/* ===== EXAMS ===== */}
-                <Route path="/exams/:examSlug" element={<ExamPage />} />
+                  {/* ===== EXAMS ===== */}
+                  <Route path="/exams/:examSlug" element={<ExamPage />} />
 
-                {/* ===== LEGAL ===== */}
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/disclaimer" element={<Disclaimer />} />
-                <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
+                  {/* ===== LEGAL ===== */}
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/disclaimer" element={<Disclaimer />} />
+                  <Route path="/about-us" element={<AboutUs />} />
+                  <Route path="/contact-us" element={<ContactUs />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
 
-                {/* ===== 404 ===== */}
-                <Route path="*" element={<NotFound />} />
+                  {/* ===== 404 ===== */}
+                  <Route path="*" element={<NotFound />} />
 
-              </Routes>
-            </main>
+                </Routes>
+              </main>
 
-            <Footer />
+              <Footer />
 
-            <ToastContainer
-              position="top-right"
-              autoClose={3000}
-              newestOnTop
-              pauseOnHover
-            />
-          </div>
-        </Router>
+              <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                newestOnTop
+                pauseOnHover
+              />
+            </div>
+          </Router>
+        </DarkModeProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

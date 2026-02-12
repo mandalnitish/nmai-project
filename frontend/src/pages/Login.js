@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import { FiMail, FiLock } from 'react-icons/fi';
 import './Auth.css';
-
+import './AuthDarkMode.css';
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);

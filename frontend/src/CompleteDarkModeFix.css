@@ -1,0 +1,477 @@
+/* =====================================================================
+   COMPLETE DARK MODE FIX - SEARCH BAR + WHITE LINE
+   Import this LAST after all other CSS files
+   Fixes: Search icon visibility, white line, and all dark mode issues
+===================================================================== */
+
+/* =====================
+   FIX WHITE LINE / EXTRA SPACE
+===================== */
+
+/* Remove white space/line above hero section */
+.dark-mode .home-page {
+  background: #0f172a !important;
+  padding-top: 0 !important;
+}
+
+.dark-mode .home-container {
+  background: transparent !important;
+  padding-top: 0 !important;
+}
+
+.dark-mode .home-layout {
+  margin-top: 2rem !important;
+  background: transparent !important;
+}
+
+.dark-mode .home-content {
+  background: transparent !important;
+}
+
+/* Remove any white backgrounds */
+.dark-mode .section,
+.dark-mode .latest-section {
+  background: transparent !important;
+}
+
+/* =====================
+   SEARCH BAR - COMPLETE FIX WITH VISIBLE ICON
+===================== */
+
+/* Search Container */
+.dark-mode .sidebar-search {
+  background: linear-gradient(135deg, #1e293b, #334155) !important;
+  border-bottom: 1px solid #475569 !important;
+  margin: -1.5rem -1.5rem 0 !important;
+  padding: 1.5rem !important;
+  border-radius: 16px 16px 0 0 !important;
+}
+
+/* Search Input with VISIBLE Icon */
+.dark-mode .sidebar-search input {
+  width: 100% !important;
+  background: #0f172a !important;
+  color: #f1f5f9 !important;
+  border: 2px solid #475569 !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 3rem 0.85rem 2.85rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  
+  /* VISIBLE SEARCH ICON - Light Gray */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0.9rem center !important;
+  background-size: 20px 20px !important;
+  background-color: #0f172a !important;
+}
+
+/* Placeholder */
+.dark-mode .sidebar-search input::placeholder {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+  opacity: 0.9 !important;
+}
+
+/* Focus State - Blue Icon */
+.dark-mode .sidebar-search input:focus {
+  outline: none !important;
+  border-color: #60a5fa !important;
+  background: #1e293b !important;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.25), 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+  
+  /* Blue icon on focus */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E") !important;
+  background-color: #1e293b !important;
+}
+
+/* Hover State */
+.dark-mode .sidebar-search input:hover:not(:focus) {
+  border-color: #64748b !important;
+  background: #1e293b !important;
+  background-color: #1e293b !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* =====================
+   LEFT SIDEBAR - CATEGORIES
+===================== */
+
+.dark-mode .home-sidebar.left {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-left: 4px solid #8b5cf6 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Categories Header */
+.dark-mode .sidebar-header h3,
+.dark-mode .home-sidebar.left h3 {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  margin: -1.5rem -1.5rem 1rem !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 16px 16px 0 0 !important;
+  font-weight: 700 !important;
+}
+
+/* Category List */
+.dark-mode .home-sidebar.left ul {
+  background: transparent !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dark-mode .home-sidebar.left li {
+  color: #e2e8f0 !important;
+  background: transparent !important;
+  border-bottom: 1px solid #334155 !important;
+  padding: 0.65rem 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .home-sidebar.left li:hover {
+  background: #334155 !important;
+  color: #a78bfa !important;
+  transform: translateX(4px) !important;
+}
+
+.dark-mode .home-sidebar.left li.active {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* =====================
+   RIGHT SIDEBAR - E-BOOKS & EXAMS
+===================== */
+
+.dark-mode .home-sidebar.right {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .sidebar-card {
+  background: linear-gradient(180deg, #1e293b, #1a1f2e) !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  margin-bottom: 1.5rem !important;
+  padding: 1.25rem !important;
+}
+
+.dark-mode .sidebar-card h3 {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  padding: 0.6rem 0.85rem !important;
+  margin: -1.25rem -1.25rem 1rem !important;
+  border-radius: 12px 12px 0 0 !important;
+  font-weight: 700 !important;
+}
+
+.dark-mode .sidebar-card ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dark-mode .sidebar-card li {
+  color: #e2e8f0 !important;
+  padding: 0.5rem 0 !important;
+  border-bottom: 1px dashed #334155 !important;
+}
+
+.dark-mode .sidebar-card li:last-child {
+  border-bottom: none !important;
+}
+
+.dark-mode .sidebar-card a {
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.dark-mode .sidebar-card a:hover {
+  color: #a78bfa !important;
+  text-decoration: underline !important;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+
+.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  border: none !important;
+  margin-top: 0 !important;
+}
+
+.dark-mode .hero-title {
+  color: #f1f5f9 !important;
+}
+
+.dark-mode .hero-subtitle {
+  color: #cbd5e1 !important;
+}
+
+.dark-mode .gradient-text {
+  background: linear-gradient(to right, #fcd34d, #fb923c) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Hero Buttons */
+.dark-mode .btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark-mode .btn-outline {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+}
+
+/* =====================
+   LATEST CURRENT AFFAIRS SECTION
+===================== */
+
+.dark-mode .section-title {
+  color: #f1f5f9 !important;
+  border-bottom-color: #8b5cf6 !important;
+}
+
+.dark-mode .section-title svg {
+  color: #a78bfa !important;
+}
+
+.dark-mode .group-title {
+  color: #f1f5f9 !important;
+  border-left-color: #8b5cf6 !important;
+}
+
+/* =====================
+   TRENDING SECTION
+===================== */
+
+.dark-mode .trending-section {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .trending-item {
+  background: #0f172a !important;
+  border: 1px solid #334155 !important;
+}
+
+.dark-mode .trending-item:hover {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2) !important;
+}
+
+.dark-mode .trending-number {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+
+.dark-mode .trending-content h4 {
+  color: #f1f5f9 !important;
+}
+
+.dark-mode .trending-meta,
+.dark-mode .trending-meta span {
+  color: #94a3b8 !important;
+}
+
+/* =====================
+   PAGINATION
+===================== */
+
+.dark-mode .pagination {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .pagination span {
+  color: #f1f5f9 !important;
+}
+
+.dark-mode .pagination button {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark-mode .pagination button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+  transform: translateY(-2px) !important;
+}
+
+.dark-mode .pagination button:disabled {
+  background: #334155 !important;
+  color: #64748b !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* =====================
+   LOADING & EMPTY STATES
+===================== */
+
+.dark-mode .loading-container,
+.dark-mode .empty-state {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+}
+
+.dark-mode .empty-state p,
+.dark-mode .loading-container p {
+  color: #cbd5e1 !important;
+}
+
+.dark-mode .spinner {
+  border-color: #334155 !important;
+  border-top-color: #8b5cf6 !important;
+}
+
+/* =====================
+   MOBILE CATEGORY TOGGLE
+===================== */
+
+.dark-mode .mobile-category-toggle {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.dark-mode .mobile-category-toggle:hover {
+  border-color: #8b5cf6 !important;
+  color: #a78bfa !important;
+}
+
+/* =====================
+   SIDEBAR OVERLAY
+===================== */
+
+.dark-mode .sidebar-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+
+.dark-mode .home-sidebar::-webkit-scrollbar {
+  width: 6px !important;
+  background: #0f172a !important;
+}
+
+.dark-mode .home-sidebar::-webkit-scrollbar-track {
+  background: #0f172a !important;
+  border-radius: 3px !important;
+}
+
+.dark-mode .home-sidebar::-webkit-scrollbar-thumb {
+  background: #8b5cf6 !important;
+  border-radius: 3px !important;
+}
+
+.dark-mode .home-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed !important;
+}
+
+/* =====================
+   RESPONSIVE - MOBILE
+===================== */
+
+@media (max-width: 768px) {
+  .dark-mode .sidebar-search {
+    margin: -1.5rem -1.5rem 1rem !important;
+    padding: 1rem !important;
+  }
+  
+  .dark-mode .sidebar-search input {
+    font-size: 0.9rem !important;
+    padding: 0.75rem 2.75rem 0.75rem 2.5rem !important;
+    background-size: 18px 18px !important;
+    background-position: 0.75rem center !important;
+  }
+  
+  .dark-mode .home-sidebar.left.mobile-open {
+    background: #1e293b !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dark-mode .sidebar-search input {
+    font-size: 0.85rem !important;
+    padding: 0.7rem 2.5rem 0.7rem 2.25rem !important;
+    background-size: 17px 17px !important;
+    background-position: 0.65rem center !important;
+  }
+}
+
+/* =====================
+   GLOBAL FIXES
+===================== */
+
+/* Remove any white backgrounds globally */
+.dark-mode [style*="background: white"],
+.dark-mode [style*="background: #ffffff"],
+.dark-mode [style*="background: #fff"],
+.dark-mode [style*="background-color: white"],
+.dark-mode [style*="background-color: #ffffff"],
+.dark-mode [style*="background-color: #fff"] {
+  background: #1e293b !important;
+  background-color: #1e293b !important;
+}
+
+/* Fix text colors */
+.dark-mode [style*="color: black"],
+.dark-mode [style*="color: #000000"],
+.dark-mode [style*="color: #000"],
+.dark-mode [style*="color: #333"] {
+  color: #f1f5f9 !important;
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .dark-mode * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .dark-mode .sidebar-search input {
+    border-width: 3px !important;
+    border-color: #ffffff !important;
+  }
+  
+  .dark-mode .sidebar-search input:focus {
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5) !important;
+  }
+}

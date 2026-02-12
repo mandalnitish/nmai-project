@@ -38,6 +38,207 @@ const TAGS = {
 /* ================= ALL ARTICLES ================= */
 
 const allArticles = [
+  
+{
+  "title": "Uttar Pradesh Presents ₹9.12 Lakh Crore Budget 2026-27",
+  "slug": "19-uttar-pradesh-presents-9-12-lakh-crore-budget-2026-27",
+  "summary": "Uttar Pradesh presents a ₹9.12 lakh crore Budget for 2026-27, marking a 12.9% increase over the previous fiscal year.",
+  "content": "<h2>Introduction</h2><p>Uttar Pradesh Finance Minister Suresh Khanna presented the state budget for the financial year 2026–27 in the Legislative Assembly, amounting to ₹9,12,696.35 crore. This represents a 12.9% increase over the previous year's budget, making it the largest budget in the state's history. The budget reflects the government's continued focus on infrastructure development, social welfare, industrial expansion, and employment generation.</p><p>The budget plays a crucial role in shaping the state's economic direction, allocating resources across sectors such as agriculture, education, healthcare, transport, and urban development.</p><h2>Key Highlights</h2><ul><li><strong>Total Budget Size:</strong> ₹9.12 lakh crore</li><li><strong>Increase:</strong> 12.9% higher than previous year</li><li><strong>Presented By:</strong> Finance Minister Suresh Khanna</li><li><strong>Focus Areas:</strong> Infrastructure, social welfare, employment, agriculture</li></ul><h2>Sector-wise Focus</h2><p>The government has allocated significant funds for infrastructure projects, including roads, expressways, metro expansion, and industrial corridors. Agriculture and rural development remain priorities, with increased funding for irrigation, farmer welfare schemes, and rural connectivity.</p><p>The education and healthcare sectors also received higher allocations, aiming to improve access, quality, and institutional capacity.</p><h2>Economic Significance</h2><p>The increased budget size reflects Uttar Pradesh’s growing economic strength and ambition to become a trillion-dollar economy contributor. Investment in infrastructure and industry is expected to boost employment, enhance productivity, and attract domestic and foreign investment.</p><h2>Exam Perspective</h2><ul><li>Important for understanding State Budget and Fiscal Policy</li><li>Relevant for Economy section in UPSC and State PSC exams</li><li>Example of state-level economic planning</li></ul><h2>Key Takeaways</h2><ul><li>Largest budget ever presented in Uttar Pradesh</li><li>Focus on infrastructure, agriculture, and welfare</li><li>Aims to accelerate economic growth and employment</li></ul><h2>Sources & References</h2><p>Uttar Pradesh Budget 2026–27, State Government Reports</p>",
+  "category": "Economy",
+  "tags": ["UP Budget", "Fiscal Policy"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910908/nmai-articles/lioiqlbyuqsynqphumas.jpg",
+    "alt": "UP Budget 2026"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "7 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["UP Government"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+
+{
+  "title": "Akashvani Raipur to Host World Radio Day Conclave",
+  "slug": "20-akashvani-raipur-host-world-radio-day-conclave-2026",
+  "summary": "All India Radio Raipur will host the World Radio Day Conclave 2026 highlighting radio’s continued importance.",
+  "content": "<h2>Introduction</h2><p>All India Radio (Akashvani), Raipur, will organize the World Radio Day Conclave 2026 on February 13 to celebrate the importance and continued relevance of radio as a communication medium. World Radio Day is observed globally every year on February 13 to recognize radio’s role in providing information, education, and entertainment.</p><p>The event will bring together media professionals, policymakers, students, and communication experts to discuss the evolving role of radio in the digital era.</p><h2>About World Radio Day</h2><p>World Radio Day was proclaimed by UNESCO in 2011 and later adopted by the United Nations General Assembly. The day highlights radio's importance as a powerful medium that reaches millions worldwide, including remote and underserved regions.</p><h2>Key Highlights</h2><ul><li><strong>Organizer:</strong> All India Radio, Raipur</li><li><strong>Date:</strong> February 13, 2026</li><li><strong>Purpose:</strong> Celebrate and promote radio communication</li></ul><h2>Importance of Radio</h2><p>Radio remains one of the most accessible and affordable communication tools, especially in rural and remote areas. It plays a vital role in disaster communication, public awareness campaigns, and education.</p><p>Despite digital advancements, radio continues to be relevant due to its wide reach, low cost, and reliability.</p><h2>Exam Perspective</h2><ul><li>Important Day observed on February 13</li><li>Relevant for Media and Communication topics</li><li>Important for current affairs exams</li></ul><h2>Key Takeaways</h2><ul><li>Radio remains relevant even in the digital age</li><li>Recognized globally by UNESCO and UN</li></ul><h2>Sources & References</h2><p>All India Radio, UNESCO</p>",
+  "category": "Important Days",
+  "tags": ["World Radio Day", "Akashvani"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910909/nmai-articles/o9mn6t2qipur4oyulrau.jpg",
+    "alt": "World Radio Day"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["AIR", "UNESCO"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+
+
+{
+  "title": "IAF to Showcase Power at Exercise Vayushakti-26",
+  "slug": "21-iaf-showcase-power-exercise-vayushakti-26",
+  "summary": "Indian Air Force to conduct Exercise Vayushakti-26 demonstrating combat readiness, operational capability, and advanced aerial warfare systems.",
+  "content": "<h2>Introduction</h2><p>The Indian Air Force (IAF) will conduct its major operational exercise, Exercise Vayushakti-26, at the Pokhran Air-to-Ground Range in Jaisalmer, Rajasthan, on February 27, 2026. This large-scale exercise is a firepower demonstration designed to showcase the operational readiness, combat capabilities, and technological advancements of the IAF.</p><p>Exercise Vayushakti is one of the most important military demonstrations conducted by India, highlighting its preparedness to defend national airspace and respond effectively to modern warfare challenges.</p><h2>About Exercise Vayushakti</h2><p>Exercise Vayushakti is conducted periodically by the Indian Air Force to demonstrate its offensive and defensive capabilities. It involves live firing of air-to-ground weapons, precision strikes, coordinated attacks, and deployment of fighter jets, transport aircraft, helicopters, and unmanned aerial systems.</p><p>The exercise allows military leadership and policymakers to evaluate the combat readiness and operational efficiency of the air force.</p><h2>Key Highlights</h2><ul><li><strong>Exercise Name:</strong> Vayushakti-26</li><li><strong>Conducted By:</strong> Indian Air Force</li><li><strong>Location:</strong> Pokhran Range, Rajasthan</li><li><strong>Objective:</strong> Demonstrate combat and operational readiness</li></ul><h2>Aircraft and Systems Involved</h2><p>The exercise will feature frontline fighter aircraft such as Rafale, Sukhoi-30 MKI, Mirage-2000, Tejas, and Jaguar. Advanced helicopters, transport aircraft, and drones will also participate.</p><p>The exercise will demonstrate precision bombing, missile firing, and coordinated multi-platform combat operations.</p><h2>Strategic Significance</h2><p>Exercise Vayushakti serves as a platform to test new technologies, weapons systems, and operational strategies. It enhances coordination among different branches of the armed forces and improves overall combat effectiveness.</p><p>Such exercises also act as a deterrent to adversaries by demonstrating India's military strength.</p><h2>Exam Perspective</h2><ul><li>Important defense exercise conducted by India</li><li>Relevant for Defense and Security section</li><li>Important for UPSC, CDS, NDA, and State PSC exams</li></ul><h2>Key Takeaways</h2><ul><li>Demonstrates India's air combat capabilities</li><li>Enhances national defense preparedness</li><li>Showcases advanced fighter aircraft and weapons</li></ul><h2>Sources & References</h2><p>Indian Air Force, Ministry of Defence</p>",
+  "category": "Defense",
+  "tags": ["IAF", "Military Exercise", "Vayushakti"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910908/nmai-articles/pmrat1eftzu9x46ljhja.jpg",
+    "alt": "Exercise Vayushakti"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CDS", "NDA"],
+  "difficulty": "Intermediate",
+  "sources": ["Indian Air Force", "Defence Ministry"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+
+{
+  "title": "Saudi Arabia to Host HCI Conference 2026 in Riyadh",
+  "slug": "22-saudi-arabia-host-hci-conference-2026-riyadh",
+  "summary": "Saudi Arabia will host the Human Capability Initiative Conference 2026 focusing on workforce development and future skills.",
+  "content": "<h2>Introduction</h2><p>Saudi Arabia has announced that it will host the Human Capability Initiative (HCI) Conference 2026 in Riyadh on May 3–4, 2026. The conference aims to bring together global leaders, policymakers, educators, and industry experts to discuss the future of human capability development.</p><p>The initiative is part of Saudi Arabia's Vision 2030 program, which seeks to diversify the economy and develop human capital.</p><h2>About Human Capability Initiative</h2><p>The Human Capability Initiative focuses on improving education, skill development, innovation, and workforce readiness. It emphasizes preparing individuals for future jobs and technological advancements.</p><h2>Objectives</h2><ul><li>Develop future workforce skills</li><li>Promote global collaboration</li><li>Enhance education and training systems</li></ul><h2>Global Importance</h2><p>The conference provides a platform for discussing technological disruption, artificial intelligence, and workforce transformation.</p><h2>Exam Perspective</h2><ul><li>Important global conference</li><li>Relevant for international relations</li></ul><h2>Key Takeaways</h2><ul><li>Focus on workforce development</li><li>Supports economic transformation</li></ul><h2>Sources</h2><p>Saudi Government, International Reports</p>",
+  "category": "International Relations",
+  "tags": ["Saudi Arabia", "Conference", "Vision 2030"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770911049/nmai-articles/ej0mhbus41fnya9yruao.jpg",
+    "alt": "HCI Conference"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "readingTime": "7 min",
+  "author": "Admin"
+},
+
+{
+  "title": "Bangladesh Holds First General Election After Hasina Ouster",
+  "slug": "23-bangladesh-first-general-election-after-hasina-ouster",
+  "summary": "Bangladesh conducts parliamentary elections marking major political transition.",
+  "content": "<h2>Introduction</h2><p>Bangladesh held its 13th parliamentary elections following political changes after Sheikh Hasina's removal in 2024.</p><h2>Significance</h2><p>This election marks a turning point in Bangladesh’s democratic and political history.</p><h2>Political Impact</h2><p>The election outcome will shape Bangladesh’s domestic and foreign policies.</p><h2>Exam Perspective</h2><ul><li>Important South Asia political event</li></ul>",
+  "category": "International Relations",
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910909/nmai-articles/qzjb1gznxgxvt3ziwfuu.jpg"
+  }
+},
+
+{
+  "title": "Indian Students Abroad Decline 31% Since 2023",
+  "slug": "24-indian-students-abroad-decline-31-percent-since-2023",
+  "summary": "Government data shows sharp decline in Indian students studying overseas.",
+  "content": "<h2>Introduction</h2><p>Government data reveals a 31% decline in Indian students studying abroad.</p><h2>Reasons</h2><ul><li>Visa restrictions</li><li>Higher education costs</li></ul><h2>Impact</h2><p>This trend reflects changing global education patterns.</p>",
+  "category": "Education",
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770911049/nmai-articles/cq12um5ekj5kbwoxcbif.jpg"
+  }
+},
+
+
+
+
+
+{
+  "title": "IAF to Showcase Power at Exercise Vayushakti-26",
+  "slug": "21-iaf-showcase-power-exercise-vayushakti-26",
+  "summary": "Indian Air Force to conduct Exercise Vayushakti-26 demonstrating combat readiness and firepower capabilities.",
+  "content": "<h2>Introduction</h2><p>The Indian Air Force will conduct Exercise Vayushakti-26 at Pokhran Air-to-Ground Range.</p><h2>Key Highlights</h2><ul><li><strong>Exercise:</strong> Vayushakti-26</li><li><strong>Location:</strong> Pokhran</li><li><strong>Objective:</strong> Demonstrate air combat capability</li></ul><h2>Detailed Analysis</h2><p>The exercise highlights operational preparedness and technological strength.</p><h2>Exam Perspective</h2><ul><li>Defense Exercises</li><li>Military Capability</li></ul><h2>Key Takeaways</h2><ul><li>Demonstrates combat readiness</li><li>Strengthens national security</li></ul><h2>Sources & References</h2><p>Defense Ministry</p>",
+  "category": "Defense",
+  "tags": ["IAF", "Military Exercise"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910908/nmai-articles/pmrat1eftzu9x46ljhja.jpg",
+    "alt": "Exercise Vayushakti"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "4 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Intermediate",
+  "sources": ["IAF"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+{
+  "title": "Saudi Arabia to Host HCI Conference 2026 in Riyadh",
+  "slug": "22-saudi-arabia-host-hci-conference-2026-riyadh",
+  "summary": "Saudi Arabia announces Human Capability Initiative Conference 2026 focusing on future workforce development.",
+  "content": "<h2>Introduction</h2><p>Saudi Arabia will host the Human Capability Initiative Conference 2026 in Riyadh.</p><h2>Key Highlights</h2><ul><li><strong>Location:</strong> Riyadh</li><li><strong>Dates:</strong> May 3–4, 2026</li><li><strong>Theme:</strong> Future workforce development</li></ul><h2>Detailed Analysis</h2><p>The conference aims to enhance human capability development worldwide.</p><h2>Exam Perspective</h2><ul><li>Global Conferences</li><li>Human Resource Development</li></ul><h2>Key Takeaways</h2><ul><li>Focus on skill development</li><li>International collaboration</li></ul><h2>Sources & References</h2><p>International Reports</p>",
+  "category": "International Relations",
+  "tags": ["Saudi Arabia", "Conference"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770911049/nmai-articles/ej0mhbus41fnya9yruao.jpg",
+    "alt": "HCI Conference"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "4 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Beginner",
+  "sources": ["International News"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+{
+  "title": "Bangladesh Holds First General Election After Hasina Ouster",
+  "slug": "23-bangladesh-first-general-election-after-hasina-ouster",
+  "summary": "Bangladesh conducts its first parliamentary elections since the removal of Sheikh Hasina in 2024.",
+  "content": "<h2>Introduction</h2><p>Bangladesh has begun voting in its 13th parliamentary elections following political changes in 2024.</p><h2>Key Highlights</h2><ul><li><strong>Country:</strong> Bangladesh</li><li><strong>Election:</strong> Parliamentary election</li><li><strong>Significance:</strong> First since Hasina removal</li></ul><h2>Detailed Analysis</h2><p>The election marks a critical transition in Bangladesh’s political landscape.</p><h2>Exam Perspective</h2><ul><li>International Politics</li><li>South Asia Affairs</li></ul><h2>Key Takeaways</h2><ul><li>Major political transition</li><li>Important regional development</li></ul><h2>Sources & References</h2><p>Election Commission Reports</p>",
+  "category": "International Relations",
+  "tags": ["Bangladesh", "Election"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770910909/nmai-articles/qzjb1gznxgxvt3ziwfuu.jpg",
+    "alt": "Bangladesh Election"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "5 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Intermediate",
+  "sources": ["International News"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
+{
+  "title": "Indian Students Abroad Decline 31% Since 2023",
+  "slug": "24-indian-students-abroad-decline-31-percent-since-2023",
+  "summary": "Government data reveals a 31% decline in Indian students pursuing higher education overseas since 2023.",
+  "content": "<h2>Introduction</h2><p>The number of Indian students studying abroad has declined significantly according to government data.</p><h2>Key Highlights</h2><ul><li><strong>Decline:</strong> 31%</li><li><strong>Sector:</strong> Overseas education</li><li><strong>Source:</strong> Government data</li></ul><h2>Detailed Analysis</h2><p>Factors include policy changes, visa restrictions, and rising costs.</p><h2>Exam Perspective</h2><ul><li>Education Trends</li><li>Migration Patterns</li></ul><h2>Key Takeaways</h2><ul><li>Changing education trends</li><li>Impact of global policies</li></ul><h2>Sources & References</h2><p>Government of India</p>",
+  "category": "Education",
+  "tags": ["Indian Students", "Education"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770911049/nmai-articles/cq12um5ekj5kbwoxcbif.jpg",
+    "alt": "Indian Students Abroad"
+  },
+  "publishDate": "2026-02-12T00:00:00.000Z",
+  "lastUpdated": "2026-02-12T00:00:00.000Z",
+  "readingTime": "4 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["Education Ministry"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 2
+},
 
   
 {

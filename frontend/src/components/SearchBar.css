@@ -9,6 +9,7 @@
   transition: all 0.3s ease;
   max-width: 600px;
   margin: 0 auto 2rem;
+  background-image: none !important;
 }
 
 .search-bar:focus-within {
@@ -19,6 +20,8 @@
 .search-icon {
   color: #666;
   font-size: 1.3rem;
+  flex-shrink: 0;
+  background: none !important;
 }
 
 .search-input {

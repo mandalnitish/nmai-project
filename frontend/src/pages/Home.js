@@ -58,8 +58,6 @@ const Home = () => {
 
   /* ================= STATE ================= */
 
-  const pageFromURL = Number(searchParams.get("page")) || 1;
-
   const [articles, setArticles] = useState([]);
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,24 +65,23 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
 
-  const [page, setPage] = useState(pageFromURL);
+  // Get page from URL, default to 1
+  const page = Number(searchParams.get("page")) || 1;
   const [totalPages, setTotalPages] = useState(1);
 
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
 
   /* ======================================================
-     FIX 1: LISTEN FOR LOGO CLICK RESET EVENT
+     LISTEN FOR LOGO CLICK RESET EVENT
   ====================================================== */
 
   useEffect(() => {
 
     const handleHomeReset = () => {
 
-      setPage(1);
       setCategory("All");
       setSearch("");
-
       setSearchParams({ page: 1 });
 
       window.scrollTo({
@@ -101,21 +98,6 @@ const Home = () => {
     };
 
   }, [setSearchParams]);
-
-
-  /* ======================================================
-     FIX 2: KEEP PAGE SYNCED WITH URL
-  ====================================================== */
-
-  useEffect(() => {
-
-    const urlPage = Number(searchParams.get("page")) || 1;
-
-    if (urlPage !== page) {
-      setPage(urlPage);
-    }
-
-  }, [searchParams]);
 
 
   /* ================= FETCH DATA ================= */
@@ -162,8 +144,6 @@ const Home = () => {
 
     fetchData();
 
-    setSearchParams({ page });
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -173,7 +153,7 @@ const Home = () => {
       mounted = false;
     };
 
-  }, [page, category, search, setSearchParams]);
+  }, [page, category, search]);
 
 
   /* ================= BODY SCROLL LOCK ================= */
@@ -188,6 +168,24 @@ const Home = () => {
     };
 
   }, [isMobileCategoryOpen]);
+
+
+  /* ================= HANDLERS ================= */
+
+  const handlePageChange = (newPage) => {
+    setSearchParams({ page: newPage });
+  };
+
+  const handleCategoryChange = (cat) => {
+    setCategory(cat);
+    setSearchParams({ page: 1 });
+    setIsMobileCategoryOpen(false);
+  };
+
+  const handleSearchChange = (value) => {
+    setSearch(value);
+    setSearchParams({ page: 1 });
+  };
 
 
   /* ================= GROUP ARTICLES ================= */
@@ -285,15 +283,7 @@ const Home = () => {
                   <li
                     key={cat}
                     className={category === cat ? "active" : ""}
-                    onClick={() => {
-
-                      setCategory(cat);
-
-                      setPage(1);
-
-                      setIsMobileCategoryOpen(false);
-
-                    }}
+                    onClick={() => handleCategoryChange(cat)}
                   >
                     {cat}
                   </li>
@@ -426,7 +416,7 @@ const Home = () => {
                     <Pagination
                       page={page}
                       totalPages={totalPages}
-                      onChange={setPage}
+                      onChange={handlePageChange}
                     />
 
                   </>
@@ -498,10 +488,7 @@ const Home = () => {
                   type="text"
                   placeholder="Search current affairs..."
                   value={search}
-                  onChange={(e) => {
-                    setSearch(e.target.value);
-                    setPage(1);
-                  }}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                 />
 
               </div>

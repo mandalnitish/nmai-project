@@ -38,7 +38,351 @@ const TAGS = {
 /* ================= ALL ARTICLES ================= */
 
 const allArticles = [
-  
+  //13 Feb
+   
+  {
+  "title": "Defence Acquisition Council Clears Rs 3.6 Lakh Crore Rafale Deal",
+  "slug": "37-defence-acquisition-council-clears-3-6-lakh-crore-rafale-deal",
+  "summary": "India’s Defence Acquisition Council cleared defence projects worth ₹3.6 lakh crore, including Rafale jets, to strengthen national security.",
+  "content": "<h2>Introduction</h2><p>The Defence Acquisition Council (DAC), chaired by Defence Minister Rajnath Singh, has approved defence procurement proposals worth approximately ₹3.6 lakh crore. This includes the acquisition of Rafale fighter jets and other advanced defence systems to enhance India’s military capabilities.</p><p>This represents one of the largest defence procurement approvals in India's history.</p><h2>About Defence Acquisition Council</h2><p>The Defence Acquisition Council is the highest decision-making body in India for defence procurement. It evaluates and approves major defence acquisitions to strengthen India's armed forces.</p><h2>Key Highlights</h2><ul><li><strong>Total Value:</strong> ₹3.6 lakh crore</li><li><strong>Approved By:</strong> Defence Acquisition Council</li><li><strong>Includes:</strong> Rafale fighter aircraft and defence systems</li></ul><h2>Importance of Rafale Aircraft</h2><p>The Rafale is a 4.5-generation multirole fighter aircraft capable of air superiority, ground attack, and nuclear deterrence missions. It significantly enhances India's air combat capabilities.</p><h2>Strategic Significance</h2><p>This approval strengthens India's defence preparedness and ensures technological superiority in modern warfare.</p><h2>Exam Perspective</h2><ul><li>Important defence procurement</li><li>Relevant for national security and defence modernization</li></ul><h2>Key Takeaways</h2><ul><li>One of India’s largest defence approvals</li><li>Enhances air force capability</li><li>Strengthens national security</li></ul><h2>Sources & References</h2><p>Ministry of Defence, Defence Acquisition Council</p>",
+  "category": "Defense",
+  "tags": ["Rafale", "Defence Acquisition", "Indian Air Force", "Military"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970151/nmai-articles/a0drvboiyxbms0obz0mr.jpg",
+    "alt": "Rafale Fighter Jet"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "9 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CDS", "NDA"],
+  "difficulty": "Intermediate",
+  "sources": ["Ministry of Defence"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Brazilian President Lula To Visit India For AI Summit",
+  "slug": "36-brazilian-president-lula-visit-india-ai-summit",
+  "summary": "Brazilian President Luiz Inácio Lula da Silva will visit India to attend the AI Summit and strengthen bilateral relations.",
+  "content": "<h2>Introduction</h2><p>Brazilian President Luiz Inácio Lula da Silva is scheduled to visit India from February 18 to February 22, 2026, at the invitation of Prime Minister Narendra Modi. The visit will include participation in the Artificial Intelligence Summit and discussions aimed at strengthening bilateral cooperation between the two countries.</p><p>This visit reflects the growing strategic partnership between India and Brazil, both major emerging economies and members of BRICS.</p><h2>India–Brazil Relations</h2><p>India and Brazil share strong diplomatic, economic, and strategic ties. Both countries cooperate in areas such as trade, defence, technology, climate change, and multilateral forums including BRICS, G20, and the United Nations.</p><p>The visit is expected to further strengthen cooperation in artificial intelligence, digital technology, and innovation.</p><h2>Key Highlights</h2><ul><li><strong>Visitor:</strong> President Luiz Inácio Lula da Silva</li><li><strong>Country:</strong> Brazil</li><li><strong>Purpose:</strong> Attend AI Summit and bilateral discussions</li><li><strong>Host:</strong> India</li></ul><h2>Strategic Importance</h2><p>The visit highlights India’s growing global role in technology and artificial intelligence. It also strengthens South-South cooperation between developing nations.</p><h2>Exam Perspective</h2><ul><li>Important diplomatic visit</li><li>Relevant for international relations and global cooperation</li><li>Important for BRICS-related questions</li></ul><h2>Key Takeaways</h2><ul><li>Strengthens India–Brazil relations</li><li>Promotes cooperation in AI and technology</li><li>Highlights India’s leadership in global technology initiatives</li></ul><h2>Sources & References</h2><p>Ministry of External Affairs, International Diplomatic Reports</p>",
+  "category": "International Relations",
+  "tags": ["Brazil", "India", "Diplomacy", "AI Summit", "BRICS"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970151/nmai-articles/ykldgdv5wwnbtn4wazk3.jpg",
+    "alt": "Brazil President India Visit"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Ministry of External Affairs"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Russia Blocks WhatsApp, Urges Shift To Max Messenger",
+  "slug": "35-russia-blocks-whatsapp-urges-shift-max-messenger",
+  "summary": "Russia has blocked WhatsApp citing non-compliance with national digital regulations and is encouraging users to switch to domestic messaging platforms.",
+  "content": "<h2>Introduction</h2><p>The Russian government has blocked the popular messaging platform WhatsApp, citing violations of national digital and data storage regulations. Authorities stated that the platform failed to comply with Russian laws requiring companies to store user data locally and cooperate with national security agencies.</p><p>The move affects millions of users across Russia and marks another step in the country’s efforts to strengthen digital sovereignty and promote domestic technology platforms.</p><h2>Background: Russia’s Digital Sovereignty Policy</h2><p>Russia has implemented strict regulations on foreign technology companies under its digital sovereignty framework. These laws require companies to store Russian citizens’ data within the country and comply with government oversight.</p><p>The government has previously restricted access to several global platforms, promoting the use of domestic alternatives.</p><h2>Key Highlights</h2><ul><li><strong>Platform Blocked:</strong> WhatsApp</li><li><strong>Country:</strong> Russia</li><li><strong>Reason:</strong> Non-compliance with national data laws</li><li><strong>Alternative Promoted:</strong> Domestic messaging platforms like Max Messenger</li></ul><h2>Strategic and Global Significance</h2><p>The decision reflects Russia’s broader strategy to reduce dependence on foreign technology companies and strengthen domestic digital infrastructure.</p><p>It also raises concerns about internet freedom, global digital governance, and geopolitical tensions related to technology control.</p><h2>Exam Perspective</h2><ul><li>Important example of digital sovereignty</li><li>Relevant for international relations and cyber governance</li><li>Important for Science & Technology and IR sections</li></ul><h2>Key Takeaways</h2><ul><li>Russia blocked WhatsApp due to regulatory non-compliance</li><li>Promotes domestic digital platforms</li><li>Highlights global trend toward digital sovereignty</li></ul><h2>Sources & References</h2><p>International Technology Reports, Government Statements</p>",
+  "category": "International Relations",
+  "tags": ["Russia", "WhatsApp", "Digital Sovereignty", "Technology Policy"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970151/nmai-articles/v4tqpyk1laesoia2pjit.jpg",
+    "alt": "Russia Blocks WhatsApp"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["International News", "Technology Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Italy Register Maiden T20 World Cup Win Against Nepal",
+  "slug": "34-italy-register-maiden-t20-world-cup-win-nepal",
+  "summary": "Italy achieved a historic milestone by defeating Nepal to secure its first-ever victory in the ICC T20 World Cup, marking a major breakthrough in the country’s cricket development and global sporting presence.",
+  "content": "<h2>Introduction</h2><p>Italy achieved a historic milestone in international cricket by securing its maiden victory in the ICC Men's T20 World Cup with a remarkable win against Nepal. This victory represents a major breakthrough for Italian cricket and highlights the growing global reach of the sport beyond its traditional strongholds such as India, Australia, England, and Pakistan.</p><p>The match not only marked Italy’s first win in a T20 World Cup tournament but also demonstrated the rapid development of cricket in associate member nations governed by the International Cricket Council (ICC). Italy’s success reflects the increasing competitiveness and professional standards among emerging cricket nations.</p><h2>Match Scorecard</h2><style>.scorecard-wrapper{max-width:100%;margin:24px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}.scorecard-card{background:#ffffff;border-radius:14px;padding:18px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,.08);transition:background .3s,color .3s}@media(prefers-color-scheme:dark){.scorecard-card{background:#1f2937;color:#e5e7eb;box-shadow:0 6px 18px rgba(0,0,0,.5)}}.scorecard-title{font-size:20px;font-weight:700;margin-bottom:14px}.scorecard-table{width:100%;border-collapse:collapse;font-size:14px}.scorecard-table th{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:12px;font-weight:600}.scorecard-table td{padding:12px;border-bottom:1px solid #e5e7eb}.scorecard-table tr:hover{background:rgba(37,99,235,.05)}@media(prefers-color-scheme:dark){.scorecard-table td{border-bottom:1px solid #374151}.scorecard-table tr:hover{background:rgba(59,130,246,.15)}}.total-row{font-weight:bold;background:rgba(37,99,235,.08)}@media(max-width:640px){.scorecard-table thead{display:none}.scorecard-table,.scorecard-table tbody,.scorecard-table tr,.scorecard-table td{display:block;width:100%}.scorecard-table tr{margin-bottom:12px;border-radius:10px;padding:8px;background:rgba(37,99,235,.05)}.scorecard-table td{padding-left:50%;text-align:right;position:relative}.scorecard-table td::before{content:attr(data-label);position:absolute;left:12px;font-weight:600;text-align:left}}</style><div class='scorecard-wrapper'><div class='scorecard-card'><div class='scorecard-title'>Italy Batting</div><table class='scorecard-table'><thead><tr><th>Batter</th><th>Runs</th><th>Balls</th><th>4s</th><th>6s</th><th>Strike Rate</th></tr></thead><tbody><tr><td data-label='Batter'>Marcus Campopiano</td><td data-label='Runs'>54</td><td data-label='Balls'>41</td><td data-label='4s'>6</td><td data-label='6s'>1</td><td data-label='Strike Rate'>131.71</td></tr><tr><td data-label='Batter'>Gareth Berg</td><td data-label='Runs'>37</td><td data-label='Balls'>29</td><td data-label='4s'>4</td><td data-label='6s'>1</td><td data-label='Strike Rate'>127.59</td></tr><tr><td data-label='Batter'>Anthony Mosca*</td><td data-label='Runs'>21</td><td data-label='Balls'>14</td><td data-label='4s'>2</td><td data-label='6s'>0</td><td data-label='Strike Rate'>150.00</td></tr><tr class='total-row'><td data-label='Batter'>Total</td><td data-label='Runs'>145/4</td><td data-label='Balls'>18.3 ov</td><td data-label='4s'>-</td><td data-label='6s'>-</td><td data-label='Strike Rate'>-</td></tr></tbody></table></div><div class='scorecard-card'><div class='scorecard-title'>Nepal Batting</div><table class='scorecard-table'><thead><tr><th>Batter</th><th>Runs</th><th>Balls</th><th>4s</th><th>6s</th><th>Strike Rate</th></tr></thead><tbody><tr><td data-label='Batter'>Kushal Bhurtel</td><td data-label='Runs'>48</td><td data-label='Balls'>36</td><td data-label='4s'>5</td><td data-label='6s'>1</td><td data-label='Strike Rate'>133.33</td></tr><tr><td data-label='Batter'>Rohit Paudel</td><td data-label='Runs'>32</td><td data-label='Balls'>28</td><td data-label='4s'>3</td><td data-label='6s'>1</td><td data-label='Strike Rate'>114.29</td></tr><tr><td data-label='Batter'>Aasif Sheikh</td><td data-label='Runs'>18</td><td data-label='Balls'>16</td><td data-label='4s'>2</td><td data-label='6s'>0</td><td data-label='Strike Rate'>112.50</td></tr><tr><td data-label='Batter'>Dipendra Singh Airee</td><td data-label='Runs'>14</td><td data-label='Balls'>12</td><td data-label='4s'>1</td><td data-label='6s'>0</td><td data-label='Strike Rate'>116.67</td></tr><tr class='total-row'><td data-label='Batter'>Total</td><td data-label='Runs'>142/8</td><td data-label='Balls'>20 ov</td><td data-label='4s'>-</td><td data-label='6s'>-</td><td data-label='Strike Rate'>-</td></tr></tbody></table></div></div><h2>Background of Cricket in Italy</h2><p>Cricket in Italy is administered by the Italian Cricket Federation, which became an ICC associate member in 1995. The sport has grown steadily, particularly due to participation from immigrant communities from cricket-playing nations such as India, Pakistan, Sri Lanka, and Bangladesh. This historic victory is expected to boost cricket’s popularity in Italy and strengthen grassroots development.</p><h2>Strategic Importance</h2><p>This victory demonstrates the success of ICC global expansion programs and highlights the growing competitiveness of associate cricket nations. It represents an important milestone in Italy’s sporting history.</p><h2>Exam Perspective</h2><ul><li>Important sports current affairs event</li><li>Relevant for UPSC, SSC, and State PSC exams</li><li>Example of global expansion of cricket</li></ul><h2>Key Takeaways</h2><ul><li>Italy secured its first ICC T20 World Cup victory</li><li>Defeated Nepal by 6 wickets</li><li>Major milestone for Italian cricket</li></ul><h2>Sources & References</h2><p>ICC Official Reports, Sports News Agencies</p>",
+  "category": "Sports",
+  "tags": ["Cricket", "ICC", "Italy", "T20 World Cup"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970151/nmai-articles/s65eklp0kou3itptg4un.jpg",
+    "alt": "Italy Cricket Historic Win"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["ICC", "Sports Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Brazilian MMA Fighter Pablo Oliveira Costa Dies At 31",
+  "slug": "33-brazilian-mma-fighter-pablo-oliveira-costa-dies-31",
+  "summary": "Brazilian mixed martial artist Pablo Oliveira Costa passed away at age 31 following a tragic electrocution accident.",
+  "content": "<h2>Introduction</h2><p>Brazilian mixed martial artist Pablo Oliveira Costa tragically passed away at the age of 31 following an electrocution accident in São José, Brazil. Costa was a well-known professional MMA fighter who had built a reputation through his performances in regional and international competitions.</p><p>His sudden death has shocked the global mixed martial arts community, highlighting the unpredictable nature of accidents and the loss of promising athletes.</p><h2>About Pablo Oliveira Costa</h2><p>Pablo Oliveira Costa was a professional MMA fighter from Brazil who competed in several national and international events. Brazil is widely recognized as one of the world's leading nations in mixed martial arts, producing legendary fighters and contributing significantly to the sport’s global popularity.</p><h2>Key Highlights</h2><ul><li><strong>Name:</strong> Pablo Oliveira Costa</li><li><strong>Age:</strong> 31 years</li><li><strong>Country:</strong> Brazil</li><li><strong>Cause of Death:</strong> Electrocution accident</li></ul><h2>Significance in MMA</h2><p>Brazil has a rich legacy in MMA, with organizations like the UFC featuring many Brazilian champions. Fighters like Costa contribute to the sport’s popularity and competitive growth.</p><h2>Exam Perspective</h2><ul><li>Important personality in sports current affairs</li><li>Relevant for international sports news</li></ul><h2>Key Takeaways</h2><ul><li>Prominent Brazilian MMA fighter passed away</li><li>Highlights Brazil’s contribution to MMA</li></ul><h2>Sources & References</h2><p>International Sports News Reports</p>",
+  "category": "Sports",
+  "tags": ["MMA", "Brazil", "Sports Personalities"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970151/nmai-articles/qsgqwnsayqw4mqzxxuas.jpg",
+    "alt": "Pablo Costa MMA Fighter"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "readingTime": "6 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["Sports News"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Bulgaria Appoints Andrey Gyurov As Interim Prime Minister",
+  "slug": "32-bulgaria-appoints-andrey-gyurov-interim-prime-minister",
+  "summary": "Bulgaria appointed Andrey Gyurov as interim Prime Minister to lead the country through a political transition period and ensure stability ahead of upcoming parliamentary elections.",
+  "content": "<h2>Introduction</h2><p>Bulgaria has appointed Andrey Gyurov as interim Prime Minister to lead the country during a crucial political transition period ahead of parliamentary elections. The appointment comes amid ongoing political instability and reflects Bulgaria’s constitutional mechanism to ensure continuity of governance during election cycles.</p><p>The interim government will manage administrative functions, oversee election preparations, and ensure political neutrality during the electoral process.</p><h2>Political Background of Bulgaria</h2><p>Bulgaria is a parliamentary democracy located in Southeast Europe. It is a member of the European Union (EU), NATO, and other major international organizations.</p><p>The country has experienced political instability in recent years due to fragmented election results, coalition difficulties, and public dissatisfaction with governance.</p><h2>Role of Interim Prime Minister</h2><p>The interim Prime Minister leads a caretaker government responsible for managing state affairs until a new elected government is formed.</p><p>The key responsibilities include:</p><ul><li>Ensuring smooth functioning of government institutions</li><li>Maintaining political neutrality</li><li>Preparing and conducting free and fair elections</li><li>Managing economic and administrative stability</li></ul><h2>About Andrey Gyurov</h2><p>Andrey Gyurov is a prominent Bulgarian political leader and economist. He has previously held important political and administrative positions and is known for his expertise in public administration and governance.</p><p>His appointment reflects the need for experienced leadership during political transitions.</p><h2>Importance of Interim Government</h2><p>Interim governments play a crucial role in democratic systems by ensuring governance continuity during election periods. They prevent administrative disruption and ensure constitutional processes are followed.</p><p>Such governments do not introduce major policy changes but focus on stability and election management.</p><h2>Bulgaria’s Political Challenges</h2><p>Bulgaria has faced several political challenges, including:</p><ul><li>Frequent elections</li><li>Coalition government instability</li><li>Economic and governance reforms</li><li>Public protests and political disagreements</li></ul><h2>European Union Context</h2><p>As a member of the European Union, Bulgaria’s political stability is important for regional security, economic development, and EU governance.</p><p>The EU closely monitors democratic processes and supports stability in member states.</p><h2>International Significance</h2><p>Political stability in Bulgaria is important for NATO security, European economic cooperation, and regional geopolitical balance.</p><h2>Exam Perspective</h2><ul><li>Important international political development</li><li>Relevant for international relations</li><li>Example of parliamentary democracy functioning</li></ul><h2>Key Takeaways</h2><ul><li>Andrey Gyurov appointed interim Prime Minister</li><li>Ensures political and administrative stability</li><li>Important step in democratic transition</li></ul><h2>Sources & References</h2><p>European Union Reports, International News Agencies</p>",
+  "category": "International Relations",
+  "tags": ["Bulgaria", "Prime Minister", "European Union"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970146/nmai-articles/ccmdu2h6nphjkjlhax0u.jpg",
+    "alt": "Bulgaria Government Leadership"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "10 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["International Reports", "EU Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Assam Rifles To Induct Indigenous Dog Breeds Under Atmanirbhar Bharat",
+  "slug": "31-assam-rifles-induct-indigenous-dog-breeds-atmanirbhar-bharat",
+  "summary": "Assam Rifles will induct indigenous Indian dog breeds into its canine units to enhance operational effectiveness and promote Atmanirbhar Bharat.",
+  "content": "<h2>Introduction</h2><p>The Assam Rifles, India's oldest paramilitary force, has announced plans to induct indigenous Indian dog breeds into its canine units as part of the Government of India's Atmanirbhar Bharat initiative. This move aims to promote self-reliance while enhancing the operational capabilities of the force in surveillance, detection, and security operations.</p><p>The initiative reflects India's growing focus on using indigenous resources in defence and security sectors.</p><h2>About Assam Rifles</h2><p>Assam Rifles is a paramilitary force under the Ministry of Home Affairs, responsible for maintaining internal security and guarding India's northeastern borders. It plays a crucial role in counter-insurgency, border security, and maintaining peace in the region.</p><h2>Key Highlights</h2><ul><li><strong>Force:</strong> Assam Rifles</li><li><strong>Initiative:</strong> Induction of indigenous dog breeds</li><li><strong>Objective:</strong> Promote Atmanirbhar Bharat and enhance operational efficiency</li></ul><h2>Importance of Indigenous Dog Breeds</h2><p>Indian dog breeds are well adapted to local climatic conditions and terrain. They possess strong endurance, agility, and disease resistance compared to foreign breeds.</p><p>Using indigenous breeds reduces dependency on imported dogs and promotes local breeding programs.</p><h2>Strategic Significance</h2><p>This initiative aligns with India's broader goal of achieving self-reliance in defence and security. It also promotes indigenous biodiversity and supports local breeders.</p><h2>Exam Perspective</h2><ul><li>Important initiative under Atmanirbhar Bharat</li><li>Relevant for defence and internal security topics</li></ul><h2>Key Takeaways</h2><ul><li>Promotes indigenous resources in defence</li><li>Strengthens operational capabilities</li><li>Supports Atmanirbhar Bharat initiative</li></ul><h2>Sources & References</h2><p>Ministry of Home Affairs, Assam Rifles</p>",
+  "category": "Defense",
+  "tags": ["Assam Rifles", "Atmanirbhar Bharat", "Internal Security"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/gx54qvmxonmpntd2lidh.jpg",
+    "alt": "Assam Rifles Dog Squad"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "readingTime": "7 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CAPF", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Ministry of Home Affairs"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Indian Air Force Instructors To Train RAF Fighter Pilots",
+  "slug": "30-iaf-instructors-train-raf-fighter-pilots",
+  "summary": "Indian Air Force instructors will train Royal Air Force fighter pilots, marking a historic milestone in India–UK defence cooperation and global military training recognition.",
+  "content": "<h2>Introduction</h2><p>India and the United Kingdom have agreed to deepen their defence partnership, with Indian Air Force (IAF) instructors set to train Royal Air Force (RAF) fighter pilots. This marks the first time Indian military instructors will train fast jet pilots of the UK, highlighting India's growing expertise and global recognition in advanced military aviation training.</p><p>This development represents a significant milestone in bilateral defence cooperation and reflects the strengthening strategic partnership between India and the United Kingdom.</p><h2>Background of India–UK Defence Relations</h2><p>India and the United Kingdom share long-standing defence ties, including joint military exercises, technology sharing, and training cooperation. Both nations regularly participate in joint exercises such as Exercise Indradhanush, which focuses on enhancing air combat interoperability and operational coordination.</p><p>The latest agreement further strengthens cooperation by recognizing India as a capable provider of advanced pilot training.</p><h2>Key Highlights</h2><ul><li><strong>Countries Involved:</strong> India and United Kingdom</li><li><strong>Training Provider:</strong> Indian Air Force</li><li><strong>Trainees:</strong> Royal Air Force fighter pilots</li><li><strong>Significance:</strong> First instance of India training UK fighter pilots</li></ul><h2>Importance of the Training Cooperation</h2><p>The decision reflects India's growing reputation as a global leader in military aviation training. The Indian Air Force has extensive experience operating modern fighter aircraft such as Rafale, Su-30 MKI, Mirage 2000, and Tejas.</p><p>Indian instructors are highly regarded for their expertise in combat tactics, flight safety, and operational efficiency.</p><h2>Strategic and Global Significance</h2><p>This development strengthens India's position as an emerging defence partner and training hub. It also reflects increasing trust and strategic alignment between India and Western nations.</p><p>The cooperation contributes to regional and global security by improving interoperability between allied air forces.</p><h2>About Royal Air Force (RAF)</h2><p>The Royal Air Force is the aerial warfare branch of the United Kingdom's armed forces. It is one of the oldest and most advanced air forces in the world, operating aircraft such as Eurofighter Typhoon and F-35 Lightning II.</p><h2>Exam Perspective</h2><ul><li>Important milestone in India–UK defence cooperation</li><li>Shows India's growing global defence role</li><li>Relevant for defence and international relations topics</li></ul><h2>Key Takeaways</h2><ul><li>Indian Air Force instructors will train UK fighter pilots</li><li>Demonstrates India's expertise in military aviation training</li><li>Strengthens India–UK strategic and defence partnership</li></ul><h2>Sources & References</h2><p>Indian Air Force, Ministry of Defence, International Defence Reports</p>",
+  "category": "Defense",
+  "tags": ["IAF", "RAF", "India UK Defence", "Military Training"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/nbochrxktged1mjl4ost.jpg",
+    "alt": "IAF RAF Training"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CDS", "NDA", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Indian Air Force", "Ministry of Defence"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Defence Ministry Signs Rs 2,312 Crore Dornier Deal",
+  "slug": "29-defence-ministry-signs-2312-crore-dornier-deal",
+  "summary": "The Ministry of Defence signed a ₹2,312 crore contract with Hindustan Aeronautics Limited (HAL) to procure eight Dornier Do-228 aircraft for the Indian Coast Guard, significantly strengthening India's maritime surveillance, coastal security, and search-and-rescue capabilities.",
+  "content": "<h2>Introduction</h2><p>The Ministry of Defence (MoD), Government of India, has signed a major defence procurement contract worth ₹2,312 crore with Hindustan Aeronautics Limited (HAL) for the acquisition of eight Dornier Do-228 aircraft. These aircraft will be deployed by the Indian Coast Guard (ICG) to enhance its maritime surveillance, coastal security, search-and-rescue (SAR), and maritime domain awareness capabilities.</p><p>This procurement is part of India's broader strategy to modernize its armed forces, strengthen coastal defence infrastructure, and enhance indigenous defence manufacturing under the 'Make in India' and 'Atmanirbhar Bharat' initiatives.</p><h2>Background of the Dornier Do-228 Aircraft</h2><p>The Dornier Do-228 is a twin-engine turboprop utility aircraft originally designed by the German aerospace company Dornier GmbH. In India, the aircraft is manufactured under license by Hindustan Aeronautics Limited (HAL), one of India's premier aerospace and defence companies.</p><p>The Dornier aircraft has been widely used by the Indian Coast Guard, Indian Navy, and Indian Air Force for various operational roles, including maritime patrol, surveillance, reconnaissance, transport, and disaster response missions.</p><h2>Key Highlights of the Deal</h2><ul><li><strong>Total Contract Value:</strong> ₹2,312 crore</li><li><strong>Aircraft Ordered:</strong> Eight Dornier Do-228 aircraft</li><li><strong>Manufacturer:</strong> Hindustan Aeronautics Limited (HAL)</li><li><strong>Operator:</strong> Indian Coast Guard</li><li><strong>Purpose:</strong> Maritime surveillance, coastal security, search-and-rescue</li><li><strong>Initiative:</strong> Make in India and Atmanirbhar Bharat</li></ul><h2>Role of the Indian Coast Guard</h2><p>The Indian Coast Guard is responsible for safeguarding India's maritime interests, protecting its coastline, and enforcing maritime laws. Its key responsibilities include:</p><ul><li>Maritime surveillance and coastal security</li><li>Search and rescue operations</li><li>Anti-smuggling and anti-piracy operations</li><li>Environmental protection and pollution control</li><li>Protection of offshore assets such as oil platforms</li></ul><p>The induction of additional Dornier aircraft will significantly enhance the Coast Guard’s ability to monitor India's vast coastline of over 7,500 kilometers.</p><h2>Strategic Importance of the Procurement</h2><p>India faces various maritime security challenges, including piracy, smuggling, illegal fishing, infiltration, and maritime terrorism. Strengthening aerial surveillance capabilities is critical to addressing these threats effectively.</p><p>The Dornier aircraft provides rapid aerial surveillance, early threat detection, and improved maritime situational awareness, which are essential for national security.</p><p>This procurement also strengthens India's maritime defence infrastructure, especially in sensitive areas such as the Arabian Sea, Bay of Bengal, and Indian Ocean Region (IOR).</p><h2>Technical Features of Dornier Do-228 Aircraft</h2><p>The Dornier Do-228 is known for its reliability, versatility, and operational efficiency. Its key features include:</p><ul><li>Twin turboprop engines</li><li>Short take-off and landing (STOL) capability</li><li>Advanced surveillance radar systems</li><li>Electro-optical and infrared sensors</li><li>Long operational range and endurance</li><li>Capability to operate in difficult weather conditions</li></ul><p>These features make it highly suitable for maritime patrol and reconnaissance missions.</p><h2>Role of Hindustan Aeronautics Limited (HAL)</h2><p>Hindustan Aeronautics Limited is one of India’s largest defence and aerospace companies. It plays a crucial role in manufacturing aircraft, helicopters, engines, and avionics systems for the Indian armed forces.</p><p>HAL has been instrumental in promoting indigenous defence production and reducing dependence on foreign defence imports.</p><h2>Make in India and Atmanirbhar Bharat Initiative</h2><p>This procurement supports the Government of India’s Make in India and Atmanirbhar Bharat initiatives, which aim to promote domestic manufacturing and achieve self-reliance in defence production.</p><p>Indigenous manufacturing strengthens national security, creates employment opportunities, and promotes technological advancement.</p><h2>Maritime Security and India's Strategic Position</h2><p>India’s strategic location in the Indian Ocean Region makes maritime security extremely important. The region handles a significant portion of global trade and energy transportation.</p><p>Enhancing maritime surveillance capabilities ensures protection of sea lanes, ports, and offshore infrastructure.</p><h2>Economic and Industrial Impact</h2><p>The deal will also benefit India's defence manufacturing sector by supporting domestic industries, creating jobs, and strengthening the aerospace ecosystem.</p><p>It contributes to the growth of India's defence industrial base and technological capability.</p><h2>Exam Perspective</h2><ul><li>Important defence procurement contract</li><li>Relevant for Defence and Security section</li><li>Example of indigenous defence manufacturing</li><li>Important for UPSC, SSC, CDS, NDA, and State PSC exams</li></ul><h2>Key Takeaways</h2><ul><li>India signed ₹2,312 crore contract with HAL</li><li>Eight Dornier aircraft to be delivered to Coast Guard</li><li>Strengthens maritime surveillance and coastal security</li><li>Supports Make in India and Atmanirbhar Bharat initiatives</li><li>Enhances India’s national defence capabilities</li></ul><h2>Sources & References</h2><p>Ministry of Defence, Hindustan Aeronautics Limited, Indian Coast Guard, Official Defence Procurement Reports</p>",
+  "category": "Defense",
+  "tags": ["HAL", "Dornier", "Defence Procurement", "Indian Coast Guard", "Make in India"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/cgkje4ox6sil3rf0x3pt.jpg",
+    "alt": "Dornier Aircraft Indian Coast Guard"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "10 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CDS", "NDA", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Ministry of Defence", "HAL", "Indian Coast Guard"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Odisha To Introduce QR Codes On Land Records",
+  "slug": "28-odisha-introduce-qr-codes-land-records",
+  "summary": "Odisha government introduces QR codes on land ownership documents to enable instant verification and prevent fraud.",
+  "content": "<h2>Introduction</h2><p>The Odisha government has announced the introduction of QR codes on land ownership documents to ensure secure, transparent, and instant verification of property records. The initiative was announced by Revenue and Disaster Management Minister Suresh Pujari as part of the state's digital governance and land reform efforts.</p><p>This move aims to modernize land record management and reduce fraud, forgery, and disputes related to land ownership.</p><h2>Key Highlights</h2><ul><li><strong>State:</strong> Odisha</li><li><strong>Feature Introduced:</strong> QR codes on land records</li><li><strong>Purpose:</strong> Instant digital verification</li><li><strong>Department:</strong> Revenue and Disaster Management</li></ul><h2>How the System Works</h2><p>Each land ownership document will contain a unique QR code that can be scanned using a smartphone or verification system. The QR code will provide instant access to official land record details stored in government databases.</p><p>This ensures authenticity and reduces the risk of fake or tampered documents.</p><h2>Importance of the Initiative</h2><p>This initiative is part of India's broader Digital India program aimed at improving governance through technology. It will improve transparency, reduce corruption, and streamline property transactions.</p><h2>Exam Perspective</h2><ul><li>Example of e-governance initiative</li><li>Relevant for Digital India and land reforms</li></ul><h2>Key Takeaways</h2><ul><li>Improves transparency in land ownership</li><li>Prevents fraud and forgery</li><li>Supports digital governance</li></ul><h2>Sources & References</h2><p>Odisha Government, Revenue Department</p>",
+  "category": "Governance",
+  "tags": ["Digital India", "Land Records", "QR Code"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970146/nmai-articles/hacxqlqob12h1vmtkwyp.jpg",
+    "alt": "QR Code Land Records"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "readingTime": "7 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Odisha Government"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "Tamil-Brahmi Inscriptions Found In Egypt’s Valley Of The Kings",
+  "slug": "27-tamil-brahmi-inscriptions-found-egypt-valley-of-the-kings",
+  "summary": "Discovery of Tamil-Brahmi inscriptions in Egypt confirms ancient trade and cultural links between Tamil civilization and Roman Egypt.",
+  "content": "<h2>Introduction</h2><p>A historic discovery of Tamil-Brahmi inscriptions in Egypt’s Valley of the Kings has revealed strong cultural and trade connections between ancient Tamil civilization and the Roman world. Nearly 30 inscriptions in Tamil-Brahmi, Prakrit, and Sanskrit were identified during archaeological research.</p><p>This discovery provides concrete archaeological evidence of maritime trade and cultural exchange between ancient South India and Mediterranean civilizations.</p><h2>About Tamil-Brahmi Script</h2><p>Tamil-Brahmi is one of the earliest scripts used to write the Tamil language, dating back to around the 3rd century BCE. It evolved from the Brahmi script and represents an important stage in the development of written Tamil.</p><h2>Historical and Cultural Significance</h2><p>The discovery confirms that Tamil merchants and traders traveled to Egypt and engaged in long-distance trade. This aligns with historical evidence of Indo-Roman trade through ports such as Muziris and Kaveripattinam.</p><h2>Key Highlights</h2><ul><li><strong>Location:</strong> Valley of the Kings, Egypt</li><li><strong>Scripts Found:</strong> Tamil-Brahmi, Prakrit, Sanskrit</li><li><strong>Period:</strong> Ancient Indo-Roman trade era</li></ul><h2>Exam Perspective</h2><ul><li>Important archaeological discovery</li><li>Evidence of Indo-Roman trade</li><li>Relevant for Ancient Indian History</li></ul><h2>Key Takeaways</h2><ul><li>Confirms ancient Indian maritime trade</li><li>Shows cultural interaction between civilizations</li></ul><h2>Sources & References</h2><p>Archaeological Survey Reports, Historical Research Publications</p>",
+  "category": "History",
+  "tags": ["Tamil Brahmi", "Egypt", "Archaeology", "Ancient Trade"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/o4yhp7gkobusyunjjqhs.jpg",
+    "alt": "Tamil Brahmi Inscriptions Egypt"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Archaeological Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+{
+  "title": "India Launches First National Biobank For LSD Rare Diseases",
+  "slug": "26-india-launches-first-national-biobank-lsd-rare-diseases",
+  "summary": "India establishes its first national biobank for Lysosomal Storage Disorders to support research, diagnosis, and treatment of rare diseases.",
+  "content": "<h2>Introduction</h2><p>India has established its first government-supported national biobank dedicated to Lysosomal Storage Disorders (LSDs), marking a significant milestone in rare disease research and treatment. The biobank has been created through collaboration among 28 medical and research institutions across six states and two Union Territories.</p><p>This initiative aims to improve diagnosis, facilitate research, and accelerate the development of effective treatments for rare genetic disorders.</p><h2>What are Lysosomal Storage Disorders?</h2><p>Lysosomal Storage Disorders are a group of rare inherited metabolic diseases caused by enzyme deficiencies, leading to accumulation of toxic substances in cells. These disorders can affect multiple organs and cause severe health complications.</p><h2>Key Highlights</h2><ul><li><strong>First National Biobank:</strong> Dedicated to LSD disorders</li><li><strong>Participants:</strong> 28 institutions</li><li><strong>Purpose:</strong> Research, diagnosis, and treatment</li></ul><h2>Importance of the Biobank</h2><p>The biobank will store biological samples such as blood, DNA, and tissue, which researchers can use to study disease mechanisms and develop new therapies.</p><p>This will improve early diagnosis and enable personalized treatment approaches.</p><h2>Strategic and Medical Significance</h2><p>The initiative strengthens India's healthcare infrastructure and supports its National Policy for Rare Diseases. It will help improve patient outcomes and advance scientific research.</p><h2>Exam Perspective</h2><ul><li>Important development in healthcare and biotechnology</li><li>Relevant for Science and Technology section</li></ul><h2>Key Takeaways</h2><ul><li>First national rare disease biobank in India</li><li>Supports research and treatment</li><li>Strengthens healthcare system</li></ul><h2>Sources & References</h2><p>Health Ministry, Medical Research Institutions</p>",
+  "category": "Science and Technology",
+  "tags": ["Biobank", "Rare Diseases", "Healthcare", "Biotechnology"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970144/nmai-articles/eavgpb1txqudhw9m6n0f.jpg",
+    "alt": "National Biobank India"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "readingTime": "8 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Health Ministry", "Research Institutions"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+  {
+  "title": "IAF Conducts Joint Air Exercise With Royal Thai Air Force",
+  "slug": "25-iaf-conducts-joint-air-exercise-royal-thai-air-force",
+  "summary": "Indian Air Force conducts joint in-situ air exercise with Royal Thai Air Force to enhance operational coordination and interoperability.",
+  "content": "<h2>Introduction</h2><p>The Indian Air Force (IAF) is conducting a joint in-situ air exercise with the Royal Thai Air Force (RTAF), aimed at strengthening military cooperation, operational coordination, and interoperability between the two air forces. This exercise represents an important step in enhancing defense ties between India and Thailand, both of which share strategic interests in maintaining peace and stability in the Indo-Pacific region.</p><p>The exercise allows pilots, ground crews, and operational planners from both nations to work together, exchange knowledge, and improve their tactical and operational effectiveness.</p><h2>Key Highlights</h2><ul><li><strong>Participants:</strong> Indian Air Force and Royal Thai Air Force</li><li><strong>Objective:</strong> Improve interoperability and coordination</li><li><strong>Type:</strong> Joint in-situ air exercise</li><li><strong>Focus:</strong> Combat readiness and operational capability</li></ul><h2>Objectives of the Exercise</h2><p>The primary objective of the exercise is to enhance mutual understanding of air combat tactics, operational procedures, and coordination mechanisms. It also aims to strengthen bilateral military cooperation and promote trust between the two forces.</p><p>The exercise includes joint planning, simulated combat scenarios, coordinated flying missions, and exchange of best operational practices.</p><h2>Strategic Significance</h2><p>India and Thailand share strong defense and strategic relations. Such joint exercises contribute to regional security and stability, especially in the Indo-Pacific region, which has become increasingly important in global geopolitics.</p><p>The exercise also strengthens India's Act East Policy and enhances cooperation with Southeast Asian nations.</p><h2>Exam Perspective</h2><ul><li>Important joint military exercise involving India</li><li>Relevant for defense cooperation and international relations</li><li>Supports India's Act East Policy</li></ul><h2>Key Takeaways</h2><ul><li>Enhances India-Thailand defense cooperation</li><li>Improves combat readiness and operational efficiency</li><li>Strengthens regional security collaboration</li></ul><h2>Sources & References</h2><p>Indian Air Force, Ministry of Defence</p>",
+  "category": "Defense",
+  "tags": ["IAF", "Thailand", "Military Exercise", "Defense Cooperation"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970144/nmai-articles/xvbu6u7l7rly9zxbqdp7.jpg",
+    "alt": "IAF Thailand Exercise"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "7 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "CDS", "NDA"],
+  "difficulty": "Intermediate",
+  "sources": ["Indian Air Force", "Defence Ministry"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+  {
+  "title": "Parliament Passes Industrial Relations Code (Amendment) Bill, 2026: Comprehensive Analysis",
+  "slug": "38-industrial-relations-code-amendment-bill-2026-upsc-detailed-analysis",
+  "summary": "The Industrial Relations Code (Amendment) Bill, 2026 strengthens India's labour law framework by clarifying provisions related to industrial disputes, trade unions, and employment regulations. This reform aims to improve ease of doing business while safeguarding workers’ rights.",
+  "content": "<h2>Introduction</h2><p>The Parliament of India has passed the Industrial Relations Code (Amendment) Bill, 2026, marking a significant step in India's ongoing labour law reforms. The amendment seeks to clarify legal ambiguities and strengthen implementation mechanisms under the Industrial Relations Code, 2020, which is one of the four labour codes introduced to modernize India's labour regulatory framework.</p><p>The amendment reflects the government's broader objective of creating a balanced labour ecosystem that promotes industrial growth, attracts investment, and protects workers' rights. It also aligns with India's vision of improving ease of doing business while ensuring social justice and labour welfare.</p><h2>Background: Evolution of Labour Laws in India</h2><p>India's labour law framework historically consisted of more than 29 central labour laws and over 100 state laws. These laws governed areas such as industrial disputes, wages, social security, occupational safety, and working conditions. However, the multiplicity and complexity of these laws created challenges in compliance, enforcement, and dispute resolution.</p><p>To address these challenges, the Government of India consolidated these laws into four comprehensive labour codes between 2019 and 2020:</p><ul><li><strong>Code on Wages, 2019</strong></li><li><strong>Industrial Relations Code, 2020</strong></li><li><strong>Occupational Safety, Health and Working Conditions Code, 2020</strong></li><li><strong>Code on Social Security, 2020</strong></li></ul><p>The Industrial Relations Code focuses specifically on regulating industrial relations between employers and workers, including trade unions, industrial disputes, layoffs, retrenchment, and closure of establishments.</p><h2>Need for the Amendment</h2><p>After the enactment of the Industrial Relations Code, 2020, several practical and legal challenges emerged during implementation. These included ambiguities in definitions, procedural complexities, and concerns from stakeholders such as employers, trade unions, and state governments.</p><p>The Industrial Relations Code (Amendment) Bill, 2026 was introduced to address these concerns by clarifying provisions, improving dispute resolution mechanisms, and strengthening legal certainty.</p><h2>Key Objectives of the Amendment Bill</h2><ul><li>Provide clarity in legal provisions and definitions</li><li>Strengthen industrial dispute resolution mechanisms</li><li>Improve transparency and compliance processes</li><li>Enhance protection of workers’ rights</li><li>Promote ease of doing business</li></ul><h2>Major Provisions of the Industrial Relations Code</h2><h3>1. Recognition of Trade Unions</h3><p>The Code provides a framework for recognizing trade unions as negotiating unions or negotiating councils. This ensures effective representation of workers and promotes collective bargaining.</p><h3>2. Industrial Dispute Resolution</h3><p>The Code establishes mechanisms such as conciliation officers, industrial tribunals, and national industrial tribunals to resolve disputes between employers and workers.</p><h3>3. Layoffs, Retrenchment, and Closure</h3><p>The Code regulates layoffs, retrenchment, and closure of establishments, ensuring that workers receive compensation and protection while allowing businesses flexibility.</p><h3>4. Fixed-Term Employment</h3><p>The Code introduces provisions for fixed-term employment, allowing employers to hire workers for specific periods while ensuring equal benefits compared to permanent workers.</p><h3>5. Strikes and Lockouts</h3><p>The Code regulates strikes and lockouts by requiring prior notice, ensuring that industrial actions are conducted responsibly.</p><h2>Key Changes Introduced by the Amendment</h2><p>The amendment provides clarity on procedural requirements for dispute resolution, trade union recognition, and compliance obligations. It strengthens administrative efficiency and reduces legal uncertainty.</p><p>The amendment also enhances protections for workers while simplifying compliance requirements for employers.</p><h2>Impact on Workers</h2><p>The amendment strengthens workers’ rights by improving mechanisms for dispute resolution, ensuring fair treatment, and providing clearer legal protections.</p><p>It also enhances transparency and accountability in industrial relations.</p><h2>Impact on Employers and Industry</h2><p>The amendment simplifies compliance requirements, reduces regulatory complexity, and improves ease of doing business. It provides legal clarity, reducing litigation and improving investor confidence.</p><p>This supports industrial growth, job creation, and economic development.</p><h2>Economic Significance</h2><p>Labour law reforms are critical for economic growth, industrial productivity, and employment generation. By improving labour market flexibility and stability, the amendment strengthens India's economic competitiveness.</p><p>The reform also supports India's ambition to become a global manufacturing hub under initiatives such as Make in India.</p><h2>Global Perspective</h2><p>Many countries have modernized labour laws to balance economic growth and worker protection. India's labour reforms align with global best practices in labour regulation and industrial governance.</p><h2>Challenges and Concerns</h2><ul><li>Concerns from trade unions regarding worker protection</li><li>Implementation challenges at state level</li><li>Need for effective enforcement</li></ul><p>Proper implementation and stakeholder engagement are essential for success.</p><h2>Conclusion</h2><p>The Industrial Relations Code (Amendment) Bill, 2026 represents a significant milestone in India's labour reforms. It strengthens legal clarity, improves industrial relations, and supports economic growth while protecting workers' rights.</p><p>The amendment contributes to India's long-term goal of building a modern, efficient, and balanced labour ecosystem.</p><h2>Exam Perspective (UPSC Focus)</h2><ul><li>Part of major labour law reforms</li><li>Important for Polity, Economy, and Governance</li><li>Relevant for Prelims and Mains</li></ul><h2>Key Takeaways</h2><ul><li>Industrial Relations Code Amendment passed in 2026</li><li>Improves labour law clarity and implementation</li><li>Supports economic growth and worker protection</li></ul><h2>Sources & References</h2><p>Ministry of Labour and Employment, Parliament of India, Labour Law Reports</p>",
+  "category": "Polity",
+  "tags": ["Industrial Relations Code", "Labour Law Reform", "Parliament", "Labour Codes"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/iihij4lyt5pieumlgwv2.jpg",
+    "alt": "Industrial Relations Code Amendment Bill 2026"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "14 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC", "Judiciary"],
+  "difficulty": "Advanced",
+  "sources": ["Ministry of Labour and Employment", "Parliament of India"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+ },
+
+  {
+  "title": "Tarique Rahman’s Victory in Bangladesh General Elections: Implications for Bangladesh and South Asia",
+  "slug": "39-tarique-rahman-victory-bangladesh-general-elections-2026-upsc-analysis",
+  "summary": "The Bangladesh Nationalist Party (BNP) secured a sweeping victory in the 2026 general elections, positioning Tarique Rahman as the next Prime Minister. The outcome marks a major political transition with significant implications for Bangladesh’s democracy, governance, and regional geopolitics.",
+  "content": "<h2>Introduction</h2><p>The Bangladesh Nationalist Party (BNP) has secured a decisive victory in Bangladesh’s general elections, paving the way for Tarique Rahman to become the country’s next Prime Minister. This electoral outcome marks a major political shift in Bangladesh’s governance and signals the return of BNP to power after years of political dominance by the Awami League.</p><p>The election represents a turning point in Bangladesh’s political landscape, with potential implications for domestic governance, democratic institutions, economic policy, and regional geopolitics.</p><h2>Background: Political Landscape of Bangladesh</h2><p>Bangladesh operates as a parliamentary democracy, where the Prime Minister serves as the head of government. Since gaining independence in 1971, the country’s politics have been dominated by two major parties:</p><ul><li><strong>Awami League (AL)</strong>, led by Sheikh Hasina</li><li><strong>Bangladesh Nationalist Party (BNP)</strong>, founded by Ziaur Rahman</li></ul><p>These two parties have alternated in power over the decades, shaping the country's political trajectory.</p><h2>Who is Tarique Rahman?</h2><p>Tarique Rahman is a senior leader of the Bangladesh Nationalist Party and the son of former Prime Minister Khaleda Zia. He has served as Acting Chairman of BNP and played a key role in organizing and strengthening the party’s political base.</p><p>His leadership represents a generational shift in Bangladesh’s political leadership and is expected to influence future governance priorities.</p><h2>Key Highlights of the Election</h2><ul><li><strong>Winning Party:</strong> Bangladesh Nationalist Party (BNP)</li><li><strong>Leader:</strong> Tarique Rahman</li><li><strong>Position:</strong> Prime Minister-designate</li><li><strong>Election Type:</strong> Parliamentary General Election</li></ul><h2>Factors Behind BNP’s Victory</h2><h3>1. Public Demand for Political Change</h3><p>Voters expressed a desire for political change, improved governance, and stronger democratic institutions.</p><h3>2. Economic Challenges</h3><p>Economic pressures such as inflation, unemployment, and rising living costs influenced voter sentiment.</p><h3>3. Political Mobilization</h3><p>BNP successfully mobilized supporters and presented itself as a credible alternative government.</p><h2>Domestic Implications</h2><h3>Governance and Policy Changes</h3><p>The new government is expected to introduce policy changes focusing on economic reforms, employment generation, and strengthening democratic institutions.</p><h3>Institutional Reforms</h3><p>The government may pursue reforms to enhance transparency, accountability, and governance efficiency.</p><h2>Regional and International Implications</h2><h3>India–Bangladesh Relations</h3><p>India and Bangladesh share strong diplomatic, economic, and security relations. The leadership change may influence bilateral cooperation in areas such as trade, security, and connectivity.</p><h3>Geopolitical Significance</h3><p>Bangladesh plays an important role in South Asian geopolitics, regional trade, and security. Political stability in Bangladesh contributes to regional stability.</p><h2>Economic Significance</h2><p>Bangladesh is one of the fastest-growing economies in South Asia. Political stability is essential for maintaining economic growth, attracting investment, and promoting development.</p><h2>Democratic Significance</h2><p>The election reflects the functioning of democratic institutions and peaceful transfer of power, which strengthens democratic governance.</p><h2>Challenges Ahead</h2><ul><li>Maintaining political stability</li><li>Managing economic challenges</li><li>Strengthening democratic institutions</li><li>Maintaining balanced foreign policy</li></ul><h2>Global Perspective</h2><p>Bangladesh is an important partner in global trade, climate action, and regional security. Political developments in Bangladesh are closely monitored internationally.</p><h2>Conclusion</h2><p>The victory of Tarique Rahman and the Bangladesh Nationalist Party marks a major turning point in Bangladesh’s political history. The transition presents both opportunities and challenges for governance, economic development, and regional cooperation.</p><p>The new government’s policies and leadership will play a crucial role in shaping Bangladesh’s future.</p><h2>Exam Perspective (UPSC Focus)</h2><ul><li>Important political development in South Asia</li><li>Relevant for International Relations and Governance</li><li>Important for UPSC Prelims and Mains</li></ul><h2>Key Takeaways</h2><ul><li>BNP secured victory in Bangladesh elections</li><li>Tarique Rahman likely to become Prime Minister</li><li>Major political transition in South Asia</li></ul><h2>Sources & References</h2><p>Election Commission of Bangladesh, International News Reports</p>",
+  "category": "International Relations",
+  "tags": ["Bangladesh", "Elections", "Tarique Rahman", "South Asia Politics"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770970145/nmai-articles/ajggidkx1soproyzxcac.jpg",
+    "alt": "Bangladesh General Elections 2026"
+  },
+  "publishDate": "2026-02-13T00:00:00.000Z",
+  "lastUpdated": "2026-02-13T00:00:00.000Z",
+  "readingTime": "14 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Advanced",
+  "sources": ["Election Commission Bangladesh", "International News"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 3
+},
+
+//12 Feb
+ 
 {
   "title": "Uttar Pradesh Presents ₹9.12 Lakh Crore Budget 2026-27",
   "slug": "19-uttar-pradesh-presents-9-12-lakh-crore-budget-2026-27",
@@ -146,9 +490,6 @@ const allArticles = [
     "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1770911049/nmai-articles/cq12um5ekj5kbwoxcbif.jpg"
   }
 },
-
-
-
 
 
 {

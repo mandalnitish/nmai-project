@@ -33,17 +33,14 @@ const getDateLabel = (date) =>
 /* ================= PAGINATION ================= */
 const Pagination = ({ page, totalPages, onChange }) => {
   if (totalPages <= 1) return null;
-
   return (
     <div className="pagination">
       <button disabled={page === 1} onClick={() => onChange(page - 1)}>
         Prev
       </button>
-
       <span>
         Page {page} of {totalPages}
       </span>
-
       <button disabled={page === totalPages} onClick={() => onChange(page + 1)}>
         Next
       </button>
@@ -53,22 +50,18 @@ const Pagination = ({ page, totalPages, onChange }) => {
 
 /* ================= HOME ================= */
 const Home = () => {
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   /* ================= STATE ================= */
-
   const [articles, setArticles] = useState([]);
   const [trending, setTrending] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
 
   // Get page from URL, default to 1
   const page = Number(searchParams.get("page")) || 1;
   const [totalPages, setTotalPages] = useState(1);
-
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
 
@@ -83,7 +76,6 @@ const Home = () => {
       setCategory("All");
       setSearch("");
       setSearchParams({ page: 1 });
-
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -92,26 +84,20 @@ const Home = () => {
     };
 
     window.addEventListener("homeReset", handleHomeReset);
-
     return () => {
       window.removeEventListener("homeReset", handleHomeReset);
     };
 
   }, [setSearchParams]);
 
-
   /* ================= FETCH DATA ================= */
 
   useEffect(() => {
 
     let mounted = true;
-
     const fetchData = async () => {
-
       try {
-
         setLoading(true);
-
         const [latestRes, trendingRes] = await Promise.all([
           articlesAPI.getAll({
             page,
@@ -131,7 +117,6 @@ const Home = () => {
       } catch (err) {
 
         console.error("Home fetch error:", err);
-
         setArticles([]);
         setTrending([]);
 
@@ -143,7 +128,6 @@ const Home = () => {
     };
 
     fetchData();
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -159,14 +143,11 @@ const Home = () => {
   /* ================= BODY SCROLL LOCK ================= */
 
   useEffect(() => {
-
     document.body.style.overflow =
       isMobileCategoryOpen ? "hidden" : "unset";
-
     return () => {
       document.body.style.overflow = "unset";
     };
-
   }, [isMobileCategoryOpen]);
 
 
@@ -228,18 +209,14 @@ const Home = () => {
           NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC
         </title>
       </Helmet>
-
       <div className="home-page">
-
         {isMobileCategoryOpen && (
           <div
             className="sidebar-overlay active"
             onClick={() => setIsMobileCategoryOpen(false)}
           />
         )}
-
         <div className="home-container">
-
           <button
             className="mobile-category-toggle"
             onClick={() =>
@@ -249,22 +226,16 @@ const Home = () => {
             {isMobileCategoryOpen ? <FiX /> : <FiMenu />}
             <span>Categories</span>
           </button>
-
-
           <div className="home-layout">
 
             {/* ================= LEFT SIDEBAR ================= */}
-
             <aside
               className={`home-sidebar left ${
                 isMobileCategoryOpen ? "mobile-open" : ""
               }`}
             >
-
               <div className="sidebar-header">
-
                 <h3>Categories</h3>
-
                 <button
                   className="sidebar-close"
                   onClick={() =>
@@ -273,13 +244,9 @@ const Home = () => {
                 >
                   <FiX />
                 </button>
-
               </div>
-
               <ul>
-
                 {categories.map((cat) => (
-
                   <li
                     key={cat}
                     className={category === cat ? "active" : ""}
@@ -287,81 +254,54 @@ const Home = () => {
                   >
                     {cat}
                   </li>
-
                 ))}
-
               </ul>
-
             </aside>
 
-
             {/* ================= MAIN CONTENT ================= */}
-
             <main className="home-content">
-
               {/* HERO */}
-
               <section className="hero-section">
-
                 <div className="hero-content">
-
                   <h1 className="hero-title">
                     Master Current Affairs for{" "}
                     <span className="gradient-text">
                       Competitive Exams
                     </span>
                   </h1>
-
                   <p className="hero-subtitle">
                     Daily current affairs, MCQs, and exam-focused content
                     for UPSC, SSC, Banking & more.
                   </p>
-
                   <div className="hero-buttons">
-
                     <Link
                       to="/current-affairs"
                       className="btn btn-primary"
                     >
                       <FiBookOpen /> Explore Articles
                     </Link>
-
                     <Link
                       to="/daily-quiz"
                       className="btn btn-outline"
                     >
                       <FiTarget /> Take Daily Quiz
                     </Link>
-
                   </div>
-
                 </div>
-
-              </section>
-
+              </section> 
 
               {/* ================= LATEST ================= */}
-
               <section className="section latest-section">
-
                 <h2 className="section-title">
                   Latest Current Affairs
                 </h2>
-
-
                 {loading && (
-
                   <div className="articles-grid">
-
                     {Array.from({ length: 6 }).map((_, i) => (
                       <ArticleSkeleton key={i} />
                     ))}
-
                   </div>
-
                 )}
-
-
                 {!loading && articles.length === 0 && page === 1 && (
 
                   <div className="empty-state">
@@ -369,12 +309,8 @@ const Home = () => {
                       No articles found. Try changing your filters.
                     </p>
                   </div>
-
                 )}
-
-
                 {!loading && (
-
                   <>
                     {[
                       ["Today", today],
@@ -384,15 +320,11 @@ const Home = () => {
                       ([label, list]) =>
                         list.length > 0 && (
                           <React.Fragment key={label}>
-
                             <h3 className="group-title">
                               {label}
                             </h3>
-
                             <div className="articles-grid">
-
                               {list.map((a) => (
-
                                 <ArticleCard
                                   key={a._id}
                                   article={{
@@ -403,145 +335,93 @@ const Home = () => {
                                   }}
                                   layout="horizontal"
                                 />
-
                               ))}
-
                             </div>
-
                           </React.Fragment>
                         )
                     )}
-
 
                     <Pagination
                       page={page}
                       totalPages={totalPages}
                       onChange={handlePageChange}
                     />
-
                   </>
                 )}
-
               </section>
-
-
               {/* ================= TRENDING ================= */}
-
               {trending.length > 0 && (
-
                 <section className="section trending-section">
-
                   <h2 className="section-title">
                     <FiTrendingUp /> Trending Now
                   </h2>
-
                   <div className="trending-grid">
-
                     {trending.map((a, i) => (
-
                       <Link
                         key={a._id}
                         to={`/article/${a.slug}`}
                         className="trending-item"
                       >
-
                         <span className="trending-number">
                           #{i + 1}
                         </span>
-
                         <div className="trending-content">
-
                           <h4>{a.title}</h4>
-
                           <div className="trending-meta">
-
                             <span>
                               {formatDate(a.publishDate)}
                             </span>
-
                             <span>{a.category}</span>
-
                           </div>
-
                         </div>
-
                       </Link>
-
                     ))}
-
                   </div>
-
                 </section>
-
               )}
-
             </main>
 
-
             {/* ================= RIGHT SIDEBAR ================= */}
-
             <aside className="home-sidebar right">
-
               <div className="sidebar-search">
-
                 <input
                   type="text"
                   placeholder="Search current affairs..."
                   value={search}
                   onChange={(e) => handleSearchChange(e.target.value)}
                 />
-
               </div>
-
-
               <div className="sidebar-card">
-
                 <h3>E-Books</h3>
-
                 <ul>
-
                   <li>
                     <Link to="/ebooks/monthly-mcqs">
                       Monthly MCQs
                     </Link>
                   </li>
-
                   <li>
                     <Link to="/ebooks/ca-articles-mcqs">
                       Articles + MCQs
                     </Link>
                   </li>
-
                   <li>
                     <Link to="/ebooks/yearly-pdf">
                       Yearly PDF
                     </Link>
                   </li>
-
                 </ul>
-
               </div>
-
-
               <div className="sidebar-card">
-
                 <h3>Exams</h3>
-
                 <ul>
-
                   <li><Link to="/exams/upsc">UPSC</Link></li>
                   <li><Link to="/exams/ssc">SSC</Link></li>
                   <li><Link to="/exams/banking">Banking</Link></li>
                   <li><Link to="/exams/railway">Railway</Link></li>
                   <li><Link to="/exams/state-psc">State PSC</Link></li>
-
                 </ul>
-
               </div>
-
             </aside>
-
-
           </div>
         </div>
       </div>

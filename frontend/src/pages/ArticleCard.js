@@ -6,9 +6,14 @@ import ArticleImage from './ArticleImage';
 const ArticleCard = ({ article }) => {
   const navigate = useNavigate();
 
-  const handleReadMore = () => {
-    navigate(`/article/${article.slug}`);
-  };
+ const handleReadMore = () => {
+  navigate(`/article/${article.slug}`);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
 
   // Extract image name from URL
  const getImageName = (url) => {

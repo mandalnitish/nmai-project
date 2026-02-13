@@ -1,5 +1,5 @@
 // pages/ArticleDetail.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useQueryClient } from "react-query";
 import { Helmet } from "react-helmet-async";
@@ -28,6 +28,12 @@ const ArticleDetail = () => {
 
   const [isSaved, setIsSaved] = useState(false);
   const [isLiking, setIsLiking] = useState(false);
+    useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, [slug]);
 
   /* ================= FETCH ARTICLE ================= */
   const { data, isLoading } = useQuery(

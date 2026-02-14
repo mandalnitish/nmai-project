@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 import ArticleSkeleton from "../components/ArticleSkeleton";
-import { FiBookOpen, FiTrendingUp, FiTarget, FiMenu, FiX } from "react-icons/fi";
+import { FiTrendingUp, FiMenu, FiX } from "react-icons/fi";
 import "./Home.css";
 
 /* ================= DATE HELPERS ================= */

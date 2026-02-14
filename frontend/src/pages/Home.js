@@ -260,35 +260,6 @@ const Home = () => {
 
             {/* ================= MAIN CONTENT ================= */}
             <main className="home-content">
-              {/* HERO */}
-              <section className="hero-section">
-                <div className="hero-content">
-                  <h1 className="hero-title">
-                    Master Current Affairs for{" "}
-                    <span className="gradient-text">
-                      Competitive Exams
-                    </span>
-                  </h1>
-                  <p className="hero-subtitle">
-                    Daily current affairs, MCQs, and exam-focused content
-                    for UPSC, SSC, Banking & more.
-                  </p>
-                  <div className="hero-buttons">
-                    <Link
-                      to="/current-affairs"
-                      className="btn btn-primary"
-                    >
-                      <FiBookOpen /> Explore Articles
-                    </Link>
-                    <Link
-                      to="/daily-quiz"
-                      className="btn btn-outline"
-                    >
-                      <FiTarget /> Take Daily Quiz
-                    </Link>
-                  </div>
-                </div>
-              </section> 
 
               {/* ================= LATEST ================= */}
               <section className="section latest-section">

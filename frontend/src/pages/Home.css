@@ -684,16 +684,6 @@
 /* =====================
    RESPONSIVE - TABLET
 ===================== */
-@media (max-width: 1200px) {
-  .home-layout {
-    grid-template-columns: 260px 1fr 280px;
-    gap: 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-}
 
 @media (max-width: 1024px) {
   .home-layout {
@@ -791,23 +781,6 @@
     background-position: 0.65rem center;
   }
   
-  /* Hero adjustments */
-  .hero-section {
-    padding: 2rem 1.5rem;
-    border-radius: var(--radius-lg);
-  }
-  
-  .hero-title {
-    font-size: 1.75rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-  }
   
   .btn {
     width: 100%;
@@ -873,21 +846,6 @@
     padding: 0.5rem 0;
   }
 }
-
-@media (max-width: 480px) {
-  .mobile-category-toggle {
-    margin: 0.75rem 0;
-    padding: 0.65rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .hero-title {
-    font-size: 1.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
   
   .btn {
     padding: 0.8rem 1.25rem;
@@ -901,7 +859,6 @@
   .section-title {
     font-size: 1.25rem;
   }
-}
 
 /* =====================
    SCROLLBAR STYLING

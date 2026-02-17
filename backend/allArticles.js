@@ -38,8 +38,537 @@ const TAGS = {
 /* ================= ALL ARTICLES ================= */
 
 const allArticles = [
+
+  //17 Feb
+
+{
+  "title": "Bhavya Bharat Bhushan Award Launched to Honor National Contributors",
+  "slug": "79-bhavya-bharat-bhushan-award-launched",
+  "summary": "Sadhguru launched the Bhavya Bharat Bhushan Award to recognize individuals contributing to India's development.",
+  "content": "<h2>Introduction</h2><p>The Bhavya Bharat Bhushan Award is a newly instituted national recognition aimed at honoring individuals who have made exceptional contributions toward India's development, progress, and global standing. The award was launched by Sadhguru Jaggi Vasudev, founder of the Isha Foundation, with the objective of recognizing and celebrating individuals whose efforts have significantly contributed to building a stronger, more prosperous, and culturally vibrant India. India, as one of the world's fastest-growing major economies, relies heavily on the dedication, innovation, and leadership of its citizens across diverse sectors including science, technology, education, governance, arts, culture, environmental conservation, social service, and entrepreneurship. The award reflects India's long-standing tradition of honoring excellence and service and aligns with India's aspirations of becoming a global leader in the 21st century.</p><h2>Background and Launch of the Award</h2><p>The Bhavya Bharat Bhushan Award was officially launched during a national event attended by prominent leaders, intellectuals, social activists, and policymakers. The launch emphasized the importance of recognizing individuals who contribute selflessly to national growth and development. Sadhguru highlighted that India's progress depends not only on government initiatives but also on individual efforts and collective participation. He emphasized that honoring such individuals will inspire others to contribute actively toward nation-building and social transformation.</p><h2>Purpose and Objectives</h2><p>The primary objective of the award is to recognize individuals who have made outstanding contributions to India's development in fields such as science, education, social service, innovation, environment, governance, and entrepreneurship. It aims to encourage excellence by recognizing dedication and commitment, promote national pride and unity, inspire youth to contribute toward national development, and strengthen civic responsibility. Recognition serves as motivation and helps promote a culture of excellence and innovation.</p><h2>Fields Covered</h2><p>The award recognizes contributions in science and technology, including innovation and research; education, including improving quality and accessibility; social service, including improving lives of disadvantaged communities; environmental conservation, including sustainability efforts; arts and culture, including preserving heritage; and entrepreneurship, including economic growth and job creation. These fields represent key pillars of national development and progress.</p><h2>Importance of National Awards</h2><p>National awards motivate individuals, encourage innovation, and strengthen national identity. Recognition reinforces positive contributions and promotes societal development. Awards highlight important achievements and inspire future generations. They contribute to building a culture of excellence and civic participation.</p><h2>Role in Nation-Building</h2><p>Nation-building requires active participation from citizens, institutions, and organizations. Recognizing contributors strengthens national progress and supports development goals. Civil society, innovators, educators, and leaders all contribute to development and progress. Recognition encourages continued participation and commitment.</p><h2>Impact on Society</h2><p>The award promotes role models, encourages positive contributions, strengthens social responsibility, and supports national vision. Recognition highlights achievements and inspires others. It promotes awareness and encourages societal progress.</p><h2>Future Significance</h2><p>The Bhavya Bharat Bhushan Award is expected to become an important national recognition supporting India's growth. It encourages innovation, excellence, and national pride. Recognizing contributors strengthens development efforts and promotes national progress.</p><h2>Conclusion</h2><p>The Bhavya Bharat Bhushan Award represents an important initiative recognizing individuals who contribute to India's development. It encourages excellence, promotes national pride, and inspires future generations. The award strengthens nation-building efforts and supports India's vision of becoming a developed global leader.</p><h2>Exam Perspective</h2><ul><li>Bhavya Bharat Bhushan Award launched by Sadhguru</li><li>Recognizes national contributors</li><li>Promotes national development</li><li>Encourages excellence and innovation</li><li>Important current affairs award</li></ul><h2>Sources</h2><p>Official Reports, National Reports</p>",
+  "category": "Awards",
+  "tags": ["Award"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/fgvu0m46lb9ejzguifmv.jpg",
+    "alt": "Award"
+  },
+  "publishDate": "2026-02-17T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Beginner",
+  "sources": ["Official Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+{
+  "title": "AIIMS Conducts First Remote Ultrasound Examination in Antarctica",
+  "slug": "74-aiims-remote-ultrasound-antarctica",
+  "summary": "AIIMS doctors successfully performed remote ultrasound examination in Antarctica, advancing telemedicine.",
+  "content": "<h2>Introduction</h2><p>The All India Institute of Medical Sciences (AIIMS), New Delhi, achieved a historic milestone by successfully conducting a remote ultrasound examination in Antarctica. This achievement represents a major advancement in telemedicine, demonstrating the ability of medical professionals to provide diagnostic services remotely in some of the most isolated and extreme environments on Earth. Antarctica is the most remote continent, with no permanent human population and extremely limited medical infrastructure. The ability to perform remote ultrasound examinations in such conditions highlights the potential of telemedicine to transform healthcare delivery globally.</p><h2>About AIIMS</h2><p>The All India Institute of Medical Sciences (AIIMS) is India's premier medical institution, established in 1956. It operates under the Ministry of Health and Family Welfare and is known for excellence in medical education, research, and patient care. AIIMS plays a key role in advancing medical technology and improving healthcare accessibility. The institution has contributed significantly to medical innovation and research in India and globally.</p><h2>Understanding Telemedicine</h2><p>Telemedicine refers to the use of telecommunications technology to provide medical services remotely. It allows healthcare professionals to diagnose, treat, and monitor patients without being physically present. Telemedicine uses communication technologies such as satellite communication, internet connectivity, video conferencing, and remote monitoring devices. It is especially useful in remote, rural, and inaccessible regions where medical facilities are limited.</p><h2>Importance of Remote Ultrasound Technology</h2><p>Ultrasound is a diagnostic imaging technique that uses sound waves to create images of internal organs. It is widely used for diagnosing medical conditions, monitoring pregnancy, and detecting abnormalities. Remote ultrasound allows doctors to guide examinations from distant locations. This technology enables accurate diagnosis even when specialists are not physically present. It improves healthcare access and saves lives.</p><h2>Significance of Antarctica Mission</h2><p>Antarctica is one of the harshest environments on Earth, with extreme cold, isolation, and limited medical support. Medical emergencies in Antarctica pose serious risks due to lack of nearby hospitals. Remote medical examination capability is essential for ensuring safety of researchers and personnel stationed there. AIIMS successfully conducted remote ultrasound examination using satellite communication technology, demonstrating India's technological and medical capability.</p><h2>Technology Used</h2><p>The remote ultrasound examination was conducted using satellite communication systems, portable ultrasound devices, and telemedicine platforms. Satellite communication ensures connectivity even in remote areas without traditional internet infrastructure. Portable ultrasound devices allow imaging in field conditions. Telemedicine platforms enable doctors to guide and interpret results remotely.</p><h2>Role of Satellite Communication</h2><p>Satellite communication plays a critical role in enabling telemedicine in remote areas. It provides reliable connectivity where traditional networks are unavailable. Satellite technology allows real-time communication between doctors and patients. It supports medical diagnosis, consultation, and monitoring.</p><h2>Benefits of Remote Medical Technology</h2><p>Remote medical technology improves healthcare accessibility, reduces need for travel, enables timely diagnosis, and enhances patient safety. It supports healthcare delivery in remote areas, disaster zones, and extreme environments. It improves healthcare efficiency and reduces costs.</p><h2>Applications of Telemedicine</h2><p>Telemedicine is used in rural healthcare, military operations, space missions, disaster management, and remote research stations. It enables medical support in inaccessible areas. Telemedicine improves healthcare delivery and patient outcomes.</p><h2>Importance for India</h2><p>India has vast rural and remote areas with limited healthcare infrastructure. Telemedicine can improve healthcare accessibility and quality. AIIMS achievement demonstrates India's capability in advanced medical technology. It strengthens India's leadership in healthcare innovation.</p><h2>Global Significance</h2><p>The successful remote ultrasound examination demonstrates the potential of telemedicine globally. It can support healthcare delivery in remote regions worldwide. It contributes to advancement of medical science and technology.</p><h2>Future of Telemedicine</h2><p>Telemedicine is expected to play an important role in future healthcare. Advances in communication technology, artificial intelligence, and portable devices will enhance telemedicine capabilities. It will improve healthcare accessibility, efficiency, and quality.</p><h2>Challenges</h2><p>Telemedicine faces challenges such as connectivity issues, technology costs, training requirements, and regulatory concerns. Addressing these challenges is essential for successful implementation.</p><h2>Conclusion</h2><p>The successful remote ultrasound examination by AIIMS in Antarctica represents a major milestone in telemedicine. It demonstrates India's technological capability and contributes to advancement of healthcare. Telemedicine has the potential to transform healthcare delivery globally.</p><h2>Exam Perspective</h2><ul><li>AIIMS conducted remote ultrasound in Antarctica</li><li>Important telemedicine advancement</li><li>Uses satellite communication</li><li>Improves healthcare accessibility</li><li>Important scientific achievement</li></ul><h2>Sources</h2><p>AIIMS Reports, Medical Research Reports</p>",
+  "category": "Science & Technology",
+  "tags": ["Telemedicine"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309862/nmai-articles/e1xbayewib1hkc73wy1c.jpg",
+    "alt": "Telemedicine"
+  },
+  "publishDate": "2026-02-17T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Intermediate",
+  "sources": ["AIIMS"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+
+{
+  "title": "White-bellied Sea Eagle Nest Monitoring Shows Population Growth in Kerala",
+  "slug": "73-white-bellied-sea-eagle-nests-rise-kerala",
+  "summary": "Monitoring survey recorded increased White-bellied Sea Eagle nesting sites in Kerala, highlighting conservation success.",
+  "content": "<h2>Introduction</h2><p>The White-bellied Sea Eagle, one of India's most majestic and powerful birds of prey, has shown encouraging signs of population growth in Kerala following recent nest monitoring surveys. The survey conducted by the Kerala Forest Department and wildlife researchers recorded a significant increase in the number of nesting sites along coastal and inland water regions. This development represents a positive outcome of conservation efforts and reflects the improving health of coastal ecosystems. The White-bellied Sea Eagle serves as an important indicator species, meaning its presence reflects the overall health of the ecosystem. The increase in nesting sites highlights the success of conservation initiatives and growing environmental awareness.</p><h2>About the White-bellied Sea Eagle</h2><p>The White-bellied Sea Eagle (Haliaeetus leucogaster) is a large bird of prey belonging to the Accipitridae family. It is widely distributed across coastal regions of India, Southeast Asia, Australia, and nearby islands. It is easily recognized by its white head, neck, underparts, and tail, along with gray wings and back. The bird has a powerful hooked beak, sharp talons, and excellent vision, making it an efficient predator. It primarily feeds on fish, reptiles, birds, and small mammals.</p><h2>Habitat and Distribution</h2><p>The White-bellied Sea Eagle is commonly found near coastal areas, estuaries, rivers, lakes, and wetlands. It prefers habitats with abundant water and tall trees suitable for nesting. In India, it is commonly found along the western and eastern coasts, including Kerala, Tamil Nadu, Odisha, and the Andaman and Nicobar Islands. Kerala's coastal ecosystems provide ideal conditions for the species due to availability of food and nesting sites.</p><h2>Nesting Behavior</h2><p>The White-bellied Sea Eagle builds large nests made of sticks and branches on tall trees or cliffs. These nests are often reused and expanded over several years. The birds typically breed during cooler months, and both male and female participate in nest building and caring for young. Nest monitoring helps scientists track population trends and reproductive success.</p><h2>Importance of Nest Monitoring</h2><p>Nest monitoring is an important conservation tool used to assess bird populations. It helps researchers track population growth, breeding success, and habitat conditions. Monitoring allows authorities to identify threats and implement conservation measures. It provides valuable data for wildlife management.</p><h2>Conservation Status</h2><p>The White-bellied Sea Eagle is currently classified as Least Concern by the International Union for Conservation of Nature (IUCN), but local populations may face threats due to habitat destruction and pollution. Conservation efforts are important to ensure long-term survival.</p><h2>Threats to the Species</h2><p>Major threats include habitat destruction due to urbanization, coastal development, deforestation, pollution, and human disturbance. Climate change also affects coastal ecosystems. Protecting habitats is essential for conservation.</p><h2>Conservation Efforts in Kerala</h2><p>The Kerala Forest Department and conservation organizations have implemented measures to protect habitats and monitor populations. Awareness programs educate communities about wildlife protection. Legal protection under the Wildlife Protection Act helps prevent harm to the species.</p><h2>Role in Ecosystem</h2><p>The White-bellied Sea Eagle plays an important role as a top predator. It helps maintain ecological balance by controlling prey populations. Its presence indicates ecosystem health.</p><h2>Importance of Biodiversity Conservation</h2><p>Biodiversity conservation is essential for maintaining ecological balance, supporting ecosystem services, and ensuring sustainable development. Protecting species like the White-bellied Sea Eagle contributes to environmental health.</p><h2>Government Initiatives</h2><p>The Indian government has implemented wildlife protection laws and conservation programs. Protected areas and wildlife sanctuaries help conserve habitats.</p><h2>Importance for Environmental Awareness</h2><p>Successful conservation stories raise awareness and encourage environmental protection. Public participation is essential for conservation success.</p><h2>Future Outlook</h2><p>The increase in nesting sites indicates positive conservation outcomes. Continued monitoring and protection are essential for long-term survival.</p><h2>Conclusion</h2><p>The growth in White-bellied Sea Eagle nesting sites in Kerala represents a major conservation success. It reflects improving ecosystem health and effective conservation efforts. Continued protection will ensure survival of this important species.</p><h2>Exam Perspective</h2><ul><li>White-bellied Sea Eagle important bird species</li><li>Found in coastal regions</li><li>Indicator of ecosystem health</li><li>Important conservation success</li><li>Protected under wildlife laws</li></ul><h2>Sources</h2><p>Forest Department Reports, Wildlife Conservation Reports</p>",
+  "category": "Environment",
+  "tags": ["Wildlife"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/vrqyrrn3axjbhggrpcsb.jpg",
+    "alt": "Sea Eagle"
+  },
+  "publishDate": "2026-02-17T00:00:00.000Z",
+  "readingTime": "11 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Beginner",
+  "sources": ["Forest Department"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+{
+  "title": "Piton de la Fournaise Volcano Eruption Intensifies on La Réunion Island",
+  "slug": "72-piton-de-la-fournaise-eruption-intensifies",
+  "summary": "The Piton de la Fournaise volcano in La Réunion has entered a new eruptive phase, highlighting volcanic activity, geological processes, and disaster preparedness.",
+  "content": "<h2>Introduction</h2><p>Piton de la Fournaise, one of the most active volcanoes in the world, has recently entered an intensified eruptive phase on La Réunion Island in the Indian Ocean. This volcano is known for its frequent eruptions and serves as an important site for studying volcanic activity and geological processes. The eruption has drawn attention from scientists, geologists, and disaster management authorities due to its significance in understanding Earth's internal processes and improving volcanic monitoring systems. Volcanic eruptions are natural geological events that occur when magma, gases, and ash are released from beneath the Earth's surface. Studying such eruptions helps scientists understand plate tectonics, magma dynamics, and Earth's structure.</p><h2>Location and Geography</h2><p>Piton de la Fournaise is located on La Réunion Island, a French overseas territory in the Indian Ocean. The island lies east of Madagascar and is part of the Mascarene Islands. The volcano is situated in the southeastern part of the island and rises to an elevation of approximately 2,632 meters above sea level. La Réunion Island was formed through volcanic activity and remains geologically active. The region's volcanic landscape includes lava flows, craters, and calderas.</p><h2>Volcanic Characteristics</h2><p>Piton de la Fournaise is classified as a shield volcano. Shield volcanoes are characterized by broad, gently sloping sides formed by repeated lava flows. These volcanoes produce effusive eruptions, where lava flows steadily rather than exploding violently. The lava is typically basaltic, meaning it is fluid and spreads easily. This type of eruption is less explosive compared to stratovolcanoes but can still cause significant damage.</p><h2>Causes of Volcanic Eruption</h2><p>Volcanic eruptions occur due to the movement of magma from beneath the Earth's crust. Magma forms in the mantle due to high temperature and pressure. When pressure builds up, magma rises toward the surface through cracks and fissures. Eventually, it erupts as lava, ash, and gases. Piton de la Fournaise is located above a volcanic hotspot, where heat from deep within the Earth creates magma.</p><h2>Monitoring and Scientific Observation</h2><p>Scientists closely monitor Piton de la Fournaise using advanced technologies such as seismographs, satellite imaging, GPS measurements, and gas sensors. Seismographs detect earthquakes associated with magma movement. Satellite images track lava flows and ground deformation. Monitoring helps predict eruptions and protect nearby populations.</p><h2>Impact of Volcanic Eruptions</h2><p>Volcanic eruptions can have both positive and negative impacts. Negative impacts include destruction of property, disruption of transportation, and environmental damage. Lava flows can destroy infrastructure. However, volcanic eruptions also create fertile soil and contribute to formation of new land. Volcanic regions often support agriculture due to nutrient-rich soil.</p><h2>Disaster Management and Preparedness</h2><p>Authorities implement disaster management measures to protect people and infrastructure. Monitoring systems provide early warning. Evacuation plans ensure safety. Public awareness helps reduce risks.</p><h2>Importance for Geological Research</h2><p>Piton de la Fournaise provides valuable opportunities for studying volcanic processes. Scientists study magma composition, eruption patterns, and geological formations. This research improves understanding of Earth's interior.</p><h2>Global Importance</h2><p>Studying active volcanoes helps improve disaster preparedness worldwide. Volcanic research contributes to understanding plate tectonics and Earth's evolution.</p><h2>Tourism and Economic Importance</h2><p>The volcano attracts tourists and supports local economy. Tourism contributes to economic development.</p><h2>Environmental Impact</h2><p>Volcanic eruptions affect air quality, ecosystems, and climate. Monitoring helps assess environmental impact.</p><h2>Future Outlook</h2><p>Continued monitoring and research will improve understanding and preparedness. Scientific advancements enhance prediction and safety.</p><h2>Conclusion</h2><p>The intensified eruption of Piton de la Fournaise highlights the importance of volcanic monitoring and geological research. Understanding volcanic activity helps improve disaster management and scientific knowledge.</p><h2>Exam Perspective</h2><ul><li>Piton de la Fournaise located on La Réunion Island</li><li>Active shield volcano</li><li>Important for geological research</li><li>Example of hotspot volcano</li><li>Important current affairs topic</li></ul><h2>Sources</h2><p>Geological Survey Reports, Volcanology Research Reports</p>",
+  "category": "Geography",
+  "tags": ["Volcano", "Geography"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/ob7oxiasmjftazokeqpu.jpg",
+    "alt": "Volcano Eruption"
+  },
+  "publishDate": "2026-02-17T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Geological Surveys"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+{
+  "title": "African Union Summit Faces Youth Legitimacy Crisis Amid Calls for Democratic Reform",
+  "slug": "71-african-union-summit-youth-legitimacy-crisis",
+  "summary": "The 39th African Union Summit in Addis Ababa highlights growing concerns over youth representation, governance legitimacy, and the future of democratic leadership across Africa.",
+  "content": "<h2>Introduction</h2><p>The 39th African Union (AU) Summit held in Addis Ababa, Ethiopia, has brought global attention to a growing youth legitimacy crisis across the African continent. This crisis refers to the increasing dissatisfaction among young people regarding political leadership, governance systems, and democratic representation. Africa is the youngest continent in the world, with more than 60 percent of its population under the age of 25. Despite this demographic advantage, youth remain significantly underrepresented in political leadership and decision-making institutions. The summit has highlighted the urgent need for reforms to ensure youth inclusion, democratic accountability, and sustainable development. The youth legitimacy crisis is a major concern because it affects political stability, economic growth, and social cohesion.</p><h2>About the African Union</h2><p>The African Union is a continental organization consisting of 55 member states across Africa. It was established in 2002 as the successor to the Organization of African Unity. The headquarters of the African Union is located in Addis Ababa, Ethiopia. The AU aims to promote unity, peace, security, economic integration, and sustainable development across Africa. It also works to promote democracy, human rights, and good governance. The African Union plays an important role in conflict resolution, peacekeeping, and regional cooperation.</p><h2>Objectives of the African Union</h2><p>The African Union has several key objectives including promoting political and economic integration, ensuring peace and security, supporting sustainable development, promoting democracy and human rights, improving living standards, and strengthening cooperation among member states. These objectives aim to create a stable and prosperous Africa.</p><h2>Youth Demographics in Africa</h2><p>Africa has the youngest population in the world, with a median age of around 19 years. This presents both opportunities and challenges. A young population can drive economic growth, innovation, and development. However, lack of employment opportunities and political representation can lead to dissatisfaction and instability. Youth unemployment is a major issue in many African countries.</p><h2>Youth Legitimacy Crisis Explained</h2><p>The youth legitimacy crisis refers to the growing lack of trust among young people in political institutions and leaders. Many young Africans feel that political systems do not represent their interests. They believe that leadership is dominated by older generations. This lack of representation affects democratic legitimacy.</p><h2>Causes of Youth Dissatisfaction</h2><p>Major causes include high unemployment, corruption, lack of economic opportunities, political exclusion, poor governance, and inequality. Many young people struggle to find jobs despite education. Corruption reduces trust in institutions. Limited political participation increases frustration.</p><h2>Impact on Democracy</h2><p>The legitimacy crisis affects democratic stability. It may lead to protests, political unrest, and social instability. Youth dissatisfaction can weaken democratic institutions. Addressing youth concerns is essential for democratic stability.</p><h2>Economic Impact</h2><p>Youth unemployment affects economic growth. Lack of opportunities reduces productivity. Investing in youth development supports economic progress.</p><h2>Role of African Union</h2><p>The African Union promotes youth inclusion through policies such as the African Youth Charter. It supports youth participation in governance. Programs promote education, employment, and leadership development.</p><h2>Importance of Youth Inclusion</h2><p>Youth inclusion supports democratic legitimacy, economic growth, and social stability. Young people bring innovation and energy. Their participation strengthens governance.</p><h2>Challenges</h2><p>Challenges include corruption, inequality, lack of education, and limited opportunities. Addressing these challenges requires reforms.</p><h2>Future Outlook</h2><p>Improving youth participation will strengthen democracy and development. Policies supporting youth empowerment are essential.</p><h2>Global Significance</h2><p>The youth legitimacy crisis has global implications. Africa's stability affects global economy and security.</p><h2>Conclusion</h2><p>The African Union Summit highlights the importance of youth inclusion in governance. Addressing youth legitimacy crisis is essential for Africa's future. Youth empowerment supports democratic stability and economic growth.</p><h2>Exam Perspective</h2><ul><li>African Union established in 2002</li><li>Headquarters Addis Ababa</li><li>Africa youngest population</li><li>Youth legitimacy crisis important issue</li><li>Important international relations topic</li></ul><h2>Sources</h2><p>African Union Reports, International Affairs Reports</p>",
+  "category": "International Relations",
+  "tags": ["African Union", "Africa", "Youth", "Politics"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/bblj5a3ebxsttvsacpxa.jpg",
+    "alt": "African Union Summit"
+  },
+  "publishDate": "2026-02-17T00:00:00.000Z",
+  "lastUpdated": "2026-02-17T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["African Union"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+
+ //16 Feb
+   {
+  "title": "2,000-Year-Old Iron Age Temple Discovered in Denmark",
+  "slug": "78-iron-age-temple-discovered-denmark",
+  "summary": "Archaeologists discovered an ancient Iron Age temple complex in Denmark, providing insights into early European civilization.",
+  "content": "<h2>Introduction</h2><p>Archaeologists discovered a 2,000-year-old temple complex in Denmark.</p><h2>Importance</h2><p>Provides insights into ancient religion.</p><h2>Archaeological Significance</h2><p>Reveals cultural history.</p><h2>Exam Perspective</h2><ul><li>Important archaeological discovery</li></ul><h2>Sources</h2><p>Archaeological Reports</p>",
+  "category": "History",
+  "tags": ["Archaeology"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309862/nmai-articles/ayum15wmrj9fwmevbnrk.jpg",
+    "alt": "Temple"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Archaeological Department"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+  {
+  "title": "India and France Launch Year of Innovation to Strengthen Strategic Partnership",
+  "slug": "77-india-france-innovation-year-launch",
+  "summary": "India and France launched the Year of Innovation initiative to strengthen technological cooperation and strategic partnership.",
+  "content": "<h2>Introduction</h2><p>India and France launched the Year of Innovation initiative to strengthen bilateral cooperation in technology, defense, and innovation.</p><h2>India-France Relations</h2><p>India and France share strong diplomatic relations.</p><h2>Areas of Cooperation</h2><ul><li>Defense</li><li>Technology</li><li>Space</li><li>Energy</li></ul><h2>Strategic Importance</h2><p>France is India’s key strategic partner.</p><h2>Exam Perspective</h2><ul><li>Important diplomatic partnership</li></ul><h2>Sources</h2><p>MEA</p>",
+  "category": "International Relations",
+  "tags": ["India", "France"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/dnsmcsacslcygxbttk5x.jpg",
+    "alt": "India France"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC"],
+  "difficulty": "Beginner",
+  "sources": ["MEA"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+  {
+  "title": "United States Successfully Airlifts Micro Nuclear Reactor in Historic Military Test",
+  "slug": "76-us-airlifts-micro-nuclear-reactor-test",
+  "summary": "The US conducted its first airlift of a micro nuclear reactor, marking a breakthrough in military energy deployment and strategic defense capability.",
+  "content": "<h2>Introduction</h2><p>The United States has successfully airlifted a micro nuclear reactor using a military cargo aircraft, marking a historic advancement in military logistics and nuclear technology deployment. This milestone represents a major step forward in providing reliable, portable, and independent power supply to remote military bases.</p><h2>What is a Micro Nuclear Reactor</h2><p>A micro nuclear reactor is a compact nuclear reactor designed to generate electricity on a small scale.</p><p>It is designed for remote and mobile deployment.</p><h2>Key Features</h2><ul><li>Compact size</li><li>Portable design</li><li>Long-lasting power supply</li><li>Low maintenance</li></ul><h2>Importance for Military Operations</h2><p>Military bases require reliable power supply.</p><p>Micro reactors reduce dependence on fuel supply chains.</p><h2>Strategic Importance</h2><ul><li>Improves military readiness</li><li>Supports remote operations</li><li>Enhances defense capabilities</li></ul><h2>Nuclear Energy Basics</h2><p>Nuclear reactors generate energy through nuclear fission.</p><p>Fission releases large amounts of energy.</p><h2>Global Military Implications</h2><p>This advancement improves strategic mobility.</p><p>Other countries may develop similar technologies.</p><h2>Exam Perspective</h2><ul><li>Micro nuclear reactor important technology</li><li>Strategic military innovation</li></ul><h2>Key Takeaways</h2><ul><li>Historic nuclear deployment test</li><li>Portable nuclear energy system</li></ul><h2>Sources</h2><p>US Defense Reports</p>",
+  "category": "Defense",
+  "tags": ["Nuclear", "USA", "Defense Technology"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309862/nmai-articles/s7j1kmznvydwm8zow2ow.jpg",
+    "alt": "Nuclear Reactor"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "Defense Exams"],
+  "difficulty": "Intermediate",
+  "sources": ["US Defense Department"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+  {
+  "title": "Rashid Khan Becomes First Bowler to Reach 700 Wickets in T20 Cricket History",
+  "slug": "75-rashid-khan-700-t20-wickets-milestone",
+  "summary": "Afghanistan captain Rashid Khan became the first bowler in history to take 700 wickets in T20 cricket, marking a historic milestone in international cricket.",
+  "content": "<h2>Introduction</h2><p>Afghanistan’s star cricketer and captain Rashid Khan has achieved a historic milestone by becoming the first bowler in the world to claim 700 wickets in T20 cricket. This achievement came during the ICC Men's T20 World Cup 2026, further strengthening Rashid Khan’s reputation as one of the greatest T20 bowlers in cricket history.</p><p>This remarkable accomplishment reflects his consistency, skill, and dominance in the shortest format of the game over many years.</p><h2>About Rashid Khan</h2><p>Rashid Khan Arman was born on September 20, 1998, in Nangarhar, Afghanistan. He emerged as a cricketing prodigy and quickly became one of the world’s leading leg-spin bowlers.</p><p>He represents Afghanistan in international cricket and has also played in major T20 leagues worldwide, including:</p><ul><li>Indian Premier League (IPL)</li><li>Big Bash League (BBL)</li><li>Pakistan Super League (PSL)</li><li>Caribbean Premier League (CPL)</li><li>The Hundred (England)</li></ul><h2>Understanding T20 Cricket</h2><p>T20 cricket is the shortest format of the game, where each team plays 20 overs. It emphasizes aggressive batting, quick scoring, and strategic bowling.</p><p>Bowlers face significant challenges in T20 cricket due to aggressive batting conditions.</p><h2>Importance of 700 Wickets Milestone</h2><ul><li>Demonstrates exceptional skill and consistency</li><li>Reflects dominance in global T20 cricket</li><li>Highlights Rashid Khan’s longevity</li><li>Sets new benchmark in cricket history</li></ul><h2>Bowling Style and Strength</h2><p>Rashid Khan is a leg-spin bowler known for his variations, accuracy, and ability to deceive batsmen.</p><ul><li>Leg-break deliveries</li><li>Googly (wrong'un)</li><li>Flipper variations</li><li>Fast bowling speed for spin</li></ul><h2>Role in Afghanistan Cricket</h2><p>Rashid Khan has played a crucial role in Afghanistan’s rise in international cricket.</p><p>He helped Afghanistan qualify for major ICC tournaments.</p><h2>Impact on Global Cricket</h2><p>Rashid Khan’s success has inspired players worldwide.</p><p>He represents emerging cricket nations.</p><h2>ICC and Global Cricket Development</h2><p>The International Cricket Council promotes global cricket development.</p><p>Associate nations like Afghanistan are emerging as competitive teams.</p><h2>Exam Perspective</h2><ul><li>Rashid Khan first to reach 700 T20 wickets</li><li>Afghanistan major emerging cricket nation</li><li>Important sports current affairs event</li></ul><h2>Key Takeaways</h2><ul><li>Historic cricket milestone</li><li>Rashid Khan world’s leading T20 bowler</li><li>Important achievement for Afghanistan</li></ul><h2>Sources</h2><p>ICC, Sports News Agencies</p>",
+  "category": "Sports",
+  "tags": ["Cricket", "Rashid Khan", "T20 World Cup", "Afghanistan"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771309863/nmai-articles/ap97opwxbd1bxkjlg5pr.jpg",
+    "alt": "Rashid Khan"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["ICC"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+ {
+  "title": "India Unveils AI Governance Framework Ahead of Impact Summit 2026",
+  "slug": "67-india-unveils-ai-governance-framework-impact-summit",
+  "summary": "India released its first comprehensive AI governance framework to ensure ethical, secure, and responsible artificial intelligence development.",
+  "content": "<h2>Introduction</h2><p>India has unveiled its first comprehensive Artificial Intelligence (AI) governance framework ahead of the Impact Summit 2026. This marks a major milestone in India's digital and technological development.</p><p>The framework aims to ensure responsible, ethical, and secure use of AI technologies.</p><h2>Need for AI Governance</h2><p>AI technologies are rapidly transforming industries.</p><p>Proper governance ensures safety and accountability.</p><h2>Objectives</h2><ul><li>Ensure ethical AI use</li><li>Promote innovation</li><li>Protect privacy</li></ul><h2>Importance for India</h2><p>India is emerging as global AI leader.</p><p>This framework strengthens India’s technological leadership.</p><h2>Strategic Importance</h2><p>Supports Digital India and technological growth.</p><h2>Exam Perspective</h2><ul><li>Important AI policy initiative</li></ul><h2>Sources</h2><p>Government of India</p>",
+  "category": "Science & Technology",
+  "tags": ["AI", "Technology", "Governance"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231204/nmai-articles/aktcbksoouwyapdbkdm8.jpg",
+    "alt": "AI Governance"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Government of India"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+ {
+  "title": "Ayesha Karim Wins Veergatha 5.0 Super 100 Honour",
+  "slug": "66-ayesha-karim-wins-veergatha-super-100",
+  "summary": "Ayesha Karim from Assam won the Veergatha 5.0 Super 100 honour, recognizing her outstanding contribution in promoting patriotism and awareness about India’s armed forces.",
+  "content": "<h2>Introduction</h2><p>Ayesha Karim, a Class IV student from Guwahati, Assam, has achieved national recognition by winning the prestigious Veergatha 5.0 Super 100 honour. Her achievement highlights the importance of promoting patriotism and awareness about India's armed forces among young students.</p><p>The Veergatha initiative is part of the Government of India's efforts to educate children about bravery, sacrifice, and national service.</p><h2>About Veergatha Initiative</h2><p>The Veergatha program is organized by the Ministry of Defence in collaboration with the Ministry of Education.</p><p>The initiative encourages students to learn about India’s Param Vir Chakra awardees and other brave soldiers.</p><h2>Objectives of the Program</h2><ul><li>Promote patriotism among students</li><li>Educate students about armed forces</li><li>Honor bravery and sacrifice</li><li>Encourage creative expression</li></ul><h2>Importance of Veergatha Program</h2><p>The program helps instill national pride and respect for armed forces.</p><p>Students learn about India's defense heroes and their sacrifices.</p><h2>National Educational Impact</h2><p>The program promotes national awareness and civic responsibility among young citizens.</p><p>It contributes to holistic education and character development.</p><h2>Role of Ministry of Defence and Education</h2><p>Both ministries collaborate to promote defense awareness and patriotism.</p><p>The initiative strengthens national unity.</p><h2>Importance for Assam and Northeast India</h2><p>Ayesha Karim’s achievement brings recognition to Assam.</p><p>It inspires students in the Northeast region.</p><h2>Exam Perspective</h2><ul><li>Veergatha initiative by Ministry of Defence</li><li>Promotes patriotism and awareness</li></ul><h2>Key Takeaways</h2><ul><li>Ayesha Karim wins Veergatha award</li><li>Promotes defense awareness</li><li>Encourages patriotism</li></ul><h2>Sources</h2><p>Ministry of Defence, Ministry of Education</p>",
+  "category": "Awards",
+  "tags": ["Veergatha", "Awards", "Education", "Defense"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231204/nmai-articles/kkumqpli2gxdwaouxzyy.jpg",
+    "alt": "Veergatha Award"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "10 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["Ministry of Defence"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+{
+  "title": "India to Establish First National Cow Culture Museum in Mathura",
+  "slug": "65-india-first-national-cow-culture-museum-mathura",
+  "summary": "India will establish its first National Cow Culture Museum in Mathura, Uttar Pradesh, to preserve and promote the cultural, historical, agricultural, and scientific significance of cows in Indian civilization.",
+  "content": "<h2>Introduction</h2><p>India is set to establish its first National Cow Culture Museum in Mathura, Uttar Pradesh, marking a significant initiative to preserve and promote the cultural, historical, agricultural, and scientific importance of cows in Indian society. The museum will be developed within the campus of Pandit Deendayal Upadhyaya Veterinary University and is expected to become a major center for research, education, tourism, and cultural preservation.</p><p>The initiative reflects India's effort to recognize the cow’s central role in its civilization, economy, rural livelihoods, traditional knowledge systems, and religious beliefs.</p><h2>Background and Cultural Importance of Cows in India</h2><p>The cow has held a special place in Indian civilization for thousands of years. Ancient Indian texts, including the Vedas, Puranas, and Upanishads, mention cows as symbols of prosperity, wealth, and sustainability. In Hindu tradition, cows are considered sacred and are associated with various deities.</p><p>The cow is often referred to as ‘Gau Mata’ (Mother Cow) due to its life-sustaining contributions through milk, agricultural support, and dung-based products. Historically, cows played a critical role in India’s agrarian economy.</p><h2>Objectives of the National Cow Culture Museum</h2><p>The primary objective of the museum is to document, preserve, and promote knowledge related to cows. It will serve as an educational and cultural institution showcasing the multifaceted importance of cows.</p><ul><li>Preserve ancient traditions and practices related to cow rearing</li><li>Promote scientific research in animal husbandry</li><li>Educate people about indigenous cow breeds</li><li>Highlight the economic and ecological importance of cows</li><li>Promote sustainable agricultural practices</li></ul><h2>Scientific and Agricultural Importance</h2><p>Cows play an essential role in agriculture, particularly in rural India. Cow dung is used as organic fertilizer, improving soil fertility and reducing dependence on chemical fertilizers. Cow urine has been studied for its potential medicinal and antimicrobial properties.</p><p>Indigenous cow breeds are well adapted to India’s climate and provide sustainable dairy production.</p><h2>Economic Importance</h2><p>The dairy sector is one of the largest contributors to India's rural economy. India is the world's largest producer of milk, and millions of farmers depend on cattle for livelihood.</p><ul><li>Provides employment in rural areas</li><li>Supports dairy and agricultural industries</li><li>Promotes organic farming</li><li>Enhances rural economic stability</li></ul><h2>Environmental and Ecological Role</h2><p>Cows contribute significantly to sustainable agriculture and environmental conservation. Organic manure reduces soil degradation and improves soil health.</p><p>The use of cow-based products reduces dependence on chemical fertilizers and promotes environmentally friendly farming.</p><h2>Features of the Museum</h2><p>The museum will include multiple sections displaying historical, scientific, and cultural information about cows.</p><ul><li>Interactive exhibits and digital displays</li><li>Information on indigenous cow breeds</li><li>Research facilities</li><li>Educational programs</li><li>Multimedia presentations</li></ul><h2>Tourism and Cultural Promotion</h2><p>Mathura is already a major religious and tourist destination. The museum is expected to attract tourists, researchers, students, and scholars from India and abroad.</p><p>This initiative will promote cultural tourism and strengthen Mathura’s position as a heritage city.</p><h2>Government Initiatives Supporting Cow Protection</h2><p>The Government of India has implemented several programs promoting livestock development, including Rashtriya Gokul Mission and National Dairy Plan.</p><p>These initiatives aim to conserve indigenous breeds and enhance dairy productivity.</p><h2>Educational and Research Importance</h2><p>The museum will serve as a research center for veterinary sciences, agriculture, and animal husbandry.</p><p>It will provide educational opportunities for students and researchers.</p><h2>Strategic and National Importance</h2><p>The museum represents India’s effort to preserve traditional knowledge systems and promote sustainable agriculture.</p><p>It strengthens cultural identity and promotes awareness about indigenous practices.</p><h2>Exam Perspective</h2><ul><li>First National Cow Culture Museum in India</li><li>Located in Mathura, Uttar Pradesh</li><li>Important for culture, agriculture, and economy</li><li>Relevant for UPSC GS Paper 1 and 3</li></ul><h2>Key Takeaways</h2><ul><li>India to establish first cow culture museum</li><li>Promotes cultural and agricultural heritage</li><li>Supports research and education</li><li>Strengthens sustainable agriculture awareness</li></ul><h2>Sources & References</h2><p>Ministry of Fisheries, Animal Husbandry and Dairying, Government of India; Veterinary University Reports; Cultural Affairs Ministry</p>",
+  "category": "Culture",
+  "tags": ["Cow Culture", "Museum", "Mathura", "Animal Husbandry", "Culture"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231203/nmai-articles/at02pbnts5ozfkomxo0c.jpg",
+    "alt": "Cow Culture Museum"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Government of India", "Veterinary University"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+{
+  "title": "Magnus Carlsen Wins FIDE Freestyle Chess World Championship 2026",
+  "slug": "69-magnus-carlsen-wins-fide-freestyle-chess-2026",
+  "summary": "Magnus Carlsen won the 2026 FIDE Freestyle Chess World Championship, reinforcing his dominance as one of the greatest chess players in history.",
+  "content": "<h2>Introduction</h2><p>Magnus Carlsen secured another historic achievement by winning the 2026 FIDE Freestyle Chess World Championship. The Norwegian grandmaster defeated American chess grandmaster Fabiano Caruana in the final, reaffirming his position as one of the greatest chess players of all time.</p><p>This victory adds to Carlsen’s illustrious career and demonstrates his continued dominance in global chess.</p><h2>About Magnus Carlsen</h2><p>Magnus Carlsen is a Norwegian chess grandmaster and former World Chess Champion. He became the youngest world chess champion in 2013 and has dominated the sport for over a decade.</p><p>Carlsen is widely regarded as one of the greatest chess players in history.</p><h2>About Freestyle Chess</h2><p>Freestyle Chess is a variation of chess designed to test creativity and strategic thinking. It often includes randomized starting positions.</p><p>This format reduces reliance on memorized openings.</p><h2>Importance of the Championship</h2><p>The FIDE Freestyle Chess Championship is one of the most prestigious chess tournaments globally.</p><p>Winning the championship demonstrates exceptional skill.</p><h2>Carlsen’s Career Achievements</h2><ul><li>World Chess Champion</li><li>Multiple world championship titles</li><li>Highest chess rating in history</li></ul><h2>Importance of Chess Globally</h2><p>Chess is one of the world’s most popular intellectual sports.</p><p>It promotes critical thinking and strategic planning.</p><h2>Exam Perspective</h2><ul><li>Magnus Carlsen won 2026 FIDE Freestyle Chess Championship</li><li>Important international sports achievement</li></ul><h2>Key Takeaways</h2><ul><li>Carlsen continues global dominance</li><li>Major international chess victory</li></ul><h2>Sources</h2><p>FIDE, Chess Federation Reports</p>",
+  "category": "Sports",
+  "tags": ["Magnus Carlsen", "Chess", "FIDE"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231204/nmai-articles/ns2gveuvj0o5zwrhanjs.jpg",
+    "alt": "Magnus Carlsen Chess"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "11 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["FIDE"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+{
+  "title": "Internet Pioneer David J. Farber Dies at 91",
+  "slug": "70-internet-pioneer-david-farber-dies",
+  "summary": "David J. Farber, a pioneering computer scientist known as a grandfather of the internet, passed away at age 91, leaving behind a lasting legacy in internet development.",
+  "content": "<h2>Introduction</h2><p>David J. Farber, one of the pioneering figures in the development of the internet, passed away at the age of 91. He was widely regarded as one of the ‘grandfathers of the internet’ due to his contributions to computer networking and internet architecture.</p><p>His work played a crucial role in shaping modern digital communication.</p><h2>Early Life and Career</h2><p>Farber was a distinguished computer scientist and educator.</p><p>He contributed to early computer network development.</p><h2>Contribution to Internet Development</h2><p>Farber played a major role in designing network systems that helped form the foundation of the internet.</p><p>His research contributed to modern communication technologies.</p><h2>Role in Internet Evolution</h2><ul><li>Network design</li><li>Computer science education</li><li>Internet research</li></ul><h2>Importance of His Contribution</h2><p>The internet has transformed global communication.</p><p>Farber’s work helped enable modern internet infrastructure.</p><h2>Global Impact of Internet</h2><p>The internet supports global economy, education, and communication.</p><h2>Exam Perspective</h2><ul><li>David Farber internet pioneer</li></ul><h2>Key Takeaways</h2><ul><li>Major internet pioneer</li></ul><h2>Sources</h2><p>Technology Reports</p>",
+  "category": "Science & Technology",
+  "tags": ["Internet", "Technology", "Computer Science"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231202/nmai-articles/nswe62fpiavkcsmnjxww.jpg",
+    "alt": "Internet Pioneer"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "11 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC"],
+  "difficulty": "Beginner",
+  "sources": ["Technology Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+ {
+  "title": "DBS Bank Pilots Visa Intelligent Commerce for AI-Driven Digital Payments",
+  "slug": "68-dbs-bank-pilots-visa-intelligent-commerce-ai-payments",
+  "summary": "DBS Bank became the first issuer in Asia-Pacific to pilot Visa Intelligent Commerce, enabling AI agents to initiate secure, automated digital payments and transforming the future of financial transactions.",
+  "content": "<h2>Introduction</h2><p>DBS Bank has become the first financial institution in the Asia-Pacific region to pilot Visa Intelligent Commerce (VIC), a groundbreaking payment technology designed to enable artificial intelligence (AI) systems to initiate and complete financial transactions autonomously. This initiative marks a significant advancement in the evolution of digital payments and reflects the increasing integration of artificial intelligence into financial services.</p><p>The collaboration between DBS Bank and Visa represents a major milestone in fintech innovation, enabling secure, automated, and intelligent commerce powered by AI agents. The pilot program demonstrates how AI can transform traditional banking, payment processing, and customer experiences.</p><h2>About DBS Bank</h2><p>DBS Bank is a leading multinational banking and financial services corporation headquartered in Singapore. It is widely recognized as one of the world’s best digital banks and has received numerous awards for innovation in digital banking.</p><p>DBS operates across Asia and plays a major role in advancing digital financial services, fintech integration, and financial innovation.</p><h2>About Visa Intelligent Commerce (VIC)</h2><p>Visa Intelligent Commerce is an advanced payment framework designed to allow artificial intelligence systems, digital assistants, and software agents to initiate and complete financial transactions securely on behalf of users.</p><p>The system integrates artificial intelligence with payment networks, enabling automated decision-making and transaction execution.</p><h2>Key Features of Visa Intelligent Commerce</h2><ul><li>AI-initiated payment transactions</li><li>Secure authentication and encryption</li><li>Real-time payment processing</li><li>Fraud detection and risk management</li><li>Integration with digital wallets and banking systems</li></ul><h2>How AI-Initiated Payments Work</h2><p>In AI-initiated commerce, intelligent agents can perform tasks such as purchasing goods, paying bills, booking services, and managing subscriptions without direct human intervention.</p><p>These systems use machine learning algorithms, secure authentication mechanisms, and real-time communication with payment networks.</p><h2>Importance for Financial Technology (FinTech)</h2><p>This innovation represents the next generation of fintech, enabling intelligent automation in financial transactions. AI-driven payments can improve efficiency, reduce human error, and enhance user convenience.</p><p>The technology supports digital transformation in banking and commerce.</p><h2>Benefits for Customers</h2><ul><li>Convenient automated payments</li><li>Faster transaction processing</li><li>Improved financial management</li><li>Enhanced security through AI monitoring</li></ul><h2>Benefits for Businesses and Banks</h2><ul><li>Improved operational efficiency</li><li>Reduced transaction processing costs</li><li>Enhanced fraud detection</li><li>Improved customer experience</li></ul><h2>Security and Risk Management</h2><p>Security is a critical component of AI-driven payments. Visa Intelligent Commerce uses advanced encryption, authentication, and fraud detection systems.</p><p>AI systems continuously monitor transactions for suspicious activities.</p><h2>Strategic Importance for Asia-Pacific Region</h2><p>Asia-Pacific is one of the fastest-growing regions for digital payments. DBS’s leadership in piloting this technology strengthens the region’s position as a global fintech innovation hub.</p><h2>Global Impact on Digital Payments</h2><p>The pilot program represents the future of digital commerce, where AI systems can perform financial transactions efficiently and securely.</p><p>This technology could transform global financial systems.</p><h2>Exam Perspective</h2><ul><li>Visa Intelligent Commerce enables AI-driven payments</li><li>DBS Bank first in Asia-Pacific to pilot</li><li>Important fintech innovation</li><li>Relevant for economy and technology exams</li></ul><h2>Key Takeaways</h2><ul><li>AI payments represent future of fintech</li><li>DBS Bank leads fintech innovation</li><li>Enhances security and efficiency</li><li>Transforms digital financial systems</li></ul><h2>Sources & References</h2><p>Visa, DBS Bank, FinTech Reports, Digital Payment Industry Reports</p>",
+  "category": "Economy",
+  "tags": ["DBS Bank", "Visa", "AI Payments", "FinTech", "Digital Payments"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771231201/nmai-articles/teqqtcdt3glsvtsimyrd.jpg",
+    "alt": "AI Digital Payments"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-16T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "Banking Exams"],
+  "difficulty": "Intermediate",
+  "sources": ["Visa", "DBS Bank"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 7
+},
+
+{
+  "title": "India vs Pakistan ICC Men's T20 World Cup 2026: Complete Match Report, Full Scorecard, and Detailed Analysis",
+  "slug": "india-vs-pakistan-icc-t20-world-cup-2026-full-report",
+  "summary": "India defeated Pakistan by 61 runs in the ICC Men's T20 World Cup 2026. Ishan Kishan played a match-winning knock, and India's bowlers delivered an outstanding performance to secure a dominant victory.",
+  "content": "<h2>Introduction</h2><p>The India vs Pakistan cricket rivalry is one of the most intense and widely followed rivalries in international cricket. Their clashes in ICC tournaments attract millions of viewers worldwide. In the ICC Men's T20 World Cup 2026, India delivered a commanding performance to defeat Pakistan convincingly.</p><p>India showed excellence in batting, bowling, and fielding, demonstrating strong team coordination and match awareness.</p><h2>Match Overview</h2><p>The match was played at R. Premadasa Stadium, Colombo, on 15 February 2026. Pakistan won the toss and elected to field first. India batted first and posted a competitive total of 175/7 in 20 overs.</p><p>Pakistan struggled during their chase due to India's disciplined bowling attack and were bowled out for 114 runs in 18 overs. India won the match by 61 runs.</p><h2>Match Details</h2><ul><li><strong>Match:</strong> India vs Pakistan</li><li><strong>Tournament:</strong> ICC Men's T20 World Cup 2026</li><li><strong>Format:</strong> T20 International</li><li><strong>Venue:</strong> R. Premadasa Stadium, Colombo</li><li><strong>Date:</strong> 15 February 2026</li><li><strong>Toss:</strong> Pakistan won the toss and elected to field</li><li><strong>India Score:</strong> 175/7 (20 overs)</li><li><strong>Pakistan Score:</strong> 114 all out (18 overs)</li><li><strong>Result:</strong> India won by 61 runs</li><li><strong>Player of the Match:</strong> Ishan Kishan</li></ul><h2>India Innings Scorecard</h2><div style='overflow-x:auto;'><table style='width:100%; border-collapse:collapse; background:#0f172a; color:#e2e8f0;'><thead style='background:#1e293b;'><tr><th style='padding:10px;'>Batter</th><th style='padding:10px;'>Runs</th><th style='padding:10px;'>Balls</th><th style='padding:10px;'>4s</th><th style='padding:10px;'>6s</th><th style='padding:10px;'>Strike Rate</th></tr></thead><tbody><tr><td>Ishan Kishan</td><td>77</td><td>40</td><td>10</td><td>3</td><td>192.50</td></tr><tr style='background:#1e293b;'><td>Tilak Varma</td><td>25</td><td>24</td><td>2</td><td>1</td><td>104.16</td></tr><tr><td>Suryakumar Yadav</td><td>32</td><td>29</td><td>3</td><td>0</td><td>110.34</td></tr><tr style='background:#1e293b;'><td>Shivam Dube</td><td>27</td><td>17</td><td>3</td><td>1</td><td>158.82</td></tr><tr><td>Rinku Singh</td><td>11*</td><td>4</td><td>1</td><td>1</td><td>275.00</td></tr><tr style='background:#020617; font-weight:bold;'><td>Total</td><td>175/7</td><td>20 overs</td><td>-</td><td>-</td><td>RR: 8.75</td></tr></tbody></table></div><h2>Pakistan Innings Scorecard</h2><div style='overflow-x:auto;'><table style='width:100%; border-collapse:collapse; background:#0f172a; color:#e2e8f0;'><thead style='background:#1e293b;'><tr><th style='padding:10px;'>Batter</th><th style='padding:10px;'>Runs</th><th style='padding:10px;'>Balls</th><th style='padding:10px;'>4s</th><th style='padding:10px;'>6s</th><th style='padding:10px;'>Strike Rate</th></tr></thead><tbody><tr><td>Usman Khan</td><td>44</td><td>34</td><td>6</td><td>1</td><td>129.41</td></tr><tr style='background:#1e293b;'><td>Shaheen Afridi</td><td>23*</td><td>19</td><td>2</td><td>1</td><td>121.05</td></tr><tr><td>Shadab Khan</td><td>14</td><td>15</td><td>1</td><td>0</td><td>93.33</td></tr><tr style='background:#020617; font-weight:bold;'><td>Total</td><td>114 all out</td><td>18 overs</td><td>-</td><td>-</td><td>RR: 6.33</td></tr></tbody></table></div><h2>India Bowling Performance</h2><div style='overflow-x:auto;'><table style='width:100%; border-collapse:collapse; background:#0f172a; color:#e2e8f0;'><thead style='background:#1e293b;'><tr><th style='padding:10px;'>Bowler</th><th style='padding:10px;'>Overs</th><th style='padding:10px;'>Runs</th><th style='padding:10px;'>Wickets</th><th style='padding:10px;'>Economy</th></tr></thead><tbody><tr><td>Hardik Pandya</td><td>3</td><td>16</td><td>2</td><td>5.33</td></tr><tr style='background:#1e293b;'><td>Jasprit Bumrah</td><td>2</td><td>17</td><td>2</td><td>8.50</td></tr><tr><td>Axar Patel</td><td>4</td><td>29</td><td>2</td><td>7.25</td></tr><tr style='background:#1e293b;'><td>Varun Chakravarthy</td><td>3</td><td>17</td><td>2</td><td>5.66</td></tr><tr><td>Kuldeep Yadav</td><td>3</td><td>14</td><td>1</td><td>4.66</td></tr></tbody></table></div><h2>Match Analysis</h2><p>Ishan Kishan played a crucial innings of 77 runs off 40 balls, providing India with a strong foundation. His aggressive batting ensured India reached a competitive total.</p><p>India’s bowlers dominated Pakistan’s batting lineup. Hardik Pandya, Jasprit Bumrah, Axar Patel, and Varun Chakravarthy each contributed significantly with wickets.</p><p>Pakistan lost early wickets and struggled to recover, eventually getting bowled out for 114 runs.</p><h2>Strategic Importance</h2><p>This victory helped India strengthen their position in the ICC Men's T20 World Cup 2026 and improved team confidence moving forward in the tournament.</p><h2>Exam Perspective</h2><ul><li>ICC Men's T20 World Cup 2026 important match</li><li>India defeated Pakistan by 61 runs</li><li>Ishan Kishan was Player of the Match</li><li>Venue: Colombo, Sri Lanka</li></ul><h2>Key Takeaways</h2><ul><li>India scored 175/7</li><li>Pakistan all out for 114</li><li>India won by 61 runs</li><li>Ishan Kishan top scorer (77 runs)</li><li>Strong bowling performance by India</li></ul><h2>Conclusion</h2><p>India delivered a dominant performance against Pakistan in the ICC Men's T20 World Cup 2026. Excellent batting by Ishan Kishan and disciplined bowling ensured a comprehensive victory. This match remains a significant highlight of the tournament.</p>",
+  "category": "Sports",
+  "tags": ["Cricket", "India vs Pakistan", "ICC", "T20 World Cup", "Current Affairs"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771221903/nmai-articles/lco2tnn842bxrj5nonlq.jpg",
+    "alt": "India vs Pakistan T20 World Cup 2026 Match"
+  },
+  "publishDate": "2026-02-16T00:00:00.000Z",
+  "lastUpdated": "2026-02-17T00:00:00.000Z",
+  "readingTime": "10 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["ESPN Cricinfo", "ICC"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+
+  //15 Feb
+
+ {
+  "title": "PM2.5 Pollution Levels Higher at Elevated Floors, Study Finds",
+  "slug": "pm25-pollution-higher-elevated-floors-study",
+  "summary": "A scientific study has revealed that PM2.5 air pollution levels can be significantly higher at elevated floors of buildings, highlighting limitations in current air quality monitoring systems and raising concerns for urban public health.",
+  "content": "<h2>Introduction</h2><p>A recent scientific study conducted in Delhi has revealed a surprising and concerning finding regarding air pollution distribution in urban environments. Contrary to common assumptions that air pollution is highest near the ground, researchers found that PM2.5 levels can be significantly higher at elevated floors of buildings, sometimes exceeding ground-level concentrations by up to 60 percent. This discovery highlights important gaps in current air pollution monitoring systems and raises serious concerns about public health risks for people living and working in high-rise buildings.</p><p>The findings have major implications for urban planning, environmental monitoring, and public health policies, especially in densely populated cities with high pollution levels.</p><h2>Understanding PM2.5 Pollution</h2><p>PM2.5 refers to particulate matter with a diameter of 2.5 micrometers or smaller. These particles are extremely fine and can penetrate deep into the lungs and bloodstream, causing severe health problems.</p><p>Sources of PM2.5 pollution include:</p><ul><li>Vehicle emissions</li><li>Industrial emissions</li><li>Construction dust</li><li>Biomass burning</li><li>Coal-fired power plants</li><li>Household fuel combustion</li></ul><p>Due to their small size, PM2.5 particles remain suspended in the air for long periods and can travel long distances.</p><h2>Key Findings of the Study</h2><p>The study used specialized monitoring equipment installed at multiple heights in high-rise buildings to measure PM2.5 concentrations.</p><p>Major findings include:</p><ul><li>PM2.5 levels were higher at elevated floors compared to ground level</li><li>Conventional monitoring stations underestimate actual exposure</li><li>Pollution disperses differently at different heights</li><li>Wind patterns influence vertical distribution of pollutants</li></ul><p>This suggests that millions of urban residents may be exposed to higher pollution levels than previously believed.</p><h2>Reasons for Higher Pollution at Elevated Levels</h2><p>Several environmental and atmospheric factors contribute to higher pollution levels at elevated floors:</p><ul><li>Vertical air circulation patterns</li><li>Reduced obstruction by buildings at higher altitudes</li><li>Wind-driven transport of pollutants</li><li>Temperature inversion phenomena</li><li>Atmospheric turbulence</li></ul><p>These factors allow pollutants to accumulate at certain heights.</p><h2>Limitations of Current Air Monitoring Systems</h2><p>Most air quality monitoring stations are installed at ground level. This creates incomplete data about pollution exposure at higher elevations.</p><p>Limitations include:</p><ul><li>Lack of vertical pollution data</li><li>Underestimation of actual exposure levels</li><li>Incomplete risk assessment</li></ul><h2>Health Impacts of PM2.5 Exposure</h2><p>PM2.5 pollution is associated with serious health risks, including:</p><ul><li>Respiratory diseases</li><li>Asthma</li><li>Lung cancer</li><li>Heart disease</li><li>Stroke</li><li>Reduced lung function</li><li>Premature death</li></ul><p>Long-term exposure can significantly reduce life expectancy.</p><h2>Impact on Urban Populations</h2><p>Residents of high-rise buildings, office workers, and urban populations may face greater exposure risks than previously understood.</p><h2>Environmental and Urban Planning Implications</h2><p>The study highlights the need for improved environmental monitoring and urban planning.</p><ul><li>Install air quality sensors at multiple heights</li><li>Improve pollution control policies</li><li>Develop better urban ventilation planning</li></ul><h2>Air Pollution Situation in India</h2><p>India has several cities with high PM2.5 levels, including Delhi, Mumbai, and Kolkata.</p><p>Major causes include:</p><ul><li>Vehicular emissions</li><li>Industrial pollution</li><li>Construction activities</li><li>Agricultural burning</li></ul><h2>Government Measures to Control Pollution</h2><ul><li>National Clean Air Programme (NCAP)</li><li>Bharat Stage emission norms</li><li>Promotion of electric vehicles</li><li>Industrial emission regulations</li></ul><h2>Global Perspective</h2><p>Air pollution is a global environmental challenge affecting millions of people worldwide.</p><h2>Exam Perspective</h2><ul><li>Important environmental and health issue</li><li>Relevant for UPSC environment and geography topics</li></ul><h2>Key Takeaways</h2><ul><li>PM2.5 levels higher at elevated floors</li><li>Monitoring systems need improvement</li><li>Major public health concern</li></ul><h2>Sources & References</h2><p>Environmental Research Studies, Air Quality Monitoring Reports</p>",
+  "category": "Environment",
+  "tags": ["Air Pollution", "PM2.5", "Environment", "Health"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771221907/nmai-articles/jm88mp7qg6hao9spvlts.jpg",
+    "alt": "Air Pollution Study"
+  },
+  "publishDate": "2026-02-15T00:00:00.000Z",
+  "lastUpdated": "2026-02-15T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Environmental Research", "Air Quality Studies"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+{
+  "title": "Lok Sabha May Take Up Opposition Notice Against Speaker",
+  "slug": "lok-sabha-opposition-notice-against-speaker",
+  "summary": "The opposition has submitted a notice seeking the removal of the Lok Sabha Speaker, highlighting constitutional procedures and parliamentary accountability in India's democratic system.",
+  "content": "<h2>Introduction</h2><p>The opposition parties have submitted a formal notice seeking the removal of the Speaker of the Lok Sabha, Om Birla. The matter is expected to be taken up during the second part of the Budget Session of Parliament. This development highlights the constitutional provisions governing parliamentary procedures and the democratic mechanisms available for ensuring accountability in legislative institutions.</p><h2>Role of the Lok Sabha Speaker</h2><p>The Speaker is the presiding officer of the Lok Sabha and plays a crucial role in maintaining order and conducting parliamentary proceedings.</p><ul><li>Maintains discipline</li><li>Ensures smooth functioning</li><li>Interprets parliamentary rules</li></ul><h2>Constitutional Provisions</h2><p>Article 94 of the Indian Constitution governs the removal of the Speaker.</p><h2>Removal Process</h2><ul><li>Notice submitted</li><li>Resolution debated</li><li>Majority vote required</li></ul><h2>Importance in Democracy</h2><p>This ensures accountability and transparency.</p><h2>Exam Perspective</h2><ul><li>Important constitutional procedure</li></ul><h2>Key Takeaways</h2><ul><li>Speaker removal governed by Constitution</li></ul><h2>Sources</h2><p>Indian Constitution, Parliament Reports</p>",
+  "category": "Polity",
+  "tags": ["Lok Sabha", "Speaker", "Parliament", "Constitution"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771221908/nmai-articles/j8dwukbbhaoieq0heehu.jpg",
+    "alt": "Lok Sabha Parliament"
+  },
+  "publishDate": "2026-02-15T00:00:00.000Z",
+  "lastUpdated": "2026-02-15T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Parliament Reports", "Indian Constitution"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+{
+  "title": "Kerala Infant Organ Donation Saves Four Lives",
+  "slug": "kerala-infant-organ-donation-saves-four-lives",
+  "summary": "A 10-month-old infant in Kerala became one of the youngest organ donors in India, saving four lives and highlighting the importance of organ donation awareness and advancements in transplant medicine.",
+  "content": "<h2>Introduction</h2><p>In a deeply emotional and historically significant event, a 10-month-old infant from Kerala became one of the youngest organ donors in India, saving the lives of four critically ill patients. Despite living only a brief life, the infant’s organ donation marked a milestone in India's medical history and highlighted the transformative power of organ transplantation.</p><p>The infant, who suffered irreversible brain injury, was declared brain dead by doctors. With the consent of the parents, multiple organs were donated to patients in urgent need. This act demonstrated extraordinary compassion and contributed significantly to India's organ transplantation program.</p><h2>Understanding Organ Donation</h2><p>Organ donation is the process of surgically removing organs or tissues from a donor and transplanting them into recipients whose organs have failed. Organ donation can occur from living donors or deceased donors.</p><p>Common organs donated include:</p><ul><li>Heart</li><li>Liver</li><li>Kidneys</li><li>Lungs</li><li>Pancreas</li><li>Corneas</li></ul><p>Organ donation saves lives and improves the quality of life for patients suffering from organ failure.</p><h2>Brain Death and Organ Donation</h2><p>Brain death is defined as the irreversible cessation of all brain activity. Once brain death is confirmed, organ donation can be performed with family consent.</p><p>Brain death differs from coma because brain death is permanent and legally recognized as death.</p><h2>Medical Significance of Infant Organ Donation</h2><p>Infant organ donation is rare due to medical, ethical, and technical challenges. However, advances in medical science have made pediatric organ transplantation possible.</p><p>This case demonstrates:</p><ul><li>Advanced medical infrastructure</li><li>Improved transplant procedures</li><li>Growing awareness about organ donation</li></ul><h2>Organ Transplantation System in India</h2><p>India has established a national framework for organ donation and transplantation.</p><p>The National Organ and Tissue Transplant Organization (NOTTO) coordinates organ donation and allocation.</p><h2>Organ Donation Laws in India</h2><p>The Transplantation of Human Organs and Tissues Act (THOTA), 1994 governs organ donation in India.</p><p>The law ensures ethical organ donation practices.</p><h2>Importance of Organ Donation</h2><p>Organ donation addresses the shortage of donor organs and saves thousands of lives each year.</p><p>Benefits include:</p><ul><li>Saves lives</li><li>Improves quality of life</li><li>Advances medical science</li></ul><h2>Organ Donation Statistics in India</h2><p>India faces a significant shortage of donor organs. Thousands of patients remain on waiting lists.</p><p>Increasing awareness can improve donation rates.</p><h2>Role of Hospitals and Medical Professionals</h2><p>Hospitals play a critical role in identifying donors, conducting transplants, and maintaining ethical standards.</p><h2>Public Awareness and Social Impact</h2><p>This case has raised awareness about organ donation and inspired others to consider donation.</p><h2>Global Perspective on Organ Donation</h2><p>Many countries have established effective organ donation systems.</p><h2>Ethical Considerations</h2><p>Organ donation requires informed consent and ethical medical practices.</p><h2>Exam Perspective</h2><ul><li>Important medical achievement</li><li>Relevant for health and science topics</li></ul><h2>Key Takeaways</h2><ul><li>Infant organ donation saved four lives</li><li>Highlights importance of organ donation</li><li>Demonstrates medical advancement</li></ul><h2>Sources & References</h2><p>Health Ministry, NOTTO, Medical Reports</p>",
+  "category": "Health",
+  "tags": ["Organ Donation", "Medical Science", "Health", "Transplant"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771221904/nmai-articles/otc5lyak3pqfxolr6ozr.jpg",
+    "alt": "Organ Donation Kerala"
+  },
+  "publishDate": "2026-02-15T00:00:00.000Z",
+  "lastUpdated": "2026-02-15T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["Health Ministry", "NOTTO"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
+
+{
+  "title": "India to be Represented by Lok Sabha Speaker at Bangladesh PM Swearing-In",
+  "slug": "india-represented-lok-sabha-speaker-bangladesh-swearing-in",
+  "summary": "Lok Sabha Speaker Om Birla will represent India at Bangladesh’s government swearing-in ceremony, highlighting strong diplomatic relations between the two neighboring countries.",
+  "content": "<h2>Introduction</h2><p>India will be represented by Lok Sabha Speaker Om Birla at the swearing-in ceremony of Bangladesh’s newly elected government in Dhaka. The Prime Minister will not attend due to prior diplomatic commitments. This development highlights the importance of India-Bangladesh diplomatic relations.</p><h2>India-Bangladesh Diplomatic Relations</h2><p>India and Bangladesh share strong diplomatic relations rooted in historical, cultural, and economic ties.</p><p>India played a key role in Bangladesh’s independence in 1971.</p><h2>Political Relations</h2><p>Both countries cooperate closely on political and security issues.</p><h2>Economic Relations</h2><p>Bangladesh is one of India’s largest trading partners in South Asia.</p><ul><li>Bilateral trade exceeds billions of dollars</li><li>India exports machinery, food, and fuel</li></ul><h2>Strategic Importance of Bangladesh</h2><p>Bangladesh holds strategic importance due to geographic proximity.</p><h2>Defense and Security Cooperation</h2><ul><li>Counter-terrorism cooperation</li><li>Border security coordination</li></ul><h2>India’s Foreign Policy Approach</h2><p>India’s Neighborhood First Policy prioritizes strong relations with neighboring countries.</p><h2>Diplomatic Representation</h2><p>Sending Lok Sabha Speaker reflects India’s commitment to diplomatic engagement.</p><h2>Importance of Diplomatic Ceremonies</h2><p>Such ceremonies strengthen international relations.</p><h2>Regional Stability</h2><p>India-Bangladesh cooperation promotes regional peace.</p><h2>Historical Background</h2><p>India supported Bangladesh’s independence movement.</p><h2>Future Prospects</h2><p>Relations expected to strengthen further.</p><h2>Exam Perspective</h2><ul><li>Important international relations event</li></ul><h2>Key Takeaways</h2><ul><li>India represented at Bangladesh swearing-in</li><li>Strong diplomatic relations</li></ul><h2>Sources & References</h2><p>Ministry of External Affairs, Government Reports</p>",
+  "category": "International Relations",
+  "tags": ["India", "Bangladesh", "Diplomacy", "Foreign Policy"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771221903/nmai-articles/guh8sl2gnkothuswyeat.jpg",
+    "alt": "India Bangladesh Diplomacy"
+  },
+  "publishDate": "2026-02-15T00:00:00.000Z",
+  "lastUpdated": "2026-02-15T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["MEA", "Government Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 6
+},
   
   //14 Feb 
+
+{
+  "title": "Indus Valley Civilisation May Date Back 8,000 Years: New Archaeological Evidence",
+  "slug": "59-indus-valley-civilisation-may-date-back-8000-years",
+  "summary": "New radiocarbon dating suggests the Indus Valley Civilisation may be up to 8,000 years old, significantly older than previously believed.",
+  "content": "<h2>Introduction</h2><p>The Indus Valley Civilisation (IVC), also known as the Harappan Civilisation, has long been considered one of the world’s earliest urban civilizations. Traditionally, historians believed that the civilisation emerged around 3300 BCE and reached maturity between 2600 BCE and 1900 BCE. However, recent archaeological findings and radiocarbon dating from the site of Bhirrana in Haryana suggest that the origins of this civilisation may date back as far as 6000 BCE, making it approximately 8,000 years old.</p><p>This discovery significantly alters our understanding of early human civilisation and positions the Indian subcontinent as one of the oldest centers of organised human settlement, agriculture, and urbanisation.</p><h2>Overview of the Indus Valley Civilisation</h2><p>The Indus Valley Civilisation was one of the world’s four major ancient civilizations, alongside Mesopotamia, Egypt, and China. It developed along the fertile plains of the Indus River and its tributaries, covering parts of modern-day India, Pakistan, and Afghanistan.</p><p>The civilisation was highly advanced and featured well-planned cities, efficient drainage systems, standardized weights and measures, and extensive trade networks.</p><h2>Major Archaeological Sites</h2><ul><li><strong>Harappa (Pakistan):</strong> One of the first discovered sites, giving the civilisation its alternate name.</li><li><strong>Mohenjo-Daro (Pakistan):</strong> Known for the Great Bath and advanced urban planning.</li><li><strong>Dholavira (India):</strong> Located in Gujarat, known for its water management system.</li><li><strong>Rakhigarhi (India):</strong> One of the largest Harappan cities.</li><li><strong>Bhirrana (India):</strong> The site that provided evidence suggesting older origins.</li></ul><h2>Bhirrana Site and Radiocarbon Dating</h2><p>Bhirrana, located in Haryana, is considered one of the oldest Harappan sites. Archaeologists conducted radiocarbon dating on materials such as pottery, charcoal, and organic remains found at the site.</p><p>Radiocarbon dating is a scientific method used to determine the age of organic materials by measuring the decay of carbon isotopes.</p><p>The results indicated human settlement at Bhirrana dating back to around 6000 BCE, significantly earlier than previously believed.</p><h2>Phases of the Indus Valley Civilisation</h2><ul><li><strong>Early Harappan Phase (6000–2600 BCE):</strong> Beginning of settlements and agriculture.</li><li><strong>Mature Harappan Phase (2600–1900 BCE):</strong> Peak period with urban cities.</li><li><strong>Late Harappan Phase (1900–1300 BCE):</strong> Decline and migration.</li></ul><h2>Urban Planning and Engineering</h2><p>The Indus Valley Civilisation was known for its advanced urban planning. Cities were laid out in grid patterns, with separate residential and administrative areas.</p><p>Features included:</p><ul><li>Covered drainage systems</li><li>Public baths</li><li>Granaries</li><li>Brick houses</li></ul><h2>Economic System</h2><p>The economy was based on agriculture, trade, and crafts. Major crops included wheat, barley, and cotton. The civilisation was one of the first to cultivate cotton.</p><p>Trade existed with Mesopotamia and other regions.</p><h2>Script and Language</h2><p>The Indus script remains undeciphered. It consists of symbols found on seals and pottery.</p><h2>Scientific and Technological Achievements</h2><ul><li>Standardized weights</li><li>Metallurgy</li><li>Urban sanitation</li></ul><h2>Importance of New Discovery</h2><p>The discovery suggests civilisation began earlier than Mesopotamia and Egypt.</p><h2>Decline of Civilisation</h2><p>Possible causes include climate change and river drying.</p><h2>Exam Perspective</h2><ul><li>One of world’s oldest civilisations</li><li>Important archaeological discovery</li></ul><h2>Key Takeaways</h2><ul><li>IVC may be 8000 years old</li><li>Bhirrana is oldest site</li></ul><h2>Sources</h2><p>Archaeological Survey of India, Research Journals</p>",
+  "category": "History",
+  "tags": ["Indus Valley Civilisation", "Archaeology"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771149398/nmai-articles/g2gpnypttiwacvnadteq.jpg",
+    "alt": "Indus Valley Civilisation"
+  },
+  "publishDate": "2026-02-14T00:00:00.000Z",
+  "lastUpdated": "2026-02-14T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Archaeological Survey"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 5
+},
+
+{
+  "title": "Philippine Eagle: One of the World’s Largest and Most Powerful Raptors",
+  "slug": "58-philippine-eagle-world-largest-raptors",
+  "summary": "The Philippine eagle is one of the world’s largest and most powerful birds of prey and is critically endangered due to habitat loss, deforestation, and illegal hunting, making conservation efforts essential for its survival.",
+  "content": "<h2>Introduction</h2><p>The Philippine eagle (Pithecophaga jefferyi) is widely regarded as one of the largest, rarest, and most powerful birds of prey in the world. Endemic to the Philippines, this magnificent raptor serves as the national bird and is a symbol of strength, resilience, and environmental conservation. Due to its limited geographic distribution and increasing threats to its natural habitat, the Philippine eagle has been classified as critically endangered by the International Union for Conservation of Nature (IUCN).</p><p>The eagle plays a vital ecological role as an apex predator, helping maintain balance within forest ecosystems. However, habitat destruction, deforestation, and human activities have severely reduced its population, making conservation efforts crucial for its survival.</p><h2>Scientific Classification</h2><ul><li><strong>Kingdom:</strong> Animalia</li><li><strong>Phylum:</strong> Chordata</li><li><strong>Class:</strong> Aves</li><li><strong>Order:</strong> Accipitriformes</li><li><strong>Family:</strong> Accipitridae</li><li><strong>Genus:</strong> Pithecophaga</li><li><strong>Species:</strong> Pithecophaga jefferyi</li></ul><p>The scientific name Pithecophaga means 'monkey-eater', reflecting its diet, which includes monkeys and other mammals.</p><h2>Physical Characteristics</h2><p>The Philippine eagle is among the largest eagles in terms of body length and wingspan. Adult eagles can grow up to 1 meter in height and have a wingspan reaching approximately 2 meters. They typically weigh between 4.5 to 8 kilograms.</p><p>The eagle has distinctive features including:</p><ul><li>A powerful hooked beak for tearing prey</li><li>Strong talons capable of gripping large animals</li><li>Long brown feathers with a distinctive crest</li><li>Sharp eyesight enabling detection of prey from great distances</li></ul><p>These physical characteristics make the Philippine eagle one of the most efficient predators in its ecosystem.</p><h2>Habitat and Distribution</h2><p>The Philippine eagle is found exclusively in the Philippines and inhabits dense tropical rainforests. Major populations are found on the islands of:</p><ul><li>Mindanao</li><li>Luzon</li><li>Samar</li><li>Leyte</li></ul><p>The eagle prefers mountainous and forested regions with minimal human disturbance. These forests provide nesting sites, shelter, and abundant food sources.</p><h2>Diet and Feeding Behavior</h2><p>The Philippine eagle is a carnivorous predator and feeds primarily on:</p><ul><li>Monkeys</li><li>Flying lemurs</li><li>Birds</li><li>Snakes</li><li>Small mammals</li></ul><p>The eagle hunts by perching silently and launching surprise attacks on prey. Its powerful talons allow it to capture and carry prey efficiently.</p><h2>Reproduction and Life Cycle</h2><p>The Philippine eagle has a slow reproductive rate, which contributes to its vulnerability. Key reproductive characteristics include:</p><ul><li>Breeding age: Around 5 years</li><li>Egg laying: One egg every two years</li><li>Incubation period: Approximately 60 days</li><li>Parental care: Both parents care for the chick</li></ul><p>The slow reproduction rate makes population recovery difficult.</p><h2>Ecological Importance</h2><p>As an apex predator, the Philippine eagle plays a critical role in maintaining ecological balance. It helps control populations of prey species and supports biodiversity.</p><h2>Conservation Status</h2><p>The Philippine eagle is classified as critically endangered by the IUCN Red List. It is estimated that fewer than 400 breeding pairs remain in the wild.</p><h2>Threats to Survival</h2><ul><li>Deforestation due to logging</li><li>Agricultural expansion</li><li>Illegal hunting</li><li>Habitat destruction</li><li>Human encroachment</li></ul><h2>Conservation Efforts</h2><p>The Philippine government and international conservation organizations have launched various initiatives to protect the species.</p><ul><li>Protected forest reserves</li><li>Breeding programs</li><li>Anti-poaching laws</li><li>Public awareness campaigns</li></ul><h2>National Symbol Significance</h2><p>The Philippine eagle was declared the national bird of the Philippines in 1995. It represents strength and environmental protection.</p><h2>Global Conservation Importance</h2><p>The Philippine eagle represents the importance of biodiversity conservation and ecosystem protection worldwide.</p><h2>Exam Perspective</h2><ul><li>Critically endangered species</li><li>Endemic to Philippines</li><li>Important for environment and biodiversity topics</li></ul><h2>Key Takeaways</h2><ul><li>One of the world’s largest eagles</li><li>Critically endangered species</li><li>Important apex predator</li><li>Symbol of conservation</li></ul><h2>Sources & References</h2><p>IUCN Red List, Wildlife Conservation Reports, Philippine Eagle Foundation</p>",
+  "category": "Environment",
+  "tags": ["Philippine Eagle", "Wildlife", "Endangered Species"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771149397/nmai-articles/iyenwdqumoi1n02zihtj.jpg",
+    "alt": "Philippine Eagle"
+  },
+  "publishDate": "2026-02-14T00:00:00.000Z",
+  "lastUpdated": "2026-02-14T00:00:00.000Z",
+  "readingTime": "12 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Beginner",
+  "sources": ["IUCN", "Philippine Eagle Foundation"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 5
+},
+
+{
+  "title": "Cabinet Approves Brahmaputra Rail-Road Twin Tunnel Project",
+  "slug": "57-brahmaputra-rail-road-twin-tunnel-cabinet-approval",
+  "summary": "The Union Cabinet approved India’s first underwater rail-cum-road tunnel beneath the Brahmaputra River, enhancing connectivity, defense mobility, and economic development in Northeast India while strengthening strategic infrastructure near international borders.",
+  "content": "<h2>Introduction</h2><p>The Union Cabinet has approved the construction of India’s first underwater rail-cum-road twin tunnel beneath the Brahmaputra River in Assam. This landmark infrastructure project represents a major advancement in India’s transport engineering capabilities and strategic infrastructure development. The tunnel will form part of a 33.7-kilometre greenfield corridor connecting Gohpur on National Highway-15 in northern Assam with Numaligarh on National Highway-37 in southern Assam.</p><p>The project aims to provide faster, safer, and all-weather connectivity between key regions of Assam and the broader northeastern region. It will significantly reduce travel distance and time, strengthen national security infrastructure, and promote economic growth.</p><h2>Overview of the Brahmaputra Twin Tunnel Project</h2><p>The Brahmaputra twin tunnel will consist of two parallel tunnels constructed beneath the riverbed. One tunnel will be dedicated to railway transport, while the other will support road transportation. This dual-purpose design ensures efficient integration of rail and road connectivity.</p><p>The tunnel will use modern tunneling technologies and advanced safety mechanisms to ensure structural stability and operational safety under riverbed conditions. Once completed, it will provide seamless connectivity throughout the year, even during floods and extreme weather conditions.</p><h2>Key Features of the Project</h2><ul><li><strong>Total Corridor Length:</strong> 33.7 kilometres</li><li><strong>Location:</strong> Beneath Brahmaputra River, Assam</li><li><strong>Connectivity:</strong> Gohpur to Numaligarh</li><li><strong>Type:</strong> Rail-cum-road twin tunnel</li><li><strong>Significance:</strong> First underwater rail-road tunnel in India</li><li><strong>Purpose:</strong> Improve transport, defense logistics, and economic connectivity</li></ul><h2>Geographical Importance of the Brahmaputra River</h2><p>The Brahmaputra River is one of Asia’s major rivers and plays a crucial role in the geography and economy of northeastern India. It originates in Tibet, flows through Arunachal Pradesh and Assam, and enters Bangladesh before emptying into the Bay of Bengal.</p><p>The river is wide and prone to flooding, making transportation across it difficult. The construction of an underwater tunnel provides a permanent and reliable transport solution.</p><h2>Strategic and Defense Importance</h2><p>The northeastern region of India is strategically sensitive due to its proximity to international borders with China, Myanmar, Bhutan, and Bangladesh. Rapid troop mobilization and efficient logistics are essential for national defense.</p><p>The tunnel will significantly enhance India's defense preparedness by enabling faster movement of military personnel, vehicles, and equipment. It will reduce response time during emergencies and strengthen border security.</p><h3>Defense Benefits</h3><ul><li>Faster deployment of armed forces</li><li>Improved military logistics and supply chain</li><li>Enhanced border surveillance capability</li><li>Strengthened national security infrastructure</li></ul><h2>Economic Importance</h2><p>The project is expected to significantly boost economic activity in northeastern India. Improved connectivity will enhance trade, tourism, industrial growth, and regional development.</p><p>Key economic benefits include:</p><ul><li>Reduced transportation costs</li><li>Improved connectivity between industrial hubs</li><li>Boost to tourism in Assam and Northeast India</li><li>Employment generation during construction and operation</li><li>Promotion of regional economic integration</li></ul><h2>Impact on Regional Connectivity</h2><p>The tunnel will provide faster connectivity between northern and southern parts of Assam. Currently, travel between these regions requires long detours over bridges. The tunnel will reduce travel distance by several kilometres and save valuable time.</p><p>This improved connectivity will benefit local communities, businesses, and transportation networks.</p><h2>Engineering and Technological Significance</h2><p>Constructing an underwater tunnel beneath a large river like the Brahmaputra is a complex engineering challenge. The project will use advanced Tunnel Boring Machines (TBMs), which are designed to operate under high pressure and water conditions.</p><p>Engineering features include:</p><ul><li>Advanced tunnel boring technology</li><li>Structural reinforcement for safety</li><li>Ventilation and emergency evacuation systems</li><li>Waterproof tunnel lining</li><li>Seismic-resistant design</li></ul><p>These technologies ensure long-term safety and durability.</p><h2>Environmental Considerations</h2><p>The project includes environmental safeguards to minimize ecological impact. Environmental impact assessments have been conducted to ensure protection of river ecosystems.</p><p>Measures include:</p><ul><li>Minimal disruption to river flow</li><li>Protection of aquatic life</li><li>Sustainable construction practices</li></ul><h2>Integration with National Infrastructure Initiatives</h2><p>The project aligns with several national infrastructure initiatives, including:</p><ul><li>Act East Policy</li><li>Bharatmala Project</li><li>National Infrastructure Pipeline</li><li>Gati Shakti Master Plan</li></ul><p>These initiatives aim to modernize India's infrastructure and improve connectivity.</p><h2>Importance for Northeast India Development</h2><p>The northeastern region has historically faced connectivity challenges due to difficult terrain and geographical isolation. Infrastructure projects like this tunnel help integrate the region with the rest of India.</p><p>This improves:</p><ul><li>Economic development</li><li>Access to markets</li><li>Social integration</li><li>National integration</li></ul><h2>Comparison with Global Tunnel Projects</h2><p>The Brahmaputra tunnel joins a group of major underwater tunnels worldwide, such as:</p><ul><li>Channel Tunnel (UK-France)</li><li>Seikan Tunnel (Japan)</li><li>Gotthard Base Tunnel (Switzerland)</li></ul><p>This demonstrates India’s growing engineering capabilities.</p><h2>Future Impact on Transportation</h2><p>The project will modernize transportation infrastructure in Northeast India. It will improve logistics efficiency, reduce travel time, and enhance safety.</p><h2>Government Vision for Infrastructure Development</h2><p>The Government of India is focusing on infrastructure development to promote economic growth, defense preparedness, and regional connectivity.</p><p>Infrastructure projects like this tunnel are essential for national development.</p><h2>Exam Perspective</h2><ul><li>India’s first underwater rail-cum-road tunnel</li><li>Important infrastructure project in Northeast India</li><li>Relevant for geography, economy, and defense topics</li><li>Important for UPSC, SSC, State PSC exams</li></ul><h2>Key Takeaways</h2><ul><li>Cabinet approved Brahmaputra rail-road twin tunnel</li><li>Improves connectivity and defense preparedness</li><li>Boosts regional economic development</li><li>Major engineering milestone for India</li><li>Supports Act East policy and national infrastructure growth</li></ul><h2>Sources & References</h2><p>Union Cabinet, Ministry of Road Transport and Highways, National Infrastructure Pipeline, Government of India Reports</p>",
+  "category": "Infrastructure",
+  "tags": ["Tunnel", "Brahmaputra", "Infrastructure", "Assam", "Transport", "Defense"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1771149398/nmai-articles/xp9lo4qy10chgc6orraf.jpg",
+    "alt": "Brahmaputra Rail Road Twin Tunnel"
+  },
+  "publishDate": "2026-02-14T00:00:00.000Z",
+  "lastUpdated": "2026-02-14T00:00:00.000Z",
+  "readingTime": "13 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "SSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Union Cabinet", "Ministry of Transport", "Infrastructure Reports"],
+  "viewCount": 0,
+  "likes": 0,
+  "pageNumber": 5
+},
+
 
  {
   "title": "Seva Teerth Inaugurated and Rs 100 Commemorative Coin Released",

@@ -77,9 +77,22 @@ app.use("/uploads", express.static("uploads"));
 
 /* ================= ROBOTS ================= */
 app.get("/robots.txt", (req, res) => {
-  res.type("text/plain");
-  res.send("User-agent: *\nDisallow: /");
+  res.setHeader("Content-Type", "text/plain");
+  res.send(`User-agent: *
+Allow: /
+
+# Allow important public APIs
+Allow: /api/articles
+Allow: /api/mcqs
+Allow: /uploads
+
+# Block private endpoints
+Disallow: /api/auth
+Disallow: /api/users
+Disallow: /api/upload
+`);
 });
+
 
 /* ================= ROUTES ================= */
 app.use("/api/upload", uploadRoutes);

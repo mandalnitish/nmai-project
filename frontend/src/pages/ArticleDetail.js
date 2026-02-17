@@ -1,4 +1,5 @@
 // pages/ArticleDetail.js
+
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useQueryClient } from "react-query";
@@ -28,10 +29,12 @@ const ArticleDetail = () => {
 
   const [isSaved, setIsSaved] = useState(false);
   const [isLiking, setIsLiking] = useState(false);
-    useEffect(() => {
+
+  /* Scroll to top when slug changes */
+  useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }, [slug]);
 
@@ -52,17 +55,24 @@ const ArticleDetail = () => {
   const article = data?.article;
 
   /* ================= HELPERS ================= */
+
   const formatDate = (dateString) => {
     if (!dateString) return "";
     const date = parseISO(dateString);
     return isValid(date) ? format(date, "MMMM dd, yyyy") : "";
   };
 
-  const getImageName = (url) => {
-    return url; // Returns full Cloudinary URL
+  const getImageUrl = () => {
+    return article?.featuredImage?.url || "https://www.nmai.in/logo.png";
   };
 
+  const canonicalUrl = `https://www.nmai.in/article/${article?.slug}`;
+
+  const authorName =
+    article?.author?.name || "NMAI Current Affairs";
+
   /* ================= STATES ================= */
+
   if (isLoading) {
     return (
       <div className="article-loading">
@@ -87,6 +97,7 @@ const ArticleDetail = () => {
   }
 
   /* ================= ACTIONS ================= */
+
   const handleSaveArticle = async () => {
     if (!user) return toast.error("Please login to save articles");
 
@@ -94,12 +105,15 @@ const ArticleDetail = () => {
     setIsSaved(!prev);
 
     try {
-      prev
-        ? await usersAPI.unsaveArticle(article._id)
-        : await usersAPI.saveArticle(article._id);
+      if (prev) {
+        await usersAPI.unsaveArticle(article._id);
+      } else {
+        await usersAPI.saveArticle(article._id);
+      }
 
       queryClient.invalidateQueries("me");
       queryClient.invalidateQueries("savedArticles");
+
       toast.success(prev ? "Removed from saved" : "Article saved");
     } catch {
       setIsSaved(prev);
@@ -109,9 +123,11 @@ const ArticleDetail = () => {
 
   const handleLike = async () => {
     if (!user) return toast.error("Please login to like articles");
+
     if (isLiking) return;
 
     setIsLiking(true);
+
     try {
       await articlesAPI.like(article._id);
       queryClient.invalidateQueries(["article", slug]);
@@ -124,32 +140,112 @@ const ArticleDetail = () => {
   };
 
   const handleShare = async () => {
-    if (navigator.share) {
-      await navigator.share({
-        title: article.title,
-        text: article.summary,
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copied to clipboard");
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: article.title,
+          text: article.summary,
+          url: canonicalUrl,
+        });
+      } else {
+        await navigator.clipboard.writeText(canonicalUrl);
+        toast.success("Link copied to clipboard");
+      }
+    } catch {
+      toast.error("Failed to share article");
     }
   };
 
   /* ================= RENDER ================= */
+
   return (
     <>
-      {/* SEO */}
+      {/* ================= SEO ================= */}
+
       <Helmet>
-        <title>{article.title} | NMAI</title>
-        <meta name="description" content={article.summary} />
+
+        {/* Basic SEO */}
+        <title>{article.title} | NMAI Current Affairs</title>
+
+        <meta
+          name="description"
+          content={article.summary}
+        />
+
+        <meta
+          name="keywords"
+          content={`${article.category}, Current Affairs, UPSC, SSC, Banking, NMAI`}
+        />
+
+        {/* Canonical */}
+        <link
+          rel="canonical"
+          href={canonicalUrl}
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.summary} />
-        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={getImageUrl()} />
+        <meta property="og:image:alt" content={article.title} />
+        <meta property="og:site_name" content="NMAI Current Affairs" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.summary} />
+        <meta name="twitter:image" content={getImageUrl()} />
+        <meta name="twitter:image:alt" content={article.title} />
+
+        {/* Article meta */}
+        <meta property="article:published_time" content={article.publishDate} />
+        <meta property="article:modified_time" content={article.updatedAt || article.publishDate} />
+        <meta property="article:author" content={authorName} />
+        <meta property="article:section" content={article.category} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+
+            headline: article.title,
+            description: article.summary,
+            image: [getImageUrl()],
+            datePublished: article.publishDate,
+            dateModified:
+              article.updatedAt || article.publishDate,
+            author: {
+              "@type": "Person",
+              name: authorName,
+            },
+
+            publisher: {
+              "@type": "Organization",
+              name: "NMAI Current Affairs",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.nmai.in/logo.png",
+              },
+            },
+
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": canonicalUrl,
+            },
+
+            isAccessibleForFree: true,
+          })}
+        </script>
       </Helmet>
+
+      {/* ================= PAGE ================= */}
 
       <div className="article-detail-page">
         <div className="article-detail-container">
+
           {/* Back */}
           <Link to="/current-affairs" className="back-link">
             <FiArrowLeft /> Back to Articles
@@ -163,7 +259,9 @@ const ArticleDetail = () => {
           )}
 
           {/* Title */}
-          <h1 className="article-detail-title">{article.title}</h1>
+          <h1 className="article-detail-title">
+            {article.title}
+          </h1>
 
           {/* Meta */}
           <div className="article-detail-meta">
@@ -171,7 +269,7 @@ const ArticleDetail = () => {
               <FiCalendar /> {formatDate(article.publishDate)}
             </span>
             <span className="meta-item">
-              <FiUser /> {article.author?.name || "Admin"}
+              <FiUser /> {authorName}
             </span>
             <span className="meta-item">
               <FiEye /> {article.viewCount || 0} views
@@ -181,10 +279,10 @@ const ArticleDetail = () => {
             </span>
           </div>
 
-          {/* FEATURED IMAGE */}
+          {/* Image */}
           <div className="article-image-wrapper">
             <ArticleImage
-              imageName={getImageName(article.featuredImage?.url)}
+              imageName={getImageUrl()}
               title={article.title}
               className="article-detail-image"
               width={1200}
@@ -192,10 +290,12 @@ const ArticleDetail = () => {
             />
           </div>
 
-          {/* Content - Summary section removed */}
+          {/* Content */}
           <div
             className="article-body"
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={{
+              __html: article.content,
+            }}
           />
 
           {/* Actions */}
@@ -206,7 +306,6 @@ const ArticleDetail = () => {
             >
               <FiBookmark /> {isSaved ? "Saved" : "Save"}
             </button>
-
             <button
               className="action-btn"
               onClick={handleLike}
@@ -214,19 +313,26 @@ const ArticleDetail = () => {
             >
               <FiHeart /> Like
             </button>
-
-            <button className="action-btn" onClick={handleShare}>
+            <button
+              className="action-btn"
+              onClick={handleShare}
+            >
               <FiShare2 /> Share
             </button>
           </div>
 
           {/* Exam relevance */}
           {article.examRelevance?.length > 0 && (
+
             <div className="exam-tags">
+
               <h4>Relevant for:</h4>
+
               <div className="tag-list">
-                {article.examRelevance.map((exam, idx) => (
-                  <span key={idx} className="exam-tag">
+
+                {article.examRelevance.map((exam, index) => (
+
+                  <span key={index} className="exam-tag">
                     {exam}
                   </span>
                 ))}

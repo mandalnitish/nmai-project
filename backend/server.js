@@ -12,6 +12,7 @@ import articleRoutes from "./routes/articleRoutes.js";
 import mcqRoutes from "./routes/mcqRoutes.js";
 import userRoutes from "./routes/users.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import sitemapRoute from "./routes/sitemap.js";
 
 /* ================= ENV ================= */
 dotenv.config();
@@ -100,6 +101,7 @@ app.use("/api/articles", articleRoutes);
 app.use("/api/mcqs", mcqRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/", sitemapRoute);
 
 /* ================= HEALTH ================= */
 app.get("/api/health", (req, res) => {

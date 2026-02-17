@@ -1,5 +1,5 @@
 import express from "express";
-import Article from "./models/Article.js"; // adjust path if needed
+import Article from "../models/Article.js";
 
 const router = express.Router();
 
@@ -7,11 +7,13 @@ router.get("/sitemap.xml", async (req, res) => {
   try {
     const baseUrl = "https://www.nmai.in";
 
-    // Fetch published articles
     const articles = await Article.find(
       { status: "published" },
       "slug updatedAt publishDate"
     ).sort({ publishDate: -1 });
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
     // Static pages
     const staticPages = [
@@ -20,15 +22,10 @@ router.get("/sitemap.xml", async (req, res) => {
       "/mcq-practice",
       "/daily-quiz",
       "/about-us",
-      "/contact-us",
+      "/contact-us"
     ];
 
-    // Generate XML
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-    // Static URLs
-    staticPages.forEach((page) => {
+    staticPages.forEach(page => {
       xml += `
   <url>
     <loc>${baseUrl}${page}</loc>
@@ -37,8 +34,8 @@ router.get("/sitemap.xml", async (req, res) => {
   </url>`;
     });
 
-    // Article URLs
-    articles.forEach((article) => {
+    // Dynamic articles
+    articles.forEach(article => {
       xml += `
   <url>
     <loc>${baseUrl}/article/${article.slug}</loc>
@@ -55,8 +52,9 @@ router.get("/sitemap.xml", async (req, res) => {
 
     res.header("Content-Type", "application/xml");
     res.send(xml);
-  } catch (error) {
-    console.error("Sitemap error:", error);
+
+  } catch (err) {
+    console.error(err);
     res.status(500).end();
   }
 });

@@ -6,6 +6,10 @@
       "destination": "https://nmai-project.onrender.com/sitemap.xml"
     },
     {
+      "source": "/robots.txt",
+      "destination": "https://nmai-project.onrender.com/robots.txt"
+    },
+    {
       "source": "/(.*)",
       "destination": "/"
     }

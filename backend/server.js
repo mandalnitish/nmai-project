@@ -56,44 +56,64 @@ app.use(
 );
 
 /* ================= RATE LIMIT ================= */
+
+// Detect Googlebot
+const isGooglebot = (req) => {
+  const ua = req.headers["user-agent"] || "";
+  return ua.toLowerCase().includes("googlebot");
+};
+
 // General API limiter
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 300,
+  standardHeaders: true,
+  legacyHeaders: false,
+
+  skip: (req) => {
+    return isGooglebot(req); // ✅ NEVER limit Googlebot
+  },
+
   message: "Too many requests, please try again later.",
 });
 
-// Upload-specific limiter (relaxed)
+// Upload limiter
 const uploadLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 50, // bulk uploads are heavy
-  message: "Too many upload requests, please slow down.",
+  max: 50,
+  skip: (req) => {
+    return isGooglebot(req); // optional safety
+  },
 });
 
 app.use("/api/", apiLimiter);
 app.use("/api/upload", uploadLimiter);
+
 
 /* ================= STATIC ================= */
 app.use("/uploads", express.static("uploads"));
 
 /* ================= ROBOTS ================= */
 app.get("/robots.txt", (req, res) => {
-  res.setHeader("Content-Type", "text/plain");
-  res.send(`User-agent: *
-Allow: /
+  res.type("text/plain");
 
-# Allow important public APIs
+  res.send(`User-agent: *
+
+# Allow important public content
+Allow: /
 Allow: /api/articles
-Allow: /api/mcqs
+Allow: /api/articles/
 Allow: /uploads
 
-# Block private endpoints
+# Block sensitive routes
 Disallow: /api/auth
 Disallow: /api/users
 Disallow: /api/upload
+
+# Sitemap location
+Sitemap: https://www.nmai.in/sitemap.xml
 `);
 });
-
 
 /* ================= ROUTES ================= */
 app.use("/api/upload", uploadRoutes);

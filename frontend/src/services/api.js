@@ -6,7 +6,7 @@ import axios from "axios";
 const API_BASE_URL =
   process.env.REACT_APP_API_URL ||
   (process.env.NODE_ENV === "production"
-    ? "https://nmai-project.onrender.com/api"
+    ? "https://nmai-project-production.up.railway.app/api" //old https://nmai-project.onrender.com/api
     : "http://localhost:5000/api");
 
 /* =====================================================

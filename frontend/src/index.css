@@ -22,3 +22,17 @@ code {
 #root {
   min-height: 100vh;
 }
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.download-btn:hover {
+  background-color: #1d4ed8;
+}

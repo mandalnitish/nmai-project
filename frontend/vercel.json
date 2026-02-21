@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/sitemap.xml",
-      "destination": "https://nmai-project.onrender.com/sitemap.xml"
+      "destination": "https://api.nmai.in/sitemap.xml"
     },
     {
       "source": "/robots.txt",
-      "destination": "https://nmai-project.onrender.com/robots.txt"
+      "destination": "https://api.nmai.in/robots.txt"
     },
     {
       "source": "/(.*)",

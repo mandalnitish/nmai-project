@@ -26,6 +26,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import AdminDashboard from "./components/AdminDashboard"; // 🔥 ONLY ONE IMPORT HERE
+import FAQ from "./pages/FAQ";
 
 /* ================= EBOOKS ================= */
 import EbookMonthlyMCQs from "./pages/ebooks/EbookMonthlyMCQs";
@@ -164,6 +165,7 @@ export default function App() {
                   <Route path="/about-us" element={<AboutUs />} />
                   <Route path="/contact-us" element={<ContactUs />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/faq" element={<FAQ />} />
 
                   {/* ===== 404 ===== */}
                   <Route path="*" element={<NotFound />} />

@@ -1,0 +1,157 @@
+/* ================= PAGE BACKGROUND ================= */
+
+.faq-page {
+  padding: 30px 20px;
+  min-height: 80vh;
+  background: transparent;
+}
+
+/* LIGHT MODE */
+.faq-page {
+  background: #f8fafc;
+}
+
+/* DARK MODE BACKGROUND */
+html.dark-mode .faq-page {
+  background: #242426;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+
+/* ================= GLASS BASE ================= */
+
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  background: rgba(255,255,255,0.65);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* DARK GLASS */
+html.dark-mode .glass {
+  background: rgb(31, 32, 33);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* ================= HEADER ================= */
+
+.faq-header {
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+html.dark-mode .faq-header h1 {
+  color: #f1f5f9;
+}
+
+.faq-header p {
+  color: #475569;
+}
+
+html.dark-mode .faq-header p {
+  color: #94a3b8;
+}
+
+
+/* ================= FAQ LIST ================= */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* ================= FAQ ITEM ================= */
+
+.faq-item {
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ACTIVE */
+.faq-item.active {
+  border: 1px solid rgba(59,130,246,0.4);
+  box-shadow: 0 0 15px rgba(59,130,246,0.25);
+}
+
+
+/* ================= QUESTION ================= */
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+html.dark-mode .faq-question h3 {
+  color: #f1f5f9;
+}
+
+
+/* ================= ICON ================= */
+
+.faq-icon {
+  font-size: 22px;
+  color: #2563eb;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* ================= ANSWER ================= */
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.faq-answer.show {
+  max-height: 200px;
+  margin-top: 12px;
+}
+
+.faq-answer p {
+  color: #334155;
+}
+
+html.dark-mode .faq-answer p {
+  color: #cbd5e1;
+}

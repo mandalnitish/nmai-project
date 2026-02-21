@@ -453,5 +453,39 @@ body.dark {
 }
 
 
+/* ================= REMOVE TOP & BOTTOM SPACE FOR FULL-WIDTH PAGES ================= */
+
+.page-container {
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+}
+
+.page-container > * {
+
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+}
+
+/* Fix main-content wrapper */
+
+.main-content {
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+}
+
+/* Fix section wrapper if used */
+
+.section {
+
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+}
+
 @import './MasterDarkMode.css';
 @import './DarkModeFixes.css';

@@ -1,45 +1,68 @@
 import React from "react";
+import "./Ebook.css";
 
 export default function EbookYearlyPDF() {
   const pdfPath = "/pdfs/Annual Current Affairs 2025 NMAI.pdf";
 
   return (
     <div className="page-container">
-      <h1>Yearly Current Affairs PDF</h1>
-      <p>Download yearly compiled current affairs PDFs.</p>
+      <div className="ebook-full">
 
-      {/* View Button */}
-      <a
-        href={pdfPath}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="download-btn"
-      >
-        View PDF
-      </a>
+        {/* ── Hero Header ── */}
+        <div className="ebook-header">
 
-      {/* Download Button */}
-      <a
-        href={pdfPath}
-        download
-        className="download-btn"
-        style={{ marginLeft: "10px" }}
-      >
-        Download PDF
-      </a>
+          <div className="ebook-badge">
+            <span className="ebook-badge-dot" />
+            Annual Edition
+          </div>
 
-      {/* Embedded PDF Viewer */}
-      <div style={{ marginTop: "20px" }}>
-        <iframe
-          src={pdfPath}
-          width="100%"
-          height="600px"
-          title="Yearly Current Affairs PDF"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "8px"
-          }}
-        />
+          <h1 className="ebook-title">Yearly Current Affairs PDF — 2025</h1>
+
+          <p className="ebook-desc">
+            Complete year-round current affairs compilation for 2025 — the
+            ultimate revision resource for UPSC, SSC, Banking, Railway &amp;
+            State PSC exams.
+          </p>
+
+          <div className="ebook-stats">
+            <span className="ebook-stat"><span className="ebook-stat-icon">📚</span> Full Year Coverage</span>
+            <span className="ebook-stat"><span className="ebook-stat-icon">🗓️</span> Jan – Dec 2025</span>
+            <span className="ebook-stat"><span className="ebook-stat-icon">🎯</span> All Competitive Exams</span>
+            <span className="ebook-stat"><span className="ebook-stat-icon">⚡</span> Free Download</span>
+          </div>
+
+          <div className="ebook-actions">
+            <a
+              href={pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ebook-btn primary"
+            >
+              📖 View PDF
+            </a>
+            <a href={pdfPath} download className="ebook-btn outline">
+              ⬇️ Download PDF
+            </a>
+            <button
+              className="ebook-btn outline"
+              onClick={() => window.open(pdfPath)}
+            >
+              ⛶ Fullscreen
+            </button>
+          </div>
+
+        </div>
+
+        {/* ── Full-Width PDF Viewer ── */}
+        <div className="ebook-viewer-full">
+          <iframe
+            src={pdfPath}
+            className="ebook-frame"
+            title="Yearly Current Affairs PDF"
+            loading="lazy"
+          />
+        </div>
+
       </div>
     </div>
   );

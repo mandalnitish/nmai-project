@@ -1,0 +1,195 @@
+/* ================= PAGE CONTAINER ================= */
+
+.page-container {
+
+  padding: 40px 20px;
+  min-height: 70vh;
+
+}
+
+
+/* ================= GLASS CARD ================= */
+
+.glass {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  padding: 32px;
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  background: rgba(255,255,255,0.72);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.08);
+
+}
+
+
+/* DARK MODE GLASS */
+
+html.dark-mode .glass {
+
+  background: rgba(15,23,42,0.72);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5);
+
+}
+
+
+/* ================= TITLES ================= */
+
+.glass h1 {
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: #0f172a;
+
+}
+
+html.dark-mode .glass h1 {
+
+  color: #f1f5f9;
+
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.glass p {
+
+  color: #475569;
+
+  margin-bottom: 20px;
+
+}
+
+html.dark-mode .glass p {
+
+  color: #cbd5e1;
+
+}
+
+
+/* ================= BUTTON SYSTEM ================= */
+
+.btn-modern {
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  display: inline-block;
+
+  transition: all 0.25s ease;
+
+}
+
+
+/* PRIMARY */
+
+.btn-primary-modern {
+
+  background: linear-gradient(135deg,#3b82f6,#6366f1);
+
+  color: white;
+
+}
+
+
+/* OUTLINE */
+
+.btn-outline-modern {
+
+  border: 1px solid #6366f1;
+
+  color: #6366f1;
+
+}
+
+html.dark-mode .btn-outline-modern {
+
+  border: 1px solid #818cf8;
+
+  color: #818cf8;
+
+}
+
+
+/* HOVER */
+
+.btn-modern:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+
+}
+
+
+/* ================= PDF VIEWER ================= */
+
+.pdf-viewer {
+
+  margin-top: 25px;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0,0,0,0.15);
+
+}
+
+html.dark-mode .pdf-viewer {
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+}
+
+.pdf-viewer iframe {
+
+  width: 100%;
+
+  height: 650px;
+
+  border: none;
+
+}
+
+
+/* ================= COMING SOON ================= */
+
+.coming-soon {
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  background: rgba(59,130,246,0.1);
+
+}
+
+html.dark-mode .coming-soon {
+
+  background: rgba(99,102,241,0.2);
+
+}

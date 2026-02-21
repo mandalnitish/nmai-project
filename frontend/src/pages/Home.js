@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 import ArticleSkeleton from "../components/ArticleSkeleton";
-import { FiTrendingUp, FiMenu, FiX } from "react-icons/fi";
+import { FiTrendingUp, FiX, FiSearch } from "react-icons/fi";
 import "./Home.css";
 
 /* ================= DATE HELPERS ================= */
@@ -64,36 +64,43 @@ const Home = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
-
   /* ======================================================
      LISTEN FOR LOGO CLICK RESET EVENT
   ====================================================== */
-
   useEffect(() => {
-
     const handleHomeReset = () => {
-
       setCategory("All");
       setSearch("");
       setSearchParams({ page: 1 });
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
-
     window.addEventListener("homeReset", handleHomeReset);
-    return () => {
-      window.removeEventListener("homeReset", handleHomeReset);
-    };
-
+    return () => window.removeEventListener("homeReset", handleHomeReset);
   }, [setSearchParams]);
 
-  /* ================= FETCH DATA ================= */
-
+  /* ======================================================
+     SYNC WITH NAVBAR LEFT DRAWER (category toggle)
+  ====================================================== */
   useEffect(() => {
+    // Navbar tells us to open/close
+    const handleNavToggle = (e) => {
+      setIsMobileCategoryOpen(e.detail?.open ?? false);
+    };
+    // Navbar category item clicked
+    const handleCatSelect = (e) => {
+      if (e.detail?.cat) handleCategoryChange(e.detail.cat);
+    };
+    window.addEventListener("navCategoryToggle", handleNavToggle);
+    window.addEventListener("drawerCategorySelect", handleCatSelect);
+    return () => {
+      window.removeEventListener("navCategoryToggle", handleNavToggle);
+      window.removeEventListener("drawerCategorySelect", handleCatSelect);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  /* ================= FETCH DATA ================= */
+  useEffect(() => {
     let mounted = true;
     const fetchData = async () => {
       try {
@@ -113,49 +120,33 @@ const Home = () => {
         setArticles(latestRes.articles || []);
         setTotalPages(latestRes.pagination?.totalPages || 1);
         setTrending(trendingRes.articles || []);
-
       } catch (err) {
-
         console.error("Home fetch error:", err);
         setArticles([]);
         setTrending([]);
-
       } finally {
-
         if (mounted) setLoading(false);
-
       }
     };
 
     fetchData();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     return () => {
       mounted = false;
     };
-
   }, [page, category, search]);
 
-
   /* ================= BODY SCROLL LOCK ================= */
-
   useEffect(() => {
-    document.body.style.overflow =
-      isMobileCategoryOpen ? "hidden" : "unset";
+    document.body.style.overflow = isMobileCategoryOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isMobileCategoryOpen]);
 
-
   /* ================= HANDLERS ================= */
-
-  const handlePageChange = (newPage) => {
-    setSearchParams({ page: newPage });
-  };
+  const handlePageChange = (newPage) => setSearchParams({ page: newPage });
 
   const handleCategoryChange = (cat) => {
     setCategory(cat);
@@ -168,23 +159,16 @@ const Home = () => {
     setSearchParams({ page: 1 });
   };
 
-
   /* ================= GROUP ARTICLES ================= */
-
-  const today = articles.filter((a) =>
-    isToday(a.publishDate || a.createdAt)
-  );
-
+  const today = articles.filter((a) => isToday(a.publishDate || a.createdAt));
   const yesterday = articles.filter((a) =>
     isYesterday(a.publishDate || a.createdAt)
   );
-
   const earlier = articles.filter(
     (a) =>
       !isToday(a.publishDate || a.createdAt) &&
       !isYesterday(a.publishDate || a.createdAt)
   );
-
 
   const categories = [
     "All",
@@ -199,15 +183,11 @@ const Home = () => {
     "Sports",
   ];
 
-
   /* ================= JSX ================= */
-
   return (
     <>
       <Helmet>
-        <title>
-          NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC
-        </title>
+        <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
       </Helmet>
       <div className="home-page">
         {isMobileCategoryOpen && (
@@ -217,17 +197,8 @@ const Home = () => {
           />
         )}
         <div className="home-container">
-          <button
-            className="mobile-category-toggle"
-            onClick={() =>
-              setIsMobileCategoryOpen(!isMobileCategoryOpen)
-            }
-          >
-            {isMobileCategoryOpen ? <FiX /> : <FiMenu />}
-            <span>Categories</span>
-          </button>
-          <div className="home-layout">
 
+          <div className="home-layout">
             {/* ================= LEFT SIDEBAR ================= */}
             <aside
               className={`home-sidebar left ${
@@ -238,9 +209,7 @@ const Home = () => {
                 <h3>Categories</h3>
                 <button
                   className="sidebar-close"
-                  onClick={() =>
-                    setIsMobileCategoryOpen(false)
-                  }
+                  onClick={() => setIsMobileCategoryOpen(false)}
                 >
                   <FiX />
                 </button>
@@ -256,16 +225,51 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* ── E-Books & Exams: mobile drawer only ── */}
+              <div className="sidebar-mobile-extras">
+
+                <div className="sidebar-inner-card">
+                  <h4 className="sidebar-inner-title">E-Books</h4>
+                  <ul className="sidebar-inner-list">
+                    <li><Link to="/ebooks/monthly-mcqs" onClick={() => setIsMobileCategoryOpen(false)}>Monthly MCQs</Link></li>
+                    <li><Link to="/ebooks/ca-articles-mcqs" onClick={() => setIsMobileCategoryOpen(false)}>Articles + MCQs</Link></li>
+                    <li><Link to="/ebooks/yearly-pdf" onClick={() => setIsMobileCategoryOpen(false)}>Yearly PDF</Link></li>
+                  </ul>
+                </div>
+
+                <div className="sidebar-inner-card">
+                  <h4 className="sidebar-inner-title">Exams</h4>
+                  <ul className="sidebar-inner-list">
+                    <li><Link to="/exams/upsc" onClick={() => setIsMobileCategoryOpen(false)}>UPSC</Link></li>
+                    <li><Link to="/exams/ssc" onClick={() => setIsMobileCategoryOpen(false)}>SSC</Link></li>
+                    <li><Link to="/exams/banking" onClick={() => setIsMobileCategoryOpen(false)}>Banking</Link></li>
+                    <li><Link to="/exams/railway" onClick={() => setIsMobileCategoryOpen(false)}>Railway</Link></li>
+                    <li><Link to="/exams/state-psc" onClick={() => setIsMobileCategoryOpen(false)}>State PSC</Link></li>
+                  </ul>
+                </div>
+
+              </div>
             </aside>
 
             {/* ================= MAIN CONTENT ================= */}
             <main className="home-content">
 
-              {/* ================= LATEST ================= */}
+              {/* ── Mobile Search Bar (hidden on desktop) ── */}
+              <div className="mobile-search-bar">
+                <FiSearch />
+                <input
+                  type="text"
+                  placeholder="Search current affairs..."
+                  value={search}
+                  onChange={(e) => handleSearchChange(e.target.value)}
+                />
+              </div>
+
+              {/* ── Latest ── */}
               <section className="section latest-section">
-                <h2 className="section-title">
-                  Latest Current Affairs
-                </h2>
+                <h2 className="section-title">Latest Current Affairs</h2>
+
                 {loading && (
                   <div className="articles-grid">
                     {Array.from({ length: 6 }).map((_, i) => (
@@ -273,14 +277,13 @@ const Home = () => {
                     ))}
                   </div>
                 )}
-                {!loading && articles.length === 0 && page === 1 && (
 
+                {!loading && articles.length === 0 && page === 1 && (
                   <div className="empty-state">
-                    <p>
-                      No articles found. Try changing your filters.
-                    </p>
+                    <p>No articles found. Try changing your filters.</p>
                   </div>
                 )}
+
                 {!loading && (
                   <>
                     {[
@@ -291,9 +294,7 @@ const Home = () => {
                       ([label, list]) =>
                         list.length > 0 && (
                           <React.Fragment key={label}>
-                            <h3 className="group-title">
-                              {label}
-                            </h3>
+                            <h3 className="group-title">{label}</h3>
                             <div className="articles-grid">
                               {list.map((a) => (
                                 <ArticleCard
@@ -320,7 +321,8 @@ const Home = () => {
                   </>
                 )}
               </section>
-              {/* ================= TRENDING ================= */}
+
+              {/* ── Trending ── */}
               {trending.length > 0 && (
                 <section className="section trending-section">
                   <h2 className="section-title">
@@ -333,15 +335,11 @@ const Home = () => {
                         to={`/article/${a.slug}`}
                         className="trending-item"
                       >
-                        <span className="trending-number">
-                          #{i + 1}
-                        </span>
+                        <span className="trending-number">#{i + 1}</span>
                         <div className="trending-content">
                           <h4>{a.title}</h4>
                           <div className="trending-meta">
-                            <span>
-                              {formatDate(a.publishDate)}
-                            </span>
+                            <span>{formatDate(a.publishDate)}</span>
                             <span>{a.category}</span>
                           </div>
                         </div>
@@ -352,7 +350,7 @@ const Home = () => {
               )}
             </main>
 
-            {/* ================= RIGHT SIDEBAR ================= */}
+            {/* ================= RIGHT SIDEBAR (desktop only) ================= */}
             <aside className="home-sidebar right">
               <div className="sidebar-search">
                 <input
@@ -366,19 +364,13 @@ const Home = () => {
                 <h3>E-Books</h3>
                 <ul>
                   <li>
-                    <Link to="/ebooks/monthly-mcqs">
-                      Monthly MCQs
-                    </Link>
+                    <Link to="/ebooks/monthly-mcqs">Monthly MCQs</Link>
                   </li>
                   <li>
-                    <Link to="/ebooks/ca-articles-mcqs">
-                      Articles + MCQs
-                    </Link>
+                    <Link to="/ebooks/ca-articles-mcqs">Articles + MCQs</Link>
                   </li>
                   <li>
-                    <Link to="/ebooks/yearly-pdf">
-                      Yearly PDF
-                    </Link>
+                    <Link to="/ebooks/yearly-pdf">Yearly PDF</Link>
                   </li>
                 </ul>
               </div>

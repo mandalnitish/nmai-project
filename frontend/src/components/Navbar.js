@@ -13,39 +13,19 @@ export default function Navbar() {
   const location = useLocation();
   const isHome   = location.pathname === "/";
 
-  /* close both on route change */
-  useEffect(() => {
-    setLeftOpen(false);
-    setRightOpen(false);
-  }, [location.pathname]);
+  useEffect(() => { setLeftOpen(false); setRightOpen(false); }, [location.pathname]);
 
-  /* body scroll lock */
   useEffect(() => {
     document.body.style.overflow = (leftOpen || rightOpen) ? "hidden" : "unset";
     return () => { document.body.style.overflow = "unset"; };
   }, [leftOpen, rightOpen]);
 
-  /* close on desktop resize */
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth > 920) { setLeftOpen(false); setRightOpen(false); }
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  /* tell Home page to open/close its category sidebar */
-  useEffect(() => {
-    window.dispatchEvent(
-      new CustomEvent("navCategoryToggle", { detail: { open: leftOpen } })
-    );
-  }, [leftOpen]);
-
-  /* sync if Home page closes its own sidebar (overlay click) */
-  useEffect(() => {
-    const handler = (e) => setLeftOpen(e.detail?.open ?? false);
-    window.addEventListener("categoryStateChange", handler);
-    return () => window.removeEventListener("categoryStateChange", handler);
   }, []);
 
   const handleLogoClick = (e) => {
@@ -62,29 +42,23 @@ export default function Navbar() {
     }
   };
 
-  const handleLogout = () => {
-    logout(); navigate("/"); setRightOpen(false);
-  };
-
+  const handleLogout = () => { logout(); navigate("/"); setRightOpen(false); };
   const closeAll = () => { setLeftOpen(false); setRightOpen(false); };
 
   return (
     <>
-      {/* Overlay */}
-      {(leftOpen || rightOpen) && (
-        <div className="nav-overlay" onClick={closeAll} />
-      )}
+      {(leftOpen || rightOpen) && <div className="nav-overlay" onClick={closeAll} />}
 
       <header className="navbar">
         <div className="navbar-wrap">
 
-          {/* ═══ LEFT — left hamburger (mobile) / logo (desktop) ═══ */}
+          {/* ── LEFT: logo (desktop) / left hamburger (mobile) ── */}
           <div className="nav-left">
             <a href="/" className="navbar-logo desktop-only" onClick={handleLogoClick}>
               <img src={logo} alt="NMAI Current Affairs" className="logo-img" />
             </a>
             <button
-              className={`nav-toggle mobile-only-flex ${leftOpen ? "is-open" : ""}`}
+              className={`nav-toggle mobile-only ${leftOpen ? "is-open" : ""}`}
               onClick={() => { setLeftOpen(!leftOpen); setRightOpen(false); }}
               aria-label="Open categories"
             >
@@ -92,7 +66,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* ═══ CENTER — desktop nav / mobile centered logo ═══ */}
+          {/* ── CENTER: desktop nav / mobile centered logo ── */}
           <div className="nav-center">
             <nav className="desktop-only desktop-nav">
               <NavLink to="/" end>Home</NavLink>
@@ -102,12 +76,12 @@ export default function Navbar() {
               <NavLink to="/about-us">About Us</NavLink>
               <NavLink to="/contact-us">Contact</NavLink>
             </nav>
-            <a href="/" className="navbar-logo mobile-only-flex" onClick={handleLogoClick}>
+            <a href="/" className="navbar-logo mobile-only" onClick={handleLogoClick}>
               <img src={logo} alt="NMAI Current Affairs" className="logo-img" />
             </a>
           </div>
 
-          {/* ═══ RIGHT — desktop auth / right hamburger (mobile) ═══ */}
+          {/* ── RIGHT: desktop auth / right hamburger (mobile) ── */}
           <div className="nav-right">
             <div className="desktop-only desktop-auth">
               <DarkModeToggle />
@@ -124,7 +98,7 @@ export default function Navbar() {
               )}
             </div>
             <button
-              className={`nav-toggle mobile-only-flex ${rightOpen ? "is-open" : ""}`}
+              className={`nav-toggle mobile-only ${rightOpen ? "is-open" : ""}`}
               onClick={() => { setRightOpen(!rightOpen); setLeftOpen(false); }}
               aria-label="Open menu"
             >
@@ -135,9 +109,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ═══════════════════════════════════
-          LEFT DRAWER — Categories, E-Books, Exams
-      ════════════════════════════════════ */}
+      {/* ═══ LEFT DRAWER — Categories (slides from left) ═══ */}
       <div className={`mobile-drawer drawer-left ${leftOpen ? "open" : ""}`}>
         <div className="drawer-header">
           <span className="drawer-title">Categories</span>
@@ -157,9 +129,9 @@ export default function Navbar() {
 
         <div className="drawer-section-title">E-Books</div>
         <nav className="drawer-link-list">
-          <NavLink to="/ebooks/monthly-mcqs"    onClick={() => setLeftOpen(false)}>📄 Monthly MCQs</NavLink>
+          <NavLink to="/ebooks/monthly-mcqs"     onClick={() => setLeftOpen(false)}>📄 Monthly MCQs</NavLink>
           <NavLink to="/ebooks/ca-articles-mcqs" onClick={() => setLeftOpen(false)}>📝 Articles + MCQs</NavLink>
-          <NavLink to="/ebooks/yearly-pdf"      onClick={() => setLeftOpen(false)}>📅 Yearly PDF</NavLink>
+          <NavLink to="/ebooks/yearly-pdf"       onClick={() => setLeftOpen(false)}>📅 Yearly PDF</NavLink>
         </nav>
 
         <div className="drawer-section-title">Exams</div>
@@ -172,16 +144,13 @@ export default function Navbar() {
         </nav>
       </div>
 
-      {/* ═══════════════════════════════════
-          RIGHT DRAWER — Nav links, Auth, Dark Mode
-      ════════════════════════════════════ */}
+      {/* ═══ RIGHT DRAWER — Nav + Auth + Dark Mode (slides from right) ═══ */}
       <div className={`mobile-drawer drawer-right ${rightOpen ? "open" : ""}`}>
         <div className="drawer-header drawer-header-right">
           <button className="drawer-close" onClick={() => setRightOpen(false)}>✕</button>
           <span className="drawer-title">Menu</span>
         </div>
 
-        {/* Auth */}
         <div className="drawer-auth">
           {!isAuthenticated ? (
             <div className="drawer-auth-buttons">
@@ -201,12 +170,10 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Dark mode toggle */}
         <div className="mobile-dark-mode-section">
           <DarkModeToggle showLabel={true} />
         </div>
 
-        {/* Nav links */}
         <nav className="mobile-nav-links">
           <NavLink to="/"                end onClick={() => setRightOpen(false)}><span className="nav-icon">🏠</span><span>Home</span></NavLink>
           <NavLink to="/current-affairs"     onClick={() => setRightOpen(false)}><span className="nav-icon">📰</span><span>Current Affairs</span></NavLink>

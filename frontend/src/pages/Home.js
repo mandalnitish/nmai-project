@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 import ArticleSkeleton from "../components/ArticleSkeleton";
-import { FiTrendingUp, FiX, FiSearch } from "react-icons/fi";
+import { FiTrendingUp, FiSearch } from "react-icons/fi";
 import "./Home.css";
 
 /* ================= DATE HELPERS ================= */
@@ -62,7 +62,6 @@ const Home = () => {
   // Get page from URL, default to 1
   const page = Number(searchParams.get("page")) || 1;
   const [totalPages, setTotalPages] = useState(1);
-  const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
 
   /* ======================================================
      LISTEN FOR LOGO CLICK RESET EVENT
@@ -82,18 +81,12 @@ const Home = () => {
      SYNC WITH NAVBAR LEFT DRAWER (category toggle)
   ====================================================== */
   useEffect(() => {
-    // Navbar tells us to open/close
-    const handleNavToggle = (e) => {
-      setIsMobileCategoryOpen(e.detail?.open ?? false);
-    };
     // Navbar category item clicked
     const handleCatSelect = (e) => {
       if (e.detail?.cat) handleCategoryChange(e.detail.cat);
     };
-    window.addEventListener("navCategoryToggle", handleNavToggle);
     window.addEventListener("drawerCategorySelect", handleCatSelect);
     return () => {
-      window.removeEventListener("navCategoryToggle", handleNavToggle);
       window.removeEventListener("drawerCategorySelect", handleCatSelect);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -137,21 +130,12 @@ const Home = () => {
     };
   }, [page, category, search]);
 
-  /* ================= BODY SCROLL LOCK ================= */
-  useEffect(() => {
-    document.body.style.overflow = isMobileCategoryOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMobileCategoryOpen]);
-
   /* ================= HANDLERS ================= */
   const handlePageChange = (newPage) => setSearchParams({ page: newPage });
 
   const handleCategoryChange = (cat) => {
     setCategory(cat);
     setSearchParams({ page: 1 });
-    setIsMobileCategoryOpen(false);
   };
 
   const handleSearchChange = (value) => {
@@ -190,29 +174,24 @@ const Home = () => {
         <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
       </Helmet>
       <div className="home-page">
-        {isMobileCategoryOpen && (
-          <div
-            className="sidebar-overlay active"
-            onClick={() => setIsMobileCategoryOpen(false)}
-          />
-        )}
         <div className="home-container">
 
+          {/* ── Mobile Search Bar — sits OUTSIDE layout, flush to top ── */}
+          <div className="mobile-search-bar">
+            <FiSearch />
+            <input
+              type="text"
+              placeholder="Search current affairs..."
+              value={search}
+              onChange={(e) => handleSearchChange(e.target.value)}
+            />
+          </div>
+
           <div className="home-layout">
-            {/* ================= LEFT SIDEBAR ================= */}
-            <aside
-              className={`home-sidebar left ${
-                isMobileCategoryOpen ? "mobile-open" : ""
-              }`}
-            >
+            {/* ================= LEFT SIDEBAR (desktop only) ================= */}
+            <aside className="home-sidebar left">
               <div className="sidebar-header">
                 <h3>Categories</h3>
-                <button
-                  className="sidebar-close"
-                  onClick={() => setIsMobileCategoryOpen(false)}
-                >
-                  <FiX />
-                </button>
               </div>
               <ul>
                 {categories.map((cat) => (
@@ -225,46 +204,10 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* ── E-Books & Exams: mobile drawer only ── */}
-              <div className="sidebar-mobile-extras">
-
-                <div className="sidebar-inner-card">
-                  <h4 className="sidebar-inner-title">E-Books</h4>
-                  <ul className="sidebar-inner-list">
-                    <li><Link to="/ebooks/monthly-mcqs" onClick={() => setIsMobileCategoryOpen(false)}>Monthly MCQs</Link></li>
-                    <li><Link to="/ebooks/ca-articles-mcqs" onClick={() => setIsMobileCategoryOpen(false)}>Articles + MCQs</Link></li>
-                    <li><Link to="/ebooks/yearly-pdf" onClick={() => setIsMobileCategoryOpen(false)}>Yearly PDF</Link></li>
-                  </ul>
-                </div>
-
-                <div className="sidebar-inner-card">
-                  <h4 className="sidebar-inner-title">Exams</h4>
-                  <ul className="sidebar-inner-list">
-                    <li><Link to="/exams/upsc" onClick={() => setIsMobileCategoryOpen(false)}>UPSC</Link></li>
-                    <li><Link to="/exams/ssc" onClick={() => setIsMobileCategoryOpen(false)}>SSC</Link></li>
-                    <li><Link to="/exams/banking" onClick={() => setIsMobileCategoryOpen(false)}>Banking</Link></li>
-                    <li><Link to="/exams/railway" onClick={() => setIsMobileCategoryOpen(false)}>Railway</Link></li>
-                    <li><Link to="/exams/state-psc" onClick={() => setIsMobileCategoryOpen(false)}>State PSC</Link></li>
-                  </ul>
-                </div>
-
-              </div>
             </aside>
 
             {/* ================= MAIN CONTENT ================= */}
             <main className="home-content">
-
-              {/* ── Mobile Search Bar (hidden on desktop) ── */}
-              <div className="mobile-search-bar">
-                <FiSearch />
-                <input
-                  type="text"
-                  placeholder="Search current affairs..."
-                  value={search}
-                  onChange={(e) => handleSearchChange(e.target.value)}
-                />
-              </div>
 
               {/* ── Latest ── */}
               <section className="section latest-section">

@@ -9,7 +9,7 @@ export default function Disclaimer() {
         <title>Disclaimer | NMAI</title>
         <meta
           name="description"
-          content="Disclaimer for NMAI – Educational purpose, accuracy, and liability information."
+          content="Disclaimer for NMAI – Educational purpose, content accuracy, and liability information."
         />
       </Helmet>
 
@@ -17,24 +17,24 @@ export default function Disclaimer() {
         <h1>Disclaimer</h1>
 
         <p className="intro">
-          The information provided on <strong>NMAI</strong> is for educational
-          and informational purposes only.
+          The content published on NMAI is intended strictly for educational
+          and informational purposes.
         </p>
 
         <p>
-          While we strive to maintain accuracy and relevance, we do not
-          guarantee the completeness or reliability of any content published
-          on the platform.
+          While we strive to ensure accuracy and relevance, NMAI does not
+          guarantee completeness or reliability of information. Readers are
+          encouraged to verify official sources where necessary.
         </p>
 
         <p>
-          NMAI shall not be held responsible for any losses, damages, or
-          consequences arising from the use of this website or its content.
+          NMAI is not affiliated with any government body or examination
+          authority unless explicitly stated.
         </p>
 
-        <p className="closing">
-          External links are provided for convenience and do not imply
-          endorsement or responsibility for third-party content.
+        <p>
+          We are not liable for any losses or consequences resulting from
+          the use of information available on this website.
         </p>
       </div>
     </div>

@@ -17,32 +17,37 @@ export default function PrivacyPolicy() {
         <h1>Privacy Policy</h1>
 
         <p className="intro">
-          At <strong>NMAI (National & Major Affairs India)</strong>, we respect
-          your privacy and are committed to protecting your personal data.
+          At NMAI, we respect your privacy and are committed to protecting
+          your personal information.
         </p>
 
         <h3>Information We Collect</h3>
         <ul>
-          <li>Personal details provided during registration</li>
-          <li>Usage data such as pages visited and interactions</li>
-          <li>Cookies for analytics, performance, and security</li>
+          <li>Basic user details provided voluntarily</li>
+          <li>Anonymous usage analytics data</li>
+          <li>Cookies for performance and functionality</li>
         </ul>
 
-        <h3>How We Use Your Information</h3>
+        <h3>Advertising & Third-Party Services</h3>
         <p>
-          The information collected is used to improve content quality,
-          personalize the learning experience, maintain platform security,
-          and enhance overall usability.
+          NMAI may use third-party advertising services such as Google
+          AdSense. These services may use cookies to serve ads based on
+          prior visits to this website or other websites.
         </p>
 
-        <h3>Data Security</h3>
         <p>
-          We implement standard security measures to safeguard your data from
-          unauthorized access, misuse, or disclosure.
+          Users may opt out of personalized advertising by visiting
+          Google Ads Settings.
+        </p>
+
+        <h3>Data Protection</h3>
+        <p>
+          We implement reasonable security measures to protect user data
+          against unauthorized access or misuse.
         </p>
 
         <p className="closing">
-          By using NMAI, you consent to this Privacy Policy and its terms.
+          Continued use of NMAI indicates acceptance of this policy.
         </p>
       </div>
     </div>

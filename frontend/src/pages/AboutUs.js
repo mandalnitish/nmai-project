@@ -9,7 +9,7 @@ export default function AboutUs() {
         <title>About Us | NMAI</title>
         <meta
           name="description"
-          content="Learn about NMAI – National & Major Affairs India, a platform for current affairs, MCQs, and exam-focused preparation."
+          content="About NMAI – An exam-focused current affairs platform providing structured analysis and MCQs for competitive examinations."
         />
       </Helmet>
 
@@ -17,36 +17,37 @@ export default function AboutUs() {
         <h1>About NMAI</h1>
 
         <p className="intro">
-          <strong>NMAI (National & Major Affairs India)</strong> is an
-          exam-focused learning platform built for aspirants of UPSC,
-          SSC, Banking, Railway, and State PSC examinations.
+          <strong>NMAI (National & Major Affairs Of India)</strong> is an
+          exam-oriented digital platform dedicated to providing structured
+          current affairs and analytical content for competitive examinations
+          such as UPSC, SSC, Banking, Railway, and State PSC.
         </p>
 
         <p>
-          We provide <strong>high-quality current affairs</strong>,
-          category-wise articles, daily MCQs, and quizzes designed
-          specifically for competitive exams.
+          Our content is carefully curated with a focus on clarity,
+          background context, and exam relevance. Each article is designed to
+          connect current developments with static syllabus components,
+          enabling better conceptual understanding and retention.
         </p>
 
+        <h3>Our Editorial Approach</h3>
+        <ul>
+          <li>Topic selection based on national relevance and exam trends</li>
+          <li>Background + contextual explanation</li>
+          <li>Static GK linkage wherever applicable</li>
+          <li>MCQs for self-assessment</li>
+          <li>Regular content review for accuracy</li>
+        </ul>
+
+        <h3>Our Mission</h3>
         <p>
-          Our mission is to simplify preparation by delivering
-          <strong> accurate, structured, and exam-relevant content</strong>
-          — saving students time and improving retention.
+          To simplify preparation by delivering reliable, structured, and
+          exam-focused knowledge that helps aspirants prepare efficiently.
         </p>
-
-        <div className="highlight-box">
-          <h3>Why NMAI?</h3>
-          <ul>
-            <li>✔ Daily updated current affairs</li>
-            <li>✔ Exam-oriented MCQs & quizzes</li>
-            <li>✔ Category-wise & date-wise coverage</li>
-            <li>✔ Clean, distraction-free learning</li>
-          </ul>
-        </div>
 
         <p className="closing">
-          NMAI is built by educators and technologists with a single goal:
-          <strong> help aspirants prepare smarter, not harder.</strong>
+          NMAI aims to be a credible academic resource built on
+          consistency, clarity, and learner-centric design.
         </p>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function ContactUs() {
         <title>Contact Us | NMAI</title>
         <meta
           name="description"
-          content="Contact NMAI for support, feedback, or suggestions related to current affairs and exam preparation."
+          content="Contact NMAI for academic queries, feedback, corrections, or collaboration related to exam-focused current affairs."
         />
       </Helmet>
 
@@ -17,25 +17,31 @@ export default function ContactUs() {
         <h1>Contact Us</h1>
 
         <p className="intro">
-          Have questions, feedback, or suggestions?  
-          We’re always happy to hear from students and educators.
+          NMAI values communication with aspirants, educators, and readers.
+          If you have questions, suggestions, content corrections, or partnership
+          inquiries, feel free to reach out.
         </p>
 
         <div className="contact-box">
           <div>
-            <h4>Email</h4>
+            <h4>Official Email</h4>
             <p>nitishmandal367@gmail.com</p>
           </div>
 
           <div>
             <h4>Website</h4>
-            <p>www.nmai.in</p>
+            <p>https://www.nmai.in</p>
+          </div>
+
+          <div>
+            <h4>Response Time</h4>
+            <p>Within 24–48 business hours</p>
           </div>
         </div>
 
         <p className="closing">
-          We aim to respond to all queries within
-          <strong> 24–48 hours</strong>.
+          We strive to maintain accuracy and appreciate users who help us
+          improve content quality.
         </p>
       </div>
     </div>

@@ -207,38 +207,79 @@ const ArticleDetail = () => {
 
         {/* Structured Data */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
+  {JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
 
-            headline: article.title,
-            description: article.summary,
-            image: [getImageUrl()],
-            datePublished: article.publishDate,
-            dateModified:
-              article.updatedAt || article.publishDate,
-            author: {
-              "@type": "Person",
-              name: authorName,
-            },
+      "@id": canonicalUrl,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": canonicalUrl,
+      },
 
-            publisher: {
-              "@type": "Organization",
-              name: "NMAI Current Affairs",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.nmai.in/logo.png",
-              },
-            },
+      headline: article.title,
+      description: article.summary,
+      image: getImageUrl() ? [getImageUrl()] : [],
 
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": canonicalUrl,
-            },
+      author: {
+        "@type": "Person",
+        name: authorName,
+      },
 
-            isAccessibleForFree: true,
-          })}
-        </script>
+      publisher: {
+        "@type": "Organization",
+        name: "NMAI",
+        url: "https://www.nmai.in",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.nmai.in/logo.png",
+        },
+        sameAs: [
+          "https://www.nmai.in/about-us"
+        ]
+      },
+
+      datePublished: article.publishDate
+        ? new Date(article.publishDate).toISOString()
+        : undefined,
+
+      dateModified: article.updatedAt
+        ? new Date(article.updatedAt).toISOString()
+        : article.publishDate
+        ? new Date(article.publishDate).toISOString()
+        : undefined,
+
+      articleSection: article.category || "Current Affairs",
+
+      about: {
+        "@type": "Thing",
+        name: article.category || "Current Affairs"
+      },
+
+      keywords: [
+        article.category,
+        "Current Affairs",
+        "UPSC",
+        "SSC",
+        "Banking",
+        "State PSC"
+      ].filter(Boolean),
+
+      wordCount: article.content
+        ? article.content.replace(/<[^>]*>/g, "").trim().split(/\s+/).length
+        : 0,
+
+      articleBody: article.content
+        ? article.content.replace(/<[^>]*>/g, "").trim().slice(0, 5000)
+        : undefined,
+
+      inLanguage: "en-IN",
+      isAccessibleForFree: true
+    },
+    (key, value) => (value === undefined ? undefined : value)
+  )}
+</script>
       </Helmet>
 
       {/* ================= PAGE ================= */}

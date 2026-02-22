@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { FiChevronDown } from "react-icons/fi";
 import "./FAQ.css";
 
@@ -9,27 +10,27 @@ export default function FAQ() {
     {
       question: "What is NMAI Current Affairs?",
       answer:
-        "NMAI Current Affairs provides daily current affairs, quizzes, and MCQs designed specifically for UPSC, SSC, Banking, Railway, and State PSC aspirants.",
+        "NMAI (National & Major Affairs India) is an exam-focused platform providing structured current affairs analysis, background context, and MCQs tailored for UPSC, SSC, Banking, Railway, and State PSC aspirants.",
     },
     {
-      question: "Is the platform free?",
+      question: "Is NMAI free to use?",
       answer:
-        "Yes, most features are free. Premium content such as advanced analytics and PDFs may be introduced later.",
+        "Yes, NMAI provides free access to most current affairs articles and MCQs. Additional exam-support tools or downloadable resources may be introduced in future.",
     },
     {
-      question: "Which exams are covered?",
+      question: "How is NMAI different from news websites?",
       answer:
-        "UPSC, SSC, Banking, Railway, State PSC, and other competitive exams.",
+        "Unlike regular news portals, NMAI presents content in an exam-oriented format. Articles include background explanation, static GK linkage, and possible exam-relevant perspectives.",
     },
     {
-      question: "Is dark mode supported?",
+      question: "Which competitive exams are covered?",
       answer:
-        "Yes, NMAI supports modern dark mode with optimized readability and reduced eye strain.",
+        "NMAI covers UPSC Civil Services, SSC exams, Banking exams, Railway recruitment exams, State PSC exams, and other government competitive examinations.",
     },
     {
-      question: "Can I use this on mobile?",
+      question: "Is the website mobile-friendly?",
       answer:
-        "Yes, the platform is fully responsive and optimized for all devices.",
+        "Yes, NMAI is fully responsive and optimized for smartphones, tablets, and desktops, ensuring smooth reading and navigation.",
     },
   ];
 
@@ -39,12 +40,33 @@ export default function FAQ() {
 
   return (
     <div className="faq-page">
+      <Helmet>
+        <title>FAQ | NMAI – Current Affairs Platform</title>
+        <meta
+          name="description"
+          content="Frequently Asked Questions about NMAI – exam-focused current affairs platform for UPSC, SSC, Banking and State PSC."
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqData.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          })}
+        </script>
+      </Helmet>
 
       <div className="faq-container">
 
         <div className="faq-header glass">
           <h1>Frequently Asked Questions</h1>
-          <p>Everything you need to know about NMAI platform</p>
+          <p>Everything you need to know about the NMAI platform</p>
         </div>
 
         <div className="faq-list">
@@ -56,7 +78,6 @@ export default function FAQ() {
               }`}
               onClick={() => toggleFAQ(index)}
             >
-
               <div className="faq-question">
                 <h3>{faq.question}</h3>
                 <FiChevronDown
@@ -73,13 +94,11 @@ export default function FAQ() {
               >
                 <p>{faq.answer}</p>
               </div>
-
             </div>
           ))}
         </div>
 
       </div>
-
     </div>
   );
 }

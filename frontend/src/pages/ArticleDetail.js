@@ -20,6 +20,7 @@ import {
 
 import ArticleImage from "../components/ArticleImage";
 import "./ArticleDetail.css";
+import AuthorBox from "../components/AuthorBox";
 
 /* ================= COMPONENT ================= */
 const ArticleDetail = () => {
@@ -333,36 +334,41 @@ const ArticleDetail = () => {
             />
           </div>
 
-          {/* Content */}
-          <div
-            className="article-body"
-            dangerouslySetInnerHTML={{
-              __html: article.content,
-            }}
-          />
+      {/* Content */}
+<div
+  className="article-body"
+  dangerouslySetInnerHTML={{
+    __html: article.content,
+  }}
+/>
 
-          {/* Actions */}
-          <div className="article-actions">
-            <button
-              className={`action-btn ${isSaved ? "active" : ""}`}
-              onClick={handleSaveArticle}
-            >
-              <FiBookmark /> {isSaved ? "Saved" : "Save"}
-            </button>
-            <button
-              className="action-btn"
-              onClick={handleLike}
-              disabled={isLiking}
-            >
-              <FiHeart /> Like
-            </button>
-            <button
-              className="action-btn"
-              onClick={handleShare}
-            >
-              <FiShare2 /> Share
-            </button>
-          </div>
+{/* Author Box */}
+<AuthorBox />
+
+{/* Actions */}
+<div className="article-actions">
+  <button
+    className={`action-btn ${isSaved ? "active" : ""}`}
+    onClick={handleSaveArticle}
+  >
+    <FiBookmark /> {isSaved ? "Saved" : "Save"}
+  </button>
+
+  <button
+    className="action-btn"
+    onClick={handleLike}
+    disabled={isLiking}
+  >
+    <FiHeart /> Like
+  </button>
+
+  <button
+    className="action-btn"
+    onClick={handleShare}
+  >
+    <FiShare2 /> Share
+  </button>
+</div>
 
           {/* Exam relevance */}
           {article.examRelevance?.length > 0 && (

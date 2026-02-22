@@ -61,7 +61,7 @@ const Footer = () => {
               <a href="https://x.com/nitishm11391299" target="_blank" rel="noopener noreferrer" className="social-link twitter">
                 <FiTwitter />
               </a>
-              <a href="https://instagram.com/nitishmandalx" target="_blank" rel="noopener noreferrer" className="social-link instagram">
+              <a href="https://instagram.com/nitishhmandal" target="_blank" rel="noopener noreferrer" className="social-link instagram">
                 <FiInstagram />
               </a>
               <a href="https://youtube.com/@nitishmandalx" target="_blank" rel="noopener noreferrer" className="social-link youtube">

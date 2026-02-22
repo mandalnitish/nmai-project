@@ -69,7 +69,7 @@ const ArticleDetail = () => {
   const canonicalUrl = `https://www.nmai.in/article/${article?.slug}`;
 
   const authorName =
-    article?.author?.name || "NMAI Current Affairs";
+    article?.author?.name || "Nitish Mandal";
 
   /* ================= STATES ================= */
 
@@ -207,25 +207,30 @@ const ArticleDetail = () => {
 
         {/* Structured Data */}
         <script type="application/ld+json">
-  {JSON.stringify(
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
+         {JSON.stringify(
+         {
+          "@context": "https://schema.org",
+           "@type": "Article",
 
-      "@id": canonicalUrl,
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": canonicalUrl,
-      },
+           "@id": canonicalUrl,
+             mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": canonicalUrl,
+          },
 
       headline: article.title,
       description: article.summary,
       image: getImageUrl() ? [getImageUrl()] : [],
 
       author: {
-        "@type": "Person",
-        name: authorName,
-      },
+           "@type": "Person",
+             name: authorName,
+           url: "https://www.nmai.in/about-us",
+            sameAs: [
+                 "https://instagram.com/nitishhmandal",
+                 "https://www.linkedin.com/in/mandalnitish"
+                 ]
+              },
 
       publisher: {
         "@type": "Organization",
@@ -235,9 +240,6 @@ const ArticleDetail = () => {
           "@type": "ImageObject",
           url: "https://www.nmai.in/logo.png",
         },
-        sameAs: [
-          "https://www.nmai.in/about-us"
-        ]
       },
 
       datePublished: article.publishDate

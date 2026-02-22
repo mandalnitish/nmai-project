@@ -24,7 +24,7 @@ export default function ContactUs() {
         <div className="contact-box">
           <div>
             <h4>Email</h4>
-            <p>support@nmai.in</p>
+            <p>nitishmandal367@gmail.com</p>
           </div>
 
           <div>

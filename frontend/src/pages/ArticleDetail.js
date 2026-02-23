@@ -67,12 +67,13 @@ const ArticleDetail = () => {
     return article?.featuredImage?.url || "https://www.nmai.in/logo.png";
   };
 
-  const canonicalUrl = `https://www.nmai.in/article/${article?.slug}`;
+  const canonicalUrl = article?.slug
+    ? `https://www.nmai.in/article/${article.slug}`
+    : "https://www.nmai.in/";
 
-  const authorName =
-    article?.author?.name || "Nitish Mandal";
+  const authorName = article?.author?.name || "Nitish Mandal";
 
-  /* ================= STATES ================= */
+  /* ================= LOADING / ERROR STATES ================= */
 
   if (isLoading) {
     return (
@@ -124,7 +125,6 @@ const ArticleDetail = () => {
 
   const handleLike = async () => {
     if (!user) return toast.error("Please login to like articles");
-
     if (isLiking) return;
 
     setIsLiking(true);
@@ -168,21 +168,17 @@ const ArticleDetail = () => {
         {/* Basic SEO */}
         <title>{article.title} | NMAI Current Affairs</title>
 
-        <meta
-          name="description"
-          content={article.summary}
-        />
+        <meta name="description" content={article.summary} />
 
         <meta
           name="keywords"
           content={`${article.category}, Current Affairs, UPSC, SSC, Banking, NMAI`}
         />
 
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
         {/* Canonical */}
-        <link
-          rel="canonical"
-          href={canonicalUrl}
-        />
+        <link rel="canonical" href={canonicalUrl} />
 
         {/* Open Graph */}
         <meta property="og:type" content="article" />
@@ -192,6 +188,13 @@ const ArticleDetail = () => {
         <meta property="og:image" content={getImageUrl()} />
         <meta property="og:image:alt" content={article.title} />
         <meta property="og:site_name" content="NMAI Current Affairs" />
+        <meta property="og:locale" content="en_IN" />
+
+        {/* Article meta */}
+        <meta property="article:published_time" content={article.publishDate} />
+        <meta property="article:modified_time" content={article.updatedAt || article.publishDate} />
+        <meta property="article:author" content={authorName} />
+        <meta property="article:section" content={article.category} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -200,89 +203,99 @@ const ArticleDetail = () => {
         <meta name="twitter:image" content={getImageUrl()} />
         <meta name="twitter:image:alt" content={article.title} />
 
-        {/* Article meta */}
-        <meta property="article:published_time" content={article.publishDate} />
-        <meta property="article:modified_time" content={article.updatedAt || article.publishDate} />
-        <meta property="article:author" content={authorName} />
-        <meta property="article:section" content={article.category} />
-
-        {/* Structured Data */}
+        {/* Breadcrumb Structured Data */}
         <script type="application/ld+json">
-         {JSON.stringify(
-         {
-          "@context": "https://schema.org",
-           "@type": "Article",
-
-           "@id": canonicalUrl,
-             mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": canonicalUrl,
-          },
-
-      headline: article.title,
-      description: article.summary,
-      image: getImageUrl() ? [getImageUrl()] : [],
-
-      author: {
-           "@type": "Person",
-             name: authorName,
-           url: "https://www.nmai.in/about-us",
-            sameAs: [
-                 "https://instagram.com/nitishhmandal",
-                 "https://www.linkedin.com/in/mandalnitish"
-                 ]
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nmai.in/",
               },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Current Affairs",
+                item: "https://www.nmai.in/current-affairs",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: article.title,
+                item: canonicalUrl,
+              },
+            ],
+          })}
+        </script>
 
-      publisher: {
-        "@type": "Organization",
-        name: "NMAI",
-        url: "https://www.nmai.in",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.nmai.in/logo.png",
-        },
-      },
-
-      datePublished: article.publishDate
-        ? new Date(article.publishDate).toISOString()
-        : undefined,
-
-      dateModified: article.updatedAt
-        ? new Date(article.updatedAt).toISOString()
-        : article.publishDate
-        ? new Date(article.publishDate).toISOString()
-        : undefined,
-
-      articleSection: article.category || "Current Affairs",
-
-      about: {
-        "@type": "Thing",
-        name: article.category || "Current Affairs"
-      },
-
-      keywords: [
-        article.category,
-        "Current Affairs",
-        "UPSC",
-        "SSC",
-        "Banking",
-        "State PSC"
-      ].filter(Boolean),
-
-      wordCount: article.content
-        ? article.content.replace(/<[^>]*>/g, "").trim().split(/\s+/).length
-        : 0,
-
-      articleBody: article.content
-        ? article.content.replace(/<[^>]*>/g, "").trim().slice(0, 5000)
-        : undefined,
-
-      inLanguage: "en-IN",
-      isAccessibleForFree: true
-    },
-    (key, value) => (value === undefined ? undefined : value)
-  )}
-</script>
+        {/* Article Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "@id": canonicalUrl,
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": canonicalUrl,
+              },
+              headline: article.title,
+              description: article.summary,
+              image: getImageUrl() ? [getImageUrl()] : [],
+              author: {
+                "@type": "Person",
+                name: authorName,
+                url: "https://www.nmai.in/about-us",
+                sameAs: [
+                  "https://instagram.com/nitishhmandal",
+                  "https://www.linkedin.com/in/mandalnitish",
+                ],
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "NMAI",
+                url: "https://www.nmai.in",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.nmai.in/logo.png",
+                },
+              },
+              datePublished: article.publishDate
+                ? new Date(article.publishDate).toISOString()
+                : undefined,
+              dateModified: article.updatedAt
+                ? new Date(article.updatedAt).toISOString()
+                : article.publishDate
+                ? new Date(article.publishDate).toISOString()
+                : undefined,
+              articleSection: article.category || "Current Affairs",
+              about: {
+                "@type": "Thing",
+                name: article.category || "Current Affairs",
+              },
+              keywords: [
+                article.category,
+                "Current Affairs",
+                "UPSC",
+                "SSC",
+                "Banking",
+                "State PSC",
+              ].filter(Boolean),
+              wordCount: article.content
+                ? article.content.replace(/<[^>]*>/g, "").trim().split(/\s+/).length
+                : 0,
+              articleBody: article.content
+                ? article.content.replace(/<[^>]*>/g, "").trim().slice(0, 5000)
+                : undefined,
+              inLanguage: "en-IN",
+              isAccessibleForFree: true,
+            },
+            (key, value) => (value === undefined ? undefined : value)
+          )}
+        </script>
       </Helmet>
 
       {/* ================= PAGE ================= */}
@@ -303,9 +316,7 @@ const ArticleDetail = () => {
           )}
 
           {/* Title */}
-          <h1 className="article-detail-title">
-            {article.title}
-          </h1>
+          <h1 className="article-detail-title">{article.title}</h1>
 
           {/* Meta */}
           <div className="article-detail-meta">
@@ -334,53 +345,18 @@ const ArticleDetail = () => {
             />
           </div>
 
-      {/* Content */}
-<div
-  className="article-body"
-  dangerouslySetInnerHTML={{
-    __html: article.content,
-  }}
-/>
+          {/* Content */}
+          <div
+            className="article-body"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
 
-{/* Author Box */}
-<AuthorBox />
-
-{/* Actions */}
-<div className="article-actions">
-  <button
-    className={`action-btn ${isSaved ? "active" : ""}`}
-    onClick={handleSaveArticle}
-  >
-    <FiBookmark /> {isSaved ? "Saved" : "Save"}
-  </button>
-
-  <button
-    className="action-btn"
-    onClick={handleLike}
-    disabled={isLiking}
-  >
-    <FiHeart /> Like
-  </button>
-
-  <button
-    className="action-btn"
-    onClick={handleShare}
-  >
-    <FiShare2 /> Share
-  </button>
-</div>
-
-          {/* Exam relevance */}
+          {/* Exam Relevance */}
           {article.examRelevance?.length > 0 && (
-
             <div className="exam-tags">
-
               <h4>Relevant for:</h4>
-
               <div className="tag-list">
-
                 {article.examRelevance.map((exam, index) => (
-
                   <span key={index} className="exam-tag">
                     {exam}
                   </span>
@@ -388,6 +364,46 @@ const ArticleDetail = () => {
               </div>
             </div>
           )}
+
+          {/* Author Box */}
+          <AuthorBox />
+
+          {/* Actions */}
+          <div className="article-actions">
+            <button
+              className={`action-btn ${isSaved ? "active" : ""}`}
+              onClick={handleSaveArticle}
+            >
+              <FiBookmark /> {isSaved ? "Saved" : "Save"}
+            </button>
+
+            <button
+              className="action-btn"
+              onClick={handleLike}
+              disabled={isLiking}
+            >
+              <FiHeart /> Like
+            </button>
+
+            <button className="action-btn" onClick={handleShare}>
+              <FiShare2 /> Share
+            </button>
+          </div>
+
+          {/* Related Articles */}
+          {article.related?.length > 0 && (
+            <div className="related-articles">
+              <h3>Related Articles</h3>
+              <ul>
+                {article.related.map((rel) => (
+                  <li key={rel._id}>
+                    <Link to={`/article/${rel.slug}`}>{rel.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
         </div>
       </div>
     </>

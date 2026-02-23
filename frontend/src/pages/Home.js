@@ -170,9 +170,14 @@ const Home = () => {
   /* ================= JSX ================= */
   return (
     <>
-      <Helmet>
-        <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
-      </Helmet>
+  <Helmet>
+     <title>NMAI – Current Affairs, MCQs & Daily Quiz for UPSC, SSC</title>
+      <meta
+      name="description"
+       content="Daily current affairs, MCQs, quizzes and exam-focused analysis for UPSC, SSC, Banking, Railway and State PSC exams."
+      />
+       <link rel="canonical" href="https://www.nmai.in/" />
+    </Helmet>
       <div className="home-page">
         <div className="home-container">
 

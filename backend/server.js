@@ -14,6 +14,12 @@ import userRoutes from "./routes/users.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import sitemapRoute from "./routes/sitemap.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /* ================= ENV ================= */
 dotenv.config();
 
@@ -92,6 +98,11 @@ app.use("/api/upload", uploadLimiter);
 
 /* ================= STATIC ================= */
 app.use("/uploads", express.static("uploads"));
+
+/* ================= STATIC POLICY PAGES ================= */
+app.get("/privacy-policy", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/privacy-policy.html"));
+});
 
 /* ================= ROBOTS ================= */
 app.get("/robots.txt", (req, res) => {

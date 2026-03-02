@@ -36,6 +36,7 @@ app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 /* ================= CORS ================= */
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://localhost:45678", // ✅ React Snap
   "https://www.nmai.in",
   "https://nmai.in",
   "https://nmai-project.vercel.app",
@@ -45,11 +46,14 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("CORS not allowed"));
+      // allow server-to-server or no-origin requests
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
       }
+
+      return callback(new Error("CORS not allowed"));
     },
     credentials: true,
   })

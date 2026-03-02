@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
           If you have any questions regarding this Privacy Policy, you may contact us at:
         </p>
         <p>
-          Email: support@nmai.in
+          Email: nitishmandal367@gmail.com
         </p>
 
         <p className="closing">

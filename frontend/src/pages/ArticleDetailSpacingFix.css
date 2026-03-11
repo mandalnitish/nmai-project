@@ -11,7 +11,7 @@ body:has(.article-detail-page) .main-content {
 
 body.dark:has(.article-detail-page) .main-content,
 body.dark-mode:has(.article-detail-page) .main-content {
-  background: #1e293b !important;
+  background: #1a1f2e !important;
 }
 
 /* 2. Page: true full-width, white */
@@ -29,7 +29,7 @@ body.dark-mode:has(.article-detail-page) .main-content {
 
 body.dark .article-detail-page,
 .dark-mode .article-detail-page {
-  background: #1e293b !important;
+  background: #1a1f2e !important;
   padding: 0 !important;
 }
 
@@ -48,7 +48,7 @@ body.dark .article-detail-page,
 
 body.dark .article-detail-container,
 .dark-mode .article-detail-container {
-  background: #1e293b !important;
+  background: #1a1f2e !important;
   border: none !important;
   box-shadow: none !important;
   color: #e2e8f0 !important;
@@ -306,7 +306,7 @@ html .dark-mode .article-detail-container .exam-tag:hover {
 /* Error state */
 html body.dark .error-content,
 html .dark-mode .error-content {
-  background: #1e293b !important;
+  background: #1a1f2e !important;
   border: 1px solid #334155 !important;
 }
 

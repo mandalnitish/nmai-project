@@ -9,8 +9,9 @@ body:has(.article-detail-page) .main-content {
   margin: 0 !important;
 }
 
-body.dark:has(.article-detail-page) .main-content {
-  background: #0f172a !important;
+body.dark:has(.article-detail-page) .main-content,
+body.dark-mode:has(.article-detail-page) .main-content {
+  background: #0d1117 !important;
 }
 
 /* 2. Page: true full-width, white */
@@ -26,8 +27,10 @@ body.dark:has(.article-detail-page) .main-content {
   position: static !important;
 }
 
-body.dark .article-detail-page {
-  background: #0f172a !important;
+body.dark .article-detail-page,
+.dark-mode .article-detail-page {
+  background: #0d1117 !important;
+  padding: 0 !important;
 }
 
 /* 3. Container: full width, small padding only */
@@ -43,37 +46,302 @@ body.dark .article-detail-page {
   box-sizing: border-box !important;
 }
 
-body.dark .article-detail-container {
-  background: #0f172a !important;
+body.dark .article-detail-container,
+.dark-mode .article-detail-container {
+  background: #0d1117 !important;
   border: none !important;
   box-shadow: none !important;
   color: #e2e8f0 !important;
 }
 
-/* 4. Dark mode text */
-body.dark .article-detail-title { color: #f1f5f9 !important; opacity: 1 !important; }
-body.dark .article-detail-meta .meta-item { color: #94a3b8 !important; opacity: 1 !important; }
-body.dark .article-body { color: #cbd5e1 !important; opacity: 1 !important; }
-body.dark .article-body h2,
-body.dark .article-body h3,
-body.dark .article-body h4 { color: #f1f5f9 !important; opacity: 1 !important; }
-body.dark .article-body p,
-body.dark .article-body li { color: #cbd5e1 !important; opacity: 1 !important; }
+/* ================================================================
+   4. DARK MODE TEXT
+   Covers BOTH body.dark and .dark-mode class variants.
+   Uses html + full ancestor chain for maximum specificity.
+   -webkit-text-fill-color overrides any transparent gradient hacks.
+================================================================ */
 
-/* 5. Prevent horizontal scroll */
+/* Back link */
+html body.dark .article-detail-page .back-link,
+html body.dark .article-detail-container .back-link,
+html .dark-mode .article-detail-page .back-link,
+html .dark-mode .article-detail-container .back-link {
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+  opacity: 1 !important;
+}
+
+/* Category badge */
+html body.dark .article-detail-page .article-category-badge-large,
+html body.dark .article-detail-container .article-category-badge-large,
+html .dark-mode .article-detail-page .article-category-badge-large,
+html .dark-mode .article-detail-container .article-category-badge-large {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Title */
+html body.dark .article-detail-page .article-detail-title,
+html body.dark .article-detail-container .article-detail-title,
+html .dark-mode .article-detail-page .article-detail-title,
+html .dark-mode .article-detail-container .article-detail-title {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+/* Meta row */
+html body.dark .article-detail-page .article-detail-meta,
+html body.dark .article-detail-container .article-detail-meta,
+html .dark-mode .article-detail-page .article-detail-meta,
+html .dark-mode .article-detail-container .article-detail-meta {
+  border-bottom-color: #21262d !important;
+}
+
+html body.dark .article-detail-page .meta-item,
+html body.dark .article-detail-page .meta-item *,
+html body.dark .article-detail-container .meta-item,
+html body.dark .article-detail-container .meta-item *,
+html .dark-mode .article-detail-page .meta-item,
+html .dark-mode .article-detail-page .meta-item *,
+html .dark-mode .article-detail-container .meta-item,
+html .dark-mode .article-detail-container .meta-item * {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+/* Image wrapper */
+html body.dark .article-detail-page .article-image-wrapper,
+html body.dark .article-detail-container .article-image-wrapper,
+html .dark-mode .article-detail-page .article-image-wrapper,
+html .dark-mode .article-detail-container .article-image-wrapper {
+  background: #161b22 !important;
+  border-color: #21262d !important;
+}
+
+/* Article body wrapper */
+html body.dark .article-detail-page .article-body,
+html body.dark .article-detail-container .article-body,
+html .dark-mode .article-detail-page .article-body,
+html .dark-mode .article-detail-container .article-body {
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  opacity: 1 !important;
+}
+
+/* h2 */
+html body.dark .article-detail-page .article-body h2,
+html body.dark .article-detail-container .article-body h2,
+html .dark-mode .article-detail-page .article-body h2,
+html .dark-mode .article-detail-container .article-body h2 {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  border-bottom-color: #21262d !important;
+  opacity: 1 !important;
+}
+
+/* h3, h4 */
+html body.dark .article-detail-page .article-body h3,
+html body.dark .article-detail-page .article-body h4,
+html body.dark .article-detail-container .article-body h3,
+html body.dark .article-detail-container .article-body h4,
+html .dark-mode .article-detail-page .article-body h3,
+html .dark-mode .article-detail-page .article-body h4,
+html .dark-mode .article-detail-container .article-body h3,
+html .dark-mode .article-detail-container .article-body h4 {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+/* p, li, span, td, th */
+html body.dark .article-detail-page .article-body p,
+html body.dark .article-detail-page .article-body li,
+html body.dark .article-detail-page .article-body span,
+html body.dark .article-detail-page .article-body td,
+html body.dark .article-detail-page .article-body th,
+html body.dark .article-detail-container .article-body p,
+html body.dark .article-detail-container .article-body li,
+html body.dark .article-detail-container .article-body span,
+html body.dark .article-detail-container .article-body td,
+html body.dark .article-detail-container .article-body th,
+html .dark-mode .article-detail-page .article-body p,
+html .dark-mode .article-detail-page .article-body li,
+html .dark-mode .article-detail-page .article-body span,
+html .dark-mode .article-detail-page .article-body td,
+html .dark-mode .article-detail-page .article-body th,
+html .dark-mode .article-detail-container .article-body p,
+html .dark-mode .article-detail-container .article-body li,
+html .dark-mode .article-detail-container .article-body span,
+html .dark-mode .article-detail-container .article-body td,
+html .dark-mode .article-detail-container .article-body th {
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  opacity: 1 !important;
+}
+
+/* strong, b */
+html body.dark .article-detail-page .article-body strong,
+html body.dark .article-detail-page .article-body b,
+html body.dark .article-detail-container .article-body strong,
+html body.dark .article-detail-container .article-body b,
+html .dark-mode .article-detail-page .article-body strong,
+html .dark-mode .article-detail-page .article-body b,
+html .dark-mode .article-detail-container .article-body strong,
+html .dark-mode .article-detail-container .article-body b {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+/* links */
+html body.dark .article-detail-page .article-body a,
+html body.dark .article-detail-container .article-body a,
+html .dark-mode .article-detail-page .article-body a,
+html .dark-mode .article-detail-container .article-body a {
+  color: #93c5fd !important;
+  opacity: 1 !important;
+}
+
+/* blockquote */
+html body.dark .article-detail-page .article-body blockquote,
+html body.dark .article-detail-container .article-body blockquote,
+html .dark-mode .article-detail-page .article-body blockquote,
+html .dark-mode .article-detail-container .article-body blockquote {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border-left-color: #fcd34d !important;
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+/* code */
+html body.dark .article-detail-page .article-body code,
+html body.dark .article-detail-container .article-body code,
+html .dark-mode .article-detail-page .article-body code,
+html .dark-mode .article-detail-container .article-body code {
+  background: #21262d !important;
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+}
+
+/* Actions */
+html body.dark .article-detail-page .article-actions,
+html body.dark .article-detail-container .article-actions,
+html .dark-mode .article-detail-page .article-actions,
+html .dark-mode .article-detail-container .article-actions {
+  border-top-color: #21262d !important;
+  border-bottom-color: #21262d !important;
+}
+
+html body.dark .article-detail-page .action-btn,
+html body.dark .article-detail-container .action-btn,
+html .dark-mode .article-detail-page .action-btn,
+html .dark-mode .article-detail-container .action-btn {
+  background: #161b22 !important;
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  border-color: #30363d !important;
+  opacity: 1 !important;
+}
+
+html body.dark .article-detail-page .action-btn:hover,
+html body.dark .article-detail-container .action-btn:hover,
+html .dark-mode .article-detail-page .action-btn:hover,
+html .dark-mode .article-detail-container .action-btn:hover {
+  background: #8b5cf6 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #8b5cf6 !important;
+}
+
+html body.dark .article-detail-page .action-btn.active,
+html body.dark .article-detail-container .action-btn.active,
+html .dark-mode .article-detail-page .action-btn.active,
+html .dark-mode .article-detail-container .action-btn.active {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+/* Exam tags */
+html body.dark .article-detail-page .exam-tags,
+html body.dark .article-detail-container .exam-tags,
+html .dark-mode .article-detail-page .exam-tags,
+html .dark-mode .article-detail-container .exam-tags {
+  background: rgba(139, 92, 246, 0.12) !important;
+  border-color: #30363d !important;
+}
+
+html body.dark .article-detail-page .exam-tags h4,
+html body.dark .article-detail-container .exam-tags h4,
+html .dark-mode .article-detail-page .exam-tags h4,
+html .dark-mode .article-detail-container .exam-tags h4 {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  opacity: 1 !important;
+}
+
+html body.dark .article-detail-page .exam-tag,
+html body.dark .article-detail-container .exam-tag,
+html .dark-mode .article-detail-page .exam-tag,
+html .dark-mode .article-detail-container .exam-tag {
+  background: #161b22 !important;
+  border-color: #8b5cf6 !important;
+  color: #a78bfa !important;
+  -webkit-text-fill-color: #a78bfa !important;
+  opacity: 1 !important;
+}
+
+html body.dark .article-detail-page .exam-tag:hover,
+html body.dark .article-detail-container .exam-tag:hover,
+html .dark-mode .article-detail-page .exam-tag:hover,
+html .dark-mode .article-detail-container .exam-tag:hover {
+  background: #8b5cf6 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Error state */
+html body.dark .error-content,
+html .dark-mode .error-content {
+  background: #0d1117 !important;
+  border: 1px solid #21262d !important;
+}
+
+html body.dark .error-content h2,
+html .dark-mode .error-content h2 {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+}
+
+html body.dark .error-content p,
+html .dark-mode .error-content p {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+/* ================================================================
+   5. Prevent horizontal scroll
+================================================================ */
 body:has(.article-detail-page),
 html:has(.article-detail-page) {
   overflow-x: hidden !important;
 }
 
-/* 6. Mobile */
+/* ================================================================
+   6. Mobile
+================================================================ */
 @media (max-width: 768px) {
   .article-detail-container {
     padding: 1rem !important;
   }
 }
 
-/* 7. Override SpacingAndLoadingFix.css which also sets container padding */
+/* ================================================================
+   7. Override SpacingAndLoadingFix.css container padding
+================================================================ */
 html body .article-detail-page,
 html body .article-detail-container {
   max-width: 100% !important;

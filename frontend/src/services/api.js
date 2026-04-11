@@ -1,17 +1,13 @@
 import axios from "axios";
 
 /* =====================================================
-   BASE URL (STRICT - NO FALLBACK BUGS)
+   BASE URL (ENV FIRST, SAFE FALLBACK)
 ===================================================== */
 const API_BASE_URL = process.env.REACT_APP_API_URL;
 
-// 🚨 Fail fast if env is missing
 if (!API_BASE_URL) {
   throw new Error("❌ REACT_APP_API_URL is not defined");
 }
-
-console.log("🌐 API BASE URL:", API_BASE_URL);
-
 /* =====================================================
    AXIOS INSTANCE
 ===================================================== */
@@ -20,7 +16,6 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 10000, // ⏱️ prevent hanging requests
 });
 
 /* =====================================================
@@ -29,34 +24,26 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-
     return config;
   },
   (error) => Promise.reject(error)
 );
 
 /* =====================================================
-   RESPONSE INTERCEPTOR
+   RESPONSE INTERCEPTOR (DATA + 401 HANDLING)
 ===================================================== */
 api.interceptors.response.use(
-  (response) => response.data, // ✅ return only data
+  (response) => response.data, // ✅ always return data only
   (error) => {
-    // 🔐 Handle unauthorized
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
-
-    // 📦 Standard error format
     return Promise.reject(
-      error.response?.data || {
-        success: false,
-        message: error.message || "Something went wrong",
-      }
+      error.response?.data || { message: error.message }
     );
   }
 );
@@ -66,18 +53,11 @@ api.interceptors.response.use(
 ===================================================== */
 const cleanParams = (params = {}) => {
   const cleaned = {};
-
   Object.entries(params).forEach(([key, value]) => {
-    if (
-      value !== "" &&
-      value !== null &&
-      value !== undefined &&
-      value !== "All" // ✅ FIX: ignore "All"
-    ) {
+    if (value !== "" && value !== null && value !== undefined) {
       cleaned[key] = value;
     }
   });
-
   return cleaned;
 };
 
@@ -157,6 +137,6 @@ export const adminAPI = {
 };
 
 /* =====================================================
-   EXPORT
+   DEFAULT EXPORT
 ===================================================== */
 export default api;

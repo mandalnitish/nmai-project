@@ -33,6 +33,29 @@ const TAGS = {
 
 const allArticles = [
 
+{
+  "id": "ievp-2026-democratic-strength",
+  "title": "IEVP 2026 Highlights India’s Democratic Strength",
+  "slug": "ievp-2026-democratic-strength-india",
+  "summary": "India’s electoral process received global attention during the International Election Visitors’ Programme (IEVP) 2026.",
+  "content": "<h2>Introduction</h2><p>India’s democratic framework once again gained international recognition during the International Election Visitors’ Programme (IEVP) 2026. The programme was organized alongside the Assembly elections in Kerala, Puducherry, and Assam, showcasing the scale, transparency, and efficiency of India’s electoral system.</p><h2>Key Highlights of IEVP 2026</h2><p>A total of 38 international delegates from various countries participated in the programme. These delegates observed different aspects of the election process, including polling arrangements, voter participation, and the use of technology.</p><ul><li>Delegates witnessed real-time polling procedures</li><li>Exposure to Electronic Voting Machines (EVMs) and VVPAT systems</li><li>Interaction with election officials and stakeholders</li></ul><h2>Significance of the Programme</h2><p>The IEVP serves as a platform to demonstrate India’s commitment to free and fair elections. It also promotes knowledge sharing and strengthens international cooperation in electoral practices.</p><h2>Conclusion</h2><p>The successful conduct of IEVP 2026 reinforces India’s position as a global leader in democratic governance and electoral management.</p>",
+  "category": "Polity",
+  "tags": ["IEVP", "Elections", "Democracy", "India"],
+  "featuredImage": {
+    "url": "https://res.cloudinary.com/dyftyrehc/image/upload/v1775933152/nmai-articles/m6zew9cn1qj42oimyvyg.jpg",
+    "alt": "Election process India"
+  },
+  "publishDate": "2026-04-11T00:00:00.000Z",
+  "readingTime": "2-3 min",
+  "author": "Admin",
+  "examRelevance": ["UPSC", "State PSC"],
+  "difficulty": "Intermediate",
+  "sources": ["Election Commission of India"],
+  "viewCount": 0,
+  "likes": 0
+},
+
+
 //16,17,18 Mar
 
 

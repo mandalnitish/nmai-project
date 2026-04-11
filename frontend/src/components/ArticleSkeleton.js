@@ -1,23 +1,21 @@
-import React from 'react';
-import './ArticleSkeleton.css';
+import React from "react";
+import "./ArticleSkeleton.css";
 
-const ArticleSkeleton = () => {
-  return (
-    <div className="article-skeleton">
-      <div className="skeleton-image"></div>
-      <div className="skeleton-content">
-        <div className="skeleton-meta">
-          <div className="skeleton-badge"></div>
-          <div className="skeleton-date"></div>
-        </div>
-        <div className="skeleton-title"></div>
-        <div className="skeleton-title short"></div>
-        <div className="skeleton-summary"></div>
-        <div className="skeleton-summary"></div>
-        <div className="skeleton-button"></div>
+const ArticleSkeleton = () => (
+  <div className="as-card" aria-hidden="true">
+    <div className="as-thumb" />
+    <div className="as-body">
+      <div className="as-meta">
+        <div className="as-shimmer as-badge" />
+        <div className="as-shimmer as-date" />
       </div>
+      <div className="as-shimmer as-title" />
+      <div className="as-shimmer as-title as-short" />
+      <div className="as-shimmer as-line" />
+      <div className="as-shimmer as-line as-line-short" />
+      <div className="as-shimmer as-read-more" />
     </div>
-  );
-};
+  </div>
+);
 
 export default ArticleSkeleton;

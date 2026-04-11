@@ -3,12 +3,11 @@ import axios from "axios";
 /* =====================================================
    BASE URL (ENV FIRST, SAFE FALLBACK)
 ===================================================== */
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL ||
-  (process.env.NODE_ENV === "production"
-    ? "https://api.nmai.in/api" //old https://nmai-project.onrender.com/api
-    : "http://localhost:5000/api");
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
+if (!API_BASE_URL) {
+  throw new Error("❌ REACT_APP_API_URL is not defined");
+}
 /* =====================================================
    AXIOS INSTANCE
 ===================================================== */

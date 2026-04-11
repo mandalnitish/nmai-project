@@ -23,7 +23,7 @@ connectDB();
 /* ================= APP ================= */
 const app = express();
 
-/* ================= PROXY ================= */
+/* ================= PROXY (IMPORTANT FOR PROD) ================= */
 app.set("trust proxy", 1);
 
 /* ================= SECURITY ================= */
@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 /* ================= CORS ================= */
 const allowedOrigins = [
   "http://localhost:3000",
-  "http://localhost:45678",
+  "http://localhost:45678", // ✅ React Snap
   "https://www.nmai.in",
   "https://nmai.in",
   "https://nmai-project.vercel.app",
@@ -46,6 +46,7 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
+      // allow server-to-server or no-origin requests
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.includes(origin)) {
@@ -66,13 +67,17 @@ const isGooglebot = (req) => {
   return ua.toLowerCase().includes("googlebot");
 };
 
-// General limiter
+// General API limiter
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 300,
   standardHeaders: true,
   legacyHeaders: false,
-  skip: (req) => isGooglebot(req),
+
+  skip: (req) => {
+    return isGooglebot(req); // ✅ NEVER limit Googlebot
+  },
+
   message: "Too many requests, please try again later.",
 });
 
@@ -80,11 +85,14 @@ const apiLimiter = rateLimit({
 const uploadLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 50,
-  skip: (req) => isGooglebot(req),
+  skip: (req) => {
+    return isGooglebot(req); // optional safety
+  },
 });
 
 app.use("/api/", apiLimiter);
 app.use("/api/upload", uploadLimiter);
+
 
 /* ================= STATIC ================= */
 app.use("/uploads", express.static("uploads"));
@@ -95,14 +103,18 @@ app.get("/robots.txt", (req, res) => {
 
   res.send(`User-agent: *
 
+# Allow important public content
 Allow: /
 Allow: /api/articles
+Allow: /api/articles/
 Allow: /uploads
 
+# Block sensitive routes
 Disallow: /api/auth
 Disallow: /api/users
 Disallow: /api/upload
 
+# Sitemap location
 Sitemap: https://www.nmai.in/sitemap.xml
 `);
 });
@@ -124,23 +136,6 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-/* ================= API ROOT (FIX ADDED) ================= */
-app.get("/api", (req, res) => {
-  res.json({
-    success: true,
-    message: "NMAI API Root",
-    version: "1.0.0",
-    endpoints: [
-      "/api/articles",
-      "/api/mcqs",
-      "/api/auth",
-      "/api/users",
-      "/api/upload",
-      "/api/health",
-    ],
-  });
-});
-
 /* ================= ROOT ================= */
 app.get("/", (req, res) => {
   res.json({
@@ -154,22 +149,12 @@ app.use((req, res) => {
   res.status(404).json({
     success: false,
     message: "Route not found",
-    path: req.originalUrl,
   });
 });
 
 /* ================= ERROR HANDLER ================= */
 app.use((err, req, res, next) => {
   console.error("❌ ERROR:", err.message);
-
-  // Handle CORS error specifically
-  if (err.message === "CORS not allowed") {
-    return res.status(403).json({
-      success: false,
-      message: "CORS blocked",
-    });
-  }
-
   res.status(500).json({
     success: false,
     message: err.message || "Internal Server Error",

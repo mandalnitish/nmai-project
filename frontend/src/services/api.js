@@ -1,13 +1,16 @@
 import axios from "axios";
 
 /* =====================================================
-   BASE URL (ENV FIRST, SAFE FALLBACK)
+   BASE URL (STRICT - NO FALLBACK BUGS)
 ===================================================== */
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL ||
-  (process.env.NODE_ENV === "production"
-    ? "https://nmai-project-production.up.railway.app/api" //old https://nmai-project.onrender.com/api
-    : "http://localhost:5000/api");
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
+// 🚨 Fail fast if env is missing
+if (!API_BASE_URL) {
+  throw new Error("❌ REACT_APP_API_URL is not defined");
+}
+
+console.log("🌐 API BASE URL:", API_BASE_URL);
 
 /* =====================================================
    AXIOS INSTANCE
@@ -17,6 +20,7 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  timeout: 10000, // ⏱️ prevent hanging requests
 });
 
 /* =====================================================
@@ -25,26 +29,34 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
   },
   (error) => Promise.reject(error)
 );
 
 /* =====================================================
-   RESPONSE INTERCEPTOR (DATA + 401 HANDLING)
+   RESPONSE INTERCEPTOR
 ===================================================== */
 api.interceptors.response.use(
-  (response) => response.data, // ✅ always return data only
+  (response) => response.data, // ✅ return only data
   (error) => {
+    // 🔐 Handle unauthorized
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
       window.location.href = "/login";
     }
+
+    // 📦 Standard error format
     return Promise.reject(
-      error.response?.data || { message: error.message }
+      error.response?.data || {
+        success: false,
+        message: error.message || "Something went wrong",
+      }
     );
   }
 );
@@ -54,11 +66,18 @@ api.interceptors.response.use(
 ===================================================== */
 const cleanParams = (params = {}) => {
   const cleaned = {};
+
   Object.entries(params).forEach(([key, value]) => {
-    if (value !== "" && value !== null && value !== undefined) {
+    if (
+      value !== "" &&
+      value !== null &&
+      value !== undefined &&
+      value !== "All" // ✅ FIX: ignore "All"
+    ) {
       cleaned[key] = value;
     }
   });
+
   return cleaned;
 };
 
@@ -138,6 +157,6 @@ export const adminAPI = {
 };
 
 /* =====================================================
-   DEFAULT EXPORT
+   EXPORT
 ===================================================== */
 export default api;

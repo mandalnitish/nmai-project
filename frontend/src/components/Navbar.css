@@ -2,11 +2,12 @@
    NAVBAR
 ───────────────────────────────────────── */
 :root {
-  --nav-h: 60px;
+  --nav-h: 72px;
   --z-nav: 1000;
   --z-overlay: 998;
   --z-drawer: 999;
 }
+
 
 .navbar {
   position: sticky;
@@ -24,7 +25,7 @@
   padding: 0 24px;
   height: var(--nav-h);
   display: grid;
-  grid-template-columns: minmax(140px,180px) 1fr auto;
+  grid-template-columns: minmax(190px,220px) 1fr auto;
   align-items: center;
   gap: 12px;
 }
@@ -34,8 +35,22 @@
 .nav-right  { display: flex; align-items: center; gap: 8px; }
 
 /* ─── Logo ─── */
-.navbar-logo { display: flex; align-items: center; text-decoration: none; background: transparent; }
-.logo-img    { height: 44px; width: auto; display: block; }
+.navbar-logo {
+  display: flex; align-items: center;
+  text-decoration: none; background: transparent;
+  overflow: hidden;
+  width: 190px; height: 64px;
+  flex-shrink: 0;
+}
+.logo-img {
+  /* Scale up 2x so black canvas borders are cropped out */
+  height: 210%;
+  width: auto;
+  display: block;
+  margin-top: 4px;
+  margin-left: -8px;
+  max-width: none;
+}
 
 /* ─── Desktop nav links ─── */
 .desktop-nav { display: flex; align-items: center; gap: 4px; }
@@ -335,7 +350,7 @@
 ───────────────────────────────────────── */
 @media (max-width: 920px) {
   .navbar-wrap {
-    padding: 0 14px; height: 54px;
+    padding: 0 14px; height: 56px;
     grid-template-columns: 42px 1fr 42px;
     gap: 8px;
   }
@@ -344,12 +359,14 @@
   .desktop-only { display: none !important; }
   .nav-toggle   { display: flex; }
   .nav-center   { justify-content: center; }
-  .logo-img     { height: 38px; }
+  .navbar-logo  { width: 164px; height: 56px; }
+  .logo-img     { height: 210%; margin-top: -28px; margin-left: -20px; }
 }
 
 @media (max-width: 600px) {
   .mobile-drawer { width: 80vw; max-width: 280px; }
-  .logo-img      { height: 34px; }
+  .navbar-logo   { width: 148px; height: 50px; }
+  .logo-img      { height: 210%; margin-top: -25px; margin-left: -18px; }
 }
 
 /* ─────────────────────────────────────────
@@ -358,11 +375,10 @@
 body.dark .navbar,
 .dark-mode .navbar              { background: #1e293b !important; border-bottom-color: #334155 !important; box-shadow: 0 1px 4px rgba(0,0,0,.3) !important; }
 
-/* Fix logo white box in dark mode */
 body.dark .navbar-logo,
 .dark-mode .navbar-logo         { background: transparent !important; }
 body.dark .logo-img,
-.dark-mode .logo-img            { filter: brightness(1) !important; background: transparent !important; mix-blend-mode: normal; border-radius: 8px; }
+.dark-mode .logo-img            { filter: brightness(1.1) !important; }
 
 body.dark .desktop-nav a,
 .dark-mode .desktop-nav a       { color: #94a3b8 !important; }

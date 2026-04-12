@@ -359,17 +359,21 @@ body.dark-mode,
 @media (max-width: 768px) {
   .home-container { padding: 0; }
   .home-layout {
-    grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 32px;
+    grid-template-columns: 1fr; gap: 0; padding: 8px 12px 32px;
     margin-top: 0 !important;
   }
   .home-sidebar.left { display: none; }
 
+  /* ── Modern compact mobile search ── */
   .mobile-search-bar {
-    display: flex; align-items: center; gap: 8px;
-    margin: 12px 12px 0;
-    background: var(--bg-white); border: 0.5px solid var(--border);
-    border-radius: var(--radius-lg); padding: 10px 14px;
-    box-shadow: var(--shadow-sm); transition: var(--transition);
+    display: flex; align-items: center; gap: 10px;
+    margin: 10px 12px 14px;
+    background: var(--bg-white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 8px rgba(15,23,42,.08);
+    transition: var(--transition);
   }
 
   .mobile-search-bar:focus-within {
@@ -377,20 +381,62 @@ body.dark-mode,
     box-shadow: 0 0 0 3px rgba(37,99,235,.12);
   }
 
-  .mobile-search-icon { color: var(--text-3); font-size: 15px; flex-shrink: 0; }
+  .mobile-search-icon { color: var(--text-3); font-size: 16px; flex-shrink: 0; }
 
   .mobile-search-bar input {
     border: none; outline: none; background: transparent;
-    font-size: 14px; color: var(--text); width: 100%;
+    font-size: 15px; color: var(--text); width: 100%;
+    font-weight: 400;
   }
 
   .mobile-search-bar input::placeholder { color: var(--text-3); }
 
-  .section-divider { padding: 8px 0 6px; }
+  /* ── Section dividers ── */
+  .section-divider {
+    padding: 14px 0 8px;
+  }
+
+  .divider-label {
+    font-size: 11px; font-weight: 800;
+    letter-spacing: .08em;
+    color: var(--text-2);
+  }
+
+  .divider-date {
+    font-size: 11px;
+    color: var(--text-3);
+  }
+
+  /* ── Articles list on mobile ── */
+  .articles-list {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  /* ── Result count ── */
+  .result-count {
+    font-size: 12px;
+    padding: 2px 0 10px;
+  }
+
+  /* ── Pagination compact ── */
+  .pagination { gap: 4px; padding: 16px 0 4px; }
+  .pg-btn { min-width: 32px; height: 32px; font-size: 12px; padding: 0 8px; border-radius: 8px; }
+  .pg-nav { padding: 0 10px; font-size: 12px; }
+
+  /* ── Widget cards ── */
   .widget-card { border-radius: var(--radius-md); }
-  .pagination { gap: 4px; }
-  .pg-btn { min-width: 32px; height: 32px; font-size: 12px; }
-  .pg-nav { padding: 0 10px; }
+  .widget-header { padding: 10px 14px; font-size: 10px; }
+  .trending-item { padding: 10px 12px; }
+  .trending-title { font-size: 12px; }
+  .trending-meta { font-size: 10px; }
+  .widget-link { padding: 8px 10px; font-size: 13px; }
+
+  /* ── Empty state ── */
+  .empty-state { padding: 40px 20px; }
+
+  /* ── Mobile trending section spacing ── */
+  .trending-section { margin-top: 16px; }
 }
 
 /* ─────────────────────────────────────────

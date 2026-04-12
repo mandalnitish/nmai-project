@@ -34,8 +34,8 @@
 .nav-right  { display: flex; align-items: center; gap: 8px; }
 
 /* ─── Logo ─── */
-.navbar-logo { display: flex; align-items: center; text-decoration: none; }
-.logo-img    { height: 44px; width: auto; }
+.navbar-logo { display: flex; align-items: center; text-decoration: none; background: transparent; }
+.logo-img    { height: 44px; width: auto; display: block; }
 
 /* ─── Desktop nav links ─── */
 .desktop-nav { display: flex; align-items: center; gap: 4px; }
@@ -355,33 +355,78 @@
 /* ─────────────────────────────────────────
    DARK MODE
 ───────────────────────────────────────── */
-body.dark .navbar              { background: #1e293b; border-bottom-color: #334155; }
-body.dark .desktop-nav a       { color: #94a3b8; }
-body.dark .desktop-nav a:hover { background: #334155; color: #f1f5f9; }
-body.dark .desktop-nav a.active { background: rgba(37,99,235,.15); color: #60a5fa; }
-body.dark .nav-login-btn        { color: #60a5fa; }
-body.dark .nav-login-btn:hover  { background: rgba(37,99,235,.15); }
-body.dark .nav-username         { color: #60a5fa; }
-body.dark .logout-btn           { border-color: #7f1d1d; color: #fca5a5; }
-body.dark .logout-btn:hover     { background: rgba(239,68,68,.1); }
-body.dark .nav-toggle span      { background: #94a3b8; }
+body.dark .navbar,
+.dark-mode .navbar              { background: #1e293b !important; border-bottom-color: #334155 !important; box-shadow: 0 1px 4px rgba(0,0,0,.3) !important; }
 
-body.dark .drawer-right          { background: #1e293b; }
-body.dark .drawer-header         { border-bottom-color: #334155; }
-body.dark .drawer-title          { color: #64748b; }
-body.dark .drawer-close          { background: #334155; color: #94a3b8; }
-body.dark .drawer-close:hover    { background: #475569; color: #f1f5f9; }
-body.dark .drawer-auth           { background: #0f172a; border-bottom-color: #334155; }
-body.dark .mobile-user-card      { background: #1e293b; border-color: #334155; }
-body.dark .user-name             { color: #f1f5f9; }
-body.dark .user-email            { color: #64748b; }
-body.dark .mobile-dark-mode-section { border-bottom-color: #334155; }
-body.dark .mobile-nav-links a    { color: #94a3b8; }
-body.dark .mobile-nav-links a:hover { background: #334155; color: #f1f5f9; }
-body.dark .mobile-nav-links a.active { background: rgba(37,99,235,.15); color: #60a5fa; }
-body.dark .mobile-menu-footer    { background: #0f172a; border-top-color: #334155; }
-body.dark .mobile-login-btn      { background: #1e293b; border-color: rgba(37,99,235,.4); color: #60a5fa; }
-body.dark .mobile-register-btn   { background: #2563eb; }
+/* Fix logo white box in dark mode */
+body.dark .navbar-logo,
+.dark-mode .navbar-logo         { background: transparent !important; }
+body.dark .logo-img,
+.dark-mode .logo-img            { filter: brightness(1) !important; background: transparent !important; mix-blend-mode: normal; border-radius: 8px; }
+
+body.dark .desktop-nav a,
+.dark-mode .desktop-nav a       { color: #94a3b8 !important; }
+body.dark .desktop-nav a:hover,
+.dark-mode .desktop-nav a:hover { background: #334155 !important; color: #f1f5f9 !important; }
+body.dark .desktop-nav a.active,
+.dark-mode .desktop-nav a.active { background: rgba(37,99,235,.15) !important; color: #60a5fa !important; }
+
+body.dark .nav-login-btn,
+.dark-mode .nav-login-btn       { color: #60a5fa !important; }
+body.dark .nav-login-btn:hover,
+.dark-mode .nav-login-btn:hover { background: rgba(37,99,235,.15) !important; }
+body.dark .nav-username,
+.dark-mode .nav-username        { color: #60a5fa !important; }
+body.dark .logout-btn,
+.dark-mode .logout-btn          { border-color: #7f1d1d !important; color: #fca5a5 !important; }
+body.dark .logout-btn:hover,
+.dark-mode .logout-btn:hover    { background: rgba(239,68,68,.1) !important; }
+body.dark .nav-toggle span,
+.dark-mode .nav-toggle span     { background: #94a3b8 !important; }
+
+/* ── RIGHT DRAWER dark mode ── */
+body.dark .drawer-right,
+.dark-mode .drawer-right         { background: #1e293b !important; box-shadow: -4px 0 24px rgba(0,0,0,.4) !important; }
+body.dark .drawer-right .drawer-header,
+.dark-mode .drawer-right .drawer-header { background: #1e293b !important; border-bottom-color: #334155 !important; }
+body.dark .drawer-right .drawer-title,
+.dark-mode .drawer-right .drawer-title  { color: #64748b !important; }
+body.dark .drawer-right .drawer-close,
+.dark-mode .drawer-right .drawer-close  { background: #334155 !important; color: #94a3b8 !important; }
+body.dark .drawer-right .drawer-close:hover,
+.dark-mode .drawer-right .drawer-close:hover { background: #475569 !important; color: #f1f5f9 !important; }
+
+body.dark .drawer-auth,
+.dark-mode .drawer-auth          { background: #0f172a !important; border-bottom-color: #334155 !important; }
+body.dark .mobile-user-card,
+.dark-mode .mobile-user-card     { background: #1e293b !important; border-color: #334155 !important; }
+body.dark .user-avatar,
+.dark-mode .user-avatar          { background: rgba(37,99,235,.15) !important; }
+body.dark .user-name,
+.dark-mode .user-name            { color: #f1f5f9 !important; }
+body.dark .user-email,
+.dark-mode .user-email           { color: #64748b !important; }
+
+body.dark .mobile-dark-mode-section,
+.dark-mode .mobile-dark-mode-section { border-bottom-color: #334155 !important; background: #1e293b !important; }
+
+body.dark .mobile-nav-links,
+.dark-mode .mobile-nav-links     { background: #1e293b !important; }
+body.dark .mobile-nav-links a,
+.dark-mode .mobile-nav-links a   { color: #94a3b8 !important; }
+body.dark .mobile-nav-links a:hover,
+.dark-mode .mobile-nav-links a:hover { background: #263347 !important; color: #f1f5f9 !important; }
+body.dark .mobile-nav-links a.active,
+.dark-mode .mobile-nav-links a.active { background: rgba(37,99,235,.15) !important; color: #60a5fa !important; }
+body.dark .mobile-nav-links a.active::after,
+.dark-mode .mobile-nav-links a.active::after { background: #2563eb !important; }
+
+body.dark .mobile-menu-footer,
+.dark-mode .mobile-menu-footer   { background: #0f172a !important; border-top-color: #334155 !important; }
+body.dark .mobile-login-btn,
+.dark-mode .mobile-login-btn     { background: #1e293b !important; border-color: rgba(37,99,235,.4) !important; color: #60a5fa !important; }
+body.dark .mobile-register-btn,
+.dark-mode .mobile-register-btn  { background: #2563eb !important; color: #fff !important; }
 
 @media (min-width: 921px) {
   .mobile-dark-mode-section { display: none; }

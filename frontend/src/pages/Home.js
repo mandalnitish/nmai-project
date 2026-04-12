@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { articlesAPI } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 import ArticleSkeleton from "../components/ArticleSkeleton";
-import { FiSearch, FiTrendingUp, FiChevronRight, FiBookOpen, FiAward } from "react-icons/fi";
+import { FiSearch, FiChevronRight, FiBookOpen, FiAward } from "react-icons/fi";
 import "./Home.css";
 
 /* ─── Date Helpers ─── */
@@ -67,7 +67,7 @@ const Pagination = ({ page, totalPages, onChange }) => {
   );
 };
 
-/* ─── ArticleGroup — returns null (no DOM node at all) when empty ─── */
+/* ─── ArticleGroup — true null when empty, no phantom DOM nodes ─── */
 const ArticleGroup = ({ articles, label, date }) => {
   if (!articles || articles.length === 0) return null;
   return (
@@ -93,7 +93,6 @@ const ArticleGroup = ({ articles, label, date }) => {
 const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [articles, setArticles]     = useState([]);
-  const [trending, setTrending]     = useState([]);
   const [loading, setLoading]       = useState(true);
   const [search, setSearch]         = useState("");
   const [category, setCategory]     = useState("All");
@@ -123,18 +122,18 @@ const Home = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const [latestRes, trendingRes] = await Promise.all([
-          articlesAPI.getAll({ page, limit: 9, category: category === "All" ? "" : category, search }),
-          articlesAPI.getTrending(5),
-        ]);
+        const latestRes = await articlesAPI.getAll({
+          page, limit: 9,
+          category: category === "All" ? "" : category,
+          search,
+        });
         if (!mounted) return;
         setArticles(latestRes.articles || []);
         setTotalPages(latestRes.pagination?.totalPages || 1);
         setTotalCount(latestRes.pagination?.total || 0);
-        setTrending(trendingRes.articles || []);
       } catch (err) {
         console.error("Home fetch error:", err);
-        setArticles([]); setTrending([]);
+        setArticles([]);
       } finally {
         if (mounted) setLoading(false);
       }
@@ -174,7 +173,7 @@ const Home = () => {
 
           <div className="home-layout">
 
-            {/* LEFT SIDEBAR */}
+            {/* ── LEFT SIDEBAR ── */}
             <aside className="home-sidebar left">
               <div className="sidebar-search-wrap">
                 <div className="sidebar-search-box">
@@ -183,6 +182,7 @@ const Home = () => {
                     onChange={(e) => handleSearchChange(e.target.value)} />
                 </div>
               </div>
+
               <div className="sidebar-section">
                 <div className="sidebar-section-title">Categories</div>
                 <ul className="cat-list">
@@ -198,28 +198,21 @@ const Home = () => {
               </div>
             </aside>
 
-            {/* MAIN CONTENT */}
+            {/* ── MAIN CONTENT ── */}
             <main className="home-content">
 
-              {/* ── No live pill, no header wrapper — articles start immediately ── */}
-
-              {/* Article count pill (only shown, no live dot) */}
               {!loading && totalCount > 0 && (
                 <div className="result-count">
-                  {totalCount} articles
-                  {category !== "All" ? ` in ${category}` : ""}
-                  {search ? ` matching "${search}"` : ""}
+                  {totalCount} articles{category !== "All" ? ` in ${category}` : ""}{search ? ` matching "${search}"` : ""}
                 </div>
               )}
 
-              {/* Skeletons */}
               {loading && (
                 <div className="articles-list">
                   {Array.from({ length: 6 }).map((_, i) => <ArticleSkeleton key={i} />)}
                 </div>
               )}
 
-              {/* Empty */}
               {!loading && articles.length === 0 && (
                 <div className="empty-state">
                   <div className="empty-icon">🔍</div>
@@ -228,7 +221,6 @@ const Home = () => {
                 </div>
               )}
 
-              {/* Grouped articles — each group returns null when empty, zero phantom nodes */}
               {!loading && articles.length > 0 && (
                 <div className="articles-groups">
                   <ArticleGroup articles={todayArticles}     label="Today"     date={getTodayLabel()} />
@@ -237,54 +229,28 @@ const Home = () => {
                   <Pagination page={page} totalPages={totalPages} onChange={handlePageChange} />
                 </div>
               )}
-
-              {/* Mobile trending */}
-              {trending.length > 0 && (
-                <section className="trending-section mobile-only">
-                  <div className="widget-header"><FiTrendingUp /> Trending Now</div>
-                  <div className="trending-list">
-                    {trending.map((a, i) => (
-                      <Link key={a._id} to={`/article/${a.slug}`} className="trending-item">
-                        <span className="trending-num">#{i + 1}</span>
-                        <div className="trending-body">
-                          <h4 className="trending-title">{a.title}</h4>
-                          <span className="trending-meta">{formatDate(a.publishDate)} · {a.category}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              )}
             </main>
 
-            {/* RIGHT SIDEBAR */}
+            {/* ── RIGHT SIDEBAR — no Trending Now ── */}
             <aside className="home-sidebar right">
-              {trending.length > 0 && (
-                <div className="widget-card">
-                  <div className="widget-header"><FiTrendingUp className="widget-icon" />Trending Now</div>
-                  <div className="trending-list">
-                    {trending.map((a, i) => (
-                      <Link key={a._id} to={`/article/${a.slug}`} className="trending-item">
-                        <span className="trending-num">#{i + 1}</span>
-                        <div className="trending-body">
-                          <h4 className="trending-title">{a.title}</h4>
-                          <span className="trending-meta">{formatDate(a.publishDate)} · {a.category}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+
               <div className="widget-card">
-                <div className="widget-header"><FiBookOpen className="widget-icon" />E-Books</div>
+                <div className="widget-header">
+                  <FiBookOpen className="widget-icon" />
+                  E-Books
+                </div>
                 <div className="widget-links">
                   <Link to="/ebooks/monthly-mcqs" className="widget-link">Monthly MCQs <FiChevronRight /></Link>
                   <Link to="/ebooks/ca-articles-mcqs" className="widget-link">Articles + MCQs <FiChevronRight /></Link>
                   <Link to="/ebooks/yearly-pdf" className="widget-link">Yearly PDF <FiChevronRight /></Link>
                 </div>
               </div>
+
               <div className="widget-card">
-                <div className="widget-header"><FiAward className="widget-icon" />Exam Focus</div>
+                <div className="widget-header">
+                  <FiAward className="widget-icon" />
+                  Exam Focus
+                </div>
                 <div className="widget-links">
                   {["UPSC", "SSC", "Banking", "Railway", "State PSC"].map((exam) => (
                     <Link key={exam} to={`/exams/${exam.toLowerCase().replace(" ", "-")}`} className="widget-link">
@@ -293,6 +259,7 @@ const Home = () => {
                   ))}
                 </div>
               </div>
+
             </aside>
 
           </div>

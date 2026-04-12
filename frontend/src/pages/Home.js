@@ -31,7 +31,7 @@ const getYesterdayLabel = () => {
   return y.toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 };
 
-/* ─── Category config ─── */
+/* ─── Categories ─── */
 const CATEGORIES = [
   { name: "All",           color: "blue"    },
   { name: "National",      color: "teal"    },
@@ -67,7 +67,7 @@ const Pagination = ({ page, totalPages, onChange }) => {
   );
 };
 
-/* ─── Article Group — returns null when no articles (no empty DOM node) ─── */
+/* ─── ArticleGroup — returns null (no DOM node at all) when empty ─── */
 const ArticleGroup = ({ articles, label, date }) => {
   if (!articles || articles.length === 0) return null;
   return (
@@ -174,7 +174,7 @@ const Home = () => {
 
           <div className="home-layout">
 
-            {/* ── LEFT SIDEBAR ── */}
+            {/* LEFT SIDEBAR */}
             <aside className="home-sidebar left">
               <div className="sidebar-search-wrap">
                 <div className="sidebar-search-box">
@@ -198,24 +198,28 @@ const Home = () => {
               </div>
             </aside>
 
-            {/* ── MAIN CONTENT ── */}
+            {/* MAIN CONTENT */}
             <main className="home-content">
 
-              <div className="content-header">
-                <div className="live-pill"><span className="live-dot" />Live updates</div>
-                {!loading && totalCount > 0 && (
-                  <span className="article-count">
-                    {totalCount} articles{category !== "All" ? ` in ${category}` : ""}{search ? ` for "${search}"` : ""}
-                  </span>
-                )}
-              </div>
+              {/* ── No live pill, no header wrapper — articles start immediately ── */}
 
+              {/* Article count pill (only shown, no live dot) */}
+              {!loading && totalCount > 0 && (
+                <div className="result-count">
+                  {totalCount} articles
+                  {category !== "All" ? ` in ${category}` : ""}
+                  {search ? ` matching "${search}"` : ""}
+                </div>
+              )}
+
+              {/* Skeletons */}
               {loading && (
                 <div className="articles-list">
                   {Array.from({ length: 6 }).map((_, i) => <ArticleSkeleton key={i} />)}
                 </div>
               )}
 
+              {/* Empty */}
               {!loading && articles.length === 0 && (
                 <div className="empty-state">
                   <div className="empty-icon">🔍</div>
@@ -224,7 +228,7 @@ const Home = () => {
                 </div>
               )}
 
-              {/* ArticleGroup returns null when empty — no DOM node, no gap */}
+              {/* Grouped articles — each group returns null when empty, zero phantom nodes */}
               {!loading && articles.length > 0 && (
                 <div className="articles-groups">
                   <ArticleGroup articles={todayArticles}     label="Today"     date={getTodayLabel()} />
@@ -234,6 +238,7 @@ const Home = () => {
                 </div>
               )}
 
+              {/* Mobile trending */}
               {trending.length > 0 && (
                 <section className="trending-section mobile-only">
                   <div className="widget-header"><FiTrendingUp /> Trending Now</div>
@@ -252,7 +257,7 @@ const Home = () => {
               )}
             </main>
 
-            {/* ── RIGHT SIDEBAR ── */}
+            {/* RIGHT SIDEBAR */}
             <aside className="home-sidebar right">
               {trending.length > 0 && (
                 <div className="widget-card">
@@ -270,7 +275,6 @@ const Home = () => {
                   </div>
                 </div>
               )}
-
               <div className="widget-card">
                 <div className="widget-header"><FiBookOpen className="widget-icon" />E-Books</div>
                 <div className="widget-links">
@@ -279,7 +283,6 @@ const Home = () => {
                   <Link to="/ebooks/yearly-pdf" className="widget-link">Yearly PDF <FiChevronRight /></Link>
                 </div>
               </div>
-
               <div className="widget-card">
                 <div className="widget-header"><FiAward className="widget-icon" />Exam Focus</div>
                 <div className="widget-links">

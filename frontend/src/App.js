@@ -59,6 +59,8 @@ import './DarkModeFixes.css';
 import './pages/SpacingAndLoadingFix.css';
 import './pages/ArticleDetailSpacingFix.css';
 
+import './DarkModePatch.css';
+
 /* ================= REACT QUERY ================= */
 const queryClient = new QueryClient({
   defaultOptions: {

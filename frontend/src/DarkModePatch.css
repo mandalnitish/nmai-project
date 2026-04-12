@@ -1,0 +1,547 @@
+/* =====================================================================
+   DARK MODE PATCH
+   Import this LAST in App.js after all other CSS imports
+   Fixes: article cards, sidebar, pagination, navbar, search
+===================================================================== */
+
+/* ─────────────────────────────────────────
+   ARTICLE CARDS
+───────────────────────────────────────── */
+body.dark .ac-card,
+.dark-mode .ac-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .ac-card:hover,
+.dark-mode .ac-card:hover {
+  border-color: rgba(37,99,235,.45) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.4) !important;
+}
+
+body.dark .ac-thumb,
+.dark-mode .ac-thumb {
+  background: #0f172a !important;
+}
+
+body.dark .ac-title,
+.dark-mode .ac-title {
+  color: #f1f5f9 !important;
+}
+
+body.dark .ac-card:hover .ac-title,
+.dark-mode .ac-card:hover .ac-title {
+  color: #60a5fa !important;
+}
+
+body.dark .ac-summary,
+.dark-mode .ac-summary {
+  color: #94a3b8 !important;
+}
+
+body.dark .ac-date,
+.dark-mode .ac-date {
+  color: #64748b !important;
+}
+
+body.dark .ac-read-more,
+.dark-mode .ac-read-more {
+  color: #60a5fa !important;
+}
+
+body.dark .ac-exam-tag,
+.dark-mode .ac-exam-tag {
+  background: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+/* Badge colors in dark mode — keep hue, darken bg */
+body.dark .ac-badge-blue,    .dark-mode .ac-badge-blue    { background: rgba(37,99,235,.18)  !important; color: #93c5fd !important; }
+body.dark .ac-badge-teal,    .dark-mode .ac-badge-teal    { background: rgba(15,118,110,.2)  !important; color: #5eead4 !important; }
+body.dark .ac-badge-green,   .dark-mode .ac-badge-green   { background: rgba(21,128,61,.2)   !important; color: #86efac !important; }
+body.dark .ac-badge-emerald, .dark-mode .ac-badge-emerald { background: rgba(6,95,70,.2)     !important; color: #6ee7b7 !important; }
+body.dark .ac-badge-purple,  .dark-mode .ac-badge-purple  { background: rgba(126,34,206,.2)  !important; color: #d8b4fe !important; }
+body.dark .ac-badge-indigo,  .dark-mode .ac-badge-indigo  { background: rgba(67,56,202,.2)   !important; color: #a5b4fc !important; }
+body.dark .ac-badge-violet,  .dark-mode .ac-badge-violet  { background: rgba(109,40,217,.2)  !important; color: #c4b5fd !important; }
+body.dark .ac-badge-amber,   .dark-mode .ac-badge-amber   { background: rgba(180,83,9,.2)    !important; color: #fcd34d !important; }
+body.dark .ac-badge-orange,  .dark-mode .ac-badge-orange  { background: rgba(194,65,12,.2)   !important; color: #fdba74 !important; }
+body.dark .ac-badge-red,     .dark-mode .ac-badge-red     { background: rgba(185,28,28,.2)   !important; color: #fca5a5 !important; }
+body.dark .ac-badge-pink,    .dark-mode .ac-badge-pink    { background: rgba(157,23,77,.2)   !important; color: #f9a8d4 !important; }
+body.dark .ac-badge-cyan,    .dark-mode .ac-badge-cyan    { background: rgba(14,116,144,.2)  !important; color: #67e8f9 !important; }
+body.dark .ac-badge-brown,   .dark-mode .ac-badge-brown   { background: rgba(146,64,14,.2)   !important; color: #fbbf24 !important; }
+
+/* ─────────────────────────────────────────
+   ARTICLE SKELETON
+───────────────────────────────────────── */
+body.dark .as-card,
+.dark-mode .as-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .as-thumb::after,
+.dark-mode .as-thumb::after,
+body.dark .as-shimmer,
+.dark-mode .as-shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%) !important;
+}
+
+body.dark .as-thumb,
+.dark-mode .as-thumb {
+  background: #0f172a !important;
+}
+
+/* ─────────────────────────────────────────
+   HOME PAGE
+───────────────────────────────────────── */
+body.dark .home-page,
+.dark-mode .home-page {
+  background: #0f172a !important;
+}
+
+body.dark .home-layout,
+.dark-mode .home-layout {
+  background: transparent !important;
+  margin-top: 0 !important;
+}
+
+body.dark .home-content,
+.dark-mode .home-content {
+  background: transparent !important;
+}
+
+/* ─────────────────────────────────────────
+   LEFT SIDEBAR
+───────────────────────────────────────── */
+body.dark .sidebar-search-wrap,
+.dark-mode .sidebar-search-wrap {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .sidebar-search-box,
+.dark-mode .sidebar-search-box {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+body.dark .sidebar-search-box:focus-within,
+.dark-mode .sidebar-search-box:focus-within {
+  border-color: #60a5fa !important;
+  background: #1e293b !important;
+}
+
+body.dark .sidebar-search-icon,
+.dark-mode .sidebar-search-icon {
+  color: #64748b !important;
+}
+
+body.dark .sidebar-search-box input,
+.dark-mode .sidebar-search-box input {
+  color: #f1f5f9 !important;
+}
+
+body.dark .sidebar-search-box input::placeholder,
+.dark-mode .sidebar-search-box input::placeholder {
+  color: #475569 !important;
+}
+
+body.dark .sidebar-section,
+.dark-mode .sidebar-section {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .sidebar-section-title,
+.dark-mode .sidebar-section-title {
+  color: #475569 !important;
+  border-bottom-color: #334155 !important;
+}
+
+body.dark .cat-item,
+.dark-mode .cat-item {
+  color: #94a3b8 !important;
+}
+
+body.dark .cat-item:hover,
+.dark-mode .cat-item:hover {
+  background: #263347 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark .cat-item.active,
+.dark-mode .cat-item.active {
+  background: rgba(37,99,235,.18) !important;
+  color: #60a5fa !important;
+}
+
+/* ─────────────────────────────────────────
+   SECTION DIVIDER
+───────────────────────────────────────── */
+body.dark .section-divider::after,
+.dark-mode .section-divider::after {
+  background: #334155 !important;
+}
+
+body.dark .divider-label,
+.dark-mode .divider-label {
+  color: #94a3b8 !important;
+}
+
+body.dark .divider-date,
+.dark-mode .divider-date {
+  color: #475569 !important;
+}
+
+/* ─────────────────────────────────────────
+   RIGHT SIDEBAR WIDGETS
+───────────────────────────────────────── */
+body.dark .widget-card,
+.dark-mode .widget-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .widget-header,
+.dark-mode .widget-header {
+  color: #64748b !important;
+  border-bottom-color: #334155 !important;
+}
+
+body.dark .widget-icon,
+.dark-mode .widget-icon {
+  color: #60a5fa !important;
+}
+
+body.dark .widget-link,
+.dark-mode .widget-link {
+  color: #94a3b8 !important;
+}
+
+body.dark .widget-link:hover,
+.dark-mode .widget-link:hover {
+  background: rgba(37,99,235,.15) !important;
+  color: #60a5fa !important;
+}
+
+body.dark .trending-item,
+.dark-mode .trending-item {
+  border-bottom-color: #1e293b !important;
+}
+
+body.dark .trending-item:hover,
+.dark-mode .trending-item:hover {
+  background: #263347 !important;
+}
+
+body.dark .trending-num,
+.dark-mode .trending-num {
+  color: #60a5fa !important;
+}
+
+body.dark .trending-title,
+.dark-mode .trending-title {
+  color: #e2e8f0 !important;
+}
+
+body.dark .trending-meta,
+.dark-mode .trending-meta {
+  color: #475569 !important;
+}
+
+/* ─────────────────────────────────────────
+   PAGINATION
+───────────────────────────────────────── */
+body.dark .pagination,
+.dark-mode .pagination {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.dark .pg-btn,
+.dark-mode .pg-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+body.dark .pg-btn:hover:not(:disabled):not(.active),
+.dark-mode .pg-btn:hover:not(:disabled):not(.active) {
+  background: #263347 !important;
+  border-color: rgba(37,99,235,.4) !important;
+  color: #60a5fa !important;
+}
+
+body.dark .pg-btn.active,
+.dark-mode .pg-btn.active {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #fff !important;
+}
+
+body.dark .pg-btn:disabled,
+.dark-mode .pg-btn:disabled {
+  opacity: .3 !important;
+}
+
+body.dark .pg-ellipsis,
+.dark-mode .pg-ellipsis {
+  color: #475569 !important;
+}
+
+/* ─────────────────────────────────────────
+   RESULT COUNT / EMPTY STATE
+───────────────────────────────────────── */
+body.dark .result-count,
+.dark-mode .result-count {
+  color: #475569 !important;
+}
+
+body.dark .empty-state,
+.dark-mode .empty-state {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .empty-title,
+.dark-mode .empty-title {
+  color: #f1f5f9 !important;
+}
+
+body.dark .empty-sub,
+.dark-mode .empty-sub {
+  color: #475569 !important;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE SEARCH
+───────────────────────────────────────── */
+body.dark .mobile-search-bar,
+.dark-mode .mobile-search-bar {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .mobile-search-bar input,
+.dark-mode .mobile-search-bar input {
+  color: #f1f5f9 !important;
+}
+
+body.dark .mobile-search-bar input::placeholder,
+.dark-mode .mobile-search-bar input::placeholder {
+  color: #475569 !important;
+}
+
+body.dark .mobile-search-icon,
+.dark-mode .mobile-search-icon {
+  color: #475569 !important;
+}
+
+/* ─────────────────────────────────────────
+   CURRENT AFFAIRS PAGE
+───────────────────────────────────────── */
+body.dark .current-affairs-page,
+.dark-mode .current-affairs-page {
+  background: #0f172a !important;
+}
+
+body.dark .ca-sidebar,
+.dark-mode .ca-sidebar {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .sidebar-header,
+.dark-mode .sidebar-header {
+  border-bottom-color: #334155 !important;
+}
+
+body.dark .sidebar-title,
+.dark-mode .sidebar-title {
+  color: #475569 !important;
+}
+
+body.dark .sidebar-close,
+.dark-mode .sidebar-close {
+  background: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+body.dark .filter-section,
+.dark-mode .filter-section {
+  border-bottom-color: #263347 !important;
+}
+
+body.dark .filter-section h4,
+.dark-mode .filter-section h4 {
+  color: #475569 !important;
+}
+
+body.dark .category-list li,
+.dark-mode .category-list li {
+  color: #94a3b8 !important;
+}
+
+body.dark .category-list li:hover,
+.dark-mode .category-list li:hover {
+  background: #263347 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark .category-list li.active,
+.dark-mode .category-list li.active {
+  background: rgba(37,99,235,.18) !important;
+  color: #60a5fa !important;
+}
+
+body.dark .exam-filter select,
+.dark-mode .exam-filter select {
+  background: #334155 !important;
+  border-color: #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark .active-filters,
+.dark-mode .active-filters {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .filter-label,
+.dark-mode .filter-label {
+  color: #475569 !important;
+}
+
+body.dark .loading-container,
+.dark-mode .loading-container {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .loading-container p,
+.dark-mode .loading-container p {
+  color: #475569 !important;
+}
+
+body.dark .pagination-btn,
+.dark-mode .pagination-btn {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+body.dark .pagination-btn:hover:not(:disabled),
+.dark-mode .pagination-btn:hover:not(:disabled) {
+  background: #263347 !important;
+  border-color: rgba(37,99,235,.4) !important;
+  color: #60a5fa !important;
+}
+
+body.dark .pagination-info,
+.dark-mode .pagination-info {
+  color: #94a3b8 !important;
+}
+
+body.dark .mobile-filter-toggle,
+.dark-mode .mobile-filter-toggle {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+/* ─────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────── */
+body.dark .navbar,
+.dark-mode .navbar {
+  background: #1e293b !important;
+  border-bottom-color: #334155 !important;
+}
+
+body.dark .desktop-nav a,
+.dark-mode .desktop-nav a {
+  color: #94a3b8 !important;
+}
+
+body.dark .desktop-nav a:hover,
+.dark-mode .desktop-nav a:hover {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark .desktop-nav a.active,
+.dark-mode .desktop-nav a.active {
+  background: rgba(37,99,235,.15) !important;
+  color: #60a5fa !important;
+}
+
+body.dark .nav-login-btn,
+.dark-mode .nav-login-btn {
+  color: #60a5fa !important;
+}
+
+body.dark .nav-login-btn:hover,
+.dark-mode .nav-login-btn:hover {
+  background: rgba(37,99,235,.15) !important;
+}
+
+body.dark .logout-btn,
+.dark-mode .logout-btn {
+  border-color: #7f1d1d !important;
+  color: #fca5a5 !important;
+}
+
+body.dark .nav-toggle span,
+.dark-mode .nav-toggle span {
+  background: #94a3b8 !important;
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE TOGGLE BUTTON
+───────────────────────────────────────── */
+body.dark .dark-mode-toggle,
+.dark-mode .dark-mode-toggle {
+  background: #334155 !important;
+  border-color: #475569 !important;
+}
+
+body.dark .dark-mode-toggle:hover,
+.dark-mode .dark-mode-toggle:hover {
+  background: #475569 !important;
+  border-color: #60a5fa !important;
+}
+
+body.dark .toggle-icon,
+.dark-mode .toggle-icon {
+  color: #fbbf24 !important;
+}
+
+/* ─────────────────────────────────────────
+   SECONDARY BAR
+───────────────────────────────────────── */
+body.dark .secondary-bar,
+.dark-mode .secondary-bar {
+  background: #1e293b !important;
+  border-bottom-color: #334155 !important;
+}
+
+body.dark .secondary-bar a,
+.dark-mode .secondary-bar a {
+  color: #94a3b8 !important;
+}
+
+body.dark .secondary-bar a:hover,
+body.dark .secondary-bar a.active,
+.dark-mode .secondary-bar a:hover,
+.dark-mode .secondary-bar a.active {
+  color: #60a5fa !important;
+  background: rgba(37,99,235,.15) !important;
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────── */
+body.dark ::-webkit-scrollbar-track { background: #0f172a !important; }
+body.dark ::-webkit-scrollbar-thumb { background: #334155 !important; }
+body.dark ::-webkit-scrollbar-thumb:hover { background: #475569 !important; }

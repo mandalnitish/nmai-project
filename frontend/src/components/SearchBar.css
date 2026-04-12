@@ -61,3 +61,34 @@
     font-size: 0.9rem;
   }
 }
+
+/* ─────────────────────────────────────────
+   DARK MODE
+───────────────────────────────────────── */
+body.dark .search-bar,
+.dark-mode .search-bar {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark .search-bar:focus-within,
+.dark-mode .search-bar:focus-within {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+}
+
+body.dark .search-icon,
+.dark-mode .search-icon {
+  color: #64748b !important;
+}
+
+body.dark .search-input,
+.dark-mode .search-input {
+  background: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark .search-input::placeholder,
+.dark-mode .search-input::placeholder {
+  color: #475569 !important;
+}
